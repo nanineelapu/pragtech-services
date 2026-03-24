@@ -10,9 +10,15 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
+    const [hasLoaded, setHasLoaded] = useState(false);
     const scrollTimeout = useRef(null);
 
     useEffect(() => {
+        if (typeof window !== "undefined") {
+            const loaded = sessionStorage.getItem("pragtech_loaded") === "true";
+            setHasLoaded(loaded);
+        }
+
         const handleScroll = () => {
             const isScrolled = window.scrollY > 50;
             setScrolled(prev => prev !== isScrolled ? isScrolled : prev);
@@ -52,9 +58,9 @@ const Navbar = () => {
     return (
         <>
             <motion.nav
-                initial={{ y: -100, opacity: 0, x: "-50%" }}
+                initial={{ y: hasLoaded ? 0 : -100, opacity: hasLoaded ? 1 : 0, x: "-50%" }}
                 animate={{ y: 0, opacity: 1, x: "-50%" }}
-                transition={{ duration: 1, delay: 3.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, delay: hasLoaded ? 0 : 3.6, ease: [0.16, 1, 0.3, 1] }}
                 className={`fixed top-[3vw] md:top-[1.2vw] left-1/2 z-100 flex items-center justify-center bg-white/15 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-white/20 rounded-full lg:rounded-[4vw] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isScrolling
                     ? "w-[32vw] md:w-[12vw] py-[2vw] md:py-[0.5vw] px-[1vw]"
                     : "w-[92vw] md:w-[90vw] px-[4vw] md:px-[4vw] py-[2.5vw] md:py-[0.8vw]"

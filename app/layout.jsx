@@ -42,7 +42,15 @@ export default function RootLayout({ children }) {
       <body className="flex flex-col" suppressHydrationWarning>
         <AnimatePresence mode="wait">
           {loading && (
-            <Preloader key="preloader" onLoadComplete={() => setLoading(false)} />
+            <Preloader 
+              key="preloader" 
+              onLoadComplete={() => {
+                setLoading(false);
+                if (typeof window !== "undefined") {
+                  sessionStorage.setItem("pragtech_loaded", "true");
+                }
+              }} 
+            />
           )}
         </AnimatePresence>
         

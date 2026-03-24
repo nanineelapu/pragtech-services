@@ -12,23 +12,6 @@ const Technologies = () => {
 
     return (
         <section className="bg-[#153a20] rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] p-[8vw] lg:p-[6vw] relative overflow-hidden flex flex-col items-start w-[92%] mx-auto">
-            {/* Custom SVG Arrow Animation Background (Hide/Simplify on mobile) */}
-            <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-10 lg:opacity-20 translate-y-1/4 lg:translate-y-0">
-                <svg width="100%" height="200" viewBox="0 0 1000 100" className="w-full">
-                    {/* Central expanding line */}
-                    <line x1="500" y1="50" x2="500" y2="50" stroke="#faf9f6" strokeWidth="2">
-                        <animate attributeName="x1" from="500" to="0" dur="2.5s" fill="freeze" begin="0s" repeatCount="indefinite" />
-                        <animate attributeName="x2" from="500" to="1000" dur="2.5s" fill="freeze" begin="0s" repeatCount="indefinite" />
-                    </line>
-                    <path d="M500,40 L490,50 L500,60" fill="none" stroke="#faf9f6" strokeWidth="2" className="animate-[bounce-slow_3s_infinite]">
-                        <animateTransform attributeName="transform" type="translate" from="0 0" to="-500 0" dur="2.5s" begin="0s" repeatCount="indefinite" />
-                    </path>
-                    <path d="M500,40 L510,50 L500,60" fill="none" stroke="#faf9f6" strokeWidth="2" className="animate-[bounce-slow_3s_infinite]">
-                        <animateTransform attributeName="transform" type="translate" from="0 0" to="500 0" dur="2.5s" begin="0s" repeatCount="indefinite" />
-                    </path>
-                </svg>
-            </div>
-
             {/* Header Content - Dynamic Row on Mobile */}
             <div className="w-full flex flex-row lg:flex-col items-center lg:items-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[6vw] relative z-10">
                 <div className="w-1/2 lg:w-full">

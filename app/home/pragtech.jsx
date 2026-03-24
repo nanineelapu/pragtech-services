@@ -10,7 +10,7 @@ import ReviewSection from "./reviewsection";
 
 const PragtechHome = () => {
     return (
-        <main className="min-h-screen bg-[#faf9f6] flex flex-col gap-[5vw]">
+        <main className="min-h-screen bg-[#ffffff] flex flex-col gap-[5vw]">
             <HomeSection />
             <FirstSection />
             <MarketSection />

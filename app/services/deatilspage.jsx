@@ -1,21 +1,62 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const DetailsPage = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { duration: 0.8, ease: "easeOut" } 
+        }
+    };
+
     return (
-        <section className="bg-[#faf9f6] pt-[8vw] lg:pt-[8vw] pb-[2vw] text-center w-full overflow-x-hidden">
-            <div className="px-[6vw] lg:px-[4vw] w-full">
-                {/* Heading Label Decor */}
-                <div className="w-[10vw] lg:w-[4vw] h-[1vw] lg:h-[0.3vw] bg-[#4dbb6b] mx-auto mb-[6vw] lg:mb-[2.5vw] rounded-full" />
+        <section className="bg-[#faf9f6] pt-[12vw] lg:pt-[8vw] pb-[6vw] lg:pb-[2vw] text-center w-full overflow-x-hidden">
+            <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerVariants}
+                className="px-[6vw] lg:px-[4vw] w-full"
+            >
+                {/* Heading Label Decor - Animated Expansion */}
+                <motion.div 
+                    variants={{
+                        hidden: { scaleX: 0, opacity: 0 },
+                        visible: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: "circOut" } }
+                    }}
+                    className="w-[12vw] lg:w-[5vw] h-[1.2vw] lg:h-[0.3vw] bg-[#4dbb6b] mx-auto mb-[6vw] lg:mb-[2.5vw] rounded-full origin-center" 
+                />
 
                 {/* Main Heading Hierarchy */}
-                <h1 className="text-[12vw] lg:text-[5vw] font-black text-[#153a20] uppercase anton-regular tracking-tighter leading-none mb-[4vw] lg:mb-[2vw]">
-                    Complete Service <span className="text-[#4dbb6b]">Portfolio</span>
-                </h1>
+                <motion.h1 
+                    variants={itemVariants}
+                    className="text-[12vw] lg:text-[5.5vw] font-black text-[#153a20] uppercase anton-regular tracking-tighter leading-[0.9] mb-[4vw] lg:mb-[2vw]"
+                >
+                    Complete Service <br className="lg:hidden" /> <span className="text-[#4dbb6b]">Portfolio</span>
+                </motion.h1>
 
-                <p className="max-w-[85vw] lg:max-w-[45vw] mx-auto text-[4.5vw] lg:text-[1.4vw] text-[#153a20]/70 eb-garamond italic leading-relaxed">
+                <motion.p 
+                    variants={itemVariants}
+                    className="max-w-[85vw] lg:max-w-[45vw] mx-auto text-[4.5vw] lg:text-[1.4vw] text-[#153a20]/70 eb-garamond italic leading-relaxed"
+                >
                     A multi-dimensional network of structural detailing excellence tailored to elevate global industrial frameworks.
-                </p>
-            </div>
+                </motion.p>
+            </motion.div>
         </section>
     );
 };

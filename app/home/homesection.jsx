@@ -1,18 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const HomeSection = () => {
-    // Animation Variants
+    const [hasLoaded, setHasLoaded] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const loaded = sessionStorage.getItem("pragtech_loaded") === "true";
+            setHasLoaded(loaded);
+        }
+    }, []);
+
+    // Animation Variants - Dynamic Delays based on Session State
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.15,
-                delayChildren: 3.8,
+                staggerChildren: hasLoaded ? 0.05 : 0.15,
+                delayChildren: hasLoaded ? 0.2 : 3.8,
                 duration: 0.8,
                 ease: "easeOut"
             }
@@ -20,11 +29,11 @@ const HomeSection = () => {
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: hasLoaded ? 10 : 30 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: hasLoaded ? 0.4 : 1, ease: [0.16, 1, 0.3, 1] }
         }
     };
 
@@ -33,7 +42,7 @@ const HomeSection = () => {
         visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: 1.5, delay: 3.5, ease: "easeOut" }
+            transition: { duration: hasLoaded ? 1 : 1.5, delay: hasLoaded ? 0.1 : 3.5, ease: "easeOut" }
         }
     };
 
@@ -42,12 +51,12 @@ const HomeSection = () => {
         visible: {
             scaleX: 1,
             opacity: 1,
-            transition: { duration: 1.2, delay: 0.8, ease: "circOut" }
+            transition: { duration: 1.2, delay: hasLoaded ? 0.2 : 0.8, ease: "circOut" }
         }
     };
 
     return (
-        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#faf9f6]">
+        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#ffffff]">
             {/* Background Image with Layered Overlays */}
             <div className="absolute inset-0">
                 <Image
@@ -76,14 +85,14 @@ const HomeSection = () => {
             </div>
 
             {/* Main Content Container */}
-            <motion.div 
+            <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
                 className="relative h-full flex flex-col items-center justify-center text-center px-[6vw] md:px-[4vw]"
             >
                 {/* Decorative Frame Elements */}
-                <motion.div 
+                <motion.div
                     variants={frameVariants}
                     className="absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none"
                 >
@@ -100,7 +109,7 @@ const HomeSection = () => {
 
                 {/* Text Block */}
                 <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
-                    <motion.h1 
+                    <motion.h1
                         variants={itemVariants}
                         className="text-[#153a20] text-[15.5vw] md:text-[12vw] font-black leading-[0.8] tracking-tight anton-regular select-none uppercase"
                     >
@@ -108,24 +117,24 @@ const HomeSection = () => {
                     </motion.h1>
 
                     {/* Green Separator Line */}
-                    <motion.div 
+                    <motion.div
                         variants={lineVariants}
                         className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-[#4dbb6b] to-transparent my-[3vw] md:my-[1vw]"
                     >
                         <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-[#4dbb6b]/20" />
-                        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-[#faf9f6] border border-[#4dbb6b] rotate-45 flex items-center justify-center">
+                        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-[#ffffff] border border-[#4dbb6b] rotate-45 flex items-center justify-center">
                             <div className="w-[1vw] md:w-[0.2vw] h-[1vw] md:h-[0.2vw] bg-[#4dbb6b] rounded-full" />
                         </div>
                     </motion.div>
 
-                    <motion.h2 
+                    <motion.h2
                         variants={itemVariants}
                         className="text-[#4dbb6b] text-[4.2vw] md:text-[3vw] font-black tracking-[1.5vw] md:tracking-[0.8vw] uppercase anton-regular"
                     >
                         IN EVERY DETAIL
                     </motion.h2>
 
-                    <motion.div 
+                    <motion.div
                         variants={itemVariants}
                         className="mt-[5vw] md:mt-[2.5vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                     >
@@ -139,10 +148,10 @@ const HomeSection = () => {
                 </div>
 
                 {/* Interactive Slider representation */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
+                    transition={{ delay: hasLoaded ? 0.5 : 2, duration: 1 }}
                     className="absolute bottom-[8vw] md:bottom-[3vw] flex items-center gap-[3vw] md:gap-[1.2vw]"
                 >
                     <div className="w-[4vw] md:w-[1.4vw] h-[4vw] md:h-[1.4vw] rounded-full border-2 border-[#4dbb6b] flex items-center justify-center">

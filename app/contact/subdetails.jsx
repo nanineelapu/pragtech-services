@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const SubDetails = () => {
     return (
@@ -12,23 +13,47 @@ const SubDetails = () => {
                 </svg>
             </div>
 
-            <div className="relative z-10 flex flex-col items-center max-w-[85vw] lg:max-w-[70vw]">
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="relative z-10 flex flex-col items-center max-w-[85vw] lg:max-w-[70vw]"
+            >
                 {/* Visual Anchor Node */}
-                <div className="w-[15vw] lg:w-[3.5vw] h-[15vw] lg:h-[3.5vw] bg-[#153a20] rounded-full flex items-center justify-center mb-[8vw] lg:mb-[4vw] shadow-[0_1vw_3vw_rgba(21,58,32,0.1)] transition-transform duration-500 hover:scale-110">
+                <motion.div 
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "backOut" }}
+                    className="w-[15vw] lg:w-[3.5vw] h-[15vw] lg:h-[3.5vw] bg-[#153a20] rounded-full flex items-center justify-center mb-[8vw] lg:mb-[4vw] shadow-[0_1vw_3vw_rgba(21,58,32,0.1)] transition-transform duration-500 hover:scale-110"
+                >
                     <span className="text-[#4dbb6b] text-[6vw] lg:text-[1.4vw]">◈</span>
-                </div>
+                </motion.div>
 
-                <p className="text-[5.5vw] lg:text-[2vw] font-medium text-[#153a20] text-center leading-[1.6] lg:leading-[1.6] eb-garamond italic tracking-tight">
+                <motion.p 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                    className="text-[5.5vw] lg:text-[2vw] font-medium text-[#153a20] text-center leading-[1.6] lg:leading-[1.6] eb-garamond italic tracking-tight"
+                >
                     "Our team remains globally synchronized to accelerate your vision. Whether navigating complex structural puzzles or exploring new frontiers of BIM detailing, we are your permanent partner in precision."
-                </p>
+                </motion.p>
 
                 {/* Architectural Divider */}
-                <div className="mt-[8vw] lg:mt-[4vw] flex items-center gap-[4vw] lg:gap-[1.5vw]">
+                <motion.div 
+                    initial={{ width: 0, opacity: 0 }}
+                    whileInView={{ width: "auto", opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                    className="mt-[8vw] lg:mt-[4vw] flex items-center gap-[4vw] lg:gap-[1.5vw]"
+                >
                     <div className="w-[15vw] lg:w-[8vw] h-px bg-[#153a20]/10" />
                     <span className="text-[2.5vw] lg:text-[0.7vw] font-black text-[#153a20]/20 tracking-[0.4vw] uppercase anton-regular">PRAGTECH</span>
                     <div className="w-[15vw] lg:w-[8vw] h-px bg-[#153a20]/10" />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };
