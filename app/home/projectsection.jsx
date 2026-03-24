@@ -3,100 +3,130 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ProjectSection = ({ px = "3.5vw", py = "3vw", width = "80%", height = "auto", ...props }) => {
+const ProjectSection = ({ px = "4vw", py = "8vw", width = "92%", ...props }) => {
     const projects = [
         {
-            title: "Structural Steel - Commercial Building",
-            category: "Civil",
-            image: "", // Black placeholder
+            title: "Commercial Steel Structure",
+            desc: "We now have complete visibility into structural integrity across 100% of steel connections, not just a sample. This allows us to verify every bolt before fabrication.",
+            stat: "100%",
+            statLabel: "Precision in connections",
+            author: "Natalia García Jané",
+            role: "Senior Operations Manager",
+            logo: "/logo_placeholder.png",
+            side: "right"
         },
         {
-            title: "Industrial Steel Framework",
-            category: "Mechanical",
-            image: "", // Black placeholder
-        },
-        {
-            title: "Steel Bridge Construction",
-            category: "Infrastructure",
-            image: "", // Black placeholder
-        },
+            title: "Industrial Framework optimization",
+            desc: "Our framework detailing allows agents to meet quality bars 50% faster than traditional methods. The speed of iteration is the competitive difference.",
+            stat: "50%",
+            statLabel: "Faster delivery time",
+            author: "Marissa Taylor",
+            role: "Manager Product Support",
+            logo: "/logo_placeholder.png",
+            side: "left"
+        }
     ];
 
     return (
         <section
-            className={`bg-white rounded-[4vw] mt-[5vw] flex flex-col items-center mx-auto self-center ${props.className || ""}`}
+            className={`bg-[#faf9f6] rounded-[4vw] mt-[5vw] flex flex-col items-start mx-auto self-center ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
-                height: height
             }}
             {...props}
         >
-            {/* Header Content */}
-            <div className="text-center mb-[4vw]">
-                <h2 className="text-[4vw] font-black text-[#0f2a4a] tracking-tight">
-                    Our <span className="text-[#0081c3] relative">
-                        Projects
-                        <div className="absolute -bottom-[0.5vw] left-0 w-full h-[0.3vw] bg-[#0081c3] rounded-full" />
-                    </span>
+            {/* Header Content - Left Aligned */}
+            <div className="w-full text-left mb-[6vw]">
+                <h2 className="text-[4vw] font-black text-[#153a20] tracking-tighter leading-none">
+                    Our <span className="text-[#4dbb6b]">Projects</span>
                 </h2>
+                <div className="w-[8vw] h-[0.3vw] bg-[#4dbb6b] mt-[1.5vw] rounded-full" />
             </div>
 
-            {/* Projects Grid */}
-            <div className="grid grid-cols-3 gap-[2.5vw] w-full mb-[4vw]">
+            {/* Projects Container */}
+            <div className="flex flex-col gap-[8vw] w-full mb-[6vw]">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="group relative h-[30vw] rounded-[2.5vw] overflow-hidden bg-black flex flex-col items-center justify-center p-[2vw] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_2vw_5vw_rgba(0,0,0,0.2)]"
+                        className={`flex flex-col lg:flex-row items-center gap-[4vw] w-full ${project.side === 'left' ? 'lg:flex-row-reverse' : ''}`}
                     >
-                        {/* Overlay/Gradient for text readability (even on black) */}
-                        <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/60 z-10" />
-
                         {/* Text Content */}
-                        <div className="relative z-20 flex flex-col items-center text-center">
-                            <h3 className="text-[1.8vw] font-black text-white leading-tight mb-[1vw] tracking-wide max-w-[80%]">
-                                {project.title}
-                            </h3>
+                        <div className="flex-1 flex flex-col gap-[2vw]">
+                            {/* Company Logo placeholder */}
+                            <div className="h-[2vw] w-fit opacity-80">
+                                <span className="text-[1.8vw] font-black text-[#153a20] tracking-tighter">PRAGTECH</span>
+                            </div>
 
-                            {/* Category Pill */}
-                            <div className="px-[1.5vw] py-[0.5vw] bg-[#0081bb]/20 border border-[#0081bb]/40 rounded-full">
-                                <span className="text-[0.9vw] font-bold text-[#0081bb] uppercase tracking-widest">
-                                    {project.category}
-                                </span>
+                            <p className="text-[2vw] font-bold text-[#153a20] leading-[1.3] tracking-tight">
+                                "{project.desc}"
+                            </p>
+
+                            {/* Author section */}
+                            <div className="flex items-center gap-[1.2vw] mt-[1vw]">
+                                <div className="w-[3.5vw] h-[3.5vw] rounded-full bg-slate-200 overflow-hidden relative border border-[#153a20]/10">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-slate-300 to-slate-400" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="text-[1.1vw] font-bold text-[#153a20]">{project.author}</span>
+                                    <span className="text-[0.9vw] text-[#153a20]/60 font-medium">{project.role}</span>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Circular Arrow Button */}
-                        <div className="absolute bottom-[2.5vw] z-20">
-                            <button className="w-[3.5vw] h-[3.5vw] bg-[#273A4D]/80 hover:bg-[#0081c3] text-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 border border-white/20">
-                                <svg
-                                    className="w-[1.5vw] h-[1.5vw] transform transition-transform duration-300 group-hover:translate-x-[0.2vw]"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2.5}
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        {/* Result Card - The Green Themed Card */}
+                        <div className="w-full lg:w-[35vw] aspect-[4/5] lg:aspect-square bg-[#cfe9d5] rounded-[3vw] p-[3vw] flex flex-col relative overflow-hidden group">
+                            {/* Top small icon placeholder */}
+                            <div className="absolute top-[2vw] right-[2vw] w-[2vw] h-[2vw] rounded-full border border-[#153a20]/20 flex items-center justify-center opacity-40">
+                                <svg className="w-[1vw] h-[1vw]" viewBox="0 0 24 24" fill="none" stroke="#153a20">
+                                    <path d="M15 10l5 5m0 0l-5 5m5-5H3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </button>
+                            </div>
+
+                            <div className="flex flex-col relative z-10">
+                                <span className="text-[6vw] font-black text-[#153a20] leading-none tracking-tighter">{project.stat}</span>
+                                <span className="text-[1.2vw] font-bold text-[#153a20]/70 mt-[1vw] max-w-[80%] leading-tight">
+                                    {project.statLabel}
+                                </span>
+                            </div>
+
+                            {/* 3D Illustration placeholder - using a placeholder image for steel components */}
+                            <div className="mt-auto relative h-[15vw] w-full transform group-hover:scale-105 transition-transform duration-700">
+                                <div className="absolute bottom-[0vw] right-[0vw] w-[18vw] h-[18vw] bg-black/5 rounded-[2vw] rotate-6 border border-black/5" />
+                                <div className="absolute bottom-[2vw] right-[2vw] w-[18vw] h-[18vw] bg-white/20 backdrop-blur-sm rounded-[2vw] -rotate-3 border border-white/20 flex items-center justify-center text-[#153a20]/20 text-[4vw] font-black">
+                                    STEEL
+                                </div>
+                            </div>
+
+                            {/* Learn More link */}
+                            <div className="absolute bottom-[2.5vw] right-[3vw] flex items-center gap-[0.5vw] text-[#153a20] font-bold text-[1vw] opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span>Read more</span>
+                                <div className="w-[1.8vw] h-[1.8vw] bg-[#153a20]/10 rounded-full flex items-center justify-center">
+                                    <svg className="w-[1vw] h-[1vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 ))}
             </div>
 
             {/* View All Button */}
-            <button className="flex items-center gap-[1.2vw] px-[4vw] py-[1.5vw] bg-[#0081c3] hover:bg-[#006ca3] text-white font-black rounded-[3vw] transition-all shadow-[0_1.5vw_4vw_rgba(0,129,195,0.3)] active:scale-95 text-[1.2vw] tracking-wider uppercase group">
-                View All Projects
-                <svg
-                    className="w-[1.4vw] h-[1.4vw] transition-transform duration-300 group-hover:translate-x-[0.3vw]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth={3}
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-            </button>
+            <div className="w-full flex justify-center mt-[2vw]">
+                <button className="flex items-center gap-[1.2vw] px-[4vw] py-[1.5vw] bg-[#153a20] hover:bg-[#1a4a2a] text-white font-black rounded-[5vw] transition-all shadow-xl active:scale-95 text-[1.1vw] tracking-wider uppercase group">
+                    View All Projects
+                    <svg
+                        className="w-[1.4vw] h-[1.4vw] transition-transform duration-300 group-hover:translate-x-[0.3vw]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3}
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
         </section>
     );
 };

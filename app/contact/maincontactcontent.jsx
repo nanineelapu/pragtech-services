@@ -4,7 +4,7 @@ import React from 'react';
 
 const MainContactContent = () => {
     return (
-        <section className="bg-[#273A4D] py-[8vw] px-[4vw]">
+        <section className="bg-[#faf9f6] py-[8vw] px-[4vw]">
             <div className="max-w-[90vw] mx-auto grid grid-cols-[1fr_0.8fr] gap-[5vw]">
                 {/* Left Column: Locations */}
                 <div className="flex flex-col">

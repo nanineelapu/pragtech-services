@@ -4,7 +4,7 @@ import React from 'react';
 
 const ContctPage = () => {
     return (
-        <section className="flex flex-col items-center justify-center min-h-[60vh] text-center px-[4vw] relative overflow-hidden bg-[#273A4D] pt-[6vw]">
+        <section className="flex flex-col items-center justify-center min-h-[60vh] text-center px-[4vw] relative overflow-hidden bg-[#faf9f6] pt-[6vw]">
             {/* Pill Above Title */}
             <div className="px-[1.5vw] py-[0.5vw] bg-[#0081bb]/10 border border-[#0081bb]/20 rounded-full mb-[3vw] flex items-center gap-[0.5vw] transition-all hover:bg-[#0081bb]/20 cursor-default relative z-10">
                 <svg className="w-[1.2vw] h-[1.2vw] text-[#0081bb]" fill="currentColor" viewBox="0 0 20 20">

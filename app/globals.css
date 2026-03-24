@@ -5,7 +5,7 @@
 @plugin "@tailwindcss/container-queries";
 
 :root {
-  --background: #273A4D;
+  --background: #faf9f6;
   --foreground: #000000;
 }
 
@@ -25,8 +25,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #273A4D;
-    --foreground: #ededed;
+    --background: #f0e8d1;
+    --foreground: #000000;
   }
 }
 
@@ -34,4 +34,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1vw);
+  }
+}
+
+@keyframes bounce-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.8vw);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-bounce-delayed {
+  animation: bounce-slow 4.5s ease-in-out infinite 0.5s;
 }
