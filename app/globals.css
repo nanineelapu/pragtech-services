@@ -1,8 +1,12 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "@tailwindcss/container-queries";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #273A4D;
+  --foreground: #000000;
 }
 
 @theme inline {
@@ -10,11 +14,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Standard breakpoints for v4 customizing */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #273A4D;
     --foreground: #ededed;
   }
 }
