@@ -26,7 +26,7 @@ html.lenis body {
 }
 
 :root {
-  --background: #faf9f6;
+  --background: #FFFFFF;
   --foreground: #000000;
 }
 
@@ -46,7 +46,7 @@ html.lenis body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f0e8d1;
+    --background: #FFFFFF;
     --foreground: #000000;
   }
 }

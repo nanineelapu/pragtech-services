@@ -1,11 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const HomeSection = () => {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+            }
+        }, { threshold: 0.1 });
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#faf9f6]">
+        <section ref={sectionRef} className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#faf9f6]">
             {/* Background Image with Layered Overlays */}
             <div className="absolute inset-0">
                 <Image
@@ -34,10 +48,10 @@ const HomeSection = () => {
             </div>
 
             {/* Main Content Container */}
-            <div className="relative h-full flex flex-col items-center justify-center text-center px-[6vw] md:px-[4vw]">
+            <div className={`relative h-full flex flex-col items-center justify-center text-center px-[6vw] md:px-[4vw] transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[5vw]"}`}>
 
                 {/* Decorative Frame Elements (Refined Forest Green) */}
-                <div className="absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none">
+                <div className={`absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none transition-all duration-1000 delay-500 scale-[1.1] ${isVisible ? "scale-100 opacity-100" : "opacity-0"}`}>
                     {/* Corners */}
                     <div className="absolute top-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-[#153a20]/20" />
                     <div className="absolute top-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-[#153a20]/20" />
@@ -53,12 +67,12 @@ const HomeSection = () => {
 
                 {/* Text Block - Dark Green for Premium Feel on Light BG */}
                 <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
-                    <h1 className="text-[#153a20] text-[15.5vw] md:text-[12vw] font-black leading-[0.8] tracking-tight anton-regular select-none uppercase">
+                    <h1 className={`text-[#153a20] text-[15.5vw] md:text-[12vw] font-black leading-[0.8] tracking-tight anton-regular select-none uppercase transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vw]"}`}>
                         PRECISION
                     </h1>
 
                     {/* Green Separator Line with Detail */}
-                    <div className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-[#4dbb6b] to-transparent my-[3vw] md:my-[1vw]">
+                    <div className={`relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-[#4dbb6b] to-transparent my-[3vw] md:my-[1vw] transition-all duration-1000 delay-400 ${isVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}`}>
                         <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-[#4dbb6b]/20" />
 
                         {/* Technical marker on the line */}
@@ -67,11 +81,11 @@ const HomeSection = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-[#4dbb6b] text-[4.2vw] md:text-[3vw] font-black tracking-[1.5vw] md:tracking-[0.8vw] uppercase anton-regular">
+                    <h2 className={`text-[#4dbb6b] text-[4.2vw] md:text-[3vw] font-black tracking-[1.5vw] md:tracking-[0.8vw] uppercase anton-regular transition-all duration-1000 delay-600 ${isVisible ? "opacity-100 tracking-[1.5vw] md:tracking-[0.8vw]" : "opacity-0 tracking-[-1vw]"}`}>
                         IN EVERY DETAIL
                     </h2>
 
-                    <div className="mt-[5vw] md:mt-[2.5vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]">
+                    <div className={`mt-[5vw] md:mt-[2.5vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw] transition-all duration-1000 delay-800 ${isVisible ? "opacity-100" : "opacity-0"}`}>
                         <h3 className="text-[#153a20]/80 text-[3.2vw] md:text-[1.8vw] font-black tracking-[0.8vw] md:tracking-[0.3vw] uppercase anton-regular">
                             STEEL DETAILING EXPERTS
                         </h3>
