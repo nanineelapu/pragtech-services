@@ -55,21 +55,58 @@ const Navbar = () => {
         { name: 'Careers', href: '/career' },
     ];
 
+    // Animation Variants for the Expansion effect
+    const navVariants = {
+        hidden: {
+            y: hasLoaded ? 0 : -100,
+            opacity: hasLoaded ? 1 : 0,
+            width: "22vw",
+            x: "-50%"
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            width: "90vw",
+            x: "-50%",
+            transition: {
+                duration: 1.2,
+                delay: hasLoaded ? 0.2 : 3.6,
+                ease: [0.16, 1, 0.3, 1],
+                width: { delay: hasLoaded ? 0.6 : 4.4, duration: 1.2, ease: "circOut" }
+            }
+        }
+    };
+
+    // Shared transition for inner content
+    const contentFade = {
+        initial: { opacity: 0, y: 10 },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: hasLoaded ? 0.8 : 5.4, // Materializes after expansion starts
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        }
+    };
+
     return (
         <>
             <motion.nav
-                initial={{ y: hasLoaded ? 0 : -100, opacity: hasLoaded ? 1 : 0, x: "-50%" }}
-                animate={{ y: 0, opacity: 1, x: "-50%" }}
-                transition={{ duration: 1, delay: hasLoaded ? 0 : 3.6, ease: [0.16, 1, 0.3, 1] }}
-                className={`fixed top-[3vw] md:top-[1.2vw] left-1/2 z-100 flex items-center justify-center bg-white/15 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-white/20 rounded-full lg:rounded-[4vw] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isScrolling
-                    ? "w-[32vw] md:w-[12vw] py-[2vw] md:py-[0.5vw] px-[1vw]"
-                    : "w-[92vw] md:w-[90vw] px-[4vw] md:px-[4vw] py-[2.5vw] md:py-[0.8vw]"
-                    }`}
+                initial="hidden"
+                animate="visible"
+                variants={navVariants}
+                className="fixed top-[3vw] md:top-[1.2vw] left-1/2 z-100 flex items-center justify-center bg-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white/20 rounded-full lg:rounded-[4vw] min-h-[4.5vw] py-[2.5vw] md:py-[0.8vw] px-[4vw] overflow-hidden"
             >
-                {/* Left Side: Navigation Links (Desktop) OR Contact Button (Mobile) */}
-                <div className={`flex items-center gap-[0.5vw] transition-all duration-500 overflow-hidden ${isScrolling ? "opacity-0 w-0 scale-90 pointer-events-none" : "flex-1 opacity-100 w-auto scale-100 visible h-auto"}`}>
-                    {/* Desktop Links */}
-                    <div className="hidden lg:flex items-center gap-[0.5vw] whitespace-nowrap">
+                {/* Left Side: Navigation Links */}
+                <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={contentFade}
+                    className="flex-1 hidden lg:flex items-center gap-[0.5vw] whitespace-nowrap"
+                >
+                    <div className="flex items-center gap-[0.5vw]">
                         {navLinks.map((link) => {
                             const isActive = pathname === link.href;
                             return (
@@ -89,37 +126,54 @@ const Navbar = () => {
                             );
                         })}
                     </div>
+                </motion.div>
 
-                    {/* Mobile Contact Button */}
+                {/* Mobile Contact Button (Replacement for left side on mobile) */}
+                <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={contentFade}
+                    className="lg:hidden flex-1"
+                >
                     <Link
                         href="/contact"
-                        className="lg:hidden flex items-center gap-[1.2vw] px-[3.5vw] py-[1.8vw] bg-[#153a20] hover:bg-[#4dbb6b] hover:text-[#153a20] text-white font-semibold rounded-full transition-all shadow-[0_6px_16px_rgba(77,187,107,0.2)] active:scale-95 text-[2.8vw] group"
+                        className="flex items-center gap-[1.2vw] px-[3.5vw] py-[1.8vw] bg-[#153a20] hover:bg-[#4dbb6b] hover:text-[#153a20] text-white font-semibold rounded-full transition-all shadow-[0_6px_16px_rgba(77,187,107,0.2)] active:scale-95 text-[2.8vw] group w-fit"
                     >
-                        <span className="xs:inline">Contact</span>
+                        Contact
                         <div className="w-[4.2vw] h-[4.2vw] bg-white/20 rounded-full flex items-center justify-center group-hover:bg-[#153a20]/20">
-                            <svg className="w-[2.4vw] h-[2.4vw] transition-colors duration-300 group-hover:text-[#153a20]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+                            <svg className="w-[2.4vw] h-[2.4vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </div>
                     </Link>
-                </div>
+                </motion.div>
 
                 {/* Middle: Logo Area */}
-                <div className={`flex flex-col items-center justify-center cursor-pointer transition-all duration-700 transform flex-none hover:scale-110 active:scale-95`}>
+                <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={contentFade}
+                    className="flex flex-col items-center justify-center cursor-pointer transform flex-none hover:scale-110 active:scale-95 mx-[4vw] lg:mx-[1vw]"
+                >
                     <Link href="/" className="flex flex-col items-center">
-                        <span className={`transition-all duration-700 text-[#111] font-black leading-tight tracking-tight ${scrolled || isScrolling ? "text-[3.8vw] md:text-[1.8vw]" : "text-[4.2vw] md:text-[2vw]"}`}>
+                        <span className={`transition-all duration-700 text-[#111] font-black leading-tight tracking-tight ${scrolled ? "text-[3.8vw] md:text-[1.8vw]" : "text-[4.2vw] md:text-[2vw]"}`}>
                             PRAGTECH
                         </span>
-                        <span className={`transition-all duration-700 text-[#111] font-bold tracking-[0.3em] opacity-60 uppercase ${scrolled || isScrolling ? "text-[1.2vw] md:text-[0.5vw]" : "text-[1.4vw] md:text-[0.6vw]"}`}>
+                        <span className={`transition-all duration-700 text-[#111] font-bold tracking-[0.3em] opacity-60 uppercase ${scrolled ? "text-[1.2vw] md:text-[0.5vw]" : "text-[1.4vw] md:text-[0.6vw]"}`}>
                             Technical Services
                         </span>
                     </Link>
-                </div>
+                </motion.div>
 
-                {/* Right Side: Action Area (Phone on Desktop) OR Hamburger (Mobile) */}
-                <div className={`flex items-center justify-end gap-[2.5vw] transition-all duration-500 overflow-hidden ${isScrolling ? "opacity-0 w-0 scale-90 pointer-events-none" : "flex-1 opacity-100 w-auto scale-100 visible h-auto"}`}>
+                {/* Right Side: Action Area */}
+                <motion.div
+                    initial="initial"
+                    animate="animate"
+                    variants={contentFade}
+                    className="flex-1 flex items-center justify-end gap-[2.5vw] whitespace-nowrap"
+                >
                     {/* Desktop Phone/Action */}
-                    <div className="hidden lg:flex items-center gap-[2.5vw] whitespace-nowrap">
+                    <div className="hidden lg:flex items-center gap-[2.5vw]">
                         <Link
                             href="tel:+12816488137"
                             className="text-[#111] font-medium text-[1.1vw] hover:text-[#4dbb6b] transition-colors"
@@ -151,7 +205,7 @@ const Navbar = () => {
                             <span className={`absolute left-0 block w-full h-[2px] bg-current transform transition-all duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 top-[1.8vw]' : 'top-[3.6vw]'}`}></span>
                         </div>
                     </button>
-                </div>
+                </motion.div>
             </motion.nav>
 
             {/* Mobile Menu Overlay */}

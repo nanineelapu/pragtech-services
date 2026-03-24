@@ -2,6 +2,7 @@
 
 import { Geist, Geist_Mono, Anton, EB_Garamond } from "next/font/google";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./globals.css";
@@ -31,7 +32,24 @@ const ebGaramond = EB_Garamond({
 });
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
   const [loading, setLoading] = useState(true);
+  const [hasChecked, setHasChecked] = useState(false);
+
+  useEffect(() => {
+    // Session-based check to only show preloader once per visit and ONLY on home page
+    const checkLoadingStatus = () => {
+      const isHome = pathname === "/";
+      const loadedInSession = sessionStorage.getItem("pragtech_loaded") === "true";
+
+      if (!isHome || loadedInSession) {
+        setLoading(false);
+      }
+      setHasChecked(true);
+    };
+
+    checkLoadingStatus();
+  }, [pathname]);
 
   return (
     <html
@@ -41,7 +59,7 @@ export default function RootLayout({ children }) {
     >
       <body className="flex flex-col" suppressHydrationWarning>
         <AnimatePresence mode="wait">
-          {loading && (
+          {loading && hasChecked && (
             <Preloader 
               key="preloader" 
               onLoadComplete={() => {
@@ -54,11 +72,23 @@ export default function RootLayout({ children }) {
           )}
         </AnimatePresence>
         
-        <SmoothScroll>
-          <Navbar />
-          {children}
-          <Footer />
-        </SmoothScroll>
+        {/* Only show content after we've verified if preloader is needed */}
+        {hasChecked && (
+          <SmoothScroll>
+            <Navbar />
+            <main className="grow">
+              {children}
+            </main>
+            <Footer />
+          </SmoothScroll>
+        )}
+
+        {/* Global technical styling to prevent background flash */}
+        <style jsx global>{`
+          body {
+            background-color: #ffffff;
+          }
+        `}</style>
       </body>
     </html>
   );

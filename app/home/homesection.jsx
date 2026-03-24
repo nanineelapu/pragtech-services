@@ -14,44 +14,44 @@ const HomeSection = () => {
         }
     }, []);
 
-    // Animation Variants - Dynamic Delays based on Session State
+    // Animation Variants - Zero duration if already loaded to prevent re-animation
     const containerVariants = {
-        hidden: { opacity: 0 },
+        hidden: { opacity: hasLoaded ? 1 : 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: hasLoaded ? 0.05 : 0.15,
-                delayChildren: hasLoaded ? 0.2 : 3.8,
-                duration: 0.8,
+                staggerChildren: hasLoaded ? 0 : 0.15,
+                delayChildren: hasLoaded ? 0 : 3.8,
+                duration: hasLoaded ? 0 : 0.8,
                 ease: "easeOut"
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: hasLoaded ? 10 : 30 },
+        hidden: { opacity: hasLoaded ? 1 : 0, y: hasLoaded ? 0 : 30 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: hasLoaded ? 0.4 : 1, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: hasLoaded ? 0 : 1, ease: [0.16, 1, 0.3, 1] }
         }
     };
 
     const frameVariants = {
-        hidden: { opacity: 0, scale: 1.1 },
+        hidden: { opacity: hasLoaded ? 1 : 0, scale: hasLoaded ? 1 : 1.1 },
         visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: hasLoaded ? 1 : 1.5, delay: hasLoaded ? 0.1 : 3.5, ease: "easeOut" }
+            transition: { duration: hasLoaded ? 0 : 1.5, delay: hasLoaded ? 0 : 3.5, ease: "easeOut" }
         }
     };
 
     const lineVariants = {
-        hidden: { scaleX: 0, opacity: 0 },
+        hidden: { scaleX: hasLoaded ? 1 : 0, opacity: hasLoaded ? 1 : 0 },
         visible: {
             scaleX: 1,
             opacity: 1,
-            transition: { duration: 1.2, delay: hasLoaded ? 0.2 : 0.8, ease: "circOut" }
+            transition: { duration: hasLoaded ? 0 : 1.2, delay: hasLoaded ? 0 : 0.8, ease: "circOut" }
         }
     };
 

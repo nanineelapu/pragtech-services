@@ -81,7 +81,7 @@ const OpenPostitions = () => {
 
             {/* Application Modal Portal */}
             {selectedJob && (
-                <div className="fixed inset-0 z-[200] flex items-center justify-center px-[4vw] lg:px-0">
+                <div className="fixed inset-0 z-200 flex items-center justify-center px-[4vw] lg:px-0">
                     {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-[#0c1f11]/60 backdrop-blur-md animate-in fade-in duration-500"

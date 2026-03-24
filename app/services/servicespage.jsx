@@ -9,7 +9,7 @@ const ServicesPage = ({
     secondaryLabel = "Get a Quote"
 }) => {
     return (
-        <div className="relative w-full min-h-[auto] lg:min-h-screen flex flex-col items-center bg-[#faf9f6] select-none">
+        <div className="relative w-full min-h-auto lg:min-h-screen flex flex-col items-center bg-[#faf9f6] select-none">
             {/* High Performance Full Width Hero Section */}
             <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0c1f11] via-[#153a20] to-black py-[22vw] lg:py-[12vw] flex flex-col items-center justify-center text-center px-[6vw] lg:px-[4vw]">
                 {/* Minimal Technical Background Details */}
