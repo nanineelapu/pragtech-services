@@ -1,51 +1,64 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => {
-    const sectionRef = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                setIsVisible(true);
-            }
-        }, { threshold: 0.1 });
-
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     const markets = [
         {
             title: "STRUCTURAL STEEL",
             desc: "Expert detailing for projects of any size and complexity.",
             image: "/structural_detailing.png",
-            pos: { top: "35%", left: "15%" },
-            branchDash: "800",
+            pos: "left"
         },
         {
             title: "MISC STEEL",
             desc: "Detailing for Stairs, Handrails, and Ladders.",
             image: "/misc_detailing.png",
-            pos: { top: "45%", right: "12%" },
-            branchDash: "1000",
+            pos: "center"
         },
         {
             title: "CONNECTION DESIGN",
             desc: "Precise connection design across global projects.",
             image: "/connection_design.png",
-            pos: { bottom: "10%", left: "42%" },
-            branchDash: "1200",
+            pos: "right"
         },
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50, scale: 0.95 },
+        visible: { 
+            opacity: 1, 
+            y: 0, 
+            scale: 1,
+            transition: { duration: 0.8, ease: "easeOut" }
+        }
+    };
+
+    const pathVariants = {
+        hidden: { pathLength: 0, opacity: 0 },
+        visible: { 
+            pathLength: 1, 
+            opacity: 1, 
+            transition: { duration: 2, ease: "easeInOut" } 
+        }
+    };
+
     return (
         <section
-            ref={sectionRef}
-            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 relative overflow-hidden flex flex-col items-center mx-auto self-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"} ${props.className || ""}`}
+            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 relative overflow-hidden flex flex-col items-center mx-auto self-center ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -53,7 +66,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
             }}
             {...props}
         >
-            {/* Technical Arrow Network Background - Desktop Only */}
+            {/* Technical Arrow Network Background - Animated SVG Reveal */}
             <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0 opacity-15" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                 <defs>
                     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -61,20 +74,36 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
                     </marker>
                 </defs>
 
-                <g fill="none" stroke="#153a20" strokeWidth="2" markerEnd="url(#arrowhead)">
-                    <path d="M500,100 L260,465" strokeDasharray="10,10" className="animate-[pulse_4s_infinite]" />
-                    <path d="M500,100 L770,565" strokeDasharray="10,10" className="animate-[pulse_5s_infinite]" />
-                    <path d="M500,100 L530,825" strokeDasharray="10,10" className="animate-[pulse_6s_infinite]" />
-                </g>
+                <motion.g 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    fill="none" 
+                    stroke="#153a20" 
+                    strokeWidth="2" 
+                    markerEnd="url(#arrowhead)"
+                >
+                    <motion.path variants={pathVariants} d="M500,100 L260,465" strokeDasharray="10,10" />
+                    <motion.path variants={pathVariants} d="M500,100 L770,565" strokeDasharray="10,10" />
+                    <motion.path variants={pathVariants} d="M500,100 L530,825" strokeDasharray="10,10" />
+                </motion.g>
 
-                <circle cx="500" cy="100" r="4" fill="#153a20" />
-                <circle cx="260" cy="465" r="3" fill="#4dbb6b" />
-                <circle cx="770" cy="565" r="3" fill="#4dbb6b" />
-                <circle cx="530" cy="825" r="3" fill="#4dbb6b" />
+                <motion.circle 
+                    initial={{ scale: 0 }} 
+                    whileInView={{ scale: 1 }} 
+                    viewport={{ once: true }}
+                    cx="500" cy="100" r="4" fill="#153a20" 
+                />
             </svg>
 
             {/* Header Content */}
-            <div className={`text-center mb-[8vw] lg:mb-[4vw] relative z-20 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-center mb-[8vw] lg:mb-[4vw] relative z-20"
+            >
                 <h2 className="text-[7.5vw] lg:text-[3.5vw] font-black text-[#153a20] tracking-tight whitespace-nowrap">
                     Markets We <span className="text-[#4dbb6b]">Serve</span>
                 </h2>
@@ -82,130 +111,109 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
                 <p className="text-[3vw] lg:text-[1.1vw] max-w-[80vw] lg:max-w-[35vw] mx-auto mt-[3vw] lg:mt-[1.5vw] text-[#153a20]/80 font-medium leading-relaxed">
                     A multi-dimensional network of engineering excellence spreading across global structures.
                 </p>
-            </div>
+            </motion.div>
 
             {/* Desktop Market Cards Container */}
-            <div className="hidden lg:block relative w-full h-[45vw] mt-[4vw] z-10 pointer-events-none">
+            <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="hidden lg:block relative w-full h-[45vw] mt-[4vw] z-10 pointer-events-none"
+            >
                 {/* Structural Steel - Top Left */}
-                <div
-                    className={`absolute pointer-events-auto group transition-all duration-1000 delay-500 hover:scale-[1.05] ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[4vw]"}`}
-                    style={{
-                        top: "0", left: "8%", width: "25vw"
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, x: -60 },
+                        visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "circOut" } }
                     }}
+                    className="absolute pointer-events-auto group hover:scale-[1.03] active:scale-[0.98] transition-transform duration-500"
+                    style={{ top: "0", left: "8%", width: "25vw" }}
                 >
-                    <div className="relative h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.15)] border border-[#153a20]/10">
-                        <Image
-                            src={markets[0].image}
-                            alt={markets[0].title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
+                    <div className="relative h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.1)] border border-[#153a20]/10">
+                        <Image src={markets[0].image} alt={markets[0].title} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-linear-to-t from-[#153a20] via-[#153a20]/40 to-transparent" />
                         <div className="absolute inset-0 flex flex-col justify-end p-[1.8vw]">
-                            <h3 className="text-[1.2vw] font-black text-white leading-tight mb-[0.5vw] uppercase tracking-wide">
-                                {markets[0].title}
-                            </h3>
-                            <p className="text-[0.8vw] text-white/80 font-medium leading-relaxed max-w-[90%]">
-                                {markets[0].desc}
-                            </p>
+                            <h3 className="text-[1.2vw] font-black text-white leading-tight mb-[0.5vw] uppercase tracking-wide">{markets[0].title}</h3>
+                            <p className="text-[0.8vw] text-white/80 font-medium leading-relaxed max-w-[90%]">{markets[0].desc}</p>
                         </div>
                         <div className="absolute top-[1.2vw] left-[1.2vw] w-[1vw] h-[1vw] border-l-[0.15vw] border-t-[0.15vw] border-[#4dbb6b]" />
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Connection Design - Top Right */}
-                <div
-                    className={`absolute pointer-events-auto group transition-all duration-1000 delay-700 hover:scale-[1.05] ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[4vw]"}`}
-                    style={{
-                        top: "0", right: "8%", width: "25vw"
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, x: 60 },
+                        visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "circOut" } }
                     }}
+                    className="absolute pointer-events-auto group hover:scale-[1.03] active:scale-[0.98] transition-transform duration-500"
+                    style={{ top: "0", right: "8%", width: "25vw" }}
                 >
-                    <div className="relative h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.15)] border border-[#153a20]/10">
-                        <Image
-                            src={markets[2].image}
-                            alt={markets[2].title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
+                    <div className="relative h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.1)] border border-[#153a20]/10">
+                        <Image src={markets[2].image} alt={markets[2].title} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-linear-to-t from-[#153a20] via-[#153a20]/40 to-transparent" />
                         <div className="absolute inset-0 flex flex-col justify-end p-[1.8vw]">
-                            <h3 className="text-[1.2vw] font-black text-white leading-tight mb-[0.5vw] uppercase tracking-wide">
-                                {markets[2].title}
-                            </h3>
-                            <p className="text-[0.8vw] text-white/80 font-medium leading-relaxed max-w-[90%]">
-                                {markets[2].desc}
-                            </p>
+                            <h3 className="text-[1.2vw] font-black text-white leading-tight mb-[0.5vw] uppercase tracking-wide">{markets[2].title}</h3>
+                            <p className="text-[0.8vw] text-white/80 font-medium leading-relaxed max-w-[90%]">{markets[2].desc}</p>
                         </div>
                         <div className="absolute top-[1.2vw] left-[1.2vw] w-[1vw] h-[1vw] border-l-[0.15vw] border-t-[0.15vw] border-[#4dbb6b]" />
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Misc Steel - Middle Down */}
-                <div
-                    className={`absolute pointer-events-auto group transition-all duration-1000 delay-900 hover:scale-[1.05] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"}`}
-                    style={{
-                        top: "16vw", left: "50%", transform: "translateX(-50%)", width: "25vw"
-                    }}
+                <motion.div
+                    variants={cardVariants}
+                    className="absolute pointer-events-auto group hover:scale-[1.03] active:scale-[0.98] transition-transform duration-500"
+                    style={{ top: "16vw", left: "50%", transform: "translateX(-50%)", width: "25vw" }}
                 >
-                    <div className="relative h-[32vw] lg:h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.15)] border border-[#153a20]/10">
-                        <Image
-                            src={markets[1].image}
-                            alt={markets[1].title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
+                    <div className="relative h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.1)] border border-[#153a20]/10">
+                        <Image src={markets[1].image} alt={markets[1].title} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-linear-to-t from-[#153a20] via-[#153a20]/40 to-transparent" />
                         <div className="absolute inset-0 flex flex-col justify-end p-[1.8vw]">
-                            <h3 className="text-[1.2vw] font-black text-white leading-tight mb-[0.5vw] uppercase tracking-wide">
-                                {markets[1].title}
-                            </h3>
-                            <p className="text-[0.8vw] text-white/80 font-medium leading-relaxed max-w-[90%]">
-                                {markets[1].desc}
-                            </p>
+                            <h3 className="text-[1.2vw] font-black text-white leading-tight mb-[0.5vw] uppercase tracking-wide">{markets[1].title}</h3>
+                            <p className="text-[0.8vw] text-white/80 font-medium leading-relaxed max-w-[90%]">{markets[1].desc}</p>
                         </div>
                         <div className="absolute top-[1.2vw] left-[1.2vw] w-[1vw] h-[1vw] border-l-[0.15vw] border-t-[0.15vw] border-[#4dbb6b]" />
                     </div>
-                </div>
+                </motion.div>
+            </motion.div>
 
-                {/* Technical Network SVG - Adjusted for new positions */}
-                <svg className={`absolute inset-0 w-full h-full pointer-events-none z-0 opacity-15 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-15 scale-100" : "opacity-0 scale-90"}`} viewBox="0 0 1000 1000" preserveAspectRatio="none" style={{ top: "-10vw" }}>
-                    <g fill="none" stroke="#153a20" strokeWidth="2" markerEnd="url(#arrowhead)">
-                        <path d="M500,150 L200,350" strokeDasharray="10,10" className="animate-[pulse_4s_infinite]" />
-                        <path d="M500,150 L800,350" strokeDasharray="10,10" className="animate-[pulse_5s_infinite]" />
-                        <path d="M500,150 L500,650" strokeDasharray="10,10" className="animate-[pulse_6s_infinite]" />
-                    </g>
-                    <circle cx="500" cy="150" r="4" fill="#153a20" />
-                </svg>
-            </div>
-
-            {/* Mobile Market Cards (Flowing Stack) */}
-            <div className="flex flex-col lg:hidden gap-[6vw] w-full px-[2vw] relative z-20">
+            {/* Mobile Market Cards */}
+            <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="flex flex-col lg:hidden gap-[6vw] w-full px-[2vw] relative z-20"
+            >
                 {markets.map((market, index) => (
-                    <div key={index} className={`w-full group transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[10vw]"}`} style={{ transitionDelay: `${index * 200}ms` }}>
+                    <motion.div 
+                        key={index} 
+                        variants={cardVariants}
+                        className="w-full group"
+                    >
                         <div className="relative h-[55vw] rounded-[4vw] overflow-hidden shadow-2xl border border-[#153a20]/5">
-                            <Image
-                                src={market.image}
-                                alt={market.title}
-                                fill
-                                className="object-cover"
-                            />
+                            <Image src={market.image} alt={market.title} fill className="object-cover" />
                             <div className="absolute inset-0 bg-linear-to-t from-[#153a20] via-[#153a20]/60 to-transparent" />
                             <div className="absolute inset-0 flex flex-col justify-end p-[5vw]">
-                                <h3 className="text-[5vw] font-black text-white leading-tight mb-[1vw] uppercase tracking-wide">
-                                    {market.title}
-                                </h3>
-                                <p className="text-[3vw] text-white/90 font-medium leading-relaxed">
-                                    {market.desc}
-                                </p>
+                                <h3 className="text-[5vw] font-black text-white leading-tight mb-[1vw] uppercase tracking-wide">{market.title}</h3>
+                                <p className="text-[3vw] text-white/90 font-medium leading-relaxed">{market.desc}</p>
                             </div>
                             <div className="absolute top-[4vw] left-[4vw] w-[4vw] h-[4vw] border-l-[0.5vw] border-t-[0.5vw] border-[#4dbb6b]" />
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
             {/* View All Button */}
-            <div className={`mt-[6vw] lg:mt-[2vw] relative z-20 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vw]"}`}>
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="mt-[6vw] lg:mt-[2vw] relative z-20"
+            >
                 <button className="flex items-center gap-[2vw] lg:gap-[1vw] px-[8vw] py-[3.5vw] lg:px-[3vw] lg:py-[1.2vw] bg-[#153a20] hover:bg-[#1a4a2a] text-white font-black rounded-full transition-all shadow-xl active:scale-95 text-[3.5vw] lg:text-[1vw] tracking-wide group">
                     Explore All Markets
                     <div className="w-[5vw] h-[5vw] lg:w-[1.8vw] lg:h-[1.8vw] bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -214,7 +222,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
                         </svg>
                     </div>
                 </button>
-            </div>
+            </motion.div>
         </section >
     );
 };

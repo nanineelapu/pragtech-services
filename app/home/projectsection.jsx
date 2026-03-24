@@ -1,23 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => {
-    const sectionRef = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                setIsVisible(true);
-            }
-        }, { threshold: 0.1 });
-
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     const projects = [
         {
             title: "Commercial Steel Structure",
@@ -26,7 +12,6 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             statLabel: "Precision",
             author: "Natalia García Jané",
             role: "Senior Ops Manager",
-            logo: "/logo_placeholder.png",
             side: "right"
         },
         {
@@ -36,15 +21,23 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             statLabel: "Faster",
             author: "Marissa Taylor",
             role: "Product Support",
-            logo: "/logo_placeholder.png",
             side: "left"
         }
     ];
 
+    const slideInLeft = {
+        hidden: { opacity: 0, x: -60 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+    };
+
+    const slideInRight = {
+        hidden: { opacity: 0, x: 60 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+    };
+
     return (
         <section
-            ref={sectionRef}
-            className={`bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"} ${props.className || ""}`}
+            className={`bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -52,24 +45,34 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             {...props}
         >
             {/* Header Content - Left Aligned */}
-            <div className={`w-full text-left mb-[10vw] lg:mb-[6vw] px-[2vw] lg:px-0 transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[4vw]"}`}>
+            <motion.div 
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="w-full text-left mb-[10vw] lg:mb-[6vw] px-[2vw] lg:px-0"
+            >
                 <h2 className="text-[12vw] lg:text-[4vw] font-black text-[#153a20] tracking-tighter leading-none uppercase">
                     Our <span className="text-[#4dbb6b]">Projects</span>
                 </h2>
                 <div className="w-[15vw] lg:w-[8vw] h-[0.8vw] lg:h-[0.3vw] bg-[#4dbb6b] mt-[2.5vw] lg:mt-[1.5vw] rounded-full" />
-            </div>
+            </motion.div>
 
             {/* Projects Container */}
             <div className="flex flex-col gap-[12vw] lg:gap-[8vw] w-full mb-[12vw] lg:mb-[6vw]">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className={`flex flex-row lg:flex-row items-center gap-[4vw] w-full transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[6vw]"} ${project.side === 'left' ? 'flex-row-reverse lg:flex-row-reverse' : ''}`}
-                        style={{ transitionDelay: `${400 + index * 200}ms` }}
+                        className={`flex flex-row lg:flex-row items-center gap-[4vw] w-full ${project.side === 'left' ? 'flex-row-reverse lg:flex-row-reverse' : ''}`}
                     >
-                        {/* Text Content - 55% width on mobile */}
-                        <div className="w-[55%] lg:flex-1 flex flex-col gap-[3vw] lg:gap-[2vw]">
-                            {/* Company Logo placeholder */}
+                        {/* Text Content */}
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={project.side === 'right' ? slideInLeft : slideInRight}
+                            className="w-[55%] lg:flex-1 flex flex-col gap-[3vw] lg:gap-[2vw]"
+                        >
                             <div className="h-[4vw] lg:h-[2vw] w-fit opacity-80">
                                 <span className="text-[4vw] lg:text-[1.8vw] font-black text-[#153a20] tracking-tighter uppercase">PRAGTECH</span>
                             </div>
@@ -88,11 +91,16 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                                     <span className="text-[2.2vw] lg:text-[0.9vw] text-[#153a20]/60 font-medium truncate">{project.role.split(' ')[0]}</span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* Result Card - 45% width on mobile */}
-                        <div className="w-[45%] lg:w-[35vw] aspect-[4/5] lg:aspect-square bg-[#cfe9d5] rounded-[4vw] lg:rounded-[3vw] p-[4vw] lg:p-[3vw] flex flex-col relative overflow-hidden group">
-                            {/* Top small icon placeholder */}
+                        {/* Result Card */}
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={project.side === 'right' ? slideInRight : slideInLeft}
+                            className="w-[45%] lg:w-[35vw] aspect-[4/5] lg:aspect-square bg-[#cfe9d5] rounded-[4vw] lg:rounded-[3vw] p-[4vw] lg:p-[3vw] flex flex-col relative overflow-hidden group"
+                        >
                             <div className="absolute top-[3vw] lg:top-[2vw] right-[3vw] lg:right-[2vw] w-[5vw] lg:w-[2vw] h-[5vw] lg:h-[2vw] rounded-full border border-[#153a20]/20 flex items-center justify-center opacity-40">
                                 <svg className="w-[2.5vw] lg:w-[1vw] h-[2.5vw] lg:h-[1vw]" viewBox="0 0 24 24" fill="none" stroke="#153a20">
                                     <path d="M15 10l5 5m0 0l-5 5m5-5H3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -100,7 +108,14 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                             </div>
 
                             <div className="flex flex-col relative z-10">
-                                <span className="text-[10vw] lg:text-[6vw] font-black text-[#153a20] leading-none tracking-tighter">{project.stat}</span>
+                                <motion.span 
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    transition={{ delay: 0.4, duration: 0.6 }}
+                                    className="text-[10vw] lg:text-[6vw] font-black text-[#153a20] leading-none tracking-tighter"
+                                >
+                                    {project.stat}
+                                </motion.span>
                                 <span className="text-[3vw] lg:text-[1.2vw] font-bold text-[#153a20]/70 mt-[1.5vw] lg:mt-[1vw] max-w-[90%] leading-tight uppercase">
                                     {project.statLabel}
                                 </span>
@@ -109,17 +124,28 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                             {/* 3D Illustration placeholder */}
                             <div className="mt-auto relative h-[25vw] lg:h-[15vw] w-full transform group-hover:scale-105 transition-transform duration-700">
                                 <div className="absolute bottom-0 right-0 w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-black/5 rounded-[2vw] rotate-6 border border-black/5" />
-                                <div className="absolute bottom-[2vw] lg:bottom-[2vw] right-[2vw] lg:right-[2vw] w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-white/20 backdrop-blur-sm rounded-[2vw] -rotate-3 border border-white/20 flex items-center justify-center text-[#153a20]/20 text-[5vw] lg:text-[4vw] font-black">
+                                <motion.div 
+                                    initial={{ rotate: -15, scale: 0.8 }}
+                                    whileInView={{ rotate: -3, scale: 1 }}
+                                    transition={{ delay: 0.6, duration: 1, type: "spring" }}
+                                    className="absolute bottom-[2vw] lg:bottom-[2vw] right-[2vw] lg:right-[2vw] w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-white/20 backdrop-blur-sm rounded-[2vw] border border-white/20 flex items-center justify-center text-[#153a20]/20 text-[5vw] lg:text-[4vw] font-black"
+                                >
                                     STEEL
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
             </div>
 
             {/* View All Button */}
-            <div className={`w-full flex justify-center mt-[4vw] lg:mt-[2vw] transition-all duration-1000 delay-800 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vw]"}`}>
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="w-full flex justify-center mt-[4vw] lg:mt-[2vw]"
+            >
                 <button className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[10vw] lg:px-[4vw] py-[4vw] lg:py-[1.5vw] bg-[#153a20] hover:bg-[#1a4a2a] text-white font-black rounded-full lg:rounded-[5vw] transition-all shadow-xl active:scale-95 text-[4vw] lg:text-[1.1vw] tracking-wider uppercase group">
                     Explore All
                     <svg
@@ -132,7 +158,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                         <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </button>
-            </div>
+            </motion.div>
         </section>
     );
 };
