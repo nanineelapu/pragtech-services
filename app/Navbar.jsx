@@ -45,7 +45,7 @@ const Navbar = () => {
         { name: 'About Us', href: '/about' },
         { name: 'Services', href: '/services', hasDropdown: true },
         { name: 'Projects', href: '/projects' },
-        { name: 'Career', href: '/career' },
+        { name: 'Careers', href: '/career' },
     ];
 
     return (
@@ -148,17 +148,17 @@ const Navbar = () => {
             <div
                 className={`fixed inset-0 z-90 transition-all duration-500 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
-                {/* Backdrop blur with dark tint */}
+                {/* Backdrop - Blur removed to keep page sharp */}
                 <div
-                    className="absolute inset-0 bg-black/60 backdrop-blur-xl"
+                    className="absolute inset-0 bg-black/40"
                     onClick={() => setIsMenuOpen(false)}
                 />
 
-                {/* Menu Content */}
+                {/* Menu Content - Enhanced Glassmorphism */}
                 <div
                     className={`absolute top-[22vw] right-[4vw] left-[4vw] transition-all duration-500 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}
                 >
-                    <div className="bg-white/20 backdrop-blur-3xl rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/30">
+                    <div className="bg-white/10 backdrop-blur-3xl rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-white/20">
                         <div className="p-6 flex flex-col gap-3">
                             {navLinks.map((link, index) => {
                                 const isActive = pathname === link.href;
