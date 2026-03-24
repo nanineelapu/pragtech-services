@@ -6,7 +6,7 @@ import Cards from './cards';
 
 const Page = () => {
     return (
-        <main className="w-full flex flex-col min-h-screen">
+        <main className="w-full flex flex-col min-h-screen overflow-x-hidden">
             <ServicesPage />
             <DetailsPage />
             <Cards />
