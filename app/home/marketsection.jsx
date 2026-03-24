@@ -1,9 +1,23 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+            }
+        }, { threshold: 0.1 });
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     const markets = [
         {
             title: "STRUCTURAL STEEL",
@@ -30,7 +44,8 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
 
     return (
         <section
-            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 relative overflow-hidden flex flex-col items-center mx-auto self-center ${props.className || ""}`}
+            ref={sectionRef}
+            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 relative overflow-hidden flex flex-col items-center mx-auto self-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"} ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -59,7 +74,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
             </svg>
 
             {/* Header Content */}
-            <div className="text-center mb-[8vw] lg:mb-[4vw] relative z-20">
+            <div className={`text-center mb-[8vw] lg:mb-[4vw] relative z-20 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
                 <h2 className="text-[7.5vw] lg:text-[3.5vw] font-black text-[#153a20] tracking-tight whitespace-nowrap">
                     Markets We <span className="text-[#4dbb6b]">Serve</span>
                 </h2>
@@ -73,7 +88,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
             <div className="hidden lg:block relative w-full h-[45vw] mt-[4vw] z-10 pointer-events-none">
                 {/* Structural Steel - Top Left */}
                 <div
-                    className="absolute pointer-events-auto group transition-all duration-500 hover:scale-[1.05]"
+                    className={`absolute pointer-events-auto group transition-all duration-1000 delay-500 hover:scale-[1.05] ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[4vw]"}`}
                     style={{
                         top: "0", left: "8%", width: "25vw"
                     }}
@@ -100,7 +115,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
 
                 {/* Connection Design - Top Right */}
                 <div
-                    className="absolute pointer-events-auto group transition-all duration-500 hover:scale-[1.05]"
+                    className={`absolute pointer-events-auto group transition-all duration-1000 delay-700 hover:scale-[1.05] ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[4vw]"}`}
                     style={{
                         top: "0", right: "8%", width: "25vw"
                     }}
@@ -127,12 +142,12 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
 
                 {/* Misc Steel - Middle Down */}
                 <div
-                    className="absolute pointer-events-auto group transition-all duration-500 hover:scale-[1.05]"
+                    className={`absolute pointer-events-auto group transition-all duration-1000 delay-900 hover:scale-[1.05] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"}`}
                     style={{
                         top: "16vw", left: "50%", transform: "translateX(-50%)", width: "25vw"
                     }}
                 >
-                    <div className="relative h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.15)] border border-[#153a20]/10">
+                    <div className="relative h-[32vw] lg:h-[16vw] rounded-[1.8vw] overflow-hidden shadow-[0_1.5vw_4vw_rgba(21,58,32,0.15)] border border-[#153a20]/10">
                         <Image
                             src={markets[1].image}
                             alt={markets[1].title}
@@ -153,7 +168,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
                 </div>
 
                 {/* Technical Network SVG - Adjusted for new positions */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-15" viewBox="0 0 1000 1000" preserveAspectRatio="none" style={{ top: "-10vw" }}>
+                <svg className={`absolute inset-0 w-full h-full pointer-events-none z-0 opacity-15 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-15 scale-100" : "opacity-0 scale-90"}`} viewBox="0 0 1000 1000" preserveAspectRatio="none" style={{ top: "-10vw" }}>
                     <g fill="none" stroke="#153a20" strokeWidth="2" markerEnd="url(#arrowhead)">
                         <path d="M500,150 L200,350" strokeDasharray="10,10" className="animate-[pulse_4s_infinite]" />
                         <path d="M500,150 L800,350" strokeDasharray="10,10" className="animate-[pulse_5s_infinite]" />
@@ -166,7 +181,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
             {/* Mobile Market Cards (Flowing Stack) */}
             <div className="flex flex-col lg:hidden gap-[6vw] w-full px-[2vw] relative z-20">
                 {markets.map((market, index) => (
-                    <div key={index} className="w-full group">
+                    <div key={index} className={`w-full group transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[10vw]"}`} style={{ transitionDelay: `${index * 200}ms` }}>
                         <div className="relative h-[55vw] rounded-[4vw] overflow-hidden shadow-2xl border border-[#153a20]/5">
                             <Image
                                 src={market.image}
@@ -190,7 +205,7 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
             </div>
 
             {/* View All Button */}
-            <div className="mt-[6vw] lg:mt-[2vw] relative z-20">
+            <div className={`mt-[6vw] lg:mt-[2vw] relative z-20 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vw]"}`}>
                 <button className="flex items-center gap-[2vw] lg:gap-[1vw] px-[8vw] py-[3.5vw] lg:px-[3vw] lg:py-[1.2vw] bg-[#153a20] hover:bg-[#1a4a2a] text-white font-black rounded-full transition-all shadow-xl active:scale-95 text-[3.5vw] lg:text-[1vw] tracking-wide group">
                     Explore All Markets
                     <div className="w-[5vw] h-[5vw] lg:w-[1.8vw] lg:h-[1.8vw] bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">

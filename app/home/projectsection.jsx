@@ -1,9 +1,23 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+            }
+        }, { threshold: 0.1 });
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     const projects = [
         {
             title: "Commercial Steel Structure",
@@ -29,7 +43,8 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
 
     return (
         <section
-            className={`bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center ${props.className || ""}`}
+            ref={sectionRef}
+            className={`bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"} ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -37,7 +52,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             {...props}
         >
             {/* Header Content - Left Aligned */}
-            <div className="w-full text-left mb-[10vw] lg:mb-[6vw] px-[2vw] lg:px-0">
+            <div className={`w-full text-left mb-[10vw] lg:mb-[6vw] px-[2vw] lg:px-0 transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[4vw]"}`}>
                 <h2 className="text-[12vw] lg:text-[4vw] font-black text-[#153a20] tracking-tighter leading-none uppercase">
                     Our <span className="text-[#4dbb6b]">Projects</span>
                 </h2>
@@ -49,7 +64,8 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className={`flex flex-row lg:flex-row items-center gap-[4vw] w-full ${project.side === 'left' ? 'flex-row-reverse lg:flex-row-reverse' : ''}`}
+                        className={`flex flex-row lg:flex-row items-center gap-[4vw] w-full transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[6vw]"} ${project.side === 'left' ? 'flex-row-reverse lg:flex-row-reverse' : ''}`}
+                        style={{ transitionDelay: `${400 + index * 200}ms` }}
                     >
                         {/* Text Content - 55% width on mobile */}
                         <div className="w-[55%] lg:flex-1 flex flex-col gap-[3vw] lg:gap-[2vw]">
@@ -103,7 +119,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             </div>
 
             {/* View All Button */}
-            <div className="w-full flex justify-center mt-[4vw] lg:mt-[2vw]">
+            <div className={`w-full flex justify-center mt-[4vw] lg:mt-[2vw] transition-all duration-1000 delay-800 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vw]"}`}>
                 <button className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[10vw] lg:px-[4vw] py-[4vw] lg:py-[1.5vw] bg-[#153a20] hover:bg-[#1a4a2a] text-white font-black rounded-full lg:rounded-[5vw] transition-all shadow-xl active:scale-95 text-[4vw] lg:text-[1.1vw] tracking-wider uppercase group">
                     Explore All
                     <svg

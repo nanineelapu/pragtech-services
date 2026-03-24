@@ -1,8 +1,22 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const ReviewSection = () => {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+            }
+        }, { threshold: 0.1 });
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     const reviews = [
         {
             name: "Sarah Williams",
@@ -66,9 +80,9 @@ const ReviewSection = () => {
     };
 
     return (
-        <section className="bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto">
+        <section ref={sectionRef} className={`bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[4vw]"}`}>
             {/* Header Content - Side-by-Side Flex on Mobile */}
-            <div className="w-full flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[2vw]">
+            <div className={`w-full flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[2vw] transition-all duration-1000 delay-300 ${isVisible ? "opacity-100" : "opacity-0"}`}>
                 <div className="w-1/2 lg:w-full">
                     <h2 className="text-[8vw] lg:text-[4vw] font-black text-[#153a20] tracking-tighter leading-none uppercase">
                         CLIENT <br className="lg:hidden" /> <span className="text-[#4dbb6b]">VOICES</span>
@@ -84,7 +98,7 @@ const ReviewSection = () => {
             </div>
 
             {/* Circular Orbit Slider */}
-            <div className="relative w-full h-[100vw] lg:h-[40vw] flex items-center justify-center">
+            <div className={`relative w-full h-[100vw] lg:h-[40vw] flex items-center justify-center transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
                 {getReviews().map((review, idx) => {
                     const isPrev = review.type === 'prev';
                     const isNext = review.type === 'next';
@@ -135,7 +149,7 @@ const ReviewSection = () => {
             </div>
 
             {/* Pagination Dots */}
-            <div className="flex gap-[2.5vw] lg:gap-[1vw] mt-[8vw] lg:mt-[4vw]">
+            <div className={`flex gap-[2.5vw] lg:gap-[1vw] mt-[8vw] lg:mt-[4vw] transition-all duration-1000 delay-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
                 {reviews.map((_, i) => (
                     <button
                         key={i}
