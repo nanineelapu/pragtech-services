@@ -4,10 +4,10 @@ import React from 'react';
 
 const Details = () => {
     return (
-        <section className="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 py-8 pb-24 md:mt-12 md:gap-16 md:py-12 md:pb-40">
+        <section className="mx-auto flex w-full max-w-[80vw] flex-col items-center gap-8 py-8 pb-24 md:mt-12 md:gap-16 md:py-12 md:pb-40">
             {/* Main Text Container */}
-            <div className="w-full max-w-5xl rounded-3xl bg-white p-6 shadow-xl text-left leading-relaxed sm:p-10 md:p-12">
-                <p className="text-base text-[#4a5f77] font-medium sm:text-lg lg:text-[1.1rem]">
+            <div className="w-full max-w-[80vw] rounded-3xl bg-white p-6 shadow-xl text-left leading-relaxed sm:p-10 md:p-12">
+                <p className="text-base text-[#4a5f77] font-medium sm:text-lg lg:text-[1.25rem]">
                     Pragmatic Technical Services provides{" "}
                     <span className="text-[#0081bb] font-bold">top-notch Structural Steel Detailing and Engineering solutions</span>{" "}
                     with over{" "}
