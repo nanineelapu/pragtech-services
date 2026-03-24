@@ -1,25 +1,19 @@
 import React from "react";
 
-
-
 const DetailsPage = () => {
     return (
-        <section className="bg-gradient-to-br from-[#0f2a3f] to-[#1f3c52] py-[5vw] px-[2vw] text-white text-center">
+        <section className="bg-[#faf9f6] pt-[8vw] pb-[2vw] px-[4vw] text-center w-full">
+            {/* Heading Label Decor */}
+            <div className="w-[4vw] h-[0.3vw] bg-[#4dbb6b] mx-auto mb-[2.5vw] rounded-full" />
 
-            {/* Heading */}
-            <h1 className="text-[3vw] font-bold">
-                Complete Service <span className="text-[#1da1f2]">Portfolio</span>
+            {/* Main Heading Hierarchy */}
+            <h1 className="text-[5vw] font-black text-[#153a20] uppercase anton-regular tracking-tighter leading-none mb-[2vw]">
+                Complete Service <span className="text-[#4dbb6b]">Portfolio</span>
             </h1>
 
-            <p className="mt-[0.8vw] text-[1vw] text-gray-300">
-                Comprehensive steel detailing solutions tailored to your project needs
+            <p className="max-w-[45vw] mx-auto text-[1.4vw] text-[#153a20]/70 eb-garamond italic leading-relaxed">
+                A multi-dimensional network of structural detailing excellence tailored to elevate global industrial frameworks.
             </p>
-
-            {/* Card Container */}
-            <div className="mt-[3vw] bg-gray-200 rounded-[1.2vw] p-[2vw] max-w-[80vw] mx-auto">
-
-
-            </div>
         </section>
     );
 };

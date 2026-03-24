@@ -38,49 +38,30 @@ const MarketSection = ({ px = "4vw", py = "10vw", width = "92%", ...props }) => 
             }}
             {...props}
         >
-            {/* Organic SVG Roots Background */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-20" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            {/* Technical Arrow Network Background */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-15" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                 <defs>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-                        <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#153a20" />
+                    </marker>
                 </defs>
 
-                <g fill="none" stroke="#153a20" strokeLinecap="round">
-                    {/* ROOT 1: To Structural (Upper Left) */}
-                    <path d="M500,100 C510,200 450,250 350,300 L150,350" strokeWidth="4" filter="url(#glow)" />
-                    {/* Micro-roots for Root 1 */}
-                    <path d="M480,180 Q430,220 400,210" strokeWidth="1.5" opacity="0.6" />
-                    <path d="M420,240 Q380,270 410,290" strokeWidth="1" opacity="0.4" />
-                    <path d="M250,325 Q220,310 180,330" strokeWidth="1.2" opacity="0.5" />
+                <g fill="none" stroke="#153a20" strokeWidth="2" markerEnd="url(#arrowhead)">
+                    {/* Path to Structural (Top Left) */}
+                    <path d="M500,100 L260,465" strokeDasharray="10,10" className="animate-[pulse_4s_infinite]" />
 
-                    {/* ROOT 2: To Misc (Upper Right) */}
-                    <path d="M500,100 C520,220 600,300 750,380 L880,450" strokeWidth="4" filter="url(#glow)" />
-                    {/* Micro-roots for Root 2 */}
-                    <path d="M540,180 Q600,210 630,190" strokeWidth="1.5" opacity="0.6" />
-                    <path d="M650,280 Q720,260 700,310" strokeWidth="1" opacity="0.4" />
-                    <path d="M780,400 Q830,380 810,430" strokeWidth="1.2" opacity="0.5" />
+                    {/* Path to Misc (Top Right) */}
+                    <path d="M500,100 L770,565" strokeDasharray="10,10" className="animate-[pulse_5s_infinite]" />
 
-                    {/* ROOT 3: To Connection (Bottom Middle) */}
-                    <path d="M500,100 C480,300 550,500 480,700 L420,900" strokeWidth="4" filter="url(#glow)" />
-                    {/* Micro-roots for Root 3 */}
-                    <path d="M490,350 Q430,400 380,380" strokeWidth="1.5" opacity="0.6" />
-                    <path d="M510,550 Q580,600 550,650" strokeWidth="1" opacity="0.4" />
-                    <path d="M450,780 Q400,800 380,750" strokeWidth="1.2" opacity="0.5" />
-
-                    {/* Central Root Mass */}
-                    <path d="M500,100 Q490,130 480,150" strokeWidth="6" opacity="0.8" />
-                    <path d="M500,100 Q510,130 520,150" strokeWidth="6" opacity="0.8" />
+                    {/* Path to Connection (Bottom) */}
+                    <path d="M500,100 L530,825" strokeDasharray="10,10" className="animate-[pulse_6s_infinite]" />
                 </g>
 
-                {/* Glowing Nodes at Tips */}
-                <circle cx="150" cy="350" r="5" fill="#4dbb6b" filter="url(#glow)" />
-                <circle cx="880" cy="450" r="5" fill="#4dbb6b" filter="url(#glow)" />
-                <circle cx="420" cy="900" r="5" fill="#4dbb6b" filter="url(#glow)" />
+                {/* Technical Node Points */}
+                <circle cx="500" cy="100" r="4" fill="#153a20" />
+                <circle cx="260" cy="465" r="3" fill="#4dbb6b" />
+                <circle cx="770" cy="565" r="3" fill="#4dbb6b" />
+                <circle cx="530" cy="825" r="3" fill="#4dbb6b" />
             </svg>
 
             {/* Header Content (Stays on top) */}

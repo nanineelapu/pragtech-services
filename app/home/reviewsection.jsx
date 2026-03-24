@@ -64,11 +64,11 @@ const ReviewSection = () => {
     return (
         <section className="bg-[#faf9f6] rounded-[4vw] mt-[5vw] py-[8vw] px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto">
             {/* Header Content */}
-            <div className="w-full text-center mb-[8vw]">
+            <div className="w-full text-left mb-[2vw]">
                 <h2 className="text-[4vw] font-black text-[#153a20] tracking-tighter leading-none">
                     Hear From Those <br /> <span className="text-[#4dbb6b]">We Serve</span>
                 </h2>
-                <div className="w-[6vw] h-[0.3vw] bg-[#4dbb6b] mx-auto mt-[2vw] rounded-full" />
+                <div className="w-[6vw] h-[0.3vw] bg-[#4dbb6b] ml-0 mt-[2vw] rounded-full" />
             </div>
 
             {/* Circular Orbit Slider */}

@@ -2,100 +2,115 @@
 
 import React from 'react';
 
+const projects = [
+    { title: "STADIUM INFRASTRUCTURE", category: "Structural", size: "large", id: "01" },
+    { title: "COMMERCIAL HUB", category: "Commercial", size: "small", id: "02" },
+    { title: "INDUSTRIAL GRID", category: "Industrial", size: "medium", id: "03" },
+    { title: "BRIDGE DETAILING", category: "Infrastructure", size: "medium", id: "04" },
+    { title: "HEALTHCARE CENTER", category: "Specialized", size: "small", id: "05" },
+    { title: "MARITIME FACILITY", category: "Structural", size: "large", id: "06" }
+];
+
 const ProjectHero = () => {
     return (
-        <section className="flex flex-col items-center justify-start min-h-screen text-center px-[4vw] relative overflow-hidden bg-[#faf9f6] pt-[8vw]">
-            {/* Background elements are usually images/SVGs, I'll provide the layout structure first */}
-            {/* Pill Above Title */}
-            <div className="px-[1.5vw] py-[0.5vw] bg-[#0081bb]/10 border border-[#0081bb]/20 rounded-full mb-[3vw] flex items-center gap-[0.5vw] transition-all hover:bg-[#0081bb]/20 cursor-default relative z-10">
-                <svg className="w-[1vw] h-[1vw] text-[#0081bb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                <span className="text-[#0081bb] text-[0.9vw] font-black uppercase tracking-widest">Our Portfolio</span>
-            </div>
-
-            {/* Main Heading Hierarchy */}
-            <div className="flex flex-col items-center mb-[3vw] relative z-10">
-                <span className="text-[6.5vw] font-black text-white leading-tight tracking-tight uppercase">
-                    Our
-                </span>
-                <h1 className="text-[8.5vw] font-black text-[#0081bb] leading-[0.9] tracking-tighter uppercase">
-                    Projects
-                </h1>
-            </div>
-
-            {/* Subtext */}
-            <p className="max-w-[45vw] text-[1.2vw] text-white/80 font-medium leading-relaxed mb-[4vw]">
-                Explore our diverse portfolio of successful steel detailing projects. From stadiums to hospitals, we bring precision and excellence to every structure.
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex gap-[1.5vw] mb-[6vw]">
-                <button className="px-[3vw] py-[1.2vw] bg-[#0081bb] hover:bg-[#006ca3] text-white font-black rounded-[0.8vw] transition-all shadow-[0_1.5vw_4vw_rgba(0,129,195,0.3)] active:scale-95 text-[1.1vw] tracking-wide uppercase">
-                    View All Projects
-                </button>
-                <button className="px-[3vw] py-[1.2vw] bg-[#34495e]/60 hover:bg-[#34495e] border border-white/10 text-white font-black rounded-[0.8vw] transition-all active:scale-95 text-[1.1vw] tracking-wide uppercase">
-                    Start Your Project
-                </button>
-            </div>
-
-            {/* Filter Buttons */}
-            <div className="flex gap-[1.5vw] items-center">
-                <button className="flex items-center gap-[0.8vw] px-[2vw] py-[0.8vw] bg-[#0081bb] text-white font-black rounded-[0.8vw] text-[0.9vw] uppercase tracking-wider shadow-[0_0.8vw_2vw_rgba(0,129,187,0.2)] transition-all hover:-translate-y-[0.2vw]">
-                    <svg className="w-[1.2vw] h-[1.2vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        <div className="w-full bg-[#faf9f6]">
+            {/* HERO SECTION - Enhanced with Gradient via Styles */}
+            <section
+                className="relative w-full min-h-[55vw] flex flex-col items-center justify-center text-center px-[5vw] overflow-hidden"
+                style={{
+                    background: `radial-gradient(circle at center, rgba(77, 187, 107, 0.1) 0%, transparent 70%), linear-gradient(to bottom, #0c1f11 0%, #153a20 50%, #0c1f11 100%)`
+                }}
+            >
+                {/* Background Blueprint Decorative */}
+                <div className="absolute inset-0 opacity-[0.1] pointer-events-none select-none">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M0 20 L100 20 M0 40 L100 40 M0 60 L100 60 M0 80 L100 80 M20 0 L20 100 M40 0 L40 100 M60 0 L60 100 M80 0 L80 100" stroke="#4dbb6b" strokeWidth="0.1" fill="none" />
                     </svg>
-                    All Projects
-                </button>
+                </div>
 
-                <button className="flex items-center gap-[0.8vw] px-[2vw] py-[0.8vw] bg-[#34495e]/40 border border-white/5 text-white/50 font-black rounded-[0.8vw] text-[0.9vw] uppercase tracking-wider transition-all hover:text-white hover:border-white/20 hover:bg-[#34495e]/60">
-                    <svg className="w-[1.2vw] h-[1.2vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    Structural Steel
-                </button>
+                <div className="relative z-10 flex flex-col items-center animate-in fade-in slide-in-from-bottom-10 duration-1000">
+                    <div className="flex items-center gap-[1vw] mb-[2vw]">
+                        <div className="w-[3vw] h-px bg-[#4dbb6b]" />
+                        <span className="text-[#4dbb6b] text-[1vw] font-black tracking-[0.5vw] uppercase anton-regular">The Blueprint Collection</span>
+                        <div className="w-[3vw] h-px bg-[#4dbb6b]" />
+                    </div>
 
-                <button className="flex items-center gap-[0.8vw] px-[2vw] py-[0.8vw] bg-[#34495e]/40 border border-white/5 text-white/50 font-black rounded-[0.8vw] text-[0.9vw] uppercase tracking-wider transition-all hover:text-white hover:border-white/20 hover:bg-[#34495e]/60">
-                    <svg className="w-[1.2vw] h-[1.2vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />
-                    </svg>
-                    Miscellaneous
-                </button>
-            </div>
+                    <h1 className="text-[10vw] font-black text-white anton-regular uppercase leading-[0.8] mb-[3vw] tracking-tighter">
+                        ENGINEERING <br /> <span className="text-[#4dbb6b]">PORTFOLIO</span>
+                    </h1>
 
-            {/* Project Gallery Container */}
-            <div className="w-full max-w-[90vw] bg-white rounded-[2vw] p-[3vw] mt-[5vw] shadow-[0_2vw_5vw_rgba(0,0,0,0.1)] relative z-10 mb-[8vw]">
-                {/* Project Grid */}
-                <div className="grid grid-cols-3 gap-[2vw]">
-                    {[
-                        "BRIDGE",
-                        "DECORATIVE HANDRAILS",
-                        "COMMERCIAL BUILDING",
-                        "INDUSTRIAL BUILDING",
-                        "WAREHOUSE",
-                        "COMMERCIAL BUILDING"
-                    ].map((project, index) => (
-                        <div key={index} className="group relative overflow-hidden rounded-[1.2vw] aspect-4/3 bg-[#f8f9fa] border border-gray-100 flex flex-col justify-end shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-[0.5vw]">
-                            {/* Placeholder for Project Image */}
-                            <div className="absolute inset-0 bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                                <span className="text-gray-300 font-bold uppercase tracking-widest text-[1vw]">Project Image</span>
+                    <p className="max-w-[50vw] text-[1.6vw] text-[#faf9f6]/70 eb-garamond italic leading-relaxed mb-[5vw]">
+                        A testament to structural precision across continents. From intricate industrial grids to landmark commercial skyscrapers, we detail the future of steel.
+                    </p>
+
+                    {/* Filter Capsules */}
+                    <div className="flex items-center gap-[1vw] flex-wrap justify-center">
+                        {['All Projects', 'Structural', 'Miscellaneous', 'Industrial', 'BIM Solutions'].map((filter, i) => (
+                            <button key={i} className={`px-[2vw] py-[0.8vw] rounded-full text-[0.8vw] anton-regular uppercase tracking-widest transition-all ${i === 0 ? 'bg-[#4dbb6b] text-[#153a20]' : 'border border-white/20 text-white/60 hover:border-[#4dbb6b] hover:text-white'
+                                }`}>
+                                {filter}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ASYMMETRICAL MOSAIC GALLERY */}
+            <section className="w-full py-[10vw] px-[5vw]">
+                <div className="grid grid-cols-12 gap-[1.5vw] auto-rows-[16vw]">
+                    {projects.map((project, index) => (
+                        <div
+                            key={index}
+                            className={`group relative overflow-hidden rounded-[1.5vw] bg-white border border-[#153a20]/5 shadow-lg transition-all duration-700 cursor-pointer 
+                                ${project.size === 'large' ? 'col-span-8 row-span-2' : project.size === 'medium' ? 'col-span-4 row-span-2' : 'col-span-4 row-span-1'}
+                            `}
+                        >
+                            {/* Technical Overlay (Blueprint feel) */}
+                            <div className="absolute inset-0 bg-[#153a20] opacity-0 group-hover:opacity-[0.97] transition-all duration-500 z-10 flex flex-col justify-center p-[2.5vw]">
+                                <span className="text-[#4dbb6b] text-[0.8vw] font-black anton-regular mb-[0.8vw]">{project.category}</span>
+                                <h3 className="text-[2.2vw] text-white anton-regular uppercase leading-tight mb-[1.5vw]">
+                                    {project.title}
+                                </h3>
+                                <p className="text-[1vw] text-white/60 eb-garamond italic mb-[2vw]">
+                                    Detailed with 0.001mm precision using TEKLA structures and global BIM standards.
+                                </p>
+                                <div className="w-fit border-b border-[#4dbb6b] text-[#4dbb6b] anton-regular text-[0.7vw] uppercase tracking-widest pb-[0.2vw]">
+                                    Explore Blueprint →
+                                </div>
                             </div>
 
-                            {/* Card Content Area - Dark Overlay */}
-                            <div className="relative z-10 bg-[#0f2a4a]/90 p-[1.5vw] text-center backdrop-blur-sm transform transition-transform duration-500 group-hover:bg-[#0f2a4a]">
-                                <h3 className="text-white font-black text-[1.1vw] uppercase tracking-wider mb-[0.8vw]">
-                                    {project}
-                                </h3>
-                                {/* Signature Blue Underline */}
-                                <div className="w-[3vw] h-[0.2vw] bg-[#0081bb] mx-auto rounded-full transition-all duration-500 group-hover:w-[5vw]" />
+                            {/* Base Card Info */}
+                            <div className="absolute inset-0 flex flex-col justify-end p-[1.8vw] bg-linear-to-t from-black/20 to-transparent">
+                                <div className="flex items-center justify-between relative z-0">
+                                    <div className="flex flex-col">
+                                        <span className="text-[#153a20]/40 text-[0.8vw] anton-regular">{project.id}</span>
+                                        <h4 className="text-[1.5vw] text-[#153a20] anton-regular uppercase transition-opacity group-hover:opacity-0">
+                                            {project.title}
+                                        </h4>
+                                    </div>
+                                    <div className="w-[2.8vw] h-[2.8vw] rounded-full border border-[#153a20]/10 flex items-center justify-center text-[#153a20] text-[1.2vw] group-hover:border-[#4dbb6b] transition-all">
+                                        ↗
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Ghosted Tech Icon in background */}
+                            <div className="absolute top-[1.5vw] right-[1.5vw] text-[6vw] text-[#153a20]/[0.02] anton-regular font-black select-none group-hover:opacity-0 transition-opacity">
+                                ◈
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
-        </section>
 
-
+                {/* Load More Button */}
+                <div className="w-full flex justify-center mt-[6vw]">
+                    <button className="flex items-center gap-[1.2vw] px-[4vw] py-[1.2vw] bg-[#153a20] text-white rounded-full anton-regular uppercase tracking-[0.2vw] transition-all hover:bg-[#4dbb6b] hover:text-[#153a20] active:scale-95 shadow-xl text-[0.9vw]">
+                        View Complete Archive
+                        <span className="ml-[0.5vw]">↓</span>
+                    </button>
+                </div>
+            </section>
+        </div>
     );
 };
 

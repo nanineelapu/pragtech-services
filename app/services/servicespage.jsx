@@ -1,65 +1,68 @@
 import React from 'react';
 
 const ServicesPage = ({
-    badge = "Our Services",
-    titleLine1 = "Steel Detailing",
-    titleLine2 = "Solutions",
+    badge = "Engineering Services",
+    titleLine1 = "The Benchmark of",
+    titleLine2 = "Structural Detail",
     subtitle = "ONE SINGLE SOURCE FOR STEEL DETAILING EXCELLENCE",
-    primaryLabel = "Explore Services",
-    secondaryLabel = "Get Quote"
+    primaryLabel = "Explore Portfolio",
+    secondaryLabel = "Get a Quote"
 }) => {
     return (
-        <div className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#172635] overflow-hidden font-sans select-none">
-            {/* Background Texture & Gradient */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,#243f56_0%,#1a2d3e_45%,#172635_100%)] z-0" />
+        <div className="relative w-full min-h-screen flex flex-col items-center bg-[#faf9f6] select-none">
+            {/* High Performance Full Width Hero Section */}
+            <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0c1f11] via-[#153a20] to-black py-[12vw] flex flex-col items-center justify-center text-center px-[4vw]">
+                {/* Minimal Technical Background Details */}
+                <div
+                    className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{
+                        backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+                        backgroundSize: '4vw 4vw'
+                    }}
+                />
 
-            {/* Central Content Assembly */}
-            <div className="relative z-10 flex flex-col items-center text-center px-[4vw]">
+                {/* Non-Animated Gradient Glows for Performance */}
+                <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#4dbb6b]/5 blur-[15vw] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-[#4dbb6b]/3 blur-[15vw] rounded-full" />
 
-                {/* Badge Container */}
-                {badge && (
-                    <div className="flex items-center gap-[0.6vw] px-[1.2vw] py-[0.5vw] mb-[2vw] rounded-full bg-[#1b3e58]/80 border border-[#2b587a]/60 backdrop-blur-md shadow-[0_0.2vw_1vw_rgba(0,0,0,0.3)]">
-                        <span className="text-[#0fb2f6] text-[0.8vw] font-bold tracking-[0.1vw] uppercase">
+                {/* Main Hero Header Hierarchy */}
+                <div className="relative z-10 flex flex-col items-center w-full max-w-[85vw]">
+                    {/* Badge Container */}
+                    <div className="px-[1.5vw] py-[0.5vw] bg-[#4dbb6b]/10 border border-[#4dbb6b]/20 rounded-full mb-[3vw] flex items-center gap-[0.8vw]">
+                        <span className="text-[#4dbb6b] text-[1.2vw]">◈</span>
+                        <span className="text-[#4dbb6b] text-[0.8vw] font-black uppercase tracking-[0.4vw] anton-regular">
                             {badge}
                         </span>
                     </div>
-                )}
 
-                {/* Primary Headline Section */}
-                <div className="flex flex-col mb-[1.8vw]">
-                    <h1 className="text-white text-[5.2vw] font-black leading-none drop-shadow-[0_0.5vw_0.8vw_rgba(0,0,0,0.2)]">
-                        {titleLine1}
-                    </h1>
-                    {titleLine2 && (
-                        <h2 className="text-[#0fb2f6] text-[5.2vw] font-black leading-none -mt-[0.5vw]">
+                    {/* Primary Headline Section */}
+                    <div className="flex flex-col mb-[4vw] text-white">
+                        <span className="text-[4.5vw] font-light leading-tight tracking-tight eb-garamond italic">
+                            {titleLine1}
+                        </span>
+                        <h1 className="text-[10vw] font-black leading-[0.8] tracking-tighter uppercase anton-regular">
                             {titleLine2}
-                        </h2>
-                    )}
-                </div>
+                        </h1>
+                    </div>
 
-                {/* Wide-Track Descriptive Subtitle */}
-                {subtitle && (
-                    <p className="text-[#a0aab2] text-[0.85vw] font-semibold tracking-[0.45vw] uppercase mb-[3.2vw] max-w-[55vw]">
+                    {/* Wide-Track Descriptive Subtitle */}
+                    <p className="max-w-[50vw] text-[1.5vw] text-white/60 font-medium leading-[1.8] mb-[5vw] eb-garamond italic">
                         {subtitle}
                     </p>
-                )}
 
-                {/* CTA Buttons Layout */}
-                <div className="flex items-center gap-[1.8vw] mt-[0.5vw]">
-                    {primaryLabel && (
-                        <button className="px-[2.4vw] py-[0.8vw] rounded-[0.5vw] bg-[#0082c9] hover:bg-[#0070a8] text-white text-[1vw] font-bold transition-all duration-300 transform hover:-translate-y-[0.2vw] active:scale-95 shadow-[0_0.5vw_2vw_-0.5vw_rgba(0,130,201,0.39)]">
+                    {/* CTA Buttons Layout */}
+                    <div className="flex flex-col sm:flex-row items-center gap-[2vw]">
+                        <button className="px-[5vw] py-[1.2vw] bg-[#4dbb6b] hover:bg-white hover:text-[#153a20] text-white font-black rounded-full transition-all shadow-xl active:scale-95 text-[1vw] tracking-[0.2vw] uppercase anton-regular cursor-pointer">
                             {primaryLabel}
                         </button>
-                    )}
 
-                    {secondaryLabel && (
-                        <button className="px-[2.4vw] py-[0.8vw] rounded-[0.5vw] bg-[#3a4a58]/90 border border-white/5 text-white text-[1vw] font-bold backdrop-blur-md transition-all duration-300 transform hover:-translate-y-[0.2vw] active:scale-95 shadow-[0_0.5vw_2vw_-1vw_rgba(0,0,0,0.4)]">
+                        <button className="px-[5vw] py-[1.2vw] bg-white/5 hover:bg-white text-white hover:text-[#153a20] border border-white/20 rounded-full transition-all active:scale-95 text-[1vw] tracking-[0.2vw] uppercase anton-regular cursor-pointer">
                             {secondaryLabel}
                         </button>
-                    )}
-                </div>
+                    </div>
 
-            </div>
+                </div>
+            </section>
         </div>
     );
 };

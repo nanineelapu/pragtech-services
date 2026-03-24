@@ -4,6 +4,27 @@
 @plugin "@tailwindcss/aspect-ratio";
 @plugin "@tailwindcss/container-queries";
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 :root {
   --background: #faf9f6;
   --foreground: #000000;
@@ -66,4 +87,15 @@ body {
 
 .animate-bounce-delayed {
   animation: bounce-slow 4.5s ease-in-out infinite 0.5s;
+}
+
+.anton-regular {
+  font-family: var(--font-anton), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.eb-garamond {
+  font-family: var(--font-eb-garamond), serif;
+  font-optical-sizing: auto;
 }

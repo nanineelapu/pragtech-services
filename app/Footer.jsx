@@ -1,28 +1,54 @@
+"use client";
+
 import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="w-full px-[4vw] pb-[4vw] mt-[5vw] relative">
-            {/* The Floating Green Glass Pod */}
-            <div className="bg-[#153a20] rounded-[4vw] overflow-hidden relative shadow-2xl transition-all duration-500">
-                {/* Glass Overlay Effect */}
-                <div className="absolute inset-0 bg-white/5 backdrop-blur-3xl z-0" />
-
-                {/* Subtle Technical Grid Background */}
-                <div
-                    className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-                    style={{
-                        backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-                        backgroundSize: '4vw 4vw'
-                    }}
-                />
-
+        <footer className="w-full relative">
+            {/* High Performance Solid Green Footer */}
+            <div className="bg-[#153a20] overflow-hidden relative transition-all duration-500">
                 <div className="relative z-10 p-[5vw]">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-[4vw]">
-                        {/* Column 1: Branding & Description (4 cols) */}
-                        <div className="lg:col-span-5 flex flex-col gap-[2vw]">
-                            <div className="flex flex-col gap-[0.5vw]">
-                                <h2 className="text-[2.2vw] font-black text-white leading-none tracking-tighter uppercase">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-[4vw] items-start">
+                        {/* LEFT SIDE: Horizontal Link Rows (spanning 7 cols) */}
+                        <div className="lg:col-span-7 flex flex-col gap-[3vw]">
+                            {[
+                                { title: 'Menu', links: ['Customers', 'Resources', 'Careers', 'Projects'] },
+                                { title: 'Company', links: ['Help', 'Terms', 'Cookies', 'Security', 'Privacy'] },
+                                { title: 'Network', links: ['X (Twitter)', 'LinkedIn', 'Instagram', 'Facebook'] }
+                            ].map((section) => (
+                                <div key={section.title} className="flex flex-col gap-[0.8vw] group">
+                                    <div className="flex items-center gap-[1.5vw]">
+                                        <h3 className="text-[1vw] font-black text-white/40 tracking-[0.3vw] uppercase italic shrink-0">
+                                            {section.title}
+                                        </h3>
+                                        {/* Tech Arrow Symbol */}
+                                        <div className="flex-1 h-px bg-white/10 relative overflow-hidden">
+                                            <div className="absolute inset-0 bg-linear-to-r from-[#4dbb6b] to-transparent w-full -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
+                                        </div>
+                                        <svg className="w-[1.2vw] h-[1.2vw] text-[#4dbb6b] transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
+                                    </div>
+
+                                    {/* Horizontal Sub-links */}
+                                    <ul className="flex flex-wrap items-center gap-x-[2.5vw] gap-y-[1vw] pl-[0.5vw]">
+                                        {section.links.map((link) => (
+                                            <li key={link}>
+                                                <Link href="#" className="text-[1.2vw] font-bold text-white hover:text-[#4dbb6b] transition-all relative group/link">
+                                                    {link}
+                                                    <span className="absolute -bottom-[0.2vw] left-0 w-0 h-[2px] bg-[#4dbb6b] transition-all duration-300 group-hover/link:w-full" />
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* RIGHT SIDE: Branding & Description (5 cols) */}
+                        <div className="lg:col-span-5 flex flex-col gap-[2vw] items-end text-right sticky top-0">
+                            <div className="flex flex-col gap-[0.5vw] items-end">
+                                <h2 className="text-[2.5vw] font-black text-white leading-none tracking-tighter uppercase">
                                     Pragtech
                                 </h2>
                                 <span className="text-[0.7vw] tracking-[0.4vw] text-[#4dbb6b] font-bold uppercase">
@@ -49,42 +75,6 @@ const Footer = () => {
                                     </button>
                                 ))}
                             </div>
-                        </div>
-
-                        {/* Column 2: MENU (2 cols) */}
-                        <div className="lg:col-span-2 flex flex-col gap-[2.5vw]">
-                            <h3 className="text-[1vw] font-black text-white/40 tracking-[0.3vw] uppercase">Menu</h3>
-                            <ul className="flex flex-col gap-[1.2vw]">
-                                {['Customers', 'Resources', 'Careers', 'Projects'].map((item) => (
-                                    <li key={item}>
-                                        <Link href="#" className="text-[1.2vw] font-bold text-white hover:text-[#4dbb6b] transition-colors">{item}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Column 3: COMPANY (2 cols) */}
-                        <div className="lg:col-span-2 flex flex-col gap-[2.5vw]">
-                            <h3 className="text-[1vw] font-black text-white/40 tracking-[0.3vw] uppercase">Company</h3>
-                            <ul className="flex flex-col gap-[1.2vw]">
-                                {['Help', 'Terms', 'Cookies', 'Security', 'Privacy'].map((item) => (
-                                    <li key={item}>
-                                        <Link href="#" className="text-[1.2vw] font-bold text-white hover:text-[#4dbb6b] transition-colors">{item}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Column 4: SOCIAL (3 cols) */}
-                        <div className="lg:col-span-3 flex flex-col gap-[2.5vw]">
-                            <h3 className="text-[1vw] font-black text-white/40 tracking-[0.3vw] uppercase">Social</h3>
-                            <ul className="flex flex-col gap-[1.2vw]">
-                                {['X (Twitter)', 'LinkedIn', 'Instagram', 'Facebook'].map((item) => (
-                                    <li key={item}>
-                                        <Link href="#" className="text-[1.2vw] font-bold text-white hover:text-[#4dbb6b] transition-colors">{item}</Link>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
                     </div>
 
@@ -116,6 +106,4 @@ const Footer = () => {
         </footer>
     );
 };
-
 export default Footer;
-

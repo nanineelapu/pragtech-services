@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ProjectSection = ({ px = "4vw", py = "8vw", width = "92%", ...props }) => {
+const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => {
     const projects = [
         {
             title: "Commercial Steel Structure",
@@ -29,7 +29,7 @@ const ProjectSection = ({ px = "4vw", py = "8vw", width = "92%", ...props }) => 
 
     return (
         <section
-            className={`bg-[#faf9f6] rounded-[4vw] mt-[5vw] flex flex-col items-start mx-auto self-center ${props.className || ""}`}
+            className={`bg-[#faf9f6] rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -92,7 +92,7 @@ const ProjectSection = ({ px = "4vw", py = "8vw", width = "92%", ...props }) => 
 
                             {/* 3D Illustration placeholder - using a placeholder image for steel components */}
                             <div className="mt-auto relative h-[15vw] w-full transform group-hover:scale-105 transition-transform duration-700">
-                                <div className="absolute bottom-[0vw] right-[0vw] w-[18vw] h-[18vw] bg-black/5 rounded-[2vw] rotate-6 border border-black/5" />
+                                <div className="absolute bottom-0 right-0 w-[18vw] h-[18vw] bg-black/5 rounded-[2vw] rotate-6 border border-black/5" />
                                 <div className="absolute bottom-[2vw] right-[2vw] w-[18vw] h-[18vw] bg-white/20 backdrop-blur-sm rounded-[2vw] -rotate-3 border border-white/20 flex items-center justify-center text-[#153a20]/20 text-[4vw] font-black">
                                     STEEL
                                 </div>

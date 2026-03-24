@@ -37,7 +37,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`px-[1.2vw] py-[0.7vw] text-[1.1vw] font-medium transition-all duration-300 flex items-center gap-[0.4vw] ${isActive ? "text-[#0081c3] font-bold" : "text-[#111] hover:text-[#0081c3]"
+                            className={`px-[1.2vw] py-[0.7vw] text-[1.1vw] font-medium transition-all duration-300 flex items-center gap-[0.4vw] ${isActive ? "text-[#4dbb6b] font-bold" : "text-[#111] hover:text-[#4dbb6b]"
                                 }`}
                         >
                             {link.name}
@@ -68,7 +68,7 @@ const Navbar = () => {
                 {/* Phone number link */}
                 <Link
                     href="tel:+12816488137"
-                    className="hidden sm:block text-[#111] font-medium text-[1.1vw] hover:text-[#0081c3] transition-colors"
+                    className="hidden sm:block text-[#111] font-medium text-[1.1vw] hover:text-[#4dbb6b] transition-colors"
                 >
                     +1 281-648-8137
                 </Link>
@@ -76,11 +76,11 @@ const Navbar = () => {
                 {/* Green Contact Us style button */}
                 <Link
                     href="/contact"
-                    className="flex items-center gap-[0.8vw] px-[2.2vw] py-[1vw] bg-[#153a20] hover:bg-[#999b74] text-white font-semibold rounded-[1.2vw] transition-all shadow-[0_0.4vw_1.2vw_rgba(77,187,107,0.25)] active:scale-95 text-[1.1vw]"
+                    className="flex items-center gap-[0.8vw] px-[2.2vw] py-[1vw] bg-[#153a20] hover:bg-[#4dbb6b] hover:text-[#153a20] text-white font-semibold rounded-[1.2vw] transition-all shadow-[0_0.4vw_1.2vw_rgba(77,187,107,0.25)] active:scale-95 text-[1.1vw] group"
                 >
                     Contact Us
-                    <div className="w-[1.6vw] h-[1.6vw] bg-white/20 rounded-full flex items-center justify-center">
-                        <svg className="w-[1vw] h-[1vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+                    <div className="w-[1.6vw] h-[1.6vw] bg-white/20 rounded-full flex items-center justify-center group-hover:bg-[#153a20]/20">
+                        <svg className="w-[1vw] h-[1vw] transition-colors duration-300 group-hover:text-[#153a20]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>

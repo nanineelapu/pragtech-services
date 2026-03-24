@@ -2,19 +2,61 @@
 
 import React from 'react';
 
+const advantages = [
+    {
+        title: "GLOBAL IMPACT",
+        desc: "Work on iconic structures across the globe, from massive stadiums to complex industrial grids.",
+        icon: "◈"
+    },
+    {
+        title: "NEXT-GEN TECH",
+        desc: "Master the latest BIM and TEKLA technologies in a laboratory-grade engineering environment.",
+        icon: "⬡"
+    },
+    {
+        title: "CULTURAL SYNC",
+        desc: "Join a high-performance culture that values precision, transparency, and personal growth.",
+        icon: "◬"
+    }
+];
+
 const WhyWorkWithUs = () => {
     return (
-        <section className="flex flex-col items-center w-full max-w-[90vw] pb-[8vw]">
-            {/* White Card container */}
-            <div className="bg-white rounded-[2vw] p-[5vw] shadow-[0_2vw_5vw_rgba(0,0,0,0.1)] w-full text-center">
-                <h2 className="text-[3.5vw] font-black text-[#0f2a4a] mb-[3vw] tracking-tight">
-                    Why Work With Us?
+        <section className="w-full bg-[#faf9f6] py-[10vw] px-[5vw] flex flex-col items-center">
+            {/* Section Header */}
+            <div className="flex items-center gap-[1vw] mb-[6vw]">
+                <div className="w-[3vw] h-px bg-[#153a20]/10" />
+                <h2 className="text-[3.5vw] font-black text-[#153a20] anton-regular uppercase tracking-tighter">
+                    THE PRAGTECH <span className="text-[#4dbb6b]">ADVANTAGE</span>
                 </h2>
-                
-                {/* Description Paragraph */}
-                <p className="max-w-[70vw] mx-auto text-[1.2vw] text-[#4a5f77] font-medium leading-loose">
-                    At Pragmatic Technical Services, we believe in nurturing talent and providing growth opportunities. Join a team of passionate professionals working on cutting-edge structural steel projects worldwide. We offer competitive salaries, flexible work arrangements, and a collaborative environment.
-                </p>
+                <div className="w-[3vw] h-px bg-[#153a20]/10" />
+            </div>
+            
+            {/* Advantages Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[2.5vw] w-full max-w-[90vw]">
+                {advantages.map((adv, i) => (
+                    <div 
+                        key={i}
+                        className="group relative bg-white rounded-[2vw] p-[3vw] border border-[#153a20]/5 shadow-[0_1.5vw_4vw_rgba(21,58,32,0.03)] transition-all duration-500 hover:-translate-y-[0.5vw] hover:shadow-2xl overflow-hidden"
+                    >
+                        {/* Ghosted Icon */}
+                        <div className="absolute top-[1vw] right-[1vw] text-[8vw] text-[#153a20]/[0.02] anton-regular pointer-events-none group-hover:text-[#4dbb6b]/5 transition-colors">
+                            {adv.icon}
+                        </div>
+
+                        <div className="relative z-10">
+                            <h3 className="text-[2vw] font-black text-[#153a20] anton-regular leading-none mb-[1.5vw] uppercase">
+                                {adv.title}
+                            </h3>
+                            <p className="text-[1.2vw] text-[#153a20]/70 eb-garamond italic leading-relaxed">
+                                {adv.desc}
+                            </p>
+                            
+                            {/* Decorative Bar */}
+                            <div className="w-[3vw] h-[0.3vw] bg-[#4dbb6b] mt-[2.5vw] rounded-full" />
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     );
