@@ -5,53 +5,44 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const HomeSection = () => {
-    const [hasLoaded, setHasLoaded] = useState(false);
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const loaded = sessionStorage.getItem("pragtech_loaded") === "true";
-            setHasLoaded(loaded);
-        }
-    }, []);
-
-    // Animation Variants - Zero duration if already loaded to prevent re-animation
+    // Animation Variants - Standard timings for immediate page entry
     const containerVariants = {
-        hidden: { opacity: hasLoaded ? 1 : 0 },
+        hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: hasLoaded ? 0 : 0.15,
-                delayChildren: hasLoaded ? 0 : 3.8,
-                duration: hasLoaded ? 0 : 0.8,
+                staggerChildren: 0.15,
+                delayChildren: 0.3,
+                duration: 0.8,
                 ease: "easeOut"
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: hasLoaded ? 1 : 0, y: hasLoaded ? 0 : 30 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: hasLoaded ? 0 : 1, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
         }
     };
 
     const frameVariants = {
-        hidden: { opacity: hasLoaded ? 1 : 0, scale: hasLoaded ? 1 : 1.1 },
+        hidden: { opacity: 0, scale: 1.1 },
         visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: hasLoaded ? 0 : 1.5, delay: hasLoaded ? 0 : 3.5, ease: "easeOut" }
+            transition: { duration: 1.5, delay: 0.2, ease: "easeOut" }
         }
     };
 
     const lineVariants = {
-        hidden: { scaleX: hasLoaded ? 1 : 0, opacity: hasLoaded ? 1 : 0 },
+        hidden: { scaleX: 0, opacity: 0 },
         visible: {
             scaleX: 1,
             opacity: 1,
-            transition: { duration: hasLoaded ? 0 : 1.2, delay: hasLoaded ? 0 : 0.8, ease: "circOut" }
+            transition: { duration: 1.2, delay: 0.5, ease: "circOut" }
         }
     };
 
@@ -151,7 +142,7 @@ const HomeSection = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: hasLoaded ? 0.5 : 2, duration: 1 }}
+                    transition={{ delay: 0.8, duration: 1 }}
                     className="absolute bottom-[8vw] md:bottom-[3vw] flex items-center gap-[3vw] md:gap-[1.2vw]"
                 >
                     <div className="w-[4vw] md:w-[1.4vw] h-[4vw] md:h-[1.4vw] rounded-full border-2 border-[#4dbb6b] flex items-center justify-center">

@@ -2,6 +2,11 @@ import AboutPage from "./aboutpage";
 import Details from "./details";
 import CustomerFocus from "./customerfocus";
 
+export const metadata = {
+  title: "About Our Expertise",
+  description: "Learn about PragTech's legacy of structural precision. We specialize in complex steel detailing and industrial engineering solutions with a global perspective.",
+};
+
 const Page = () => {
     return (
         <main className="min-h-screen bg-[#faf9f6] w-full flex flex-col items-center">

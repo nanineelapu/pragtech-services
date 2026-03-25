@@ -1,14 +1,52 @@
-"use client";
-
 import { Geist, Geist_Mono, Anton, EB_Garamond } from "next/font/google";
-import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./globals.css";
 import SmoothScroll from "./SmoothScroll";
-import { Preloader } from "./Preloader";
-import { AnimatePresence } from "framer-motion";
+
+// Global Metadata for SEO
+export const metadata = {
+  title: {
+    default: "PragTech Technical Services | Precision Steel Detailing & Engineering",
+    template: "%s | PragTech Technical Services"
+  },
+  description: "PragTech offers premium structural engineering and precision steel detailing services globally. Expert solutions for complex industrial and commercial projects.",
+  keywords: ["steel detailing", "structural engineering", "industrial design", "precision engineering", "PragTech", "steel construction", "BIM"],
+  authors: [{ name: "PragTech Technical Services" }],
+  creator: "PragTech",
+  publisher: "PragTech Technical Services",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "PragTech Technical Services",
+    description: "Premium structural engineering and precision steel detailing services globally.",
+    url: "https://pragtech.services", // Placeholder - adjust if needed
+    siteName: "PragTech",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PragTech Technical Services",
+    description: "Precision in every detail of steel detailing and engineering.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,25 +70,6 @@ const ebGaramond = EB_Garamond({
 });
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const [loading, setLoading] = useState(true);
-  const [hasChecked, setHasChecked] = useState(false);
-
-  useEffect(() => {
-    // Session-based check to only show preloader once per visit and ONLY on home page
-    const checkLoadingStatus = () => {
-      const isHome = pathname === "/";
-      const loadedInSession = sessionStorage.getItem("pragtech_loaded") === "true";
-
-      if (!isHome || loadedInSession) {
-        setLoading(false);
-      }
-      setHasChecked(true);
-    };
-
-    checkLoadingStatus();
-  }, [pathname]);
-
   return (
     <html
       lang="en"
@@ -58,37 +77,13 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="flex flex-col" suppressHydrationWarning>
-        <AnimatePresence mode="wait">
-          {loading && hasChecked && (
-            <Preloader 
-              key="preloader" 
-              onLoadComplete={() => {
-                setLoading(false);
-                if (typeof window !== "undefined") {
-                  sessionStorage.setItem("pragtech_loaded", "true");
-                }
-              }} 
-            />
-          )}
-        </AnimatePresence>
-        
-        {/* Only show content after we've verified if preloader is needed */}
-        {hasChecked && (
-          <SmoothScroll>
-            <Navbar />
-            <main className="grow">
-              {children}
-            </main>
-            <Footer />
-          </SmoothScroll>
-        )}
-
-        {/* Global technical styling to prevent background flash */}
-        <style jsx global>{`
-          body {
-            background-color: #ffffff;
-          }
-        `}</style>
+        <SmoothScroll>
+          <Navbar />
+          <main className="grow">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

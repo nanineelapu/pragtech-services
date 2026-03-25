@@ -10,15 +10,9 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
-    const [hasLoaded, setHasLoaded] = useState(false);
     const scrollTimeout = useRef(null);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            const loaded = sessionStorage.getItem("pragtech_loaded") === "true";
-            setHasLoaded(loaded);
-        }
-
         const handleScroll = () => {
             const isScrolled = window.scrollY > 50;
             setScrolled(prev => prev !== isScrolled ? isScrolled : prev);
@@ -55,38 +49,55 @@ const Navbar = () => {
         { name: 'Careers', href: '/career' },
     ];
 
-    // Animation Variants for the Expansion effect
+    // Animation Variants for the Expansion effect - Sped up for better responsiveness
     const navVariants = {
         hidden: {
-            y: hasLoaded ? 0 : -100,
-            opacity: hasLoaded ? 1 : 0,
+            y: -100,
+            opacity: 0,
+            scale: 0.98,
+            filter: "blur(8px)",
             width: "22vw",
             x: "-50%"
         },
         visible: {
             y: 0,
             opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
             width: "90vw",
             x: "-50%",
             transition: {
-                duration: 1.2,
-                delay: hasLoaded ? 0.2 : 3.6,
-                ease: [0.16, 1, 0.3, 1],
-                width: { delay: hasLoaded ? 0.6 : 4.4, duration: 1.2, ease: "circOut" }
+                type: "spring",
+                stiffness: 90,
+                damping: 22,
+                mass: 1,
+                delay: 0.05,
+                width: {
+                    type: "spring",
+                    stiffness: 70,
+                    damping: 25,
+                    delay: 0.25
+                },
+                filter: { duration: 0.8, ease: "easeOut" }
             }
         }
     };
 
-    // Shared transition for inner content
+    // Shared transition for inner content - Faster materialization
     const contentFade = {
-        initial: { opacity: 0, y: 10 },
+        initial: {
+            opacity: 0,
+            y: 12,
+            filter: "blur(3px)"
+        },
         animate: {
             opacity: 1,
             y: 0,
+            filter: "blur(0px)",
             transition: {
-                delay: hasLoaded ? 0.8 : 5.4, // Materializes after expansion starts
+                delay: 0.6, // Materializes quickly after expansion begins
                 duration: 0.8,
-                ease: "easeOut"
+                ease: [0.16, 1, 0.3, 1]
             }
         }
     };
@@ -97,7 +108,7 @@ const Navbar = () => {
                 initial="hidden"
                 animate="visible"
                 variants={navVariants}
-                className="fixed top-[3vw] md:top-[1.2vw] left-1/2 z-100 flex items-center justify-center bg-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white/20 rounded-full lg:rounded-[4vw] min-h-[4.5vw] py-[2.5vw] md:py-[0.8vw] px-[4vw] overflow-hidden"
+                className="fixed top-[3vw] md:top-[1.2vw] left-1/2 z-100 flex items-center justify-center bg-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white/20 rounded-full lg:rounded-[4vw] min-h-[12vw] md:min-h-[4.5vw] py-[3.5vw] md:py-[0.8vw] px-[4vw] overflow-hidden"
             >
                 {/* Left Side: Navigation Links */}
                 <motion.div
