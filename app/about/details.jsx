@@ -66,7 +66,7 @@ const Details = () => {
                     className="flex-1 rounded-[6vw] lg:rounded-[2.5vw] bg-white p-8 lg:p-10 shadow-xl border border-navy/5 transition-all duration-500 hover:translate-y-[-1vw] group"
                 >
                     <div className="mb-6 lg:mb-8 flex items-center gap-5 lg:gap-6">
-                        <div className="flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-2xl bg-navy/5 border border-navy/10 shadow-sm transition-transform group-hover:rotate-12">
+                        <div className="flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-2xl bg-[#555961] border border-navy/10 shadow-sm transition-transform group-hover:rotate-12">
                             <svg className="h-7 w-7 lg:h-8 lg:w-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 <circle cx="12" cy="12" r="3" />

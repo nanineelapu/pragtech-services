@@ -86,7 +86,7 @@ const Cards = () => {
                 transition={{ duration: 1 }}
                 className="w-full lg:w-[55%] relative min-h-[80vw] lg:h-auto lg:min-h-0"
             >
-                <div className="lg:sticky lg:top-[12vw] lg:mt-[5vw] bg-navy rounded-[8vw] lg:rounded-[3vw] p-[8vw] lg:p-[4vw] shadow-2xl overflow-hidden min-h-[30vw] flex flex-col justify-center">
+                <div className="lg:sticky lg:top-[12vw] lg:mt-[5vw] bg-[#555961] rounded-[8vw] lg:rounded-[3vw] p-[8vw] lg:p-[4vw] shadow-2xl overflow-hidden min-h-[30vw] flex flex-col justify-center">
                     {/* Background Detail - Animated Icon */}
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -111,7 +111,7 @@ const Cards = () => {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             className="relative z-10"
                         >
-                            <span className="text-teal text-[3vw] lg:text-[1vw] font-black tracking-[0.3vw] uppercase mb-[2vw] lg:mb-[1vw] block font-heading">
+                            <span className="text-navy text-[3vw] lg:text-[1vw] font-black tracking-[0.3vw] uppercase mb-[2vw] lg:mb-[1vw] block font-heading">
                                 Service Excellence
                             </span>
                             <h2 className="text-[8vw] lg:text-[3vw] font-black text-white font-heading uppercase leading-[0.9] mb-[4vw] lg:mb-[2vw] max-w-full lg:max-w-[80%]">
@@ -121,9 +121,9 @@ const Cards = () => {
                                 {services[activeIndex].desc}
                             </p>
 
-                            <button className="flex items-center gap-[3vw] lg:gap-[1vw] text-teal font-black text-[3.5vw] lg:text-[1vw] uppercase tracking-wider group/btn font-heading">
+                            <button className="flex items-center gap-[3vw] lg:gap-[1vw] text-navy font-black text-[3.5vw] lg:text-[1vw] uppercase tracking-wider group/btn font-heading">
                                 Learn more about this service
-                                <div className="w-[8vw] h-[8vw] lg:w-[1.8vw] lg:h-[1.8vw] border border-teal/30 rounded-full flex items-center justify-center group-hover/btn:bg-teal group-hover/btn:text-navy transition-all">
+                                <div className="w-[8vw] h-[8vw] lg:w-[1.8vw] lg:h-[1.8vw] border border-navy rounded-full flex items-center justify-center group-hover/btn:bg-navy group-hover/btn:text-white transition-all">
                                     →
                                 </div>
                             </button>
@@ -131,7 +131,7 @@ const Cards = () => {
                     </AnimatePresence>
 
                     {/* Visual Floor Decor */}
-                    <div className="absolute bottom-0 left-0 w-full h-[1vw] lg:h-[0.5vw] bg-teal/20" />
+                    <div className="absolute bottom-0 left-0 w-full h-[1vw] lg:h-[0.5vw] bg-navy/20" />
                 </div>
             </motion.div>
         </div>

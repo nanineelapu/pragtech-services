@@ -45,7 +45,6 @@ const AboutPage = () => {
             transition: { duration: 1.2, delay: 0.5, ease: "circOut" }
         }
     };
-
     return (
         <div className="flex flex-col items-center min-h-screen bg-white w-full">
             {/* High Performance Full Width Hero Section */}

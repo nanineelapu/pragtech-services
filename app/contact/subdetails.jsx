@@ -13,7 +13,7 @@ const SubDetails = () => {
                 </svg>
             </div>
 
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -21,7 +21,7 @@ const SubDetails = () => {
                 className="relative z-10 flex flex-col items-center max-w-[85vw] lg:max-w-[70vw]"
             >
                 {/* Visual Anchor Node */}
-                <motion.div 
+                <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
@@ -31,18 +31,18 @@ const SubDetails = () => {
                     <span className="text-[#4dbb6b] text-[6vw] lg:text-[1.4vw]">◈</span>
                 </motion.div>
 
-                <motion.p 
+                <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.3 }}
-                    className="text-[5.5vw] lg:text-[2vw] font-medium text-[#153a20] text-center leading-[1.6] lg:leading-[1.6] eb-garamond italic tracking-tight"
+                    className="text-[5.5vw] lg:text-[2vw] font-medium text-black text-center leading-[1.6] lg:leading-[1.6] eb-garamond italic tracking-tight"
                 >
                     "Our team remains globally synchronized to accelerate your vision. Whether navigating complex structural puzzles or exploring new frontiers of BIM detailing, we are your permanent partner in precision."
                 </motion.p>
 
                 {/* Architectural Divider */}
-                <motion.div 
+                <motion.div
                     initial={{ width: 0, opacity: 0 }}
                     whileInView={{ width: "auto", opacity: 1 }}
                     viewport={{ once: true }}

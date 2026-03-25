@@ -27,7 +27,7 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
 
     return (
         <section
-            className={`bg-navy rounded-[4vw] overflow-hidden mt-[5vw] mx-auto self-center ${props.className || ""}`}
+            className={`bg-[#555961] rounded-[4vw] overflow-hidden mt-[5vw] mx-auto self-center ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,

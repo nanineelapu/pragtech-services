@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="w-full relative px-[4vw] lg:px-0">
             {/* High Performance Solid Navy Footer */}
-            <div className="bg-[#0f172a] overflow-hidden relative transition-all duration-500 rounded-t-[8vw] lg:rounded-none">
+            <div className="bg-[#0F172A] overflow-hidden relative transition-all duration-500 rounded-t-[8vw] lg:rounded-none">
                 <div className="relative z-10 p-[8vw] lg:p-[5vw]">
                     <div className="flex flex-col lg:grid lg:grid-cols-12 gap-[10vw] lg:gap-[4vw] items-start">
 
