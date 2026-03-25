@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Anton, EB_Garamond } from "next/font/google";
+import { Karla, Open_Sans } from "next/font/google";
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -48,24 +48,15 @@ export const metadata = {
   },
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const karla = Karla({
+  variable: "--font-karla",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const anton = Anton({
-  variable: "--font-anton",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
 });
 
@@ -73,10 +64,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${ebGaramond.variable} antialiased`}
+      className={`${karla.variable} ${openSans.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col" suppressHydrationWarning>
+      <body className="flex flex-col font-body text-pretty" suppressHydrationWarning>
         <SmoothScroll>
           <Navbar />
           <main className="grow">
@@ -88,5 +79,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-

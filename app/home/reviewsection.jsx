@@ -57,7 +57,7 @@ const ReviewSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="bg-[#faf9f6] rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto"
+            className="bg-white rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto"
         >
             {/* Header Content */}
             <div className="w-full flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[2vw]">
@@ -68,10 +68,10 @@ const ReviewSection = () => {
                     transition={{ duration: 0.8 }}
                     className="w-1/2 lg:w-full"
                 >
-                    <h2 className="text-[8vw] lg:text-[4vw] font-black text-[#153a20] tracking-tighter leading-none uppercase">
-                        CLIENT <br className="lg:hidden" /> <span className="text-[#4dbb6b]">VOICES</span>
+                    <h2 className="text-[8vw] lg:text-[4vw] font-black text-navy tracking-tighter leading-none uppercase font-heading">
+                        CLIENT <br className="lg:hidden" /> <span className="text-teal">VOICES</span>
                     </h2>
-                    <div className="w-[12vw] lg:w-[6vw] h-[0.8vw] lg:h-[0.3vw] bg-[#4dbb6b] ml-0 mt-[2vw] rounded-full" />
+                    <div className="w-[12vw] lg:w-[6vw] h-[0.8vw] lg:h-[0.3vw] bg-teal ml-0 mt-[2vw] rounded-full" />
                 </motion.div>
 
                 <motion.div
@@ -81,7 +81,7 @@ const ReviewSection = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="w-1/2 lg:w-full lg:mt-[2vw]"
                 >
-                    <p className="text-[3vw] lg:text-[1.1vw] text-[#153a20]/40 font-bold uppercase tracking-widest text-right lg:text-left">
+                    <p className="text-[3vw] lg:text-[1.1vw] text-navy/40 font-bold uppercase tracking-widest text-right lg:text-left font-body">
                         Trusted globally <br className="lg:hidden" /> since 2012
                     </p>
                 </motion.div>
@@ -99,9 +99,9 @@ const ReviewSection = () => {
                         className="absolute flex flex-col items-center justify-center text-center p-[4vw] z-20"
                     >
                         {/* Circular Review Pod */}
-                        <div className="relative rounded-full aspect-square border-2 border-[#153a20]/10 flex flex-col items-center justify-center bg-white shadow-2xl w-[85vw] lg:w-[35vw]">
+                        <div className="relative rounded-full aspect-square border-2 border-navy/10 flex flex-col items-center justify-center bg-white shadow-2xl w-[85vw] lg:w-[35vw]">
                             {/* Quote Icon */}
-                            <div className="absolute top-[10%] bg-[#4dbb6b] text-white w-[10vw] lg:w-[3vw] h-[10vw] lg:h-[3vw] rounded-full flex items-center justify-center shadow-lg">
+                            <div className="absolute top-[10%] bg-teal text-white w-[10vw] lg:w-[3vw] h-[10vw] lg:h-[3vw] rounded-full flex items-center justify-center shadow-lg">
                                 <svg className="w-[4vw] lg:w-[1.2vw] h-[4vw] lg:h-[1.2vw]" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 15.1046 21.017 14V9C21.017 7.89543 20.1216 7 19.017 7H16.017C14.9124 7 14.017 7.89543 14.017 9V12M3 21L3 18C3 16.8954 3.89543 16 5 16H8C9.10457 16 10 15.1046 10 14V9C10 7.89543 9.10457 7 8 7H5C3.89543 7 3 7.89543 3 9V12" />
                                 </svg>
@@ -109,28 +109,28 @@ const ReviewSection = () => {
 
                             {/* Main Text Content */}
                             <div className="max-w-[85%] lg:max-w-[75%] flex flex-col items-center">
-                                <p className="text-[#153a20] text-[3.8vw] lg:text-[1.2vw] font-bold leading-relaxed italic mb-[5vw] lg:mb-[2vw]">
+                                <p className="text-navy text-[3.8vw] lg:text-[1.2vw] font-bold leading-relaxed italic mb-[5vw] lg:mb-[2vw] font-body">
                                     "{reviews[currentIndex].text}"
                                 </p>
 
                                 {/* Author Info */}
                                 <div className="flex flex-col items-center">
-                                    <div className="w-[15vw] lg:w-[4.5vw] h-[15vw] lg:h-[4.5vw] rounded-full overflow-hidden border-2 border-[#4dbb6b] mb-[3vw] lg:mb-[1vw]">
+                                    <div className="w-[15vw] lg:w-[4.5vw] h-[15vw] lg:h-[4.5vw] rounded-full overflow-hidden border-2 border-teal mb-[3vw] lg:mb-[1vw]">
                                         <img src={reviews[currentIndex].image} alt={reviews[currentIndex].name} className="w-full h-full object-cover" />
                                     </div>
-                                    <h4 className="text-[#153a20] text-[4.5vw] lg:text-[1.4vw] font-black tracking-tight">{reviews[currentIndex].name}</h4>
-                                    <span className="text-[#4dbb6b] text-[2.5vw] lg:text-[0.8vw] font-bold uppercase tracking-widest mt-1 lg:mt-0">{reviews[currentIndex].company}</span>
+                                    <h4 className="text-navy text-[4.5vw] lg:text-[1.4vw] font-black tracking-tight font-heading">{reviews[currentIndex].name}</h4>
+                                    <span className="text-teal text-[2.5vw] lg:text-[0.8vw] font-bold uppercase tracking-widest mt-1 lg:mt-0 font-body">{reviews[currentIndex].company}</span>
                                 </div>
                             </div>
 
                             {/* Background Decorative Circle */}
-                            <div className="absolute inset-0 rounded-full border-4 border-dashed border-[#4dbb6b]/10 animate-[spin_60s_linear_infinite]" />
+                            <div className="absolute inset-0 rounded-full border-4 border-dashed border-teal/10 animate-[spin_60s_linear_infinite]" />
                         </div>
                     </motion.div>
                 </AnimatePresence>
 
                 {/* Orbiting Ring - Visual Only */}
-                <div className="hidden lg:block absolute w-[55vw] h-[55vw] rounded-full border border-[#153a20]/5 pointer-events-none" />
+                <div className="hidden lg:block absolute w-[55vw] h-[55vw] rounded-full border border-navy/5 pointer-events-none" />
             </div>
 
             {/* Pagination Dots */}
@@ -146,7 +146,7 @@ const ReviewSection = () => {
                         key={i}
                         onClick={() => setCurrentIndex(i)}
                         className={`h-[2vw] lg:h-[0.8vw] rounded-full transition-all duration-500
-                            ${currentIndex === i ? 'bg-[#153a20] w-[6vw] lg:w-[2.5vw]' : 'bg-[#153a20]/20 w-[2vw] lg:w-[0.8vw]'}`}
+                            ${currentIndex === i ? 'bg-navy w-[6vw] lg:w-[2.5vw]' : 'bg-navy/20 w-[2vw] lg:w-[0.8vw]'}`}
                     ></button>
                 ))}
             </motion.div>

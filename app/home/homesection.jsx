@@ -47,12 +47,12 @@ const HomeSection = () => {
     };
 
     return (
-        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#ffffff]">
+        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#ffffff] mt-[12vw] md:mt-[4.5vw]">
             {/* Background Image with Layered Overlays */}
             <div className="absolute inset-0">
                 <Image
                     src="/images/hero-bg.png"
-                    alt="Steel Detailing Expert - Precision Industrial Backdrop"
+                    alt=""
                     fill
                     className="opacity-10 grayscale group-hover:scale-105 transition-transform duration-1000 ease-out object-cover"
                     priority
@@ -63,7 +63,7 @@ const HomeSection = () => {
                     <svg width="100%" height="100%">
                         <defs>
                             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#153a20" strokeWidth="0.5" />
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f172a" strokeWidth="0.5" />
                             </pattern>
                         </defs>
                         <rect width="100%" height="100%" fill="url(#grid)" />
@@ -71,8 +71,8 @@ const HomeSection = () => {
                 </div>
 
                 {/* New Gradient Style */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(77,187,107,0.1)_0%,transparent_40%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(21,58,32,0.05)_0%,transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(20,184,166,0.1)_0%,transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(15,23,42,0.05)_0%,transparent_40%)]" />
             </div>
 
             {/* Main Content Container */}
@@ -87,54 +87,76 @@ const HomeSection = () => {
                     variants={frameVariants}
                     className="absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none"
                 >
-                    <div className="absolute top-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-[#153a20]/20" />
-                    <div className="absolute top-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-[#153a20]/20" />
-                    <div className="absolute bottom-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-[#153a20]/20" />
-                    <div className="absolute bottom-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-[#153a20]/20" />
+                    <div className="absolute top-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                    <div className="absolute top-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+                    <div className="absolute bottom-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                    <div className="absolute bottom-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
 
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-[#4dbb6b]" />
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-[#4dbb6b]" />
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-[#4dbb6b]" />
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-[#4dbb6b]" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
                 </motion.div>
 
                 {/* Text Block */}
                 <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
                     <motion.h1
                         variants={itemVariants}
-                        className="text-[#153a20] text-[15.5vw] md:text-[12vw] font-black leading-[0.8] tracking-tight anton-regular select-none uppercase"
+                        className="text-navy text-[15.5vw] md:text-[12vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                     >
                         PRECISION
                     </motion.h1>
 
-                    {/* Green Separator Line */}
+                    {/* Teal Separator Line */}
                     <motion.div
                         variants={lineVariants}
-                        className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-[#4dbb6b] to-transparent my-[3vw] md:my-[1vw]"
+                        className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-teal to-transparent my-[3vw] md:my-[1vw]"
                     >
-                        <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-[#4dbb6b]/20" />
-                        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-[#ffffff] border border-[#4dbb6b] rotate-45 flex items-center justify-center">
-                            <div className="w-[1vw] md:w-[0.2vw] h-[1vw] md:h-[0.2vw] bg-[#4dbb6b] rounded-full" />
+                        <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-teal/20" />
+                        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-white border border-teal rotate-45 flex items-center justify-center">
+                            <div className="w-[1vw] md:w-[0.2vw] h-[1vw] md:h-[0.2vw] bg-teal rounded-full" />
                         </div>
                     </motion.div>
 
                     <motion.h2
                         variants={itemVariants}
-                        className="text-[#4dbb6b] text-[4.2vw] md:text-[3vw] font-black tracking-[1.5vw] md:tracking-[0.8vw] uppercase anton-regular"
+                        className="text-teal text-[4.2vw] md:text-[3vw] font-bold  md:tracking-[0.4vw] uppercase font-heading"
                     >
-                        IN EVERY DETAIL
+                        Steel Detailing
                     </motion.h2>
 
                     <motion.div
                         variants={itemVariants}
                         className="mt-[5vw] md:mt-[2.5vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                     >
-                        <h3 className="text-[#153a20]/80 text-[3.2vw] md:text-[1.8vw] font-black tracking-[0.8vw] md:tracking-[0.3vw] uppercase anton-regular">
-                            STEEL DETAILING EXPERTS
+                        <h3 className="text-navy/80 text-[3.2vw] md:text-[1.8vw] font-bold tracking-[0.8vw] md:tracking-[0.3vw] uppercase font-heading">
+                            Delivered Globally
                         </h3>
-                        <p className="max-w-[80vw] text-[#153a20]/60 text-[3.2vw] md:text-[1.4vw] font-medium tracking-[0.1vw] eb-garamond italic">
-                            Your projects are in safe hands with global structural precision.
+                        <p className="max-w-[80vw] text-navy/60 text-[3.2vw] md:text-[1.4vw] font-medium tracking-[0.1vw] font-body italic">
+                            UK-based steel detailing experts supporting projects across 6+ countries with accuracy,
+                            speed, and reliability.
                         </p>
+                    </motion.div>
+
+                    {/* CTA Buttons - Premium Styled */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
+                    >
+                        <button className="group relative px-[8vw] md:px-[3vw] py-[3.5vw] md:py-[1.2vw] bg-teal text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(20,184,166,0.5)] font-heading">
+                            <span className="relative z-10">Get a Quote</span>
+                            <div className="absolute inset-0 bg-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
+                            <span className="absolute inset-0 flex items-center justify-center text-teal translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
+                                Get a Quote
+                            </span>
+                        </button>
+
+                        <div className="w-px h-[8vw] md:h-[3vw] bg-navy/10" />
+
+                        <button className="group px-[8vw] md:px-[3vw] py-[3.3vw] md:py-[1.1vw] border border-navy/20 text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:border-teal hover:text-teal transition-all duration-500 font-heading relative overflow-hidden">
+                            <span className="relative z-10 transition-colors duration-500 group-hover:text-teal">View Our Work</span>
+                            <div className="absolute inset-0 bg-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </button>
                     </motion.div>
                 </div>
 
@@ -145,17 +167,17 @@ const HomeSection = () => {
                     transition={{ delay: 0.8, duration: 1 }}
                     className="absolute bottom-[8vw] md:bottom-[3vw] flex items-center gap-[3vw] md:gap-[1.2vw]"
                 >
-                    <div className="w-[4vw] md:w-[1.4vw] h-[4vw] md:h-[1.4vw] rounded-full border-2 border-[#4dbb6b] flex items-center justify-center">
-                        <div className="w-[1.5vw] md:w-[0.5vw] h-[1.5vw] md:h-[0.5vw] rounded-full bg-[#4dbb6b]" />
+                    <div className="w-[4vw] md:w-[1.4vw] h-[4vw] md:h-[1.4vw] rounded-full border-2 border-teal flex items-center justify-center">
+                        <div className="w-[1.5vw] md:w-[0.5vw] h-[1.5vw] md:h-[0.5vw] rounded-full bg-teal" />
                     </div>
                     {[1, 2, 3].map((i) => (
-                        <div key={i} className="w-[1.5vw] md:w-[0.6vw] h-[1.5vw] md:h-[0.6vw] rounded-full bg-[#153a20]/10 hover:bg-[#153a20]/30 transition-colors cursor-pointer" />
+                        <div key={i} className="w-[1.5vw] md:w-[0.6vw] h-[1.5vw] md:h-[0.6vw] rounded-full bg-navy/10 hover:bg-navy/30 transition-colors cursor-pointer" />
                     ))}
                 </motion.div>
             </motion.div>
 
             {/* Subtle Vignette */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(21,58,32,0.03)_100%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.03)_100%)] pointer-events-none" />
         </section>
     );
 };

@@ -45,11 +45,11 @@ const ContctPage = () => {
             </div>
 
             {/* Background Narrative Watermark */}
-            <motion.div 
+            <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={watermarkVariants}
-                className="absolute top-[18vw] lg:top-[6vw] left-0 w-full text-center text-white/10 text-[22vw] lg:text-[16vw] font-black anton-regular pointer-events-none select-none tracking-tighter uppercase whitespace-nowrap z-0"
+                className="absolute top-[18vw] lg:top-[6vw] left-0 w-full text-center text-white/10 text-[22vw] lg:text-[16vw] font-black font-heading pointer-events-none select-none tracking-tighter uppercase whitespace-nowrap z-0"
             >
                 CONNECT
             </motion.div>
@@ -61,36 +61,36 @@ const ContctPage = () => {
                 className="relative z-10 flex flex-col items-center w-full"
             >
                 {/* Pill Above Title */}
-                <motion.div 
+                <motion.div
                     variants={itemVariants}
                     className="px-[4vw] lg:px-[1.2vw] py-[1.5vw] lg:py-[0.4vw] bg-[#4dbb6b] text-[#153a20] rounded-full mb-[8vw] lg:mb-[2.5vw] flex items-center gap-[1.5vw] lg:gap-[0.6vw]"
                 >
                     <span className="text-[3vw] lg:text-[1vw]">◈</span>
-                    <span className="text-[2.5vw] lg:text-[0.8vw] font-black uppercase tracking-widest anton-regular">GLOBAL SUPPORT HUB</span>
+                    <span className="text-[2.5vw] lg:text-[0.8vw] font-black uppercase tracking-widest font-heading">GLOBAL SUPPORT HUB</span>
                 </motion.div>
 
                 {/* Main Heading Hierarchy */}
                 <motion.div variants={itemVariants} className="flex flex-col items-center mb-[8vw] lg:mb-[3.5vw]">
-                    <h1 className="text-[14vw] lg:text-[9vw] font-black text-white anton-regular leading-[0.8] tracking-tighter uppercase">
+                    <h1 className="text-[14vw] lg:text-[9vw] font-black text-white font-heading leading-[0.8] tracking-tighter uppercase">
                         INITIATE <br /> <span className="text-[#4dbb6b]">CONNECTION</span>
                     </h1>
                 </motion.div>
 
                 {/* Subtext */}
-                <motion.p 
+                <motion.p
                     variants={itemVariants}
-                    className="max-w-[90vw] lg:max-w-[45vw] text-[4.2vw] lg:text-[1.5vw] text-[#faf9f6]/70 eb-garamond italic leading-relaxed mb-[10vw] lg:mb-[4.5vw]"
+                    className="max-w-[90vw] lg:max-w-[45vw] text-[4.2vw] lg:text-[1.5vw] text-[#faf9f6]/70 font-body italic leading-relaxed mb-[10vw] lg:mb-[4.5vw]"
                 >
                     Ready to transform your structural vision into reality? Reach out for expert BIM modeling, estimation, and detailing support across all time zones.
                 </motion.p>
 
                 {/* Action Buttons */}
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-[4vw] lg:gap-[1.2vw] w-full sm:w-auto">
-                    <button className="w-full sm:w-auto px-[10vw] lg:px-[3vw] py-[3.5vw] lg:py-[1.1vw] bg-[#4dbb6b] hover:bg-white text-[#153a20] font-black rounded-full transition-all active:scale-95 text-[3.5vw] lg:text-[0.9vw] tracking-[0.15vw] uppercase anton-regular cursor-pointer whitespace-nowrap">
+                    <button className="w-full sm:w-auto px-[10vw] lg:px-[3vw] py-[3.5vw] lg:py-[1.1vw] bg-[#4dbb6b] hover:bg-white text-[#153a20] font-black rounded-full transition-all active:scale-95 text-[3.5vw] lg:text-[0.9vw] tracking-[0.15vw] uppercase font-heading cursor-pointer whitespace-nowrap">
                         Direct Message
                     </button>
                     <div className="hidden sm:block w-px h-[2.5vw] bg-white/20 mx-[1vw]" />
-                    <button className="w-full sm:w-auto px-[10vw] lg:px-[3vw] py-[3.5vw] lg:py-[1.1vw] border border-white/20 hover:border-[#4dbb6b] text-white font-black rounded-full transition-all hover:text-[#4dbb6b] text-[3.5vw] lg:text-[0.9vw] tracking-[0.15vw] uppercase anton-regular cursor-pointer whitespace-nowrap">
+                    <button className="w-full sm:w-auto px-[10vw] lg:px-[3vw] py-[3.5vw] lg:py-[1.1vw] border border-white/20 hover:border-[#4dbb6b] text-white font-black rounded-full transition-all hover:text-[#4dbb6b] text-[3.5vw] lg:text-[0.9vw] tracking-[0.15vw] uppercase font-heading cursor-pointer whitespace-nowrap">
                         Technical Sales
                     </button>
                 </motion.div>

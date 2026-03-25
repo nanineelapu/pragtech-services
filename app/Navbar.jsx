@@ -124,7 +124,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`px-[1.2vw] py-[0.7vw] text-[1.1vw] font-medium transition-all duration-300 flex items-center gap-[0.4vw] ${isActive ? "text-[#4dbb6b] font-bold" : "text-[#111] hover:text-[#4dbb6b]"
+                                    className={`px-[1.2vw] py-[0.7vw] text-[1.1vw] font-medium transition-all duration-300 flex items-center gap-[0.4vw] font-body ${isActive ? "text-[#14b8a6] font-bold" : "text-[#111] hover:text-[#14b8a6]"
                                         }`}
                                 >
                                     {link.name}
@@ -148,10 +148,10 @@ const Navbar = () => {
                 >
                     <Link
                         href="/contact"
-                        className="flex items-center gap-[1.2vw] px-[3.5vw] py-[1.8vw] bg-[#153a20] hover:bg-[#4dbb6b] hover:text-[#153a20] text-white font-semibold rounded-full transition-all shadow-[0_6px_16px_rgba(77,187,107,0.2)] active:scale-95 text-[2.8vw] group w-fit"
+                        className="flex items-center gap-[1.2vw] px-[3.5vw] py-[1.8vw] bg-[#0f172a] hover:bg-[#14b8a6] hover:text-white text-white font-semibold rounded-full transition-all shadow-[0_6px_16px_rgba(20,184,166,0.2)] active:scale-95 text-[2.8vw] group w-fit font-heading"
                     >
                         Contact
-                        <div className="w-[4.2vw] h-[4.2vw] bg-white/20 rounded-full flex items-center justify-center group-hover:bg-[#153a20]/20">
+                        <div className="w-[4.2vw] h-[4.2vw] bg-white/20 rounded-full flex items-center justify-center group-hover:bg-[#0f172a]/20">
                             <svg className="w-[2.4vw] h-[2.4vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
@@ -167,10 +167,10 @@ const Navbar = () => {
                     className="flex flex-col items-center justify-center cursor-pointer transform flex-none hover:scale-110 active:scale-95 mx-[4vw] lg:mx-[1vw]"
                 >
                     <Link href="/" className="flex flex-col items-center">
-                        <span className={`transition-all duration-700 text-[#111] font-black leading-tight tracking-tight ${scrolled ? "text-[3.8vw] md:text-[1.8vw]" : "text-[4.2vw] md:text-[2vw]"}`}>
+                        <span className={`transition-all duration-700 text-[#111] font-black leading-tight tracking-tight font-heading ${scrolled ? "text-[3.8vw] md:text-[1.8vw]" : "text-[4.2vw] md:text-[2vw]"}`}>
                             PRAGTECH
                         </span>
-                        <span className={`transition-all duration-700 text-[#111] font-bold tracking-[0.3em] opacity-60 uppercase ${scrolled ? "text-[1.2vw] md:text-[0.5vw]" : "text-[1.4vw] md:text-[0.6vw]"}`}>
+                        <span className={`transition-all duration-700 text-[#111] font-bold tracking-[0.3em] opacity-60 uppercase font-heading ${scrolled ? "text-[1.2vw] md:text-[0.5vw]" : "text-[1.4vw] md:text-[0.6vw]"}`}>
                             Technical Services
                         </span>
                     </Link>
@@ -187,17 +187,17 @@ const Navbar = () => {
                     <div className="hidden lg:flex items-center gap-[2.5vw]">
                         <Link
                             href="tel:+12816488137"
-                            className="text-[#111] font-medium text-[1.1vw] hover:text-[#4dbb6b] transition-colors"
+                            className="text-[#111] font-medium text-[1.1vw] hover:text-[#14b8a6] transition-colors font-body"
                         >
                             +1 281-648-8137
                         </Link>
                         <Link
                             href="/contact"
-                            className="flex items-center gap-[0.8vw] px-[2.2vw] py-[1vw] bg-[#153a20] hover:bg-[#4dbb6b] hover:text-[#153a20] text-white font-semibold rounded-[1.2vw] transition-all shadow-[0_8px_24px_rgba(77,187,107,0.25)] active:scale-95 text-[1.1vw] group"
+                            className="flex items-center gap-[0.8vw] px-[2.2vw] py-[1vw] bg-[#0f172a] hover:bg-[#14b8a6] hover:text-white text-white font-semibold rounded-[1.2vw] transition-all shadow-[0_8px_24px_rgba(20,184,166,0.25)] active:scale-95 text-[1.1vw] group font-heading"
                         >
                             Contact Us
-                            <div className="w-[1.6vw] h-[1.6vw] bg-white/20 rounded-full flex items-center justify-center group-hover:bg-[#153a20]/20">
-                                <svg className="w-[1vw] h-[1vw] transition-colors duration-300 group-hover:text-[#153a20]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+                            <div className="w-[1.6vw] h-[1.6vw] bg-white/20 rounded-full flex items-center justify-center group-hover:bg-[#0f172a]/20">
+                                <svg className="w-[1vw] h-[1vw] transition-colors duration-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </div>
@@ -207,7 +207,7 @@ const Navbar = () => {
                     {/* Mobile Hamburger Toggle */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="lg:hidden p-2 text-[#111] hover:text-[#4dbb6b] transition-all active:scale-90 focus:outline-none"
+                        className="lg:hidden p-2 text-[#111] hover:text-[#14b8a6] transition-all active:scale-90 focus:outline-none"
                         aria-label="Toggle menu"
                     >
                         <div className="relative w-[5.5vw] h-[4vw]">
@@ -242,7 +242,7 @@ const Navbar = () => {
                                         key={link.name}
                                         href={link.href}
                                         className={`flex items-center justify-between p-5 rounded-[1.8rem] transition-all duration-300 ${isActive
-                                            ? "bg-[#153a20] text-white shadow-[0_10px_25px_rgba(21,58,32,0.3)]"
+                                            ? "bg-[#0f172a] text-white shadow-[0_10px_25px_rgba(15,23,42,0.3)]"
                                             : "hover:bg-white/10 text-[#111]"
                                             }`}
                                         style={{
@@ -250,9 +250,9 @@ const Navbar = () => {
                                             transform: isMenuOpen ? 'translateX(0)' : 'translateX(10px)'
                                         }}
                                     >
-                                        <span className="text-[5.5vw] font-bold tracking-tight">{link.name}</span>
+                                        <span className="text-[5.5vw] font-bold tracking-tight font-heading">{link.name}</span>
                                         {isActive ? (
-                                            <div className="w-[2.2vw] h-[2.2vw] rounded-full bg-[#4dbb6b] shadow-[0_0_10px_#4dbb6b]" />
+                                            <div className="w-[2.2vw] h-[2.2vw] rounded-full bg-[#14b8a6] shadow-[0_0_10px_#14b8a6]" />
                                         ) : (
                                             link.hasDropdown && (
                                                 <svg className="w-[5vw] h-[5vw] opacity-40 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -269,7 +269,7 @@ const Navbar = () => {
                                     href="tel:+12816488137"
                                     className="flex items-center gap-4 p-4 text-[#111] group"
                                 >
-                                    <div className="w-[12vw] h-[12vw] rounded-2xl bg-black/5 flex items-center justify-center transition-all group-hover:bg-[#4dbb6b]/10 group-hover:text-[#4dbb6b]">
+                                    <div className="w-[12vw] h-[12vw] rounded-2xl bg-black/5 flex items-center justify-center transition-all group-hover:bg-[#14b8a6]/10 group-hover:text-[#14b8a6]">
                                         <svg className="w-[6vw] h-[6vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                         </svg>

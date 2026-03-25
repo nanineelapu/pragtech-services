@@ -28,89 +28,137 @@ const AboutPage = () => {
         }
     };
 
-    const imageVariants = {
+    const frameVariants = {
         hidden: { opacity: 0, scale: 1.1 },
         visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: 1.5, ease: "easeOut" }
+            transition: { duration: 1.5, delay: 0.2, ease: "easeOut" }
+        }
+    };
+
+    const lineVariants = {
+        hidden: { scaleX: 0, opacity: 0 },
+        visible: {
+            scaleX: 1,
+            opacity: 1,
+            transition: { duration: 1.2, delay: 0.5, ease: "circOut" }
         }
     };
 
     return (
-        <div className="flex flex-col items-center min-h-screen bg-[#faf9f6] w-full">
+        <div className="flex flex-col items-center min-h-screen bg-white w-full">
             {/* High Performance Full Width Hero Section */}
-            <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0c1f11] via-[#153a20] to-black pt-[35vw] lg:py-[12vw] min-h-[150vw] lg:min-h-screen flex flex-col items-center lg:justify-center text-center px-[6vw] lg:px-[4vw]">
-                {/* Background Animation Layer */}
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={imageVariants}
-                    className="absolute inset-0"
-                >
-                    {/* Minimal Technical Background Details */}
-                    <div
-                        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                        style={{
-                            backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-                            backgroundSize: '8vw 8vw'
-                        }}
-                    />
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white mt-[12vw] md:mt-[4.5vw]">
+                {/* Technical Grid Overlay */}
+                <div className="absolute inset-0 opacity-[0.08]">
+                    <svg width="100%" height="100%">
+                        <defs>
+                            <pattern id="grid-about" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f172a" strokeWidth="0.5" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid-about)" />
+                    </svg>
+                </div>
 
-                    {/* Non-Animated Gradient Glows for Performance */}
-                    <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#4dbb6b]/5 blur-[15vw] rounded-full" />
-                    <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-[#4dbb6b]/3 blur-[15vw] rounded-full" />
-                </motion.div>
+                {/* Layered Gradient Glows */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(19,142,127,0.1)_0%,transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(15,23,42,0.05)_0%,transparent_40%)]" />
 
-                {/* Main Hero Header Hierarchy */}
+                {/* Main Content Container */}
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
-                    className="relative z-10 flex flex-col items-center w-full"
+                    className="relative h-full flex flex-col items-center justify-center text-center px-[6vw] md:px-[4vw]"
                 >
-                    {/* Header Label */}
+                    {/* Decorative Frame Elements */}
                     <motion.div
-                        variants={itemVariants}
-                        className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-[#4dbb6b]/10 border border-[#4dbb6b]/20 rounded-full mb-[6vw] lg:mb-[3vw] flex items-center gap-[1.50vw] lg:gap-[0.8vw]"
+                        variants={frameVariants}
+                        className="absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none"
                     >
-                        <span className="text-[#4dbb6b] text-[2.5vw] lg:text-[1.2vw]">◈</span>
-                        <span className="text-[#4dbb6b] text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] anton-regular">Engineering Overview</span>
+                        <div className="absolute top-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                        <div className="absolute top-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+                        <div className="absolute bottom-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                        <div className="absolute bottom-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
                     </motion.div>
 
-                    <motion.div
-                        variants={itemVariants}
-                        className="flex flex-col items-center mb-[8vw] lg:mb-[4vw] text-white"
-                    >
-                        <span className="text-[6.5vw] lg:text-[4.5vw] font-light leading-tight tracking-tight eb-garamond italic">
-                            The Science of
-                        </span>
-                        <h1 className="text-[16vw] lg:text-[10vw] font-black leading-[0.8] tracking-tighter uppercase anton-regular">
-                            Pragtech
-                        </h1>
-                    </motion.div>
+                    {/* Text Block */}
+                    <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
+                        {/* Badge */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
+                        >
+                            <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
+                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Engineering Overview</span>
+                        </motion.div>
 
-                    {/* Performance Optimized Narrative text (No Blur) */}
-                    <motion.p
-                        variants={itemVariants}
-                        className="max-w-[85vw] lg:max-w-[45vw] text-[4.2vw] lg:text-[1.5vw] text-white/60 font-medium leading-[1.6] lg:leading-[1.8] mb-[10vw] lg:mb-[5vw] eb-garamond italic"
-                    >
-                        Forging the future of structural integrity through high-precision computational detailing. We are the silent engine behind the world's most <span className="text-[#4dbb6b] font-bold">complex</span> industrial frameworks.
-                    </motion.p>
+                        <motion.h1
+                            variants={itemVariants}
+                            className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
+                        >
+                            THE SCIENCE OF
+                        </motion.h1>
 
-                    {/* Action Bar: High-contrast buttons */}
-                    <motion.div
-                        variants={itemVariants}
-                        className="flex flex-col sm:flex-row items-center gap-[4vw] lg:gap-[2vw] w-full sm:w-auto"
-                    >
-                        <button className="w-full sm:w-auto px-[8vw] lg:px-[5vw] py-[3.5vw] lg:py-[1.2vw] bg-[#4dbb6b] hover:bg-white hover:text-[#153a20] text-white font-black rounded-full transition-all shadow-xl active:scale-95 text-[3.5vw] lg:text-[1vw] tracking-[0.2vw] uppercase anton-regular cursor-pointer whitespace-nowrap">
-                            Browse Our Legacy
-                        </button>
-                        <button className="w-full sm:w-auto px-[8vw] lg:px-[5vw] py-[3.5vw] lg:py-[1.2vw] bg-white/5 hover:bg-white text-white hover:text-[#153a20] border border-white/20 rounded-full transition-all active:scale-95 text-[3.5vw] lg:text-[1vw] tracking-[0.2vw] uppercase anton-regular cursor-pointer whitespace-nowrap">
-                            Initiate Connection
-                        </button>
-                    </motion.div>
+                        {/* Teal Separator Line */}
+                        <motion.div
+                            variants={lineVariants}
+                            className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-teal to-transparent my-[3vw] md:my-[1vw]"
+                        >
+                            <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-teal/20" />
+                            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-white border border-teal rotate-45 flex items-center justify-center">
+                                <div className="w-[1vw] md:w-[0.2vw] h-[1vw] md:h-[0.2vw] bg-teal rounded-full" />
+                            </div>
+                        </motion.div>
+
+                        <motion.h2
+                            variants={itemVariants}
+                            className="text-teal text-[12vw] md:text-[10vw] font-black leading-[0.8] tracking-tighter uppercase font-heading"
+                        >
+                            PRAGTECH
+                        </motion.h2>
+
+                        <motion.div
+                            variants={itemVariants}
+                            className="mt-[5vw] md:mt-[2vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
+                        >
+                            <p className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
+                                Forging the future of structural integrity through high-precision computational detailing. We are the silent engine behind the world's most <span className="text-teal font-bold uppercase">complex</span> industrial frameworks.
+                            </p>
+                        </motion.div>
+
+                        {/* CTA Buttons */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
+                        >
+                            <button className="group relative px-[8vw] md:px-[3vw] py-[3.5vw] md:py-[1.2vw] bg-teal text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(20,184,166,0.5)] font-heading cursor-pointer">
+                                <span className="relative z-10">Browse Our Legacy</span>
+                                <div className="absolute inset-0 bg-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
+                                <span className="absolute inset-0 flex items-center justify-center text-teal translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
+                                    Browse Our Legacy
+                                </span>
+                            </button>
+
+                            <div className="w-px h-[8vw] md:h-[3vw] bg-navy/10" />
+
+                            <button className="group px-[8vw] md:px-[3vw] py-[3.3vw] md:py-[1.1vw] border border-navy/20 text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:border-teal hover:text-teal transition-all duration-500 font-heading relative overflow-hidden cursor-pointer">
+                                <span className="relative z-10 transition-colors duration-500 group-hover:text-teal">Initiate Connection</span>
+                                <div className="absolute inset-0 bg-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            </button>
+                        </motion.div>
+                    </div>
                 </motion.div>
+
+                {/* Subtle Vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.03)_100%)] pointer-events-none" />
             </section>
 
             {/* Who We Are Title Section */}
@@ -127,11 +175,11 @@ const AboutPage = () => {
                             hidden: { scaleX: 0, opacity: 0 },
                             visible: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
                         }}
-                        className="hidden sm:block w-[10vw] h-px bg-linear-to-r from-transparent to-[#153a20]/20 origin-right"
+                        className="hidden sm:block w-[10vw] h-px bg-linear-to-r from-transparent to-navy/20 origin-right"
                     />
                     <motion.h2
                         variants={itemVariants}
-                        className="text-[10vw] lg:text-[5vw] font-black text-[#153a20] tracking-tighter uppercase anton-regular"
+                        className="text-[10vw] lg:text-[5vw] font-black text-navy tracking-tighter uppercase font-heading"
                     >
                         Who We Are
                     </motion.h2>
@@ -140,7 +188,7 @@ const AboutPage = () => {
                             hidden: { scaleX: 0, opacity: 0 },
                             visible: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
                         }}
-                        className="hidden sm:block w-[10vw] h-px bg-linear-to-l from-transparent to-[#153a20]/20 origin-left"
+                        className="hidden sm:block w-[10vw] h-px bg-linear-to-l from-transparent to-navy/20 origin-left"
                     />
                 </div>
                 <motion.div
@@ -148,7 +196,7 @@ const AboutPage = () => {
                         hidden: { scale: 0, opacity: 0 },
                         visible: { scale: 1, opacity: 1, transition: { duration: 0.8, delay: 0.5 } }
                     }}
-                    className="w-[8vw] lg:w-[4vw] h-[1vw] lg:h-[0.3vw] bg-[#4dbb6b] rounded-full"
+                    className="w-[8vw] lg:w-[4vw] h-[1vw] lg:h-[0.3vw] bg-teal rounded-full"
                 />
             </motion.section>
         </div>
@@ -156,4 +204,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-

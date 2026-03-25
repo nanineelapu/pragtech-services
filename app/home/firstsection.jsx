@@ -27,7 +27,7 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
 
     return (
         <section
-            className={`bg-[#153a20] rounded-[4vw] overflow-hidden mt-[5vw] mx-auto self-center ${props.className || ""}`}
+            className={`bg-navy rounded-[4vw] overflow-hidden mt-[5vw] mx-auto self-center ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -48,14 +48,14 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                     </div>
 
                     {/* Glass Floating Badges */}
-                    <div className="absolute left-[-2vw] bottom-[15%] bg-[#faf3d1]/30 backdrop-blur-md border border-white/20 px-[2vw] py-[1.2vw] rounded-[1.5vw] shadow-2xl flex items-center gap-[1vw] animate-bounce-slow z-10">
-                        <span className="text-[#faf3d1] text-[2.5vw] font-black leading-none tracking-tighter">5x</span>
-                        <span className="text-[#faf3d1]/90 text-[0.8vw] font-bold uppercase tracking-widest leading-none">Efficiency <br /> In Workload</span>
+                    <div className="absolute left-[-2vw] bottom-[15%] bg-orange/30 backdrop-blur-md border border-white/20 px-[2vw] py-[1.2vw] rounded-[1.5vw] shadow-2xl flex items-center gap-[1vw] animate-bounce-slow z-10">
+                        <span className="text-orange text-[2.5vw] font-black leading-none tracking-tighter">5x</span>
+                        <span className="text-orange/90 text-[0.8vw] font-bold uppercase tracking-widest leading-none">Efficiency <br /> In Workload</span>
                     </div>
 
-                    <div className="absolute right-[-2vw] top-[20%] bg-[#cfe9d5]/30 backdrop-blur-md border border-white/20 px-[2vw] py-[1.2vw] rounded-[1.5vw] shadow-2xl flex items-center gap-[1vw] animate-bounce-delayed z-10">
-                        <span className="text-[#cfe9d5] text-[2.5vw] font-black leading-none tracking-tighter">100%</span>
-                        <span className="text-[#cfe9d5]/90 text-[0.8vw] font-bold uppercase tracking-widest leading-none">Precision <br /> Guaranteed</span>
+                    <div className="absolute right-[-2vw] top-[20%] bg-teal/30 backdrop-blur-md border border-white/20 px-[2vw] py-[1.2vw] rounded-[1.5vw] shadow-2xl flex items-center gap-[1vw] animate-bounce-delayed z-10">
+                        <span className="text-teal text-[2.5vw] font-black leading-none tracking-tighter">100%</span>
+                        <span className="text-teal/90 text-[0.8vw] font-bold uppercase tracking-widest leading-none">Precision <br /> Guaranteed</span>
                     </div>
                 </div>
 
@@ -65,11 +65,11 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                         Elevate the standard for every <br className="hidden xl:block" /> structural solution.
                     </h1>
                     <p className="text-white/70 text-[1.2vw] font-medium leading-relaxed max-w-[35vw]">
-                        AI-driven detailing and structural engineering built for high-scale demands.
-                        Automatically optimize designs, identify structural gaps, and trigger real-time precision audits.
+                        Pragtech Ltd is a UK-based steel detailing company providing high-quality structural detailing
+                        services to contractors, fabricators, and engineering firms worldwide
                     </p>
                     <div className="flex gap-[1vw] mt-[1vw]">
-                        <div className="w-[4vw] h-[0.4vw] bg-[#cfe9d5] rounded-full"></div>
+                        <div className="w-[4vw] h-[0.4vw] bg-teal rounded-full"></div>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                         relentless focus on safety and fabricability.
                     </p>
                     <div className="flex gap-[1vw] mt-[1.5vw]">
-                        <button className="px-[2.5vw] py-[1vw] bg-[#cfe9d5] text-[#153a20] font-black rounded-[5vw] text-[1vw] hover:bg-white transition-all shadow-lg hover:shadow-white/10">
+                        <button className="px-[2.5vw] py-[1vw] bg-teal text-navy font-black rounded-[5vw] text-[1vw] hover:bg-white transition-all shadow-lg hover:shadow-white/10">
                             View Our Tech Stack
                         </button>
                     </div>
@@ -109,7 +109,7 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                                 <p className="text-white/40 text-[0.8vw] font-medium leading-normal">{stat.desc}</p>
                             </div>
                             {/* Accent line for "root" structure */}
-                            <div className="absolute left-0 top-0 bottom-0 w-[0.3vw] bg-[#cfe9d5] scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                            <div className="absolute left-0 top-0 bottom-0 w-[0.3vw] bg-teal scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
                         </div>
                     ))}
                 </div>
