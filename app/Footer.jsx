@@ -12,11 +12,16 @@ const Footer = () => {
 
                         {/* BRANDING & DESCRIPTION (Moved to top on mobile) */}
                         <div className="order-first lg:order-last lg:col-span-5 flex flex-col gap-[5vw] lg:gap-[2vw] items-start lg:items-end text-left lg:text-right w-full">
-                            <div className="flex flex-col gap-[1.5vw] lg:gap-[0.5vw] items-start lg:items-end">
-                                <h2 className="text-[12vw] lg:text-[2.5vw] font-black text-white leading-none tracking-tighter uppercase font-heading">
-                                    Pragtech
-                                </h2>
-                                <span className="text-[3vw] lg:text-[0.7vw] tracking-[0.6vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading">
+                            <div className="flex flex-col gap-[1.5vw] lg:gap-[1vw] items-start lg:items-end min-w-full">
+                                <div className="relative h-[15vw] lg:h-[4.5vw] w-[45vw] lg:w-[12vw]">
+                                    <img
+                                        src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
+                                        alt="Pragtech Logo"
+                                        className="w-full h-full object-contain lg:object-right invert"
+                                    />
+                                    <p className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">PRAGTECH</p>
+                                </div>
+                                <span className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">
                                     Engineering Excellence
                                 </span>
                             </div>

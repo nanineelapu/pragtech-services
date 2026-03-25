@@ -13,14 +13,16 @@ const projects = [
 ];
 
 const ProjectHero = () => {
-    // Hero Animation Variants
+    // Hero Animation Variants - Consistent with HomeSection
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
                 staggerChildren: 0.15,
-                delayChildren: 0.5
+                delayChildren: 0.3,
+                duration: 0.8,
+                ease: "easeOut"
             }
         }
     };
@@ -34,68 +36,97 @@ const ProjectHero = () => {
         }
     };
 
-    const cardVariants = {
-        hidden: { opacity: 0, y: 40, scale: 0.98 },
+    const frameVariants = {
+        hidden: { opacity: 0, scale: 1.1 },
         visible: {
             opacity: 1,
-            y: 0,
             scale: 1,
-            transition: { duration: 0.8, ease: "easeOut" }
+            transition: { duration: 1.5, delay: 0.2, ease: "easeOut" }
         }
     };
 
     return (
-        <div className="w-full bg-[#faf9f6]">
-            {/* HERO SECTION */}
-            <section
-                className="relative w-full min-h-[150vw] lg:min-h-[55vw] flex flex-col items-center pt-[35vw] lg:pt-0 lg:justify-center text-center px-[4vw] lg:px-[5vw] overflow-hidden"
-                style={{
-                    background: `radial-gradient(circle at center, rgba(19, 142, 127, 0.1) 0%, transparent 70%), linear-gradient(to bottom, #030712 0%, #0f172a 50%, #030712 100%)`
-                }}
-            >
-                {/* Background Blueprint Decorative */}
-                <div className="absolute inset-0 opacity-[0.1] pointer-events-none select-none">
-                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <motion.path
-                            initial={{ pathLength: 0, opacity: 0 }}
-                            animate={{ pathLength: 1, opacity: 1 }}
-                            transition={{ duration: 3, ease: "easeInOut" }}
-                            d="M0 20 L100 20 M0 40 L100 40 M0 60 L100 60 M0 80 L100 80 M20 0 L20 100 M40 0 L40 100 M60 0 L60 100 M80 0 L80 100"
-                            stroke="#138e7f" strokeWidth="0.1" fill="none"
-                        />
+        <div className="w-full bg-white select-none">
+            {/* HERO SECTION - White Theme */}
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white mt-[12vw] md:mt-[4.5vw]">
+                {/* Technical Grid Overlay */}
+                <div className="absolute inset-0 opacity-[0.08]">
+                    <svg width="100%" height="100%">
+                        <defs>
+                            <pattern id="grid-projects" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f172a" strokeWidth="0.5" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid-projects)" />
                     </svg>
                 </div>
 
+                {/* Layered Gradient Glows */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(19,142,127,0.1)_0%,transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(15,23,42,0.05)_0%,transparent_40%)]" />
+
+                {/* Main Content Container */}
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
-                    className="relative z-10 flex flex-col items-center mt-[10vw] lg:mt-0 w-full max-w-[92vw] lg:max-w-[85vw]"
+                    className="relative h-full flex flex-col items-center justify-center text-center px-[6vw] md:px-[4vw]"
                 >
-                    <motion.div variants={itemVariants} className="flex items-center gap-[2vw] lg:gap-[1vw] mb-[4vw] lg:mb-[2vw]">
-                        <div className="w-[8vw] lg:w-[3vw] h-px bg-teal" />
-                        <span className="text-teal text-[3vw] lg:text-[1vw] font-black tracking-[0.5vw] uppercase anton-regular">The Blueprint Collection</span>
-                        <div className="w-[8vw] lg:w-[3vw] h-px bg-teal" />
+                    {/* Decorative Frame Elements */}
+                    <motion.div
+                        variants={frameVariants}
+                        className="absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none"
+                    >
+                        <div className="absolute top-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                        <div className="absolute top-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+                        <div className="absolute bottom-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                        <div className="absolute bottom-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
                     </motion.div>
 
-                    <motion.h1 variants={itemVariants} className="text-[15vw] lg:text-[10vw] font-black text-white anton-regular uppercase leading-[0.8] mb-[6vw] lg:mb-[3vw] tracking-tighter">
-                        ENGINEERING <br /> <span className="text-teal">PORTFOLIO</span>
-                    </motion.h1>
+                    {/* Text Block */}
+                    <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
+                        {/* Badge */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
+                        >
+                            <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
+                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">The Blueprint Collection</span>
+                        </motion.div>
 
-                    <motion.p variants={itemVariants} className="max-w-[90vw] lg:max-w-[50vw] text-[4.2vw] lg:text-[1.6vw] text-[#faf9f6]/70 eb-garamond italic leading-relaxed mb-[8vw] lg:mb-[5vw]">
-                        A testament to structural precision across continents. From intricate industrial grids to landmark commercial skyscrapers, we detail the future of steel.
-                    </motion.p>
+                        <motion.h1
+                            variants={itemVariants}
+                            className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
+                        >
+                            ENGINEERING <br /> <span className="text-teal">PORTFOLIO</span>
+                        </motion.h1>
 
-                    {/* Filter Capsules */}
-                    <motion.div variants={itemVariants} className="flex items-center gap-[2vw] lg:gap-[1vw] flex-wrap justify-center px-[4vw]">
-                        {['All Projects', 'Structural', 'Miscellaneous', 'Industrial', 'BIM Solutions'].map((filter, i) => (
-                            <button key={i} className={`px-[5vw] lg:px-[2vw] py-[2vw] lg:py-[0.8vw] rounded-full text-[3vw] lg:text-[0.8vw] anton-regular uppercase tracking-widest transition-all ${i === 0 ? 'bg-teal text-navy' : 'border border-white/20 text-white/60 hover:border-teal hover:text-white'
-                                }`}>
-                                {filter}
-                            </button>
-                        ))}
-                    </motion.div>
+                        {/* Teal Separator Line */}
+                        <motion.div
+                            variants={{
+                                hidden: { scaleX: 0, opacity: 0 },
+                                visible: { scaleX: 1, opacity: 1, transition: { duration: 1.2, delay: 0.5, ease: "circOut" } }
+                            }}
+                            className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-teal to-transparent my-[3vw] md:my-[1vw]"
+                        >
+                            <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-teal/20" />
+                            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-white border border-teal rotate-45 flex items-center justify-center">
+                                <div className="w-[1vw] md:w-[0.2vw] h-[1vw] md:h-[0.2vw] bg-teal rounded-full" />
+                            </div>
+                        </motion.div>
+
+                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
+                            A testament to structural precision across continents. From intricate industrial grids to landmark commercial skyscrapers, we detail the future of steel.
+                        </motion.p>
+                    </div>
                 </motion.div>
+                {/* Subtle Vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.03)_100%)] pointer-events-none" />
             </section>
 
             {/* ASYMMETRICAL MOSAIC GALLERY */}

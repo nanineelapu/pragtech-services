@@ -167,12 +167,13 @@ const Navbar = () => {
                     className="flex flex-col items-center justify-center cursor-pointer transform flex-none hover:scale-110 active:scale-95 mx-[4vw] lg:mx-[1vw]"
                 >
                     <Link href="/" className="flex flex-col items-center">
-                        <span className={`transition-all duration-700 text-[#111] font-black leading-tight tracking-tight font-heading ${scrolled ? "text-[3.8vw] md:text-[1.8vw]" : "text-[4.2vw] md:text-[2vw]"}`}>
-                            PRAGTECH
-                        </span>
-                        <span className={`transition-all duration-700 text-[#111] font-bold tracking-[0.3em] opacity-60 uppercase font-heading ${scrolled ? "text-[1.2vw] md:text-[0.5vw]" : "text-[1.4vw] md:text-[0.6vw]"}`}>
-                            Technical Services
-                        </span>
+                        <div className={`relative transition-all duration-700 ${scrolled ? "h-[10vw] md:h-[3vw] w-[25vw] md:w-[8vw]" : "h-[12vw] md:h-[4vw] w-[30vw] md:w-[10vw]"}`}>
+                            <img
+                                src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
+                                alt="Pragtech Logo"
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
                     </Link>
                 </motion.div>
 

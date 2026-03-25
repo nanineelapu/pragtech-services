@@ -37,7 +37,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
 
     return (
         <section
-            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center ${props.className || ""}`}
+            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center overflow-hidden ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -71,7 +71,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={project.side === 'right' ? slideInLeft : slideInRight}
-                            className="w-[55%] lg:flex-1 flex flex-col gap-[3vw] lg:gap-[2vw]"
+                            className="flex-1 flex flex-col gap-[3vw] lg:gap-[2vw]"
                         >
                             <div className="h-[4vw] lg:h-[2vw] w-fit opacity-80">
                                 <span className="text-[4vw] lg:text-[1.8vw] font-black text-navy tracking-tighter uppercase font-heading">PRAGTECH</span>

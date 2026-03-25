@@ -2,6 +2,18 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ehtazgziwtjqm5ww.public.blob.vercel-storage.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      }
+    ],
+  },
 };
 
 export default nextConfig;

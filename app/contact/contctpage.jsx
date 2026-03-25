@@ -4,13 +4,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ContctPage = () => {
+    // Animation Variants - Consistent with HomeSection for brand unity
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
                 staggerChildren: 0.15,
-                delayChildren: 0.2
+                delayChildren: 0.3,
+                duration: 0.8,
+                ease: "easeOut"
             }
         }
     };
@@ -20,93 +23,131 @@ const ContctPage = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
         }
     };
 
-    const watermarkVariants = {
-        hidden: { opacity: 0, scale: 0.8, letterSpacing: "0.5em" },
+    const frameVariants = {
+        hidden: { opacity: 0, scale: 1.1 },
         visible: {
-            opacity: 0.05,
+            opacity: 1,
             scale: 1,
-            letterSpacing: "0.1em",
-            transition: { duration: 2, ease: "easeOut" }
+            transition: { duration: 1.5, delay: 0.2, ease: "easeOut" }
+        }
+    };
+
+    const lineVariants = {
+        hidden: { scaleX: 0, opacity: 0 },
+        visible: {
+            scaleX: 1,
+            opacity: 1,
+            transition: { duration: 1.2, delay: 0.5, ease: "circOut" }
         }
     };
 
     return (
-        <section
-            className="relative w-full min-h-[150vw] lg:min-h-screen flex flex-col items-center lg:justify-center text-center px-[6vw] lg:px-[5vw] overflow-hidden pt-[35vw] lg:pt-[4vw] bg-navy"
-        >
-            {/* Structural Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-                        backgroundSize: '8vw 8vw'
-                    }}
-                />
-            </div>
+        <div className="relative w-full min-h-auto lg:min-h-screen flex flex-col items-center bg-white select-none">
+            {/* High Performance Full Width Hero Section */}
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white mt-[12vw] md:mt-[4.5vw]">
+                {/* Technical Grid Overlay */}
+                <div className="absolute inset-0 opacity-[0.08]">
+                    <svg width="100%" height="100%">
+                        <defs>
+                            <pattern id="grid-contact" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f172a" strokeWidth="0.5" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid-contact)" />
+                    </svg>
+                </div>
 
-            {/* Dynamic Background Gradients */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute inset-0 bg-radial-[circle_at_center,rgba(19,142,127,0.15)_0%,transparent_70%]" />
-                <div className="absolute inset-0 bg-linear-to-b from-black via-navy to-black opacity-100" />
-            </div>
+                {/* Layered Gradient Glows */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(19,142,127,0.1)_0%,transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(15,23,42,0.05)_0%,transparent_40%)]" />
 
-            {/* Background Narrative Watermark */}
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={watermarkVariants}
-                className="absolute top-[18vw] lg:top-[6vw] left-0 w-full text-center text-white/10 text-[22vw] lg:text-[16vw] font-black font-heading pointer-events-none select-none tracking-tighter uppercase whitespace-nowrap z-0"
-            >
-                CONNECT
-            </motion.div>
-
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
-                className="relative z-10 flex flex-col items-center w-full"
-            >
-                {/* Pill Above Title */}
+                {/* Main Content Container */}
                 <motion.div
-                    variants={itemVariants}
-                    className="px-[4vw] lg:px-[1.2vw] py-[1.5vw] lg:py-[0.4vw] bg-teal/10 border border-teal/20 text-teal rounded-full mb-[8vw] lg:mb-[2.5vw] flex items-center gap-[1.5vw] lg:gap-[0.6vw]"
+                    initial="hidden"
+                    animate="visible"
+                    variants={containerVariants}
+                    className="relative h-full flex flex-col items-center justify-center text-center px-[6vw] md:px-[4vw]"
                 >
-                    <span className="text-[3vw] lg:text-[1vw]">◈</span>
-                    <span className="text-[2.5vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">GLOBAL SUPPORT HUB</span>
+                    {/* Decorative Frame Elements */}
+                    <motion.div
+                        variants={frameVariants}
+                        className="absolute top-[20vw] bottom-[20vw] md:top-[10vw] md:bottom-[10vw] left-[10vw] right-[10vw] md:left-[15vw] md:right-[15vw] pointer-events-none"
+                    >
+                        <div className="absolute top-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                        <div className="absolute top-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-t-[0.5vw] md:border-t-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+                        <div className="absolute bottom-0 left-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-l-[0.5vw] md:border-l-[0.2vw] border-navy/20" />
+                        <div className="absolute bottom-0 right-0 w-[4vw] h-[4vw] md:w-[1.5vw] md:h-[1.5vw] border-b-[0.5vw] md:border-b-[0.2vw] border-r-[0.5vw] md:border-r-[0.2vw] border-navy/20" />
+
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[1.5vw] h-[1.5vw] md:w-[0.6vw] md:h-[0.6vw] bg-teal" />
+                    </motion.div>
+
+                    {/* Text Block */}
+                    <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
+                        {/* Badge */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
+                        >
+                            <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
+                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">GLOBAL SUPPORT HUB</span>
+                        </motion.div>
+
+                        <motion.h1
+                            variants={itemVariants}
+                            className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
+                        >
+                            INITIATE <br /> <span className="text-teal text-[10vw] md:text-[6vw]">CONNECTION</span>
+                        </motion.h1>
+
+                        {/* Teal Separator Line */}
+                        <motion.div
+                            variants={lineVariants}
+                            className="relative w-[70vw] md:w-[35vw] h-px bg-linear-to-r from-transparent via-teal to-transparent my-[3vw] md:my-[1vw]"
+                        >
+                            <div className="absolute inset-0 blur-[2vw] md:blur-[0.4vw] bg-teal/20" />
+                            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[3vw] md:w-[1vw] h-[3vw] md:h-[1vw] bg-white border border-teal rotate-45 flex items-center justify-center">
+                                <div className="w-[1vw] md:w-[0.2vw] h-[1vw] md:h-[0.2vw] bg-teal rounded-full" />
+                            </div>
+                        </motion.div>
+
+                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
+                            Ready to transform your structural vision into reality? Reach out for expert BIM modeling, estimation, and detailing support across all time zones.
+                        </motion.p>
+
+                        {/* Action Buttons */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
+                        >
+                            <button className="group relative px-[8vw] md:px-[3vw] py-[3.5vw] md:py-[1.2vw] bg-navy text-white text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap">
+                                <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-heading">Direct Message</span>
+                                <div className="absolute inset-0 bg-linear-to-b from-[#1e293b] to-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
+                                <span className="absolute inset-0 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
+                                    Direct Message
+                                </span>
+                            </button>
+
+                            <div className="w-px h-[8vw] md:h-[3vw] bg-navy/10" />
+
+                            <button className="group px-[8vw] md:px-[3vw] py-[3.3vw] md:py-[1.1vw] border border-navy/20 text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap">
+                                <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Technical Sales</span>
+                                <div className="absolute inset-0 bg-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            </button>
+                        </motion.div>
+                    </div>
                 </motion.div>
 
-                {/* Main Heading Hierarchy */}
-                <motion.div variants={itemVariants} className="flex flex-col items-center mb-[8vw] lg:mb-[3.5vw]">
-                    <h1 className="text-[14vw] lg:text-[9vw] font-black text-white font-heading leading-[0.8] tracking-tighter uppercase">
-                        INITIATE <br /> <span className="text-teal">CONNECTION</span>
-                    </h1>
-                </motion.div>
-
-                {/* Subtext */}
-                <motion.p
-                    variants={itemVariants}
-                    className="max-w-[90vw] lg:max-w-[45vw] text-[4.2vw] lg:text-[1.5vw] text-white/60 font-body italic leading-relaxed mb-[10vw] lg:mb-[4.5vw]"
-                >
-                    Ready to transform your structural vision into reality? Reach out for expert BIM modeling, estimation, and detailing support across all time zones.
-                </motion.p>
-
-                {/* Action Buttons */}
-                <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-[4vw] lg:gap-[1.2vw] w-full sm:w-auto">
-                    <button className="w-full sm:w-auto px-[10vw] lg:px-[3vw] py-[3.5vw] lg:py-[1.1vw] bg-teal hover:bg-white text-navy font-black rounded-full transition-all active:scale-95 text-[3.5vw] lg:text-[0.9vw] tracking-[0.15vw] uppercase font-heading cursor-pointer whitespace-nowrap">
-                        Direct Message
-                    </button>
-                    <div className="hidden sm:block w-px h-[2.5vw] bg-white/20 mx-[1vw]" />
-                    <button className="w-full sm:w-auto px-[10vw] lg:px-[3vw] py-[3.5vw] lg:py-[1.1vw] border border-white/20 hover:border-teal text-white font-black rounded-full transition-all hover:text-navy hover:bg-white text-[3.5vw] lg:text-[0.9vw] tracking-[0.15vw] uppercase font-heading cursor-pointer whitespace-nowrap">
-                        Technical Sales
-                    </button>
-                </motion.div>
-            </motion.div>
-        </section>
+                {/* Subtle Vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.03)_100%)] pointer-events-none" />
+            </section>
+        </div>
     );
 };
 
