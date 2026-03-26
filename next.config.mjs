@@ -10,6 +10,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'ni6f1bnmnusal1wh.public.blob.vercel-storage.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'i.pravatar.cc',
       }
     ],

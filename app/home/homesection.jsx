@@ -51,7 +51,7 @@ const HomeSection = () => {
             {/* Background Image with Layered Overlays */}
             <div className="absolute inset-0">
                 <Image
-                    src="/images/hero-bg.png"
+                    src="/steel_hero.png"
                     alt=""
                     fill
                     className="opacity-10 grayscale group-hover:scale-105 transition-transform duration-1000 ease-out object-cover"
