@@ -47,7 +47,7 @@ const HomeSection = () => {
     };
 
     return (
-        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#ffffff] mt-[12vw] md:mt-[4.5vw]">
+        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#ffffff] pt-[12vw] md:pt-[4.5vw]">
             {/* Background Image with Layered Overlays */}
             <div className="absolute inset-0">
                 <Image

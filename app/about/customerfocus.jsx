@@ -73,7 +73,7 @@ const CustomerFocus = () => {
                 className="text-center mb-[10vw] lg:mb-[6vw]"
             >
                 <h2 className="text-[12vw] lg:text-[5vw] font-black text-navy tracking-tighter uppercase anton-regular">
-                    The PragTech <span className="text-teal">Focus</span>
+                    The Pragtech Ltd <span className="text-teal">Focus</span>
                 </h2>
                 <div className="w-[8vw] lg:w-[4vw] h-[0.8vw] lg:h-[0.3vw] bg-teal mx-auto mt-[1vw] rounded-full" />
             </motion.div>

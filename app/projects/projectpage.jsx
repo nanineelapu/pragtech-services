@@ -57,7 +57,7 @@ const ProjectHero = () => {
     return (
         <div className="w-full bg-white select-none">
             {/* HERO SECTION - White Theme */}
-            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white mt-[12vw] md:mt-[4.5vw]">
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white pt-[12vw] md:pt-[4.5vw]">
                 {/* Technical Grid Overlay */}
                 <div className="absolute inset-0 opacity-[0.08]">
                     <svg width="100%" height="100%">

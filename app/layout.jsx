@@ -1,4 +1,4 @@
-import { Karla, Open_Sans } from "next/font/google";
+import { Montserrat, Roboto } from "next/font/google";
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -8,31 +8,31 @@ import SmoothScroll from "./SmoothScroll";
 // Global Metadata for SEO
 export const metadata = {
   title: {
-    default: "PragTech Technical Services | Precision Steel Detailing & Engineering",
-    template: "%s | PragTech Technical Services"
+    default: "Pragtech Ltd | Precision Steel Detailing & Engineering UK",
+    template: "%s | Pragtech Ltd"
   },
-  description: "PragTech offers premium structural engineering and precision steel detailing services globally. Expert solutions for complex industrial and commercial projects.",
-  keywords: ["steel detailing", "structural engineering", "industrial design", "precision engineering", "PragTech", "steel construction", "BIM"],
-  authors: [{ name: "PragTech Technical Services" }],
-  creator: "PragTech",
-  publisher: "PragTech Technical Services",
+  description: "Pragtech Ltd provides premium structural engineering and precision steel detailing services in the UK and globally. Operating in 6+ countries with high-end engineering expertise.",
+  keywords: ["steel detailing UK", "structural engineering", "industrial design", "precision engineering", "Pragtech Ltd", "steel construction", "BIM", "London steel detailing"],
+  authors: [{ name: "Pragtech Ltd" }],
+  creator: "Pragtech Ltd",
+  publisher: "Pragtech Ltd",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "PragTech Technical Services",
-    description: "Premium structural engineering and precision steel detailing services globally.",
-    url: "https://pragtech.services", // Placeholder - adjust if needed
-    siteName: "PragTech",
-    locale: "en_US",
+    title: "Pragtech Ltd Technical Services",
+    description: "Premium structural engineering and precision steel detailing services globally. Operating in 6+ countries.",
+    url: "https://pragtech.co.uk",
+    siteName: "Pragtech Ltd",
+    locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PragTech Technical Services",
-    description: "Precision in every detail of steel detailing and engineering.",
+    title: "Pragtech Ltd | Precision Steel Detailing",
+    description: "Precision in every detail of steel detailing and engineering. Operating in 6+ countries.",
   },
   robots: {
     index: true,
@@ -48,15 +48,15 @@ export const metadata = {
   },
 };
 
-const karla = Karla({
-  variable: "--font-karla",
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  weight: ["300", "400", "500", "600", "700", "800"],
+const roboto = Roboto({
+  variable: "--font-roboto",
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${karla.variable} ${openSans.variable} antialiased`}
+      className={`${montserrat.variable} ${roboto.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="flex flex-col font-body text-pretty" suppressHydrationWarning>

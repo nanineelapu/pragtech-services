@@ -150,8 +150,8 @@ const OpenPostitions = () => {
                                 <label className="text-navy text-[2.8vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Preferred Location*</label>
                                 <select className="w-full bg-white border border-navy/10 px-[4.5vw] lg:px-[1vw] py-[3vw] lg:py-[0.6vw] rounded-[1.5vw] lg:rounded-[0.5vw] text-navy text-[3.8vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond appearance-none cursor-pointer">
                                     <option>Select a location</option>
-                                    <option>Houston, TX (HQ)</option>
-                                    <option>Bentonville, AR</option>
+                                    <option>London, UK (Global HQ)</option>
+                                    <option>Houston, TX</option>
                                     <option>Dubai, UAE</option>
                                     <option>Hyderabad, India</option>
                                 </select>
@@ -194,7 +194,7 @@ const OpenPostitions = () => {
 
             {/* Footer Note */}
             <p className="mt-[12vw] lg:mt-[8vw] text-navy/40 text-[4vw] lg:text-[1.2vw] eb-garamond max-w-[85vw] lg:max-w-[30vw] text-center italic">
-                * PragTech is an equal opportunity employer committed to structural excellence and engineering innovation.
+                * Pragtech Ltd is an equal opportunity employer committed to structural excellence and engineering innovation.
             </p>
         </section>
     );

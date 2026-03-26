@@ -4,7 +4,7 @@ import CustomerFocus from "./customerfocus";
 
 export const metadata = {
   title: "About Our Expertise",
-  description: "Learn about PragTech's legacy of structural precision. We specialize in complex steel detailing and industrial engineering solutions with a global perspective.",
+  description: "Learn about Pragtech Ltd's legacy of structural precision. We specialize in complex steel detailing and industrial engineering solutions with a global perspective.",
 };
 
 const Page = () => {

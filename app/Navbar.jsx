@@ -170,7 +170,7 @@ const Navbar = () => {
                         <div className={`relative transition-all duration-700 ${scrolled ? "h-[10vw] md:h-[3vw] w-[25vw] md:w-[8vw]" : "h-[12vw] md:h-[4vw] w-[30vw] md:w-[10vw]"}`}>
                             <img
                                 src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
-                                alt="Pragtech Logo"
+                                alt="Pragtech Ltd Logo"
                                 className="w-full h-full object-contain"
                             />
                         </div>

@@ -33,6 +33,7 @@ html.lenis body {
   --accent-orange: #f97316;
   --gray-light: #f1f5f9;
   --gray-medium: #64748b;
+  --steel-grey: #475569;
 }
 
 @theme inline {
@@ -43,9 +44,10 @@ html.lenis body {
   --color-orange: #f97316;
   --color-gray-light: #f1f5f9;
   --color-gray-medium: #64748b;
+  --color-steel: #475569;
 
-  --font-heading: var(--font-karla);
-  --font-body: var(--font-open-sans);
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-roboto);
 
   /* Standard breakpoints for v4 customizing */
   --breakpoint-sm: 640px;
@@ -65,7 +67,7 @@ html.lenis body {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-open-sans), sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -76,7 +78,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-karla), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 @keyframes bounce-slow {
@@ -100,26 +102,23 @@ h6 {
 }
 
 /* Legacy support/Explicit overrides */
-.karla-regular {
-  font-family: var(--font-karla), sans-serif;
+.montserrat-regular {
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 400;
 }
 
-.karla-bold {
-  font-family: var(--font-karla), sans-serif;
+.montserrat-bold {
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 700;
 }
 
-.open-sans {
-  font-family: var(--font-open-sans), sans-serif;
+.roboto-body {
+  font-family: var(--font-roboto), sans-serif;
 }
 
-/* Old font classes for compatibility until updated in components */
-.anton-regular {
-  font-family: var(--font-karla), sans-serif;
-  font-weight: 700;
-}
-
-.eb-garamond {
-  font-family: var(--font-open-sans), sans-serif;
-}
+/* Compatibility classes mapping to new design system */
+.karla-regular { font-family: var(--font-montserrat), sans-serif; }
+.karla-bold { font-family: var(--font-montserrat), sans-serif; font-weight: 700; }
+.open-sans { font-family: var(--font-roboto), sans-serif; }
+.anton-regular { font-family: var(--font-montserrat), sans-serif; font-weight: 900; }
+.eb-garamond { font-family: var(--font-roboto), sans-serif; font-style: italic; }

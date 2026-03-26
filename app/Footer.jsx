@@ -16,18 +16,26 @@ const Footer = () => {
                                 <div className="relative h-[15vw] lg:h-[4.5vw] w-[45vw] lg:w-[12vw]">
                                     <img
                                         src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
-                                        alt="Pragtech Logo"
+                                        alt="Pragtech Ltd Logo"
                                         className="w-full h-full object-contain lg:object-right invert"
                                     />
-                                    <p className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">PRAGTECH</p>
+                                    <p className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">PRAGTECH LTD</p>
                                 </div>
                                 <span className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">
-                                    Engineering Excellence
+                                    Engineering Excellence Globally
                                 </span>
                             </div>
                             <p className="text-[4vw] lg:text-[1.1vw] text-white/50 font-medium leading-relaxed max-w-full lg:max-w-[30vw] font-body">
-                                Architecting the future of structural steel through high-precision AI-driven detailing and global engineering oversight.
+                                Architecting the future of structural steel through high-precision detailing and engineering oversight. Operating in more than 6 countries.
                             </p>
+                            
+                            {/* Address & Reg Info */}
+                            <div className="flex flex-col gap-[1vw] text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body items-start lg:items-end mt-[2vw]">
+                                <p>71-75 Shelton street, Covent Garden</p>
+                                <p>London, WC2H 9JQ, United Kingdom</p>
+                                <p className="text-[#14b8a6]/60">Company Reg: 16973363</p>
+                                <p className="text-[#14b8a6]/60 underline">Pragtech.co.uk</p>
+                            </div>
 
                             {/* Social Icons - Optimized for Mobile Touch */}
                             <div className="flex gap-[4vw] lg:gap-[1vw] mt-[2vw] lg:mt-[1vw]">
@@ -87,7 +95,7 @@ const Footer = () => {
                     {/* Footer Bottom: Floating Minimal Row */}
                     <div className="mt-[12vw] lg:mt-[6vw] pt-[6vw] lg:pt-[2.5vw] border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-[6vw] lg:gap-[2vw]">
                         <p className="text-[3.5vw] lg:text-[1vw] text-white/30 font-medium text-center lg:text-left font-body">
-                            Designed by <span className="text-white/60 font-black font-heading">Swio Corporate</span>. © 2025 All Rights Reserved.
+                            © 2026 <span className="text-white/60 font-black font-heading">Pragtech Ltd</span>. All Rights Reserved.
                         </p>
 
                         <div className="flex flex-col lg:flex-row items-center gap-[8vw] lg:gap-[4vw]">

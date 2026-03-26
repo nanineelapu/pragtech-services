@@ -48,7 +48,7 @@ const AboutPage = () => {
     return (
         <div className="flex flex-col items-center min-h-screen bg-white w-full">
             {/* High Performance Full Width Hero Section */}
-            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white mt-[12vw] md:mt-[4.5vw]">
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white pt-[12vw] md:pt-[4.5vw]">
                 {/* Technical Grid Overlay */}
                 <div className="absolute inset-0 opacity-[0.08]">
                     <svg width="100%" height="100%">
@@ -103,7 +103,7 @@ const AboutPage = () => {
                             variants={itemVariants}
                             className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            THE SCIENCE OF
+                            ABOUT US
                         </motion.h1>
 
                         {/* Teal Separator Line */}
@@ -129,7 +129,9 @@ const AboutPage = () => {
                             className="mt-[5vw] md:mt-[2vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                         >
                             <p className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                                Forging the future of structural integrity through high-precision computational detailing. We are the silent engine behind the world's most <span className="text-teal font-bold uppercase">complex</span> industrial frameworks.
+                                Pragtech Ltd is a premier UK-based engineering firm delivering precise structural detailing services across more than 6 countries.
+                                Our team combines technical mastery with practical <span className="text-teal font-bold uppercase">experience</span> to ensure global accuracy and
+                                efficiency.
                             </p>
                         </motion.div>
 
