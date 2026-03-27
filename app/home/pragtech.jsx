@@ -2,7 +2,7 @@
 
 import React from "react";
 import HomeSection from "./homesection";
-import FirstSection from "./firstsection";
+
 import MarketSection from "./marketsection";
 import ProjectSection from "./projectsection";
 import Technologies from "./technologies";
@@ -12,7 +12,7 @@ const PragtechHome = () => {
     return (
         <main className="min-h-screen bg-[#ffffff] flex flex-col gap-[5vw] overflow-x-hidden">
             <HomeSection />
-            <FirstSection />
+
             <MarketSection />
             <ProjectSection />
             <Technologies />
