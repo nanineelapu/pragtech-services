@@ -17,18 +17,18 @@ const Footer = () => {
                                     <img
                                         src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
                                         alt="Pragtech Ltd Logo"
-                                        className="w-full h-full object-contain lg:object-right invert"
+                                        className="w-full h-full object-contain lg:object-right -translate-x-[15vw] lg:translate-x-0 transition-transform"
                                     />
                                     <p className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">PRAGTECH LTD</p>
                                 </div>
-                                <span className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">
+                                <span className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase mt-[2vw] lg:mt-0 font-heading opacity-80">
                                     Engineering Excellence Globally
                                 </span>
                             </div>
                             <p className="text-[4vw] lg:text-[1.1vw] text-white/50 font-medium leading-relaxed max-w-full lg:max-w-[30vw] font-body">
                                 Architecting the future of structural steel through high-precision detailing and engineering oversight. Operating in more than 6 countries.
                             </p>
-                            
+
                             {/* Address & Reg Info */}
                             <div className="flex flex-col gap-[1vw] text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body items-start lg:items-end mt-[2vw]">
                                 <p>71-75 Shelton street, Covent Garden</p>
