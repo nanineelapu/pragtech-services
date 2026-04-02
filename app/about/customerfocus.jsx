@@ -63,7 +63,7 @@ const CustomerFocus = () => {
     };
 
     return (
-        <section className="mx-auto flex w-full max-w-[92vw] flex-col items-center py-[15vw] lg:py-[8vw] bg-white overflow-hidden">
+        <section className="mx-auto flex w-full max-w-[92vw] flex-col items-center py-[15vw] lg:py-[8vw] bg-transparent overflow-hidden">
             {/* Main Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}

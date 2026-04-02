@@ -22,7 +22,7 @@ const advantages = [
 
 const WhyWorkWithUs = () => {
     return (
-        <section className="w-full bg-white py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
+        <section className="w-full bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
             {/* Section Header */}
             <div className="flex items-center gap-[3vw] lg:gap-[1vw] mb-[12vw] lg:mb-[6vw]">
                 <div className="w-[8vw] lg:w-[3vw] h-px bg-navy/10" />
@@ -37,7 +37,7 @@ const WhyWorkWithUs = () => {
                 {advantages.map((adv, i) => (
                     <div
                         key={i}
-                        className="group relative bg-white rounded-[5vw] lg:rounded-[2vw] p-[8vw] lg:p-[3vw] border border-navy/5 shadow-[0_1.5vw_4vw_rgba(15,23,42,0.03)] transition-all duration-500 hover:-translate-y-[0.5vw] hover:shadow-2xl overflow-hidden"
+                        className="group relative bg-white/80 backdrop-blur-sm rounded-[5vw] lg:rounded-[2vw] p-[8vw] lg:p-[3vw] border border-navy/5 shadow-[0_1.5vw_4vw_rgba(15,23,42,0.03)] transition-all duration-500 hover:-translate-y-[0.5vw] hover:shadow-2xl overflow-hidden"
                     >
                         {/* Ghosted Icon */}
                         <div className="absolute top-[2vw] lg:top-[1vw] right-[2vw] lg:right-[1vw] text-[20vw] lg:text-[8vw] text-navy/2 anton-regular pointer-events-none group-hover:text-teal/5 transition-colors">

@@ -35,9 +35,9 @@ const MainContactContent = () => {
     };
 
     return (
-        <section className="bg-[#ffffff] py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[4vw] relative overflow-hidden">
+        <section className="bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[4vw] relative overflow-hidden">
             {/* Background Decorative Element */}
-            <div className="absolute top-0 right-0 w-[50vw] lg:w-[30vw] h-[50vw] lg:h-[30vw] bg-navy/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[50vw] lg:w-[30vw] h-[50vw] lg:h-[30vw] bg-navy/2 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
             <div className="max-w-[92vw] mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-[10vw] lg:gap-[6vw] relative z-10">
                 {/* Left Column: Technical Nodes (Locations) */}
@@ -60,7 +60,7 @@ const MainContactContent = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-[4vw] lg:gap-[2.5vw]">
                         {/* USA HQ Card */}
-                        <motion.div variants={cardVariants} className="group bg-white rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
                                     <img src="https://flagcdn.com/us.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="USA" />
@@ -77,7 +77,7 @@ const MainContactContent = () => {
                         </motion.div>
 
                         {/* South Central Card */}
-                        <motion.div variants={cardVariants} className="group bg-white rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="w-[12vw] lg:w-[3vw] h-[12vw] lg:h-[3vw] bg-navy rounded-xl flex items-center justify-center">
                                     <span className="text-teal text-[4vw] lg:text-[1.2vw]">◈</span>
@@ -94,7 +94,7 @@ const MainContactContent = () => {
                         </motion.div>
 
                         {/* India HQ Card */}
-                        <motion.div variants={cardVariants} className="group bg-white rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
                                     <img src="https://flagcdn.com/in.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="India" />
@@ -111,7 +111,7 @@ const MainContactContent = () => {
                         </motion.div>
 
                         {/* UK Card */}
-                        <motion.div variants={cardVariants} className="group bg-white rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
                                     <img src="https://flagcdn.com/gb.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="UK" />
@@ -174,7 +174,7 @@ const MainContactContent = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-[4vw] lg:gap-[1.2vw] py-[4vw] lg:py-[1.5vw] bg-white/[0.03] p-[4vw] lg:p-[2vw] rounded-[3vw] lg:rounded-[1.5vw] border border-white/[0.05]">
+                        <div className="flex items-start gap-[4vw] lg:gap-[1.2vw] py-[4vw] lg:py-[1.5vw] bg-white/3 p-[4vw] lg:p-[2vw] rounded-[3vw] lg:rounded-[1.5vw] border-white/5">
                             <input type="checkbox" className="mt-[1vw] lg:mt-[0.3vw] w-[4vw] lg:w-[1.2vw] h-[4vw] lg:h-[1.2vw] accent-teal" />
                             <p className="text-[3vw] lg:text-[0.75vw] text-white/40 eb-garamond leading-relaxed italic">
                                 I verify that the information provided is accurate and I agree to receive project-related communications from PRAGTECH. Your data is handled per our <span className="text-teal underline cursor-pointer hover:text-white transition-colors">Privacy Protocols</span>.

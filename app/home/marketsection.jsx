@@ -122,10 +122,9 @@ const MarketSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                 </button>
             </motion.div>
 
-            {/* Background Texture/Gradient */}
-            <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-                <div className="absolute inset-0 bg-linear-to-br from-navy via-navy/90 to-black" />
-                <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-teal/50 to-transparent" />
+            {/* Background Texture/Gradient moved to global - keeping it subtle here */}
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+                <div className="absolute inset-0 bg-linear-to-b from-blue-400/5 to-transparent" />
             </div>
         </section>
 

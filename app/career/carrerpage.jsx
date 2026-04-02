@@ -46,9 +46,9 @@ const CarrerPage = () => {
     };
 
     return (
-        <div className="relative w-full min-h-auto lg:min-h-screen flex flex-col items-center bg-white select-none">
+        <div className="relative w-full min-h-auto lg:min-h-screen flex flex-col items-center bg-transparent select-none transition-colors duration-300">
             {/* High Performance Full Width Hero Section */}
-            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white pt-[12vw] md:pt-[4.5vw]">
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
                 {/* Technical Grid Overlay */}
                 <div className="absolute inset-0 opacity-[0.08]">
                     <svg width="100%" height="100%">

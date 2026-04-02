@@ -9,11 +9,11 @@ export const metadata = {
 
 const Page = () => {
     return (
-        <main className="min-h-screen bg-[#faf9f6] w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center">
             <CarrerPage />
             <WhyWorkWithUs />
             <OpenPostitions />
-        </main>
+        </div>
     );
 };
 

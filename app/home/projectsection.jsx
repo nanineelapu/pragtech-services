@@ -37,7 +37,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
 
     return (
         <section
-            className={`bg-white rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center overflow-hidden ${props.className || ""}`}
+            className={`bg-transparent rounded-[6vw] lg:rounded-[4vw] mt-0 flex flex-col items-start mx-auto self-center overflow-hidden ${props.className || ""}`}
             style={{
                 paddingLeft: px, paddingRight: px, paddingTop: py, paddingBottom: py,
                 width: width,
@@ -84,7 +84,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                             {/* Author section */}
                             <div className="flex items-center gap-[2.5vw] lg:gap-[1.2vw] mt-[2vw] lg:mt-[1vw]">
                                 <div className="w-[8vw] h-[8vw] lg:w-[3.5vw] lg:h-[3.5vw] rounded-full bg-slate-200 overflow-hidden relative border border-navy/10 shrink-0">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-slate-300 to-slate-400" />
+                                    <div className="absolute inset-0 bg-linear-to-br from-slate-300 to-slate-400" />
                                 </div>
                                 <div className="flex flex-col truncate">
                                     <span className="text-[2.8vw] lg:text-[1.1vw] font-bold text-navy truncate font-heading">{project.author.split(' ')[0]}</span>
@@ -99,7 +99,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={project.side === 'right' ? slideInRight : slideInLeft}
-                            className="w-[45%] lg:w-[35vw] aspect-[4/5] lg:aspect-square bg-teal/10 rounded-[4vw] lg:rounded-[3vw] p-[4vw] lg:p-[3vw] flex flex-col relative overflow-hidden group"
+                            className="w-[45%] lg:w-[35vw] aspect-4/5 lg:aspect-square bg-teal/10 rounded-[4vw] lg:rounded-[3vw] p-[4vw] lg:p-[3vw] flex flex-col relative overflow-hidden group"
                         >
                             <div className="absolute top-[3vw] lg:top-[2vw] right-[3vw] lg:right-[2vw] w-[5vw] lg:w-[2vw] h-[5vw] lg:h-[2vw] rounded-full border border-navy/20 flex items-center justify-center opacity-40">
                                 <svg className="w-[2.5vw] lg:w-[1vw] h-[2.5vw] lg:h-[1vw]" viewBox="0 0 24 24" fill="none" stroke="#0f172a">

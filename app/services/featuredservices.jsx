@@ -52,7 +52,7 @@ const FeaturedServices = () => {
     };
 
     return (
-        <section className="relative w-full bg-[#faf9f6] py-[12vw] lg:py-[8vw] px-[5vw] overflow-hidden flex flex-col items-center">
+        <section className="relative w-full bg-transparent py-[12vw] lg:py-[8vw] px-[5vw] overflow-hidden flex flex-col items-center">
             {/* Background Narrative Watermark - Inverted to Teal Trace */}
             <AnimatePresence mode="wait">
                 <motion.div

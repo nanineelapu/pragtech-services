@@ -28,7 +28,7 @@ const OpenPostitions = () => {
     };
 
     return (
-        <section className="w-full bg-white py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
+        <section className="w-full bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
             {/* Header Hierarchy */}
             <div className="text-center mb-[12vw] lg:mb-[6vw]">
                 <span className="text-teal text-[3vw] lg:text-[1vw] font-black tracking-[0.5vw] uppercase anton-regular">Current Openings</span>
@@ -43,7 +43,7 @@ const OpenPostitions = () => {
                 {jobPositions.map((job, index) => (
                     <div
                         key={index}
-                        className="group bg-white rounded-[5vw] lg:rounded-[2vw] p-[8vw] lg:p-[2.5vw] border border-navy/5 shadow-[0_1.5vw_4vw_rgba(15,23,42,0.03)] hover:shadow-2xl transition-all duration-700 hover:-translate-y-[0.5vw] flex flex-col justify-between min-h-[70vw] lg:min-h-[22vw]"
+                        className="group bg-white/80 backdrop-blur-md rounded-[5vw] lg:rounded-[2vw] p-[8vw] lg:p-[2.5vw] border border-navy/5 shadow-[0_1.5vw_4vw_rgba(15,23,42,0.03)] hover:shadow-2xl transition-all duration-700 hover:-translate-y-[0.5vw] flex flex-col justify-between min-h-[70vw] lg:min-h-[22vw]"
                     >
                         <div>
                             {/* Metadata Pills */}

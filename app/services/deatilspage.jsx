@@ -25,7 +25,7 @@ const DetailsPage = () => {
     };
 
     return (
-        <section className="bg-white pt-[12vw] lg:pt-[8vw] pb-[6vw] lg:pb-[2vw] text-center w-full overflow-x-hidden">
+        <section className="bg-transparent pt-[12vw] lg:pt-[8vw] pb-[6vw] lg:pb-[2vw] text-center w-full overflow-x-hidden">
             <motion.div
                 initial="hidden"
                 whileInView="visible"

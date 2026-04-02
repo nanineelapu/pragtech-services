@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Montserrat, Roboto } from "next/font/google";
 import React from "react";
 import Navbar from "./Navbar";
@@ -67,11 +68,27 @@ export default function RootLayout({ children }) {
       className={`${montserrat.variable} ${roboto.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col font-body text-pretty" suppressHydrationWarning>
+      <body className="flex flex-col font-body text-pretty bg-white" suppressHydrationWarning>
         <SmoothScroll>
           <Navbar />
-          <main className="grow">
-            {children}
+          <main className="grow relative">
+            {/* Global Background for all pages - scrolling */}
+            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+              <Image
+                src="https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/Gemini_Generated_Image_y1h0mny1h0mny1h0%20%281%29.webp"
+                alt="Main Background"
+                fill
+                priority
+                className="object-cover opacity-100"
+              />
+              {/* Universal readability overlay */}
+              <div className="absolute inset-0 bg-linear-to-b from-blue-400/10 via-transparent to-white/90" />
+            </div>
+
+            {/* Page Content */}
+            <div className="relative z-10 w-full min-h-screen">
+              {children}
+            </div>
           </main>
           <Footer />
         </SmoothScroll>

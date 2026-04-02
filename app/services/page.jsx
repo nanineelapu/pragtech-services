@@ -11,12 +11,12 @@ export const metadata = {
 
 const Page = () => {
     return (
-        <main className="w-full flex flex-col min-h-screen overflow-x-hidden">
+        <div className="w-full flex flex-col items-center">
             <ServicesPage />
             <DetailsPage />
             <Cards />
             <FeaturedServices />
-        </main>
+        </div>
     )
 }
 

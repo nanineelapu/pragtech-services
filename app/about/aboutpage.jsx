@@ -46,9 +46,9 @@ const AboutPage = () => {
         }
     };
     return (
-        <div className="flex flex-col items-center min-h-screen bg-white w-full">
+        <div className="flex flex-col items-center bg-transparent w-full">
             {/* High Performance Full Width Hero Section */}
-            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-white pt-[12vw] md:pt-[4.5vw]">
+            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
                 {/* Technical Grid Overlay */}
                 <div className="absolute inset-0 opacity-[0.08]">
                     <svg width="100%" height="100%">
@@ -138,20 +138,20 @@ const AboutPage = () => {
                         {/* CTA Buttons */}
                         <motion.div
                             variants={itemVariants}
-                            className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
+                            className="mt-[8vw] md:mt-[2vw] flex items-center gap-[2.5vw] md:gap-[2.5vw] z-20"
                         >
-                            <button className="group relative px-[8vw] md:px-[3vw] py-[3.5vw] md:py-[1.2vw] bg-navy text-white text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer">
-                                <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-heading">Browse Our Legacy</span>
+                            <button className="group relative px-[4.5vw] md:px-[3vw] py-[2.8vw] md:py-[1.2vw] bg-navy text-white text-[2.6vw] md:text-[0.9vw] font-bold uppercase tracking-widest md:tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer">
+                                <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-heading">Our Legacy</span>
                                 <div className="absolute inset-0 bg-linear-to-b from-[#1e293b] to-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
                                 <span className="absolute inset-0 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
-                                    Browse Our Legacy
+                                    Our Legacy
                                 </span>
                             </button>
 
-                            <div className="w-px h-[8vw] md:h-[3vw] bg-navy/10" />
+                            <div className="w-px h-[5vw] md:h-[3vw] bg-navy/10" />
 
-                            <button className="group px-[8vw] md:px-[3vw] py-[3.3vw] md:py-[1.1vw] border border-navy/20 text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer">
-                                <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Initiate Connection</span>
+                            <button className="group px-[4.5vw] md:px-[3vw] py-[2.6vw] md:py-[1.1vw] border border-navy/20 text-navy text-[2.6vw] md:text-[0.9vw] font-bold uppercase tracking-widest md:tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer">
+                                <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Contact Us</span>
                                 <div className="absolute inset-0 bg-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </button>
                         </motion.div>
@@ -168,7 +168,7 @@ const AboutPage = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={containerVariants}
-                className="flex flex-col items-center py-[12vw] lg:py-[4vw] text-center w-full"
+                className="flex flex-col items-center pt-[12vw] pb-0 lg:py-[4vw] text-center w-full"
             >
                 <div className="flex items-center gap-[4vw] lg:gap-[2vw] mb-[4vw] lg:mb-[2vw]">
                     <motion.div

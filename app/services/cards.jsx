@@ -40,7 +40,7 @@ const Cards = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <div className="flex flex-col lg:flex-row gap-[10vw] lg:gap-[6vw] w-full max-w-[92vw] lg:max-w-[82vw] mx-auto min-h-[40vw] text-left px-[4vw] lg:px-0 bg-white mt-[12vw] lg:mt-[8vw]">
+        <div className="flex flex-col lg:flex-row gap-[10vw] lg:gap-[6vw] w-full max-w-[92vw] lg:max-w-[82vw] mx-auto min-h-[40vw] text-left px-[4vw] lg:px-0 bg-transparent mt-[12vw] lg:mt-[8vw]">
             {/* LEFT SIDE: The Interactive List */}
             <motion.div
                 initial={{ opacity: 0, x: -30 }}

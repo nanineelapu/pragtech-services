@@ -57,7 +57,7 @@ const ReviewSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="bg-white rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto"
+            className="bg-transparent rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto"
         >
             {/* Header Content */}
             <div className="w-full flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[2vw]">

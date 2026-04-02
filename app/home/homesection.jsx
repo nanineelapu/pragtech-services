@@ -47,32 +47,18 @@ const HomeSection = () => {
     };
 
     return (
-        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-[#ffffff] pt-[12vw] md:pt-[4.5vw]">
-            {/* Background Image with Layered Overlays */}
-            <div className="absolute inset-0">
-                <Image
-                    src="/steel_hero.png"
-                    alt=""
-                    fill
-                    className="opacity-10 grayscale group-hover:scale-105 transition-transform duration-1000 ease-out object-cover"
-                    priority
-                />
-
-                {/* Technical Grid Overlay */}
-                <div className="absolute inset-0 opacity-[0.08]">
-                    <svg width="100%" height="100%">
-                        <defs>
-                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f172a" strokeWidth="0.5" />
-                            </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#grid)" />
-                    </svg>
-                </div>
-
-                {/* New Gradient Style */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(20,184,166,0.1)_0%,transparent_40%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(15,23,42,0.05)_0%,transparent_40%)]" />
+        <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
+            {/* Background is now global */}
+            {/* Technical Grid Overlay - Keep but make it more subtle */}
+            <div className="absolute inset-0 opacity-[0.03]">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0f172a" strokeWidth="0.5" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
             </div>
 
             {/* Main Content Container */}
@@ -104,7 +90,7 @@ const HomeSection = () => {
                         variants={itemVariants}
                         className="text-navy text-[15.5vw] md:text-[12vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                     >
-                        PRECISION
+                        PRAGTECH
                     </motion.h1>
 
                     {/* Teal Separator Line */}
