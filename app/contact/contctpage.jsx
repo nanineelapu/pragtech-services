@@ -48,7 +48,7 @@ const ContctPage = () => {
     return (
         <div className="relative w-full min-h-auto lg:min-h-screen flex flex-col items-center bg-transparent select-none transition-colors duration-300">
             {/* High Performance Full Width Hero Section */}
-            <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
+            <section className="relative w-full h-[160vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
                 {/* Technical Grid Overlay */}
                 <div className="absolute inset-0 opacity-[0.08]">
                     <svg width="100%" height="100%">
@@ -96,14 +96,14 @@ const ContctPage = () => {
                             className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
-                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">GLOBAL SUPPORT HUB</span>
+                            <span className="text-teal text-[2.2vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">GLOBAL SUPPORT HUB</span>
                         </motion.div>
 
                         <motion.h1
                             variants={itemVariants}
-                            className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
+                            className="text-navy text-[10vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            INITIATE <br /> <span className="text-teal text-[10vw] md:text-[6vw]">CONNECTION</span>
+                            INITIATE <br /> <span className="text-teal text-[8vw] md:text-[6vw]">CONNECTION</span>
                         </motion.h1>
 
                         {/* Teal Separator Line */}
@@ -117,16 +117,16 @@ const ContctPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
+                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.4vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
                             Ready to transform your structural vision into reality? Reach out for expert BIM modeling, estimation, and detailing support across all time zones.
                         </motion.p>
 
                         {/* Action Buttons */}
                         <motion.div
                             variants={itemVariants}
-                            className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
+                            className="mt-[6vw] md:mt-[2vw] flex items-center gap-[2.5vw] md:gap-[2.5vw] z-20"
                         >
-                            <button className="group relative px-[8vw] md:px-[3vw] py-[3.5vw] md:py-[1.2vw] bg-navy text-white text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap">
+                            <button className="group relative px-[6vw] md:px-[3vw] py-[2.2vw] md:py-[1.2vw] bg-navy text-white text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap">
                                 <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-heading">Direct Message</span>
                                 <div className="absolute inset-0 bg-linear-to-b from-[#1e293b] to-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
                                 <span className="absolute inset-0 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
@@ -134,9 +134,9 @@ const ContctPage = () => {
                                 </span>
                             </button>
 
-                            <div className="w-px h-[8vw] md:h-[3vw] bg-navy/10" />
+                            <div className="w-px h-[6vw] md:h-[3vw] bg-navy/10" />
 
-                            <button className="group px-[8vw] md:px-[3vw] py-[3.3vw] md:py-[1.1vw] border border-navy/20 text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap">
+                            <button className="group px-[6vw] md:px-[3vw] py-[2.2vw] md:py-[1.1vw] border border-navy/20 text-navy text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap">
                                 <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Technical Sales</span>
                                 <div className="absolute inset-0 bg-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </button>
