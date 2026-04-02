@@ -51,19 +51,13 @@ const Details = () => {
                     <div className="absolute top-0 right-0 w-[20vw] h-[20vw] bg-teal/5 rounded-full blur-[6vw] -translate-y-1/2 translate-x-1/2" />
 
                     <p className="relative z-10 text-[4.5vw] lg:text-[1.3vw] text-navy font-medium leading-[1.8] lg:leading-loose font-body italic">
-                        Pragmatic Technical Services (Pragtech) is a client-centric engineering firm providing{" "}
-                        <span className="text-teal font-bold underline decoration-teal/20 underline-offset-4">advanced Structural Steel Detailing and Connection Design services</span>{" "}
-                        built on a foundation of{" "}
-                        <span className="text-teal font-bold">500+ years of collective engineering experience.</span>{" "}
-                        Our global production hubs utilize a high-performance workforce specialized in{" "}
-                        <span className="text-teal font-bold lg:whitespace-nowrap">AISC, CISC, NISD, AWS, and OSHA</span>{" "}
-                        standards. From large-scale industrial complexes to intricate commercial skyscrapers, we ensure every project is executed to perfection. To date, our team has successfully delivered more than{" "}
-                        <span className="text-teal font-bold">3500+ global projects</span>{" "}
+                        At Pragtech Ltd, we follow industry standards based on the region we are serving — including{" "}
+                        <span className="text-teal font-bold underline decoration-teal/20 underline-offset-4">UK standards, AISC, and other international specifications</span>{" "}
+                        — so every drawing is compliant, buildable, and ready for fabrication. With a record of delivering more than{" "}
+                        <span className="text-teal font-bold">3500+ global projects,</span>{" "}
                         including{" "}
-                        <span className="text-teal font-bold italic">Power Plants, Sports Stadiums, Material Handling Systems, and Healthcare Facilities.</span>{" "}
-                        By leveraging state-of-the-art platforms like{" "}
-                        <span className="text-teal font-bold italic underline decoration-[1vw] lg:decoration-[0.2vw] underline-offset-[1.5vw] lg:underline-offset-[0.4vw]">SDS/2 and Tekla Structures,</span>{" "}
-                        we provide shop-ready drawings and CNC-integrated data that drastically reduce site-rework. At Pragtech, we don't just detail steel; we detail the future of the built environment.
+                        <span className="text-teal font-bold italic">Power Plants, Sports Stadiums, Material Handling Systems, and Healthcare Facilities,</span>{" "}
+                        we provide shop-ready drawings and CNC-integrated data that drastically reduce site-rework. We ensure every project is executed with precision, clarity, and dependable support for fabricators and contractors everywhere.
                     </p>
                 </motion.div>
 

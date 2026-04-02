@@ -128,7 +128,7 @@ const CustomerFocus = () => {
                 className="mt-[12vw] lg:mt-[6vw] text-center max-w-[85vw] lg:max-w-[50vw]"
             >
                 <p className="text-[4.5vw] lg:text-[1.4vw] font-medium text-navy eb-garamond italic leading-[1.6]">
-                    "Our focus is not just on the drawing, but on the success of the execution. We are committed to high-quality structural detailing at every stage."
+                    "Our focus is simple: precision, clarity, and dependable support for fabricators and contractors everywhere."
                 </p>
             </motion.div>
         </section>

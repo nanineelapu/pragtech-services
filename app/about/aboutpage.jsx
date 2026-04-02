@@ -129,8 +129,7 @@ const AboutPage = () => {
                             className="mt-[5vw] md:mt-[2vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                         >
                             <p className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                                Pragmatic Technical Services (Pragtech) is a specialized global leader in high-integrity structural steel detailing and BIM solutions.
-                                Operating from the USA, India, and the UK, we empower steel fabricators and erectors with 0.001mm precision and project-perfect accuracy.
+                                Pragtech Ltd is a UK‑based detailing company delivering accurate, fabrication‑ready drawings for structural steel, miscellaneous metalwork, and cold‑rolled SFS (light gauge steel framing).
                             </p>
                         </motion.div>
 

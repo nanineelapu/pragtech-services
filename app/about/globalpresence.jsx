@@ -45,7 +45,7 @@ const GlobalPresence = () => {
                             GLOBAL <br /> <span className="text-teal">FOOTPRINT</span>
                         </h2>
                         <p className="text-[4.2vw] lg:text-[1.4vw] text-navy/60 font-medium leading-relaxed italic mb-[8vw] lg:mb-[4vw] max-w-[85vw] lg:max-w-full font-body">
-                            Our presence spans continents to ensure 24/7 technical support and localized engineering expertise.
+                            We support clients across the UK and worldwide, providing fast communication and reliable detailing across all time zones. Our team is available whenever you need us, ensuring smooth coordination from start to finish.
                         </p>
                     </motion.div>
 
