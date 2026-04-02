@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 
 const jobPositions = [
-    { title: "Senior Steel Detailer", type: "Full-Time", dept: "SDS/2 & Tekla" },
-    { title: "Structural Checker", type: "Full-Time", dept: "Quality" },
-    { title: "Connection Engineer", type: "Full-Time", dept: "Professional" },
-    { title: "BIM / VDC Coordinator", type: "Full-Time", dept: "Digital" },
-    { title: "Project Manager", type: "Full-Time", dept: "Operations" },
-    { title: "Junior Steel Detailer", type: "Trainee", dept: "Engineering" },
-    { title: "Estimation Specialist", type: "Full-Time", dept: "MTO Division" },
-    { title: "Technical Lead", type: "Contract", dept: "Steel Solutions" }
+    { title: "Senior Steel Detailer", type: "Full-Time", dept: "SDS/2 & Tekla", jd: "Lead complex 3D modeling for industrial structures. Ensure compliance with AISC/CISC standards using SDS/2 and Tekla structures." },
+    { title: "Structural Checker", type: "Full-Time", dept: "Quality", jd: "Perform high-precision verification of shop drawings. Maintain 100% accuracy in GA and assembly details for global delivery." },
+    { title: "Connection Engineer", type: "Full-Time", dept: "Professional", jd: "Design and seal high-integrity structural connections. Optimize steel joints for global commercial and industrial builds." },
+    { title: "BIM / VDC Coordinator", type: "Full-Time", dept: "Digital", jd: "Orchestrate digital construction workflows and clash detection. Integrate structural models with MEP and architectural systems." },
+    { title: "Project Manager", type: "Full-Time", dept: "Operations", jd: "Oversee international detailing lifecycles from award to delivery. Manage global teams and ensure strict timeline adherence." },
+    { title: "Junior Steel Detailer", type: "Trainee", dept: "Engineering", jd: "Support modeling of minor steel components and miscellaneous framing. Develop core expertise in automated detailing software." },
+    { title: "Estimation Specialist", type: "Full-Time", dept: "MTO Division", jd: "Conduct comprehensive weight analysis and material take-offs. Provide accurate structural tonnage budgets for global bidding." },
+    { title: "Technical Lead", type: "Contract", dept: "Steel Solutions", jd: "Provide high-level software support and internal detailing standards. Resolve complex project-specific modeling challenges." }
 ];
 
 const OpenPostitions = () => {
@@ -65,7 +65,7 @@ const OpenPostitions = () => {
                         {/* Bottom Action Area */}
                         <div>
                             <p className="text-[3.8vw] lg:text-[1.1vw] text-navy/60 eb-garamond mb-[6vw] lg:mb-[2.5vw] leading-tight">
-                                Opportunity to work on high-stakes global infrastructure.
+                                {job.jd}
                             </p>
 
                             <button
@@ -81,7 +81,7 @@ const OpenPostitions = () => {
 
             {/* Application Modal Portal */}
             {selectedJob && (
-                <div className="fixed inset-0 z-[200] flex items-center justify-center px-[4vw] lg:px-0">
+                <div className="fixed inset-0 z-[200] flex items-start justify-center px-[4vw] lg:px-0 pt-[15vw] lg:pt-[8vw] overflow-y-auto pb-[10vw]">
                     {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-navy/60 backdrop-blur-md animate-in fade-in duration-500"
@@ -91,64 +91,64 @@ const OpenPostitions = () => {
                     {/* Modal Container */}
                     <div className="relative w-full max-w-[95vw] lg:max-w-[45vw] bg-white rounded-[8vw] lg:rounded-[2vw] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.3)] border border-white/50 animate-in zoom-in-95 duration-500 flex flex-col overscroll-contain">
                         {/* Modal Header */}
-                        <div className="bg-navy p-[6vw] lg:p-[2vw] flex items-center justify-between shrink-0">
+                        <div className="bg-navy p-[4vw] lg:p-[1.2vw] flex items-center justify-between shrink-0">
                             <div>
-                                <h2 className="text-white text-[6vw] lg:text-[2.2vw] font-black anton-regular tracking-tight uppercase leading-none">
+                                <h2 className="text-white text-[5.5vw] lg:text-[1.8vw] font-black anton-regular tracking-tight uppercase leading-none">
                                     Apply for Position
                                 </h2>
-                                <p className="text-teal text-[3.5vw] lg:text-[1vw] font-black uppercase tracking-widest mt-[1vw] anton-regular">
+                                <p className="text-teal text-[3vw] lg:text-[0.85vw] font-black uppercase tracking-widest mt-[0.5vw] anton-regular">
                                     {selectedJob.title}
                                 </p>
                             </div>
                             <button
                                 onClick={closePortal}
-                                className="w-[10vw] h-[10vw] lg:w-[3vw] lg:h-[3vw] bg-white/10 hover:bg-white/20 text-white flex items-center justify-center rounded-full transition-all group active:scale-90"
+                                className="w-[8vw] h-[8vw] lg:w-[2.5vw] lg:h-[2.5vw] bg-white/10 hover:bg-white/20 text-white flex items-center justify-center rounded-full transition-all group active:scale-90"
                             >
-                                <svg className="w-[5vw] h-[5vw] lg:w-[1.2vw] lg:h-[1.2vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-[4vw] h-[4vw] lg:w-[1vw] lg:h-[1vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
 
                         {/* Form Body */}
-                        <form className="p-[6vw] lg:p-[2.5vw] flex flex-col gap-[3vw] lg:gap-[1.2vw]">
+                        <form className="p-[4vw] lg:p-[1.8vw] flex flex-col gap-[2vw] lg:gap-[1vw]">
                             {/* Input Group: Name */}
-                            <div className="flex flex-col gap-[1vw] lg:gap-[0.5vw]">
-                                <label className="text-navy text-[2.8vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Full Name*</label>
+                            <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
+                                <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Full Name*</label>
                                 <input
                                     type="text"
                                     placeholder="John Doe"
-                                    className="w-full bg-white border border-navy/10 px-[4.5vw] lg:px-[1vw] py-[3vw] lg:py-[0.6vw] rounded-[1.5vw] lg:rounded-[0.5vw] text-navy text-[3.8vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
+                                    className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
                                     required
                                 />
                             </div>
 
                             {/* Two Column Grid */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[3vw] lg:gap-[1.2vw]">
-                                <div className="flex flex-col gap-[1vw] lg:gap-[0.5vw]">
-                                    <label className="text-navy text-[2.8vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Email Address*</label>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2vw] lg:gap-[1vw]">
+                                <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
+                                    <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Email Address*</label>
                                     <input
                                         type="email"
                                         placeholder="john@example.com"
-                                        className="w-full bg-white border border-navy/10 px-[4.5vw] lg:px-[1vw] py-[3vw] lg:py-[0.6vw] rounded-[1.5vw] lg:rounded-[0.5vw] text-navy text-[3.8vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
+                                        className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
                                         required
                                     />
                                 </div>
-                                <div className="flex flex-col gap-[1vw] lg:gap-[0.5vw]">
-                                    <label className="text-navy text-[2.8vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Phone Number*</label>
+                                <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
+                                    <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Phone Number*</label>
                                     <input
                                         type="tel"
                                         placeholder="+1 234 567 8900"
-                                        className="w-full bg-white border border-navy/10 px-[4.5vw] lg:px-[1vw] py-[3vw] lg:py-[0.6vw] rounded-[1.5vw] lg:rounded-[0.5vw] text-navy text-[3.8vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
+                                        className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
                                         required
                                     />
                                 </div>
                             </div>
 
                             {/* Preferred Location */}
-                            <div className="flex flex-col gap-[1vw] lg:gap-[0.5vw]">
-                                <label className="text-navy text-[2.8vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Preferred Location*</label>
-                                <select className="w-full bg-white border border-navy/10 px-[4.5vw] lg:px-[1vw] py-[3vw] lg:py-[0.6vw] rounded-[1.5vw] lg:rounded-[0.5vw] text-navy text-[3.8vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond appearance-none cursor-pointer">
+                            <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
+                                <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Preferred Location*</label>
+                                <select className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond appearance-none cursor-pointer">
                                     <option>Select a location</option>
                                     <option>London, UK (Global HQ)</option>
                                     <option>Houston, TX</option>
@@ -158,16 +158,16 @@ const OpenPostitions = () => {
                             </div>
 
                             {/* Resume Upload Area */}
-                            <div className="flex flex-col gap-[1vw] lg:gap-[0.5vw]">
-                                <label className="text-navy text-[2.8vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Resume (PDF)*</label>
-                                <label className="w-full border-2 border-dashed border-navy/10 hover:border-teal bg-white/50 p-[4vw] lg:p-[1.5vw] rounded-[2vw] lg:rounded-[0.8vw] flex flex-col items-center justify-center gap-[1.5vw] lg:gap-[0.4vw] cursor-pointer transition-all group">
+                            <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
+                                <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Resume (PDF)*</label>
+                                <label className="w-full border border-dashed border-navy/10 hover:border-teal bg-white/50 p-[3vw] lg:p-[1.2vw] rounded-[1.5vw] lg:rounded-[0.6vw] flex flex-col items-center justify-center gap-[1vw] lg:gap-[0.3vw] cursor-pointer transition-all group">
                                     <input type="file" className="hidden" accept=".pdf" />
-                                    <div className="w-[10vw] h-[10vw] lg:w-[2.5vw] lg:h-[2.5vw] bg-navy/5 group-hover:bg-teal/10 rounded-full flex items-center justify-center transition-all">
-                                        <svg className="w-[5vw] h-[5vw] lg:w-[1vw] lg:h-[1vw] text-navy/40 group-hover:text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="w-[8vw] h-[8vw] lg:w-[2.2vw] lg:h-[2.2vw] bg-navy/5 group-hover:bg-teal/10 rounded-full flex items-center justify-center transition-all">
+                                        <svg className="w-[4vw] h-[4vw] lg:w-[1vw] lg:h-[1vw] text-navy/40 group-hover:text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                                         </svg>
                                     </div>
-                                    <span className="text-navy/60 text-[3.2vw] lg:text-[0.9vw] eb-garamond group-hover:text-navy">Upload resume (PDF, max 5MB)</span>
+                                    <span className="text-navy/60 text-[3vw] lg:text-[0.85vw] eb-garamond group-hover:text-navy">Upload resume (PDF, max 5MB)</span>
                                 </label>
                             </div>
 
@@ -176,13 +176,13 @@ const OpenPostitions = () => {
                                 <button
                                     type="button"
                                     onClick={closePortal}
-                                    className="w-full py-[3vw] lg:py-[0.9vw] border border-navy/10 hover:bg-navy/5 text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all"
+                                    className="w-full py-[2.5vw] lg:py-[0.7vw] border border-navy/10 hover:bg-navy/5 text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all"
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="submit"
-                                    className="w-full py-[3vw] lg:py-[0.9vw] bg-navy hover:bg-teal text-white hover:text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-[1.5vw] lg:gap-[0.4vw]"
+                                    className="w-full py-[2.5vw] lg:py-[0.7vw] bg-navy hover:bg-teal text-white hover:text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-[1.5vw] lg:gap-[0.4vw]"
                                 >
                                     Submit Application
                                 </button>
