@@ -104,7 +104,7 @@ const ServicesPage = ({
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
                             <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">
-                                {badge}
+                                Technical Design Services
                             </span>
                         </motion.div>
 
@@ -112,7 +112,7 @@ const ServicesPage = ({
                             variants={itemVariants}
                             className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            {titleLine1}
+                            OUR <span className="text-teal">SERVICES</span>
                         </motion.h1>
 
                         {/* Teal Separator Line */}
@@ -128,9 +128,9 @@ const ServicesPage = ({
 
                         <motion.h2
                             variants={itemVariants}
-                            className="text-teal text-[8vw] md:text-[5vw] font-black leading-[0.8] tracking-tighter uppercase font-heading"
+                            className="text-navy/40 text-[6vw] md:text-[3vw] font-black leading-[0.8] tracking-tighter uppercase font-heading"
                         >
-                            {titleLine2}
+                            Our Core Capabilities
                         </motion.h2>
 
                         <motion.div
@@ -138,7 +138,7 @@ const ServicesPage = ({
                             className="mt-[5vw] md:mt-[2vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                         >
                             <p className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                                {subtitle}
+                                Bridging the gap between engineering and fabrication. We provide end-to-end structural detailing, connection design, and BIM services that ensure your project is built right the first time.
                             </p>
                         </motion.div>
 

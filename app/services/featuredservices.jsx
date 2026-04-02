@@ -6,32 +6,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 const featuredData = [
     {
         id: "01",
-        title: "STRUCTURAL STEEL",
-        desc: "Management of high-complexity projects utilizing world-class engineering standards for structural integrity.",
+        title: "Structural Steel",
+        desc: "Management of high-complexity projects utilizing world-class engineering standards for structural integrity and fabrication precision.",
         tag: "Core Engineering"
     },
     {
         id: "02",
-        title: "MISC STEEL DETAIL",
-        desc: "Comprehensive solutions for precise secondary structural elements including gratings, handrails, and ladders.",
+        title: "Misc Steel Detail",
+        desc: "Comprehensive solutions for precise secondary structural elements including stairs, handrails, and industrial ladders.",
         tag: "Secondary Design"
     },
     {
         id: "03",
-        title: "CONNECTION DESIGN",
-        desc: "Expert steel connection engineering through global partners, ensuring time-efficient fabrication and safety.",
-        tag: "Global Partners"
+        title: "Connection Design",
+        desc: "Expert steel connection engineering through licensed partners, ensuring code-compliant fabrication and structural safety.",
+        tag: "Licensed Partners"
     },
     {
         id: "04",
-        title: "INDUSTRIAL STEEL",
-        desc: "Specialized detailing for complex industrial facilities, warehouses, and heavy-duty manufacturing grids.",
+        title: "Industrial Steel",
+        desc: "Specialized detailing for heavy industrial facilities, manufacturing supports, and complex equipment frameworks.",
         tag: "Heavy Industry"
     },
     {
         id: "05",
-        title: "BIM MODELING",
-        desc: "Harnessing 3D digital models for superior coordination, clash detection, and seamless project execution.",
+        title: "BIM Modeling",
+        desc: "Harnessing 3D digital models for superior project coordination, clash detection, and seamless multi-trade execution.",
         tag: "Digital Twins"
     }
 ];

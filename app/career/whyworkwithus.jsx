@@ -4,18 +4,18 @@ import React from 'react';
 
 const advantages = [
     {
-        title: "GLOBAL IMPACT",
-        desc: "Work on iconic structures across the globe, from massive stadiums to complex industrial grids.",
+        title: "PRECISION CULTURE",
+        desc: "Master the art of 0.001mm accuracy. We foster an environment where technical perfection is the daily standard.",
         icon: "◈"
     },
     {
-        title: "NEXT-GEN TECH",
-        desc: "Master the latest BIM and TEKLA technologies in a laboratory-grade engineering environment.",
+        title: "SOFTWARE MASTERY",
+        desc: "Advance your expertise in Tekla, SDS/2, and BIM workflows. We provide the latest tools for the highest performance.",
         icon: "⬡"
     },
     {
-        title: "CULTURAL SYNC",
-        desc: "Join a high-performance culture that values precision, transparency, and personal growth.",
+        title: "GLOBAL PROJECTS",
+        desc: "Make your mark on high-integrity industrial and commercial structures across the USA, India, and the UK.",
         icon: "◬"
     }
 ];

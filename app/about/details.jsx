@@ -51,21 +51,19 @@ const Details = () => {
                     <div className="absolute top-0 right-0 w-[20vw] h-[20vw] bg-teal/5 rounded-full blur-[6vw] -translate-y-1/2 translate-x-1/2" />
 
                     <p className="relative z-10 text-[4.5vw] lg:text-[1.3vw] text-navy font-medium leading-[1.8] lg:leading-loose font-body italic">
-                        Pragmatic Technical Services provides{" "}
-                        <span className="text-teal font-bold underline decoration-teal/20 underline-offset-4">top-notch Structural Steel Detailing and Engineering solutions</span>{" "}
-                        with over{" "}
-                        <span className="text-teal font-bold">500+ years of combined experience.</span>{" "}
-                        An exceptional team of professionals with expertise in their respective fields and well versed in{" "}
-                        <span className="text-teal font-bold lg:whitespace-nowrap">AISC, CISC, NISD, AWS, OSHA</span>{" "}
-                        and other Standard Industry Practices. From designing to building, we give our best to ensure that a project is executed to perfection. Our team has worked on more than{" "}
-                        <span className="text-teal font-bold">3500+ projects</span>{" "}
-                        with varying capacities —{" "}
-                        <span className="text-teal font-bold italic">Power plants, Stadiums, Conveyors, Hospitals and Schools</span>{" "}
-                        are a few examples. Leveraging cutting-edge technologies like{" "}
+                        Pragmatic Technical Services (Pragtech) is a client-centric engineering firm providing{" "}
+                        <span className="text-teal font-bold underline decoration-teal/20 underline-offset-4">advanced Structural Steel Detailing and Connection Design services</span>{" "}
+                        built on a foundation of{" "}
+                        <span className="text-teal font-bold">500+ years of collective engineering experience.</span>{" "}
+                        Our global production hubs utilize a high-performance workforce specialized in{" "}
+                        <span className="text-teal font-bold lg:whitespace-nowrap">AISC, CISC, NISD, AWS, and OSHA</span>{" "}
+                        standards. From large-scale industrial complexes to intricate commercial skyscrapers, we ensure every project is executed to perfection. To date, our team has successfully delivered more than{" "}
+                        <span className="text-teal font-bold">3500+ global projects</span>{" "}
+                        including{" "}
+                        <span className="text-teal font-bold italic">Power Plants, Sports Stadiums, Material Handling Systems, and Healthcare Facilities.</span>{" "}
+                        By leveraging state-of-the-art platforms like{" "}
                         <span className="text-teal font-bold italic underline decoration-[1vw] lg:decoration-[0.2vw] underline-offset-[1.5vw] lg:underline-offset-[0.4vw]">SDS/2 and Tekla Structures,</span>{" "}
-                        we deliver precise and efficient structural detailing solutions. We look forward to expanding globally and working on a wider range of projects. With technology improving every minute, we are proud to say that we keep up with the latest trends by updating our equipment and software regularly. Pragmatic Technical Services was established specifically to export{" "}
-                        <span className="text-teal font-bold">high quality structural and miscellaneous steel detailing services</span>{" "}
-                        for steel fabricators, steel erectors and construction firms.
+                        we provide shop-ready drawings and CNC-integrated data that drastically reduce site-rework. At Pragtech, we don't just detail steel; we detail the future of the built environment.
                     </p>
                 </motion.div>
 
@@ -93,10 +91,10 @@ const Details = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-white font-heading uppercase">Our Vision</h3>
+                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-white font-heading uppercase">Strategic Vision</h3>
                             </div>
                             <p className="text-[4.2vw] lg:text-[1.2vw] font-medium leading-[1.7] lg:leading-[1.8] text-white/70 font-body">
-                                To become a leading global provider of engineering solutions, recognized for our commitment to excellence, innovation, and integrity. We are dedicated to empowering our employees, believing that strong individuals build resilient institutions.
+                                To be the global benchmark for technical precision in steel construction. We strive to lead the shift towards fully integrated BIM environments, where engineering intelligence and digital manufacturing converge to eliminate inefficiency.
                             </p>
                         </div>
                     </motion.div>
@@ -122,10 +120,10 @@ const Details = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-navy font-heading uppercase">Our Mission</h3>
+                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-navy font-heading uppercase">Global Mission</h3>
                             </div>
                             <p className="text-[4.2vw] lg:text-[1.2vw] font-medium leading-[1.7] lg:leading-[1.8] text-navy/70 font-body">
-                                With our strong foundation of expertise, our mission is to deliver world-class structural detailing solutions through precision, innovation, and integrity. We empower our skilled team to exceed global industry standards.
+                                Our mission is to deliver zero-defect detailing solutions through innovation and integrity. By empowering a specialized workforce with the latest technical capabilities, we exceed international industry standards and drive project profitability for our clients.
                             </p>
                         </div>
                     </motion.div>

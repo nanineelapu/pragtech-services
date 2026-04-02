@@ -96,14 +96,14 @@ const CarrerPage = () => {
                             className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
-                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Open Positions Available</span>
+                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Build the Future of Steel</span>
                         </motion.div>
 
                         <motion.h1
                             variants={itemVariants}
                             className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            JOIN THE FUTURE OF <br /> <span className="text-teal text-[10vw] md:text-[6vw]">STEEL DETAILING</span>
+                            ENGINEER YOUR <br /> <span className="text-teal">FUTURE</span>
                         </motion.h1>
 
                         {/* Teal Separator Line */}
@@ -118,11 +118,11 @@ const CarrerPage = () => {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                            We are searching for the next generation of detailing experts. Build a career defined by precision, technology, and global structural impact.
+                            Join a global elite of structural detailing experts. We are looking for precision-driven individuals ready to master SDS/2 and Tekla while working on iconic international landmarks.
                         </motion.p>
 
                         {/* Action Buttons */}
-                        <motion.div 
+                        <motion.div
                             variants={itemVariants}
                             className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
                         >

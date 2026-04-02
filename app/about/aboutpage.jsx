@@ -96,14 +96,14 @@ const AboutPage = () => {
                             className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
-                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Engineering Overview</span>
+                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Global Engineering Excellence</span>
                         </motion.div>
 
                         <motion.h1
                             variants={itemVariants}
                             className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            ABOUT US
+                            ABOUT <span className="text-teal">US</span>
                         </motion.h1>
 
                         {/* Teal Separator Line */}
@@ -119,9 +119,9 @@ const AboutPage = () => {
 
                         <motion.h2
                             variants={itemVariants}
-                            className="text-teal text-[12vw] md:text-[10vw] font-black leading-[0.8] tracking-tighter uppercase font-heading"
+                            className="text-navy/40 text-[6vw] md:text-[3vw] font-black leading-[0.8] tracking-tighter uppercase font-heading"
                         >
-                            PRAGTECH
+                            Pragmatic Technical Services
                         </motion.h2>
 
                         <motion.div
@@ -129,9 +129,8 @@ const AboutPage = () => {
                             className="mt-[5vw] md:mt-[2vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                         >
                             <p className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                                Pragtech Ltd is a premier UK-based engineering firm delivering precise structural detailing services across more than 6 countries.
-                                Our team combines technical mastery with practical <span className="text-teal font-bold uppercase">experience</span> to ensure global accuracy and
-                                efficiency.
+                                Pragmatic Technical Services (Pragtech) is a specialized global leader in high-integrity structural steel detailing and BIM solutions.
+                                Operating from the USA, India, and the UK, we empower steel fabricators and erectors with 0.001mm precision and project-perfect accuracy.
                             </p>
                         </motion.div>
 

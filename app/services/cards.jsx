@@ -5,34 +5,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const services = [
     {
-        title: "STRUCTURAL STEEL DETAILING",
-        desc: "Precision managed projects of any size and complexity, utilizing world-class engineering standards to deliver high-integrity structural frameworks.",
+        title: "Structural Steel Detailing",
+        desc: "High-precision shop drawings and 3D models for complex structural frameworks. We utilize SDS/2 and Tekla Structures to ensure 100% accuracy in fabrication and erection.",
         icon: "◈"
     },
     {
-        title: "MISC STEEL DETAILING",
-        desc: "Comprehensive detailing solutions for gratings, handrails, and ladders, ensuring every secondary structural element is perfectly integrated.",
+        title: "Miscellaneous Steel Detailing",
+        desc: "Specialized detailing for stairs, handrails, guardrails, ladders, and safety platforms. We bridge the complexity between architectural aesthetics and structural functionality.",
         icon: "⬡"
     },
     {
-        title: "CONNECTION DESIGN",
-        desc: "Expert steel connection design through global engineering partners, ensuring structural safety and time-efficient fabrication.",
+        title: "Connection Design",
+        desc: "PE-sealed connection engineering and calculations that strictly adhere to AISC and CISC standards, ensuring structural integrity and code compliance.",
         icon: "◆"
     },
     {
-        title: "INDUSTRIAL STEEL SERVICES",
-        desc: "Specialized detailing for complex industrial facilities including warehouses, manufacturing plants, and heavy-duty structural grids.",
+        title: "BIM & VDC Services",
+        desc: "Virtual Design and Construction through multi-discipline BIM coordination. We provide clash detection and construction sequencing to minimize field interference.",
+        icon: "■"
+    },
+    {
+        title: "Industrial & Heavy Steel",
+        desc: "Custom detailing for large-scale industrial projects, including conveyor systems, material handling units, and heavy-duty manufacturing equipment supports.",
         icon: "▼"
     },
     {
-        title: "ESTIMATION & MTO SERVICES",
-        desc: "Accurate and detailed material take-offs and estimation services to streamline construction budgeting and procurement.",
+        title: "Estimation & Takeoffs",
+        desc: "Comprehensive material take-offs (MTO) and weight estimates that empower fabricators with precise bidding and procurement intelligence.",
         icon: "◢"
-    },
-    {
-        title: "BUILDING BIM SERVICES",
-        desc: "Harnessing the power of 3D digital models integrated with real-time project data for clash detection and seamless coordination.",
-        icon: "■"
     }
 ];
 

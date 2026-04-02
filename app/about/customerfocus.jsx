@@ -7,26 +7,26 @@ const CustomerFocus = () => {
     const focusItems = [
         {
             id: "01",
-            title: "Precision Delivery",
-            desc: "Deliver on time with extreme technical accuracy.",
+            title: "Technical Accuracy",
+            desc: "0.001mm precision with AISC certified detailing workflows.",
             bg: "bg-navy text-white",
         },
         {
             id: "02",
-            title: "Inventive Design",
-            desc: "Giving highest importance to creativity and innovation.",
+            title: "Adaptive Design",
+            desc: "Automated rule-based connection design tailored to your shop.",
             bg: "bg-teal text-navy",
         },
         {
             id: "03",
-            title: "Industry Standard",
-            desc: "Strict compliance with international industry guidelines.",
-            bg: "bg-gray-light text-navy",
+            title: "Global Standards",
+            desc: "Full compliance with AISC, CISC, NISD, and Eurocodes.",
+            bg: "bg-gray-200 text-navy",
         },
         {
             id: "04",
-            title: "Global Quality",
-            desc: "Meeting world-class standards in every structural detail.",
+            title: "Field-Ready Data",
+            desc: "CNC-ready outputs and clash-free 3D BIM integration.",
             bg: "bg-white border border-navy/10 text-navy",
         }
     ];

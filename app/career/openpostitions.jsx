@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 
 const jobPositions = [
-    { title: "SENIOR DETAILER", type: "Full-Time", dept: "Engineering" },
-    { title: "BIM MODELER", type: "Full-Time", dept: "Digital" },
-    { title: "STEEL CHECKER", type: "Contract", dept: "Quality" },
-    { title: "PROJECT MANAGER", type: "Full-Time", dept: "Operations" },
-    { title: "TRAINEE ENGINEER", type: "Full-Time", dept: "Junior" },
-    { title: "SALES EXECUTIVE", type: "Full-Time", dept: "Growth" },
-    { title: "CONNECTION ENGINEER", type: "Consultant", dept: "Global" },
-    { title: "ESTIMATOR", type: "Full-Time", dept: "Finance" }
+    { title: "Senior Steel Detailer", type: "Full-Time", dept: "SDS/2 & Tekla" },
+    { title: "Structural Checker", type: "Full-Time", dept: "Quality" },
+    { title: "Connection Engineer", type: "Full-Time", dept: "Professional" },
+    { title: "BIM / VDC Coordinator", type: "Full-Time", dept: "Digital" },
+    { title: "Project Manager", type: "Full-Time", dept: "Operations" },
+    { title: "Junior Steel Detailer", type: "Trainee", dept: "Engineering" },
+    { title: "Estimation Specialist", type: "Full-Time", dept: "MTO Division" },
+    { title: "Technical Lead", type: "Contract", dept: "Steel Solutions" }
 ];
 
 const OpenPostitions = () => {
@@ -194,7 +194,7 @@ const OpenPostitions = () => {
 
             {/* Footer Note */}
             <p className="mt-[12vw] lg:mt-[8vw] text-navy/40 text-[4vw] lg:text-[1.2vw] eb-garamond max-w-[85vw] lg:max-w-[30vw] text-center italic">
-                * Pragtech Ltd is an equal opportunity employer committed to structural excellence and engineering innovation.
+                * Pragmatic Technical Services is an equal opportunity employer committed to structural excellence and engineering innovation.
             </p>
         </section>
     );

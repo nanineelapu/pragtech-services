@@ -4,12 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const projects = [
-    { title: "STADIUM INFRASTRUCTURE", category: "Structural", size: "large", id: "01" },
-    { title: "COMMERCIAL HUB", category: "Commercial", size: "small", id: "02" },
-    { title: "INDUSTRIAL GRID", category: "Industrial", size: "medium", id: "03" },
-    { title: "BRIDGE DETAILING", category: "Infrastructure", size: "medium", id: "04" },
-    { title: "HEALTHCARE CENTER", category: "Specialized", size: "small", id: "05" },
-    { title: "MARITIME FACILITY", category: "Structural", size: "large", id: "06" }
+    { title: "Industrial Power Plant", category: "Heavy Industrial", size: "large", id: "01" },
+    { title: "Metropolitan Stadium", category: "Commercial", size: "small", id: "02" },
+    { title: "University Complex", category: "Institutional", size: "medium", id: "03" },
+    { title: "Hospital Infrastructure", category: "Healthcare", size: "medium", id: "04" },
+    { title: "Conveyor Systems", category: "Material Handling", size: "small", id: "05" },
+    { title: "Maritime Facility", category: "Infrastructure", size: "large", id: "06" }
 ];
 
 const ProjectHero = () => {
@@ -105,7 +105,7 @@ const ProjectHero = () => {
                             className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
-                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">The Blueprint Collection</span>
+                            <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Global Project Archive</span>
                         </motion.div>
 
                         <motion.h1
@@ -130,13 +130,15 @@ const ProjectHero = () => {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                            A testament to structural precision across continents. From intricate industrial grids to landmark commercial skyscrapers, we detail the future of steel.
+                            A testament to structural precision across more than 3500 projects. From complex industrial frameworks to iconic commercial developments, we deliver accuracy that defines structural reality.
                         </motion.p>
                     </div>
                 </motion.div>
                 {/* Subtle Vignette */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.03)_100%)] pointer-events-none" />
             </section>
+
+
 
             {/* ASYMMETRICAL MOSAIC GALLERY */}
             <section className="w-full py-[15vw] lg:py-[10vw] px-[4vw] lg:px-[5vw]">
@@ -159,10 +161,10 @@ const ProjectHero = () => {
                                     {project.title}
                                 </h3>
                                 <p className="hidden lg:block text-[1vw] text-white/60 eb-garamond italic mb-[2vw]">
-                                    Detailed with 0.001mm precision using TEKLA structures and global BIM standards.
+                                    Detailed with 0.001mm precision using TEKLA structures and SDS/2 automated workflows.
                                 </p>
                                 <div className="w-fit border-b border-teal text-teal anton-regular text-[2.5vw] lg:text-[0.7vw] uppercase tracking-widest pb-[0.2vw]">
-                                    Explore →
+                                    View Technical Specs →
                                 </div>
                             </div>
 
