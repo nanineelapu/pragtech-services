@@ -15,7 +15,7 @@ const advantages = [
     },
     {
         title: "GLOBAL PROJECTS",
-        desc: "Make your mark on high-integrity industrial and commercial structures across the USA, India, and the UK.",
+        desc: "Make your mark on high-integrity industrial and commercial structures across the USA, UK and worldwide.",
         icon: "◬"
     }
 ];

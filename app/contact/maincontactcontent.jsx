@@ -70,8 +70,8 @@ const MainContactContent = () => {
                             </div>
                             <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Global Headquarters</span>
                             <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
-                                London, United Kingdom <br />
-                                <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
+                                71-75 Shelton Street, Covent Garden <br />
+                                London, WC2H 9JQ, United Kingdom
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
                                 <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 2868065002</span>
@@ -88,29 +88,14 @@ const MainContactContent = () => {
                             </div>
                             <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">North American Hub</span>
                             <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
-                                4080, McGinnis Ferry Road <br /> Suite #1403, Alpharetta, <br /> GA 30005, USA.
+                                USA <br />
+                                <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+1 770-809-0806</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+1 281-648-8137</span>
                             </div>
                         </motion.div>
 
-                        {/* India Card */}
-                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
-                            <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
-                                <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
-                                    <img src="https://flagcdn.com/in.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="India" />
-                                </div>
-                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">India</span>
-                            </div>
-                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Center of Excellence</span>
-                            <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
-                                MJR Magnifique IT Park, <br /> Gachibowli, Hyderabad, <br /> Telangana, India – 500008
-                            </p>
-                            <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+91 91542 45831</span>
-                            </div>
-                        </motion.div>
 
                         {/* UAE Card */}
                         <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">

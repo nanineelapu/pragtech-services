@@ -10,8 +10,7 @@ const GlobalPresence = () => {
         { city: "Dubai", region: "UAE", desc: "Strategic operations and Middle Eastern business hub." },
         { city: "Toronto", region: "CANADA", desc: "North American service expansion and client liaison." },
         { city: "Sydney", region: "AUSTRALIA", desc: "Asia-Pacific regional operations and support." },
-        { city: "Alpharetta", region: "USA", desc: "Core engineering operations and North American hub." },
-        { city: "Hyderabad", region: "INDIA", desc: "High-performance engineering and global delivery center." }
+        { city: "USA", region: "USA", desc: "Strategic North American engineering and support hub." }
     ];
 
     const containerVariants = {
