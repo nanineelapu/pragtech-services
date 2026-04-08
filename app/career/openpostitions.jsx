@@ -28,7 +28,7 @@ const OpenPostitions = () => {
     };
 
     return (
-        <section className="w-full bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
+        <section id="open-positions" className="w-full bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
             {/* Header Hierarchy */}
             <div className="text-center mb-[12vw] lg:mb-[6vw]">
                 <span className="text-teal text-[3vw] lg:text-[1vw] font-black tracking-[0.5vw] uppercase anton-regular">Current Openings</span>

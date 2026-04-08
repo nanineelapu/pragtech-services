@@ -42,6 +42,7 @@ const MainContactContent = () => {
             <div className="max-w-[92vw] mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-[10vw] lg:gap-[6vw] relative z-10">
                 {/* Left Column: Technical Nodes (Locations) */}
                 <motion.div
+                    id="location-hubs"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
@@ -169,6 +170,7 @@ const MainContactContent = () => {
 
                 {/* Right Column: Secure Contact Interface (Form) */}
                 <motion.div
+                    id="contact-form"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}

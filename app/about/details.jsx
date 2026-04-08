@@ -37,7 +37,7 @@ const Details = () => {
     };
 
     return (
-        <section className="w-full bg-transparent pt-0 pb-12 lg:pb-24 overflow-hidden">
+        <section id="our-legacy" className="w-full bg-transparent pt-0 pb-12 lg:pb-24 overflow-hidden">
             <div className="mx-auto flex w-full max-w-[92vw] lg:max-w-[90vw] flex-col items-center gap-8 lg:gap-12 lg:pt-8 perspective-1000">
                 {/* Main Text Container - Premium Paper Style */}
                 <motion.div

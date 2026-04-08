@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const CarrerPage = () => {
@@ -126,7 +127,10 @@ const CarrerPage = () => {
                             variants={itemVariants}
                             className="mt-[6vw] md:mt-[2vw] flex items-center gap-[2.5vw] md:gap-[2.5vw] z-20"
                         >
-                            <button className="group relative px-[4vw] md:px-[3vw] py-[2.2vw] md:py-[1.2vw] bg-navy text-white text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap">
+                            <button 
+                                onClick={() => document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="group relative px-[4vw] md:px-[3vw] py-[2.2vw] md:py-[1.2vw] bg-navy text-white text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap"
+                            >
                                 <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-heading">Explore Opportunities</span>
                                 <div className="absolute inset-0 bg-linear-to-b from-[#1e293b] to-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
                                 <span className="absolute inset-0 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
@@ -136,7 +140,10 @@ const CarrerPage = () => {
 
                             <div className="w-px h-[6vw] md:h-[3vw] bg-navy/10" />
 
-                            <button className="group px-[4vw] md:px-[3vw] py-[2.2vw] md:py-[1.1vw] border border-navy/20 text-navy text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap">
+                            <button 
+                                onClick={() => document.getElementById('our-culture')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="group px-[4vw] md:px-[3vw] py-[2.2vw] md:py-[1.1vw] border border-navy/20 text-navy text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap"
+                            >
                                 <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Our Culture</span>
                                 <div className="absolute inset-0 bg-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </button>

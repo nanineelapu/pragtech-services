@@ -22,7 +22,7 @@ const advantages = [
 
 const WhyWorkWithUs = () => {
     return (
-        <section className="w-full bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
+        <section id="our-culture" className="w-full bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[5vw] flex flex-col items-center">
             {/* Section Header */}
             <div className="flex items-center gap-[3vw] lg:gap-[1vw] mb-[12vw] lg:mb-[6vw]">
                 <div className="w-[8vw] lg:w-[3vw] h-px bg-navy/10" />
