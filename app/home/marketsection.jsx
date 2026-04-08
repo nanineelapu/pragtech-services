@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const MarketSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
@@ -112,14 +113,14 @@ const MarketSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                 transition={{ duration: 0.7, delay: 0.5 }}
                 className="mt-[6vw] lg:mt-[3vw] relative z-20"
             >
-                <button className="flex items-center gap-[2vw] lg:gap-[1vw] px-[6vw] py-[2.8vw] lg:px-[2.5vw] lg:py-[1vw] bg-teal hover:bg-teal/90 text-navy font-black rounded-full transition-all shadow-lg active:scale-95 text-[3vw] lg:text-[0.9vw] tracking-wide group font-heading">
+                <Link href="/services" className="flex items-center gap-[2vw] lg:gap-[1vw] px-[5vw] py-[2.4vw] lg:px-[2.5vw] lg:py-[1vw] bg-teal hover:bg-teal/90 text-navy font-black rounded-full transition-all shadow-lg active:scale-95 text-[2.6vw] lg:text-[0.9vw] tracking-wide group font-heading cursor-pointer">
                     Explore All Markets
                     <div className="w-[4.5vw] h-[4.5vw] lg:w-[1.6vw] lg:h-[1.6vw] bg-navy/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
                         <svg className="w-[2.5vw] h-[2.5vw] lg:w-[0.9vw] lg:h-[0.9vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>
-                </button>
+                </Link>
             </motion.div>
 
             {/* Background Texture/Gradient moved to global - keeping it subtle here */}

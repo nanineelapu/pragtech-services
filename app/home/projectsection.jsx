@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => {
@@ -146,7 +147,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="w-full flex justify-center mt-[4vw] lg:mt-[2vw]"
             >
-                <button className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[10vw] lg:px-[4vw] py-[4vw] lg:py-[1.5vw] bg-navy hover:bg-navy/90 text-white font-black rounded-full lg:rounded-[5vw] transition-all shadow-xl active:scale-95 text-[4vw] lg:text-[1.1vw] tracking-wider uppercase group font-heading">
+                <Link href="/projects" className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[7vw] lg:px-[4vw] py-[3.2vw] lg:py-[1.5vw] bg-navy hover:bg-navy/90 text-white font-black rounded-full lg:rounded-[5vw] transition-all shadow-xl active:scale-95 text-[3.2vw] lg:text-[1.1vw] tracking-wider uppercase group font-heading cursor-pointer">
                     Explore All
                     <svg
                         className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw] transition-transform duration-300 group-hover:translate-x-[0.3vw]"
@@ -157,7 +158,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                </button>
+                </Link>
             </motion.div>
         </section>
     );

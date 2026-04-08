@@ -58,9 +58,34 @@ const Footer = () => {
                         {/* LINK ROWS */}
                         <div className="lg:col-span-7 flex flex-col gap-[8vw] lg:gap-[3vw] w-full">
                             {[
-                                { title: 'Menu', links: ['Customers', 'Resources', 'Careers', 'Projects'] },
-                                { title: 'Company', links: ['Help', 'Terms', 'Cookies', 'Security', 'Privacy'] },
-                                { title: 'Network', links: ['X', 'LinkedIn', 'Instagram', 'Facebook'] }
+                                { 
+                                    title: 'Menu', 
+                                    links: [
+                                        { name: 'Customers', href: '#' },
+                                        { name: 'Resources', href: '#' },
+                                        { name: 'Careers', href: '/career' },
+                                        { name: 'Projects', href: '/projects' }
+                                    ] 
+                                },
+                                { 
+                                    title: 'Company', 
+                                    links: [
+                                        { name: 'Help', href: '#' },
+                                        { name: 'Terms', href: '#' },
+                                        { name: 'Cookies', href: '#' },
+                                        { name: 'Security', href: '#' },
+                                        { name: 'Privacy', href: '#' }
+                                    ] 
+                                },
+                                { 
+                                    title: 'Network', 
+                                    links: [
+                                        { name: 'X', href: '#' },
+                                        { name: 'LinkedIn', href: '#' },
+                                        { name: 'Instagram', href: '#' },
+                                        { name: 'Facebook', href: '#' }
+                                    ] 
+                                }
                             ].map((section) => (
                                 <div key={section.title} className="flex flex-col gap-[3vw] lg:gap-[0.8vw] group">
                                     <div className="flex items-center gap-[4vw] lg:gap-[1.5vw]">
@@ -79,9 +104,9 @@ const Footer = () => {
                                     {/* Horizontal Sub-links */}
                                     <ul className="flex flex-wrap items-center gap-x-[6vw] lg:gap-x-[2.5vw] gap-y-[3vw] lg:gap-y-[1vw] pl-[0.5vw]">
                                         {section.links.map((link) => (
-                                            <li key={link}>
-                                                <Link href="#" className="text-[4.2vw] lg:text-[1.2vw] font-bold text-white hover:text-[#14b8a6] transition-all relative group/link font-body">
-                                                    {link}
+                                            <li key={link.name}>
+                                                <Link href={link.href} className="text-[4.2vw] lg:text-[1.2vw] font-bold text-white hover:text-[#14b8a6] transition-all relative group/link font-body">
+                                                    {link.name}
                                                     <span className="absolute -bottom-[0.5vw] lg:-bottom-[0.2vw] left-0 w-0 h-[2px] lg:h-[2px] bg-[#14b8a6] transition-all duration-300 group-hover/link:w-full" />
                                                 </Link>
                                             </li>

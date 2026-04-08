@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -13,6 +13,8 @@ const projects = [
 ];
 
 const ProjectHero = () => {
+    const [activeProject, setActiveProject] = useState(null);
+
     // Hero Animation Variants - Consistent with HomeSection
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -150,20 +152,31 @@ const ProjectHero = () => {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={cardVariants}
-                            className={`group relative overflow-hidden rounded-[2vw] lg:rounded-[1.5vw] bg-white border border-navy/5 shadow-lg transition-all duration-700 cursor-pointer
+                            onClick={() => setActiveProject(activeProject === index ? null : index)}
+                            className={`group relative overflow-hidden rounded-[2vw] lg:rounded-[1.5vw] bg-[#f8f9fa] border border-navy/5 shadow-lg transition-all duration-700 cursor-pointer
                                 ${project.size === 'large' ? 'col-span-12 lg:col-span-8 row-span-2' : project.size === 'medium' ? 'col-span-6 lg:col-span-4 row-span-2' : 'col-span-6 lg:col-span-4 row-span-1'}
+                                ${activeProject === index ? 'ring-2 ring-teal ring-inset shadow-2xl' : ''}
                             `}
                         >
-                            {/* Technical Overlay */}
-                            <div className="absolute inset-0 bg-navy opacity-0 group-hover:opacity-[0.97] transition-all duration-500 z-10 flex flex-col justify-center p-[3vw] lg:p-[2.5vw]">
-                                <span className="text-teal text-[3vw] lg:text-[0.8vw] font-black anton-regular mb-[1vw] lg:mb-[0.8vw]">{project.category}</span>
-                                <h3 className="text-[5vw] lg:text-[2.2vw] text-white anton-regular uppercase leading-tight mb-[1.5vw] lg:mb-[1.5vw]">
+                            {/* Technical Overlay - Now reactive to click + hover */}
+                            <div className={`absolute inset-0 bg-[#0f172a] transition-all duration-500 z-10 flex flex-col justify-center p-[4vw] lg:p-[2.5vw]
+                                ${activeProject === index ? 'opacity-[0.98] blur-0' : 'opacity-0 lg:group-hover:opacity-[0.97]'}
+                            `}>
+                                <div className="flex items-center justify-between mb-[1vw] lg:mb-[0.8vw]">
+                                    <span className="text-[#14b8a6] text-[2.6vw] lg:text-[0.8vw] font-black uppercase tracking-widest font-heading">{project.category}</span>
+                                    {activeProject === index && (
+                                        <div className="lg:hidden w-[8vw] h-[8vw] rounded-full bg-white/5 flex items-center justify-center text-white/40 text-[4vw]">✕</div>
+                                    )}
+                                </div>
+                                <h3 className="text-[4vw] lg:text-[2.2vw] text-white font-black uppercase leading-tight mb-[2vw] lg:mb-[1.5vw] font-heading break-words">
                                     {project.title}
                                 </h3>
-                                <p className="hidden lg:block text-[1vw] text-white/60 eb-garamond italic mb-[2vw]">
-                                    Detailed with 0.001mm precision using TEKLA structures and SDS/2 automated workflows.
+                                <p className={`text-[2.4vw] lg:text-[1vw] text-white/50 italic mb-[3vw] lg:mb-[2vw] font-body leading-snug max-w-[95%]
+                                    ${activeProject === index ? 'block' : 'hidden lg:block'}
+                                `}>
+                                    Precision detailing through TEKLA & SDS/2 for structural excellence.
                                 </p>
-                                <div className="w-fit border-b border-teal text-teal anton-regular text-[2.5vw] lg:text-[0.7vw] uppercase tracking-widest pb-[0.2vw]">
+                                <div className="w-fit border-b border-teal text-teal font-black text-[2.4vw] lg:text-[0.7vw] uppercase tracking-widest pb-[0.2vw] font-heading">
                                     View Technical Specs →
                                 </div>
                             </div>
@@ -172,8 +185,8 @@ const ProjectHero = () => {
                             <div className="absolute inset-0 flex flex-col justify-end p-[2.5vw] lg:p-[1.8vw] bg-linear-to-t from-black/20 to-transparent">
                                 <div className="flex items-center justify-between relative z-0">
                                     <div className="flex flex-col">
-                                        <span className="text-navy/40 text-[2.5vw] lg:text-[0.8vw] anton-regular">{project.id}</span>
-                                        <h4 className="text-[3.5vw] lg:text-[1.5vw] text-navy anton-regular uppercase transition-opacity group-hover:opacity-0 leading-none">
+                                        <span className="text-navy/40 text-[2.5vw] lg:text-[0.8vw] font-heading">{project.id}</span>
+                                        <h4 className="text-[3.5vw] lg:text-[1.5vw] text-navy font-black uppercase transition-opacity group-hover:opacity-0 leading-none font-heading">
                                             {project.title}
                                         </h4>
                                     </div>
@@ -184,7 +197,7 @@ const ProjectHero = () => {
                             </div>
 
                             {/* Ghosted Tech Icon */}
-                            <div className="absolute top-[1.5vw] lg:top-[1.5vw] right-[1.5vw] lg:right-[1.5vw] text-[8vw] lg:text-[6vw] text-navy/2 anton-regular font-black select-none group-hover:opacity-0 transition-opacity">
+                            <div className="absolute top-[1.5vw] lg:top-[1.5vw] right-[1.5vw] lg:right-[1.5vw] text-[8vw] lg:text-[6vw] text-navy/2 font-black select-none group-hover:opacity-0 transition-opacity font-heading">
                                 ◈
                             </div>
                         </motion.div>
@@ -198,7 +211,7 @@ const ProjectHero = () => {
                     viewport={{ once: true }}
                     className="w-full flex justify-center mt-[12vw] lg:mt-[6vw]"
                 >
-                    <button className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[8vw] lg:px-[4vw] py-[3.5vw] lg:py-[1.2vw] bg-navy text-white rounded-full anton-regular uppercase tracking-[0.2vw] transition-all hover:bg-teal hover:text-navy active:scale-95 shadow-xl text-[3.5vw] lg:text-[0.9vw] whitespace-nowrap">
+                    <button className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[8vw] lg:px-[4vw] py-[3.5vw] lg:py-[1.2vw] bg-navy text-white rounded-full font-black uppercase tracking-[0.2vw] transition-all hover:bg-teal hover:text-navy active:scale-95 shadow-xl text-[3.5vw] lg:text-[0.9vw] whitespace-nowrap font-heading">
                         View Complete Archive
                         <span className="ml-[1vw] lg:ml-[0.5vw]">↓</span>
                     </button>

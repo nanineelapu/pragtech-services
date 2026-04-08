@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const HomeSection = () => {
@@ -129,20 +130,20 @@ const HomeSection = () => {
                         variants={itemVariants}
                         className="mt-[6vw] md:mt-[2vw] flex items-center gap-[4vw] md:gap-[2.5vw] z-20"
                     >
-                        <button className="group relative px-[8vw] md:px-[3vw] py-[3.5vw] md:py-[1.2vw] bg-navy text-white text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading">
+                        <Link href="/contact" className="group relative px-[5vw] md:px-[3vw] py-[3vw] md:py-[1.2vw] bg-navy text-white text-[2.8vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap">
                             <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-heading">Get a Quote</span>
                             <div className="absolute inset-0 bg-linear-to-b from-[#1e293b] to-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
-                            <span className="absolute inset-0 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading">
+                            <span className="absolute inset-0 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] font-heading whitespace-nowrap">
                                 Get a Quote
                             </span>
-                        </button>
+                        </Link>
 
                         <div className="w-px h-[8vw] md:h-[3vw] bg-navy/10" />
 
-                        <button className="group px-[8vw] md:px-[3vw] py-[3.3vw] md:py-[1.1vw] border border-navy/20 text-navy text-[3.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden">
-                            <span className="relative z-10 transition-colors duration-500 group-hover:text-white">View Our Work</span>
+                        <Link href="/projects" className="group px-[5vw] md:px-[3vw] py-[2.8vw] md:py-[1.1vw] border border-navy/20 text-navy text-[2.8vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap">
+                            <span className="relative z-10 transition-colors duration-500 group-hover:text-white whitespace-nowrap">View Our Work</span>
                             <div className="absolute inset-0 bg-navy opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
 
