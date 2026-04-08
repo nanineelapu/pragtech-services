@@ -151,8 +151,10 @@ const OpenPostitions = () => {
                                 <select className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond appearance-none cursor-pointer">
                                     <option>Select a location</option>
                                     <option>London, UK (Global HQ)</option>
-                                    <option>Houston, TX</option>
+                                    <option>Alpharetta, USA</option>
                                     <option>Dubai, UAE</option>
+                                    <option>Toronto, Canada</option>
+                                    <option>Sydney, Australia</option>
                                     <option>Hyderabad, India</option>
                                 </select>
                             </div>

@@ -26,7 +26,7 @@ const Page = () => {
                 <div className="absolute inset-0 bg-linear-to-b from-blue-400/5 via-transparent to-white/90" />
             </div>
 
-            <div className="relative z-10 flex flex-col items-center gap-[10vw] lg:gap-[5vw] pb-[15vw] lg:pb-[8vw]">
+            <div className="relative z-10 flex flex-col items-center gap-[5vw] lg:gap-[3vw] pb-[10vw] lg:pb-[5vw]">
                 <AboutPage />
                 <Details />
                 <GlobalPresence />

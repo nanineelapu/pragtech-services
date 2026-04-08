@@ -6,75 +6,82 @@ import { motion } from 'framer-motion';
 
 const GlobalPresence = () => {
     const locations = [
-        { city: "Alpharetta", region: "USA (HQ)", desc: "Core strategic operations and North American hub." },
-        { city: "London", region: "UK", desc: "Corporate liaison and European business development." },
+        { city: "London", region: "UK (HQ)", desc: "Global headquarters and strategic corporate hub." },
+        { city: "Dubai", region: "UAE", desc: "Strategic operations and Middle Eastern business hub." },
+        { city: "Toronto", region: "CANADA", desc: "North American service expansion and client liaison." },
+        { city: "Sydney", region: "AUSTRALIA", desc: "Asia-Pacific regional operations and support." },
+        { city: "Alpharetta", region: "USA", desc: "Core engineering operations and North American hub." },
         { city: "Hyderabad", region: "INDIA", desc: "High-performance engineering and global delivery center." }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" }
+        }
+    };
+
     return (
-        <section className="w-full py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[4vw] bg-transparent overflow-hidden">
-            <div className="max-w-[92vw] mx-auto flex flex-col lg:flex-row items-center gap-[10vw] lg:gap-[6vw]">
-                {/* Map Visual Side */}
+        <section className="w-full py-[8vw] lg:py-[5vw] bg-transparent overflow-hidden">
+            <div className="max-w-[92vw] mx-auto flex flex-col items-center">
+                {/* Header Section - Centered for Impact */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-                    whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="relative w-full lg:w-1/2 aspect-video rounded-[6vw] lg:rounded-[3vw] overflow-hidden shadow-2xl border border-navy/5"
+                    transition={{ duration: 1 }}
+                    className="text-center mb-[12vw] lg:mb-[6vw] max-w-[85vw] lg:max-w-[60vw]"
                 >
-                    <Image
-                        src="/global_presence_map_1775105524373.png"
-                        alt="Pragtech Global Presence Map"
-                        fill
-                        className="object-cover"
-                    />
-                    {/* Glowing Overlay Grid */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.1)_0%,transparent_100%)] pointer-events-none" />
+                    <span className="text-teal text-[3.2vw] lg:text-[1.1vw] font-black tracking-[0.5vw] uppercase font-heading">Connectivity</span>
+                    <h2 className="text-[10vw] lg:text-[5vw] font-black text-navy tracking-tighter uppercase leading-none mt-[2vw] mb-[4vw] font-heading">
+                        GLOBAL <span className="text-teal">FOOTPRINT</span>
+                    </h2>
+                    <p className="text-[4.2vw] lg:text-[1.4vw] text-navy/60 font-medium leading-relaxed italic font-body">
+                        We support clients across the UK and worldwide, providing fast communication and reliable detailing across all time zones. Our team is available whenever you need us, ensuring smooth coordination from start to finish.
+                    </p>
                 </motion.div>
 
-                {/* Text Content Side */}
-                <div className="w-full lg:w-1/2 flex flex-col items-start">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-teal text-[3.2vw] lg:text-[1.1vw] font-black tracking-[0.5vw] uppercase font-heading">Connectivity</span>
-                        <h2 className="text-[10vw] lg:text-[5vw] font-black text-navy tracking-tighter uppercase leading-none mt-[2vw] mb-[6vw] lg:mb-[3vw] font-heading">
-                            GLOBAL <br /> <span className="text-teal">FOOTPRINT</span>
-                        </h2>
-                        <p className="text-[4.2vw] lg:text-[1.4vw] text-navy/60 font-medium leading-relaxed italic mb-[8vw] lg:mb-[4vw] max-w-[85vw] lg:max-w-full font-body">
-                            We support clients across the UK and worldwide, providing fast communication and reliable detailing across all time zones. Our team is available whenever you need us, ensuring smooth coordination from start to finish.
-                        </p>
-                    </motion.div>
-
-                    {/* Location List Nodes */}
-                    <div className="flex flex-col gap-[6vw] lg:gap-[2.5vw] w-full">
-                        {locations.map((loc, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: i * 0.15 }}
-                                className="flex items-start gap-[4vw] lg:gap-[1.5vw] group"
-                            >
-                                <div className="w-[10vw] lg:w-[3vw] h-[10vw] lg:h-[3vw] rounded-full bg-teal/10 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal group-hover:text-white border border-teal/20">
-                                    <span className="text-teal group-hover:text-white text-[4.5vw] lg:text-[1.2vw]">◈</span>
+                {/* Modular Location Grid - Highly readable modular structure */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[4vw] lg:gap-[2.5vw] w-full px-[4vw] lg:px-0"
+                >
+                    {locations.map((loc, i) => (
+                        <motion.div
+                            key={i}
+                            variants={itemVariants}
+                            className="flex flex-col p-[6vw] lg:p-[2.5vw] bg-white/50 backdrop-blur-sm rounded-[5vw] lg:rounded-[2vw] border border-navy/5 hover:border-teal/30 transition-all duration-500 hover:shadow-xl group"
+                        >
+                            <div className="flex items-center gap-[3vw] lg:gap-[1vw] mb-[3vw] lg:mb-[1vw]">
+                                <div className="w-[10vw] lg:w-[2.5vw] h-[10vw] lg:h-[2.5vw] rounded-full bg-teal/10 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal group-hover:text-white border border-teal/20">
+                                    <span className="text-teal group-hover:text-white text-[4.5vw] lg:text-[1vw]">◈</span>
                                 </div>
-                                <div className="flex flex-col">
-                                    <h3 className="text-navy text-[5vw] lg:text-[1.6vw] font-black uppercase tracking-tight font-heading leading-none mb-[1vw]">
-                                        {loc.city} <span className="text-teal font-medium ml-2 text-[3.5vw] lg:text-[1vw]">/ {loc.region}</span>
-                                    </h3>
-                                    <p className="text-navy/50 text-[3.8vw] lg:text-[1.1vw] font-body">
-                                        {loc.desc}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+                                <h3 className="text-navy text-[5vw] lg:text-[1.4vw] font-black uppercase tracking-tight font-heading leading-none">
+                                    {loc.city} <span className="text-teal font-medium ml-1 text-[3.5vw] lg:text-[0.9vw]">/ {loc.region}</span>
+                                </h3>
+                            </div>
+                            <p className="text-navy/50 text-[3.8vw] lg:text-[1.1vw] font-body leading-snug pl-[13vw] lg:pl-[3.5vw]">
+                                {loc.desc}
+                            </p>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );

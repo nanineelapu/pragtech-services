@@ -9,7 +9,7 @@ import SmoothScroll from "./SmoothScroll";
 // Global Metadata for SEO
 export const metadata = {
   title: {
-    default: "Pragtech Ltd | Precision Steel Detailing & Engineering UK",
+    default: "Pragtech Ltd | Pragtech Steel Detailing & Engineering UK",
     template: "%s | Pragtech Ltd"
   },
   description: "Pragtech Ltd provides premium structural engineering and precision steel detailing services in the UK and globally. Operating in 6+ countries with high-end engineering expertise.",

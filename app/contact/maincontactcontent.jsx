@@ -59,7 +59,25 @@ const MainContactContent = () => {
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-[4vw] lg:gap-[2.5vw]">
-                        {/* USA HQ Card */}
+                        {/* UK HQ Card */}
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                            <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
+                                <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
+                                    <img src="https://flagcdn.com/gb.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="UK" />
+                                </div>
+                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">UK</span>
+                            </div>
+                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Global Headquarters</span>
+                            <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
+                                London, United Kingdom <br />
+                                <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
+                            </p>
+                            <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 2868065002</span>
+                            </div>
+                        </motion.div>
+
+                        {/* USA Card */}
                         <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
@@ -67,7 +85,7 @@ const MainContactContent = () => {
                                 </div>
                                 <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">USA</span>
                             </div>
-                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Global Headquarters</span>
+                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">North American Hub</span>
                             <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
                                 4080, McGinnis Ferry Road <br /> Suite #1403, Alpharetta, <br /> GA 30005, USA.
                             </p>
@@ -76,24 +94,7 @@ const MainContactContent = () => {
                             </div>
                         </motion.div>
 
-                        {/* South Central Card */}
-                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
-                            <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
-                                <div className="w-[12vw] lg:w-[3vw] h-[12vw] lg:h-[3vw] bg-navy rounded-xl flex items-center justify-center">
-                                    <span className="text-teal text-[4vw] lg:text-[1.2vw]">◈</span>
-                                </div>
-                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">South Central</span>
-                            </div>
-                            <span className="text-teal/60 font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Regional Center</span>
-                            <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
-                                1107 State HWY 103W, <br /> San Augustine, <br /> TX 75972, USA
-                            </p>
-                            <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+1 281-648-8137</span>
-                            </div>
-                        </motion.div>
-
-                        {/* India HQ Card */}
+                        {/* India Card */}
                         <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
@@ -106,24 +107,61 @@ const MainContactContent = () => {
                                 MJR Magnifique IT Park, <br /> Gachibowli, Hyderabad, <br /> Telangana, India – 500008
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+91 MJR-MAGNIFIQUE</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+91 91542 45831</span>
                             </div>
                         </motion.div>
 
-                        {/* UK Card */}
+                        {/* UAE Card */}
                         <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
                             <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
                                 <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
-                                    <img src="https://flagcdn.com/gb.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="UK" />
+                                    <img src="https://flagcdn.com/ae.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="UAE" />
                                 </div>
-                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">UK</span>
+                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">UAE</span>
                             </div>
-                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Corporate Liaison</span>
+                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Middle East Hub</span>
                             <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
-                                3B, Hamelyn Close Basingstoke <br /> Hampshire RG21 8UY, UK
+                                Dubai, United Arab Emirates <br />
+                                <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 2868065002</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+971 770-809-0806</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Canada Card */}
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                            <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
+                                <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
+                                    <img src="https://flagcdn.com/ca.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="Canada" />
+                                </div>
+                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">Canada</span>
+                            </div>
+                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">Service Expansion</span>
+                            <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
+                                Toronto, Ontario, Canada <br />
+                                <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
+                            </p>
+                            <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+1 281-648-8137</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Australia Card */}
+                        <motion.div variants={cardVariants} className="group bg-white/80 backdrop-blur-md rounded-[4vw] lg:rounded-[2vw] p-[6vw] lg:p-[3vw] flex flex-col items-start border border-navy/5 hover:border-teal/40 transition-all duration-500 shadow-sm hover:shadow-2xl">
+                            <div className="flex items-center gap-[4vw] lg:gap-[1.2rem] mb-[4vw] lg:mb-[2vw]">
+                                <div className="p-[2.5vw] lg:p-[0.8vw] bg-[#ffffff] rounded-xl border border-navy/5">
+                                    <img src="https://flagcdn.com/au.svg" className="w-[8vw] lg:w-[2.5vw] h-auto rounded-sm shadow-sm" alt="Australia" />
+                                </div>
+                                <span className="text-[6vw] lg:text-[1.8vw] font-black text-navy anton-regular tracking-tight uppercase">Australia</span>
+                            </div>
+                            <span className="text-teal font-black text-[2.5vw] lg:text-[0.8vw] uppercase tracking-[0.2vw] mb-[4vw] lg:mb-[1.5vw] anton-regular">APAC Regional hub</span>
+                            <p className="text-navy/70 text-[4.2vw] lg:text-[1.1vw] eb-garamond font-medium leading-relaxed mb-auto">
+                                Sydney, NSW, Australia <br />
+                                <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
+                            </p>
+                            <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+61 1107-HWY-103W</span>
                             </div>
                         </motion.div>
                     </div>
