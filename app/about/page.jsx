@@ -6,8 +6,8 @@ import CustomerFocus from "./customerfocus";
 import ReviewSection from "../home/reviewsection";
 
 export const metadata = {
-    title: "About Our Expertise",
-    description: "Learn about Pragtech Ltd's legacy of structural precision. We specialize in complex steel detailing and industrial engineering solutions with a global perspective.",
+    title: "About Pragtech Ltd | UK-Based Steel Detailing Experts",
+    description: "Pragtech Ltd delivers precise, fabrication-ready models and drawings for structural steel, miscellaneous metalwork, cold-rolled SFS, and cladding systems worldwide.",
 };
 
 const Page = () => {
@@ -31,7 +31,6 @@ const Page = () => {
                 <Details />
                 <GlobalPresence />
                 <CustomerFocus />
-                <ReviewSection />
             </div>
         </div>
     );

@@ -63,7 +63,7 @@ const CustomerFocus = () => {
     };
 
     return (
-        <section className="mx-auto flex w-full max-w-[92vw] flex-col items-center py-[15vw] lg:py-[8vw] bg-transparent overflow-hidden">
+        <section className="mx-auto flex w-full max-w-[92vw] flex-col items-center pt-[15vw] lg:pt-[8vw] pb-[6vw] lg:pb-[3vw] bg-transparent overflow-hidden">
             {/* Main Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ const CustomerFocus = () => {
                 className="text-center mb-[10vw] lg:mb-[6vw]"
             >
                 <h2 className="text-[12vw] lg:text-[5vw] font-black text-navy tracking-tighter uppercase anton-regular">
-                    The Pragtech Ltd <span className="text-teal">Focus</span>
+                    Client <span className="text-teal">Commitment</span>
                 </h2>
                 <div className="w-[8vw] lg:w-[4vw] h-[0.8vw] lg:h-[0.3vw] bg-teal mx-auto mt-[1vw] rounded-full" />
             </motion.div>
@@ -125,10 +125,10 @@ const CustomerFocus = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, delay: 0.8 }}
-                className="mt-[12vw] lg:mt-[6vw] text-center max-w-[85vw] lg:max-w-[50vw]"
+                className="mt-[12vw] lg:mt-[6vw] text-center max-w-[90vw] lg:max-w-[75vw]"
             >
                 <p className="text-[4.5vw] lg:text-[1.4vw] font-medium text-navy eb-garamond italic leading-[1.6]">
-                    "Our focus is simple: precision, clarity, and dependable support for fabricators and contractors everywhere."
+                    "We are committed to delivering precise, reliable, and value‑driven detailing solutions for every client we work with. Each project is carefully reviewed, coordinated, and engineered to ensure accuracy, buildability, and alignment with project requirements. Our team applies strong technical discipline, clear communication, and a deep understanding of industry standards to support efficient workflows and consistent results. We prioritise timely delivery, cost‑effective solutions, and a partnership‑based approach that keeps client needs at the centre of every decision."
                 </p>
             </motion.div>
         </section>

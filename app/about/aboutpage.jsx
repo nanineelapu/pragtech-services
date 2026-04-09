@@ -129,7 +129,7 @@ const AboutPage = () => {
                             className="mt-[5vw] md:mt-[2vw] flex flex-col items-center gap-[1.5vw] md:gap-[0.5vw]"
                         >
                             <p className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                                Pragtech Ltd is a UK‑based detailing company delivering accurate, fabrication‑ready drawings for structural steel, miscellaneous metalwork, and cold‑rolled SFS (light gauge steel framing).
+                                Pragtech Ltd is a UK‑based detailing company delivering precise, fabrication‑ready models and drawings for structural steel, miscellaneous metalwork, cold‑rolled SFS, and cladding systems.
                             </p>
                         </motion.div>
 
@@ -138,7 +138,7 @@ const AboutPage = () => {
                             variants={itemVariants}
                             className="mt-[8vw] md:mt-[2vw] flex items-center gap-[2.5vw] md:gap-[2.5vw] z-20"
                         >
-                            <button 
+                            <button
                                 onClick={() => document.getElementById('our-legacy')?.scrollIntoView({ behavior: 'smooth' })}
                                 className="group relative px-[4.5vw] md:px-[3vw] py-[2.8vw] md:py-[1.2vw] bg-navy text-white text-[2.6vw] md:text-[0.9vw] font-bold uppercase tracking-widest md:tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer"
                             >

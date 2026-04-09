@@ -6,33 +6,51 @@ import { motion, AnimatePresence } from 'framer-motion';
 const featuredData = [
     {
         id: "01",
-        title: "Structural Steel",
-        desc: "Management of high-complexity projects utilizing world-class engineering standards for structural integrity and fabrication precision.",
-        tag: "Core Engineering"
+        title: "Structural Steel Detailing",
+        desc: "At Pragtech Ltd, we deliver precise structural steel detailing for a wide range of industrial and commercial projects, including warehouses, factories, data centres, distribution hubs, retail spaces, offices, hospitals, schools, stadiums, bridges, and other complex structures. All detailing is completed in‑house for full quality control. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we produce accurate 3D models, fabrication‑ready drawings, and CNC outputs that support efficient production and smooth site erection. Our connection detailing prioritises buildability, cost‑efficiency, and alignment with engineering intent, backed by strict internal quality checks on every project.",
+        tag: "In-House Detail"
     },
     {
         id: "02",
-        title: "Misc Steel Detail",
-        desc: "Comprehensive solutions for precise secondary structural elements including stairs, handrails, and industrial ladders.",
-        tag: "Secondary Design"
+        title: "Miscellaneous Metalwork",
+        desc: "At Pragtech Ltd, we provide accurate detailing for all miscellaneous and secondary steel elements, including gratings, stairs, handrails, ladders, guardrails, wall rails, platforms, canopies, gates, girts, and custom metalwork. We specialise in staircase and railing systems, delivering clear, compliant, and fabrication‑ready details for industrial, commercial, and specialised projects. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we produce coordinated models and drawings that support efficient fabrication and smooth installation. Every deliverable is reviewed through strict internal quality checks to ensure accuracy, buildability, and alignment with project standards.",
+        tag: "Specialised Design"
     },
     {
         id: "03",
-        title: "Connection Design",
-        desc: "Expert steel connection engineering through licensed partners, ensuring code-compliant fabrication and structural safety.",
-        tag: "Licensed Partners"
+        title: "Cold‑Rolled SFS Detailing",
+        desc: "At Pragtech Ltd, we deliver accurate and coordinated cold‑rolled SFS detailing for industrial, commercial, and residential projects. Our scope includes panel layouts, stud arrangements, openings, brackets, and fixing details, all aligned with manufacturer requirements and project specifications. Using Tekla Structures, AutoCAD, and other advanced tools, we produce clear, buildable drawings that integrate smoothly with steel, cladding, and architectural elements. Every deliverable is checked internally to ensure accuracy, compliance, and efficient installation on site.",
+        tag: "Integrated Detail"
     },
     {
         id: "04",
-        title: "Industrial Steel",
-        desc: "Specialized detailing for heavy industrial facilities, manufacturing supports, and complex equipment frameworks.",
-        tag: "Heavy Industry"
+        title: "Cladding Detailing",
+        desc: "At Pragtech Ltd, we provide accurate and coordinated cladding detailing for industrial, commercial, and specialised building envelopes. Our scope includes panel layouts, fixing details, bracket arrangements, support systems, and interface coordination with steel, SFS, and architectural elements. Using Tekla Structures, AutoCAD, and other advanced tools, we deliver clear, buildable drawings that support efficient fabrication and smooth on‑site installation. Every detail is reviewed through our internal quality process to ensure accuracy, compliance, and seamless integration across all façade systems.",
+        tag: "Building Envelopes"
     },
     {
         id: "05",
-        title: "BIM Modeling",
-        desc: "Harnessing 3D digital models for superior project coordination, clash detection, and seamless multi-trade execution.",
-        tag: "Digital Twins"
+        title: "BIM Modelling & Coordination",
+        desc: "At Pragtech Ltd, we provide accurate BIM modelling and coordination services that support clash detection, trade integration, and smooth project delivery. Our models align structural steel, SFS, cladding, and architectural elements to ensure clear communication and reduced on‑site issues. Using Tekla Structures, Revit, Navisworks, AutoCAD, and other advanced tools, we deliver coordinated 3D models and well‑structured information that improve buildability and project efficiency. Every model is reviewed through our internal quality process to ensure accuracy, compliance, and seamless collaboration across all disciplines.",
+        tag: "Clash Detection"
+    },
+    {
+        id: "06",
+        title: "GA / Shop Drawings",
+        desc: "At Pragtech Ltd, we provide reliable connection design support for structural steel projects of all sizes. We work closely with engineers and fabricators to develop buildable, cost‑efficient, and code‑compliant connection details that align with project requirements and fabrication capabilities. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we model and coordinate all connection types, ensuring clarity, accuracy, and smooth integration with the overall steel structure. Every detail is reviewed through our internal quality process to ensure safe, practical, and installation‑friendly solutions.",
+        tag: "Technical Support"
+    },
+    {
+        id: "07",
+        title: "Connection Design Support",
+        desc: "At Pragtech Ltd, we provide accurate estimation and material take‑offs to support tendering, planning, and early‑stage project decisions. Our team prepares clear quantity breakdowns for structural steel, miscellaneous metalwork, SFS, and cladding components, ensuring reliable data for pricing and procurement. Using advance tools,we extract precise quantities directly from coordinated models and drawings. Every take‑off is reviewed through our internal quality process to ensure accuracy, consistency, and confidence in project budgeting.",
+        tag: "Quantity Survey"
+    },
+    {
+        id: "08",
+        title: "As‑Built / Record Modelling",
+        desc: "At Pragtech Ltd, we prepare accurate as‑built and record models based on site‑verified information, red‑line markups, and final construction data. Our team updates structural steel, miscellaneous metalwork, SFS, and cladding models to reflect the exact conditions of what was installed on site. we deliver clear, compliant as‑built drawings and models that support handover, facility management, and future modifications. Every update is reviewed through our internal quality process to ensure accuracy and full alignment with final site conditions.",
+        tag: "Record Modelling"
     }
 ];
 
@@ -52,7 +70,7 @@ const FeaturedServices = () => {
     };
 
     return (
-        <section className="relative w-full bg-transparent py-[12vw] lg:py-[8vw] px-[5vw] overflow-hidden flex flex-col items-center">
+        <section className="relative w-full bg-transparent py-[10vw] lg:py-[6vw] px-[5vw] overflow-hidden flex flex-col items-center">
             {/* Background Narrative Watermark - Inverted to Teal Trace */}
             <AnimatePresence mode="wait">
                 <motion.div
@@ -94,7 +112,7 @@ const FeaturedServices = () => {
                 </div>
 
                 {/* Content Split: Text & Preview */}
-                <div className="w-full flex flex-col lg:flex-row items-center gap-[12vw] lg:gap-[6vw] min-h-[35vw]">
+                <div className="w-full flex flex-col lg:flex-row items-center gap-[10vw] lg:gap-[4vw] min-h-[35vw]">
 
                     {/* Left Side: Active Content */}
                     <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left min-h-[50vw] lg:min-h-0">
@@ -104,13 +122,13 @@ const FeaturedServices = () => {
                                 {...slideVariants}
                                 className="w-full h-full flex flex-col items-center lg:items-start"
                             >
-                                <span className="text-[10vw] lg:text-[3.5vw] text-teal font-heading leading-none mb-[2vw] lg:mb-[1vw]">
+                                <span className="text-[9vw] lg:text-[3vw] text-teal font-heading leading-none mb-[2vw] lg:mb-[1vw]">
                                     {activeItem.id}
                                 </span>
-                                <h3 className="text-[10vw] lg:text-[5.5vw] font-black text-navy font-heading uppercase leading-[0.8] mb-[4vw] lg:mb-[2vw] tracking-tighter">
+                                <h3 className="text-[9vw] lg:text-[4.5vw] font-black text-navy font-heading uppercase leading-[0.8] mb-[4vw] lg:mb-[2vw] tracking-tighter">
                                     {activeItem.title}
                                 </h3>
-                                <p className="text-[4.2vw] lg:text-[1.4vw] text-navy/70 font-body leading-[1.6] mb-[8vw] lg:mb-[4vw] max-w-[85vw] lg:max-w-[40vw]">
+                                <p className="text-[4vw] lg:text-[1.2vw] text-navy/70 font-body leading-[1.6] mb-[6vw] lg:mb-[3vw] max-w-[85vw] lg:max-w-[40vw]">
                                     "{activeItem.desc}"
                                 </p>
 
@@ -137,7 +155,7 @@ const FeaturedServices = () => {
                                     className={`group flex items-center justify-between p-[4vw] lg:p-[1.5vw] border-b transition-all duration-500 ${activeIndex === index ? 'border-teal bg-navy/5' : 'border-navy/10 hover:border-navy/30'
                                         }`}
                                 >
-                                    <span className={`text-[4vw] lg:text-[1.1vw] font-heading uppercase transition-colors ${activeIndex === index ? 'text-navy' : 'text-navy/30 group-hover:text-navy/60'
+                                    <span className={`text-[3.6vw] lg:text-[1vw] font-heading uppercase transition-colors ${activeIndex === index ? 'text-navy' : 'text-navy/30 group-hover:text-navy/60'
                                         }`}>
                                         {item.title}
                                     </span>

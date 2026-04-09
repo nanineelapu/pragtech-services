@@ -51,13 +51,7 @@ const Details = () => {
                     <div className="absolute top-0 right-0 w-[20vw] h-[20vw] bg-teal/5 rounded-full blur-[6vw] -translate-y-1/2 translate-x-1/2" />
 
                     <p className="relative z-10 text-[4.5vw] lg:text-[1.3vw] text-navy font-medium leading-[1.8] lg:leading-loose font-body italic">
-                        At Pragtech Ltd, we follow industry standards based on the region we are serving — including{" "}
-                        <span className="text-teal font-bold underline decoration-teal/20 underline-offset-4">UK standards, AISC, and other international specifications</span>{" "}
-                        — so every drawing is compliant, buildable, and ready for fabrication. With a record of delivering more than{" "}
-                        <span className="text-teal font-bold">3500+ global projects,</span>{" "}
-                        including{" "}
-                        <span className="text-teal font-bold italic">Power Plants, Sports Stadiums, Material Handling Systems, and Healthcare Facilities,</span>{" "}
-                        we provide shop-ready drawings and CNC-integrated data that drastically reduce site-rework. We ensure every project is executed with precision, clarity, and dependable support for fabricators and contractors everywhere.
+                        We support clients in the UK and worldwide, providing fast communication and reliable coordination across all time zones. Our team works to the standards required for each region — including <span className="text-teal font-bold underline decoration-teal/20 underline-offset-4">UK Standards, AISC, and other international codes</span> — ensuring every detail is compliant, buildable, and aligned with project specifications. Using advanced 3D modelling platforms, we produce accurate, clash‑free models, coordinated detailing packages, and clear drawings for fabrication and installation. From early modelling to final issue, we provide technical support throughout every stage of the project.
                     </p>
                 </motion.div>
 
@@ -85,10 +79,10 @@ const Details = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-white font-heading uppercase">Strategic Vision</h3>
+                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-white font-heading uppercase">Our Direction</h3>
                             </div>
                             <p className="text-[4.2vw] lg:text-[1.2vw] font-medium leading-[1.7] lg:leading-[1.8] text-white/70 font-body">
-                                To be the global benchmark for technical precision in steel construction. We strive to lead the shift towards fully integrated BIM environments, where engineering intelligence and digital manufacturing converge to eliminate inefficiency.
+                                Our direction is to position Pragtech Ltd as a dependable global partner for steel, metalwork, SFS, and cladding detailing. We focus on technical accuracy, efficient modelling workflows, and consistent project delivery. We invest in our team because strong people create strong outcomes, building a culture driven by professionalism, accountability, and integrity. Through advanced tools and disciplined engineering practices, we aim to deliver detailing solutions that enhance buildability and add measurable value to every project.
                             </p>
                         </div>
                     </motion.div>
@@ -114,10 +108,10 @@ const Details = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-navy font-heading uppercase">Global Mission</h3>
+                                <h3 className="text-[8vw] lg:text-[3vw] font-black tracking-tight text-navy font-heading uppercase">Mission Statement</h3>
                             </div>
                             <p className="text-[4.2vw] lg:text-[1.2vw] font-medium leading-[1.7] lg:leading-[1.8] text-navy/70 font-body">
-                                Our mission is to deliver zero-defect detailing solutions through innovation and integrity. By empowering a specialized workforce with the latest technical capabilities, we exceed international industry standards and drive project profitability for our clients.
+                                Our mission is to deliver high‑precision detailing solutions through advanced modelling, technical expertise, and disciplined engineering practices. We empower our team to excel, uphold global standards, and build strong partnerships across industries. With a focus on innovation, responsibility, and long‑term value, we aim to support a smarter, safer, and more efficient future for the construction and engineering sector.
                             </p>
                         </div>
                     </motion.div>

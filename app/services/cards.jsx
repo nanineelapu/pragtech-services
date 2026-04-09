@@ -6,33 +6,43 @@ import { motion, AnimatePresence } from 'framer-motion';
 const services = [
     {
         title: "Structural Steel Detailing",
-        desc: "High-precision shop drawings and 3D models for complex structural frameworks. We utilize SDS/2 and Tekla Structures to ensure 100% accuracy in fabrication and erection.",
+        desc: "At Pragtech Ltd, we deliver precise structural steel detailing for industrial and commercial projects, including warehouses, factories, schools, and complex structures. Using Tekla Structures and SDS/2, we produce accurate 3D models and CNC outputs that support efficient site erection.",
         icon: "◈"
     },
     {
-        title: "Miscellaneous Steel Detailing",
-        desc: "Specialized detailing for stairs, handrails, guardrails, ladders, and safety platforms. We bridge the complexity between architectural aesthetics and structural functionality.",
+        title: "Miscellaneous Metalwork",
+        desc: "We provide accurate detailing for all secondary steel elements, including stairs, handrails, ladders, canopies, and custom metalwork. We specialise in railing systems, delivering compliant details for industrial and commercial projects.",
         icon: "⬡"
     },
     {
-        title: "Connection Design",
-        desc: "PE-sealed connection engineering and calculations that strictly adhere to AISC and CISC standards, ensuring structural integrity and code compliance.",
-        icon: "◆"
+        title: "Cold-Rolled SFS Detailing",
+        desc: "We deliver accurate and coordinated cold-rolled SFS detailing. Our scope includes panel layouts, stud arrangements, and openings, all integrated smoothly with steel, cladding, and architectural elements for efficient site installation.",
+        icon: "📐"
     },
     {
-        title: "BIM & VDC Services",
-        desc: "Virtual Design and Construction through multi-discipline BIM coordination. We provide clash detection and construction sequencing to minimize field interference.",
+        title: "Cladding Detailing",
+        desc: "We provide accurate and coordinated cladding detailing for building envelopes. Our scope includes panel layouts, bracket arrangements, and interface coordination to ensure seamless integration across all facade systems.",
+        icon: "🏠"
+    },
+    {
+        title: "BIM Modelling & Coordination",
+        desc: "We provide accurate BIM modelling and coordination services for clash detection and trade integration. Our models align structural steel, SFS, and architectural elements to reduce on-site issues and improve project efficiency.",
         icon: "■"
     },
     {
-        title: "Industrial & Heavy Steel",
-        desc: "Custom detailing for large-scale industrial projects, including conveyor systems, material handling units, and heavy-duty manufacturing equipment supports.",
-        icon: "▼"
+        title: "GA / Shop Drawings",
+        desc: "We produce coordinated GA and shop drawings for fabrication and installation. Every deliverable is reviewed through strict internal quality checks to ensure accuracy, buildability, and alignment with project standards.",
+        icon: "📝"
     },
     {
-        title: "Estimation & Takeoffs",
-        desc: "Comprehensive material take-offs (MTO) and weight estimates that empower fabricators with precise bidding and procurement intelligence.",
-        icon: "◢"
+        title: "Connection Design Support",
+        desc: "We provide reliable connection design support for steel projects of all sizes. We develop buildable, cost-efficient, and code-compliant connection details that align with project requirements and fabrication capabilities.",
+        icon: "◆"
+    },
+    {
+        title: "As-Built / Record Modelling",
+        desc: "We prepare accurate as-built and record models based on site-verified data and final construction info. We deliver clear drawings that support facility management and future modifications.",
+        icon: "🏗️"
     }
 ];
 
@@ -54,15 +64,15 @@ const Cards = () => {
                         key={index}
                         onMouseEnter={() => setActiveIndex(index)}
                         onClick={() => setActiveIndex(index)}
-                        className={`group relative p-[4vw] lg:p-[1.8vw] rounded-2xl lg:rounded-xl cursor-pointer transition-all duration-300 ${activeIndex === index ? 'bg-navy translate-x-0 lg:translate-x-1' : 'hover:bg-navy/5'
+                        className={`group relative p-[3vw] lg:p-[1.2vw] rounded-2xl lg:rounded-xl cursor-pointer transition-all duration-300 ${activeIndex === index ? 'bg-navy translate-x-0 lg:translate-x-1' : 'hover:bg-navy/5'
                             }`}
                     >
                         <div className="flex items-center gap-[4vw] lg:gap-[1.5vw]">
-                            <span className={`text-[4vw] lg:text-[1.2vw] font-heading transition-colors ${activeIndex === index ? 'text-teal' : 'text-navy/30'
+                            <span className={`text-[3.2vw] lg:text-[0.9vw] font-heading transition-colors ${activeIndex === index ? 'text-teal' : 'text-navy/30'
                                 }`}>
                                 0{index + 1}
                             </span>
-                            <h3 className={`text-[5.5vw] lg:text-[1.8vw] font-black font-heading uppercase transition-colors ${activeIndex === index ? 'text-white' : 'text-navy'
+                            <h3 className={`text-[4.5vw] lg:text-[1.4vw] font-black font-heading uppercase transition-colors ${activeIndex === index ? 'text-white' : 'text-navy'
                                 }`}>
                                 {service.title}
                             </h3>
@@ -114,10 +124,10 @@ const Cards = () => {
                             <span className="text-navy text-[3vw] lg:text-[1vw] font-black tracking-[0.3vw] uppercase mb-[2vw] lg:mb-[1vw] block font-heading">
                                 Service Excellence
                             </span>
-                            <h2 className="text-[8vw] lg:text-[3vw] font-black text-white font-heading uppercase leading-[0.9] mb-[4vw] lg:mb-[2vw] max-w-full lg:max-w-[80%]">
+                             <h2 className="text-[7vw] lg:text-[2.2vw] font-black text-white font-heading uppercase leading-[0.9] mb-[4vw] lg:mb-[2vw] max-w-full lg:max-w-[80%]">
                                 {services[activeIndex].title}
                             </h2>
-                            <p className="text-[4.2vw] lg:text-[1.3vw] text-white/70 font-body leading-relaxed mb-[6vw] lg:mb-[3vw]">
+                            <p className="text-[3.8vw] lg:text-[1.1vw] text-white/70 font-body leading-relaxed mb-[6vw] lg:mb-[3vw]">
                                 {services[activeIndex].desc}
                             </p>
 
