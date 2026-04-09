@@ -8,6 +8,9 @@ import SmoothScroll from "./SmoothScroll";
 
 // Global Metadata for SEO
 export const metadata = {
+  icons: {
+    icon: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/favicon.ico',
+  },
   title: {
     default: "Pragtech Ltd | Pragtech Steel Detailing & Engineering UK",
     template: "%s | Pragtech Ltd"
