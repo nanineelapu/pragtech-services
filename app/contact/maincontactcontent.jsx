@@ -207,7 +207,7 @@ const MainContactContent = () => {
                         </div>
 
                         <button className="flex items-center justify-center gap-[4vw] lg:gap-[1.2vw] w-full py-[4.5vw] lg:py-[1.5vw] bg-teal hover:bg-white text-navy font-black rounded-full text-[4.5vw] lg:text-[1.2vw] uppercase tracking-[0.2vw] anton-regular transition-all shadow-[0_1.5vw_4vw_rgba(20,184,166,0.2)] active:scale-95 group">
-                            Send Transmission
+                            Send
                             <svg className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw] transition-transform duration-300 group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
