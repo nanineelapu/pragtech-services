@@ -204,18 +204,7 @@ const ProjectHero = () => {
                     ))}
                 </div>
 
-                {/* Load More Button */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="w-full flex justify-center mt-[12vw] lg:mt-[6vw]"
-                >
-                    <button className="flex items-center gap-[3vw] lg:gap-[1.2vw] px-[8vw] lg:px-[4vw] py-[3.5vw] lg:py-[1.2vw] bg-navy text-white rounded-full font-black uppercase tracking-[0.2vw] transition-all hover:bg-teal hover:text-navy active:scale-95 shadow-xl text-[3.5vw] lg:text-[0.9vw] whitespace-nowrap font-heading">
-                        View Complete Archive
-                        <span className="ml-[1vw] lg:ml-[0.5vw]">↓</span>
-                    </button>
-                </motion.div>
+
             </section>
         </div>
     );

@@ -1,45 +1,54 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const services = [
     {
+        id: "structural-steel-detailing",
         title: "Structural Steel Detailing",
         desc: "At Pragtech Ltd, we deliver precise structural steel detailing for industrial and commercial projects, including warehouses, factories, schools, and complex structures. Using Tekla Structures and SDS/2, we produce accurate 3D models and CNC outputs that support efficient site erection.",
         icon: "◈"
     },
     {
+        id: "miscellaneous-metalwork",
         title: "Miscellaneous Metalwork",
         desc: "We provide accurate detailing for all secondary steel elements, including stairs, handrails, ladders, canopies, and custom metalwork. We specialise in railing systems, delivering compliant details for industrial and commercial projects.",
         icon: "⬡"
     },
     {
+        id: "cold-rolled-sfs-detailing",
         title: "Cold-Rolled SFS Detailing",
         desc: "We deliver accurate and coordinated cold-rolled SFS detailing. Our scope includes panel layouts, stud arrangements, and openings, all integrated smoothly with steel, cladding, and architectural elements for efficient site installation.",
         icon: "📐"
     },
     {
+        id: "cladding-detailing",
         title: "Cladding Detailing",
         desc: "We provide accurate and coordinated cladding detailing for building envelopes. Our scope includes panel layouts, bracket arrangements, and interface coordination to ensure seamless integration across all facade systems.",
         icon: "🏠"
     },
     {
+        id: "bim-modelling",
         title: "BIM Modelling & Coordination",
         desc: "We provide accurate BIM modelling and coordination services for clash detection and trade integration. Our models align structural steel, SFS, and architectural elements to reduce on-site issues and improve project efficiency.",
         icon: "■"
     },
     {
+        id: "ga-shop-drawings",
         title: "GA / Shop Drawings",
         desc: "We produce coordinated GA and shop drawings for fabrication and installation. Every deliverable is reviewed through strict internal quality checks to ensure accuracy, buildability, and alignment with project standards.",
         icon: "📝"
     },
     {
+        id: "connection-design",
         title: "Connection Design Support",
         desc: "We provide reliable connection design support for steel projects of all sizes. We develop buildable, cost-efficient, and code-compliant connection details that align with project requirements and fabrication capabilities.",
         icon: "◆"
     },
     {
+        id: "as-built-modelling",
         title: "As-Built / Record Modelling",
         desc: "We prepare accurate as-built and record models based on site-verified data and final construction info. We deliver clear drawings that support facility management and future modifications.",
         icon: "🏗️"
@@ -48,9 +57,33 @@ const services = [
 
 const Cards = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                const index = services.findIndex(s => s.id === hash);
+                if (index !== -1) {
+                    setActiveIndex(index);
+                    // Add a small delay for smooth scroll to anchor
+                    setTimeout(() => {
+                        const element = document.getElementById('services-grid');
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 100);
+                }
+            }
+        };
+
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, [pathname]);
 
     return (
-        <div className="flex flex-col lg:flex-row gap-[10vw] lg:gap-[6vw] w-full max-w-[92vw] lg:max-w-[82vw] mx-auto min-h-[40vw] text-left px-[4vw] lg:px-0 bg-transparent mt-[12vw] lg:mt-[8vw]">
+        <div id="services-grid" className="flex flex-col lg:flex-row gap-[10vw] lg:gap-[6vw] w-full max-w-[92vw] lg:max-w-[82vw] mx-auto min-h-[40vw] text-left px-[4vw] lg:px-0 bg-transparent mt-[12vw] lg:mt-[8vw]">
             {/* LEFT SIDE: The Interactive List */}
             <motion.div
                 initial={{ opacity: 0, x: -30 }}

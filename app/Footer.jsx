@@ -61,29 +61,29 @@ const Footer = () => {
                                 { 
                                     title: 'Menu', 
                                     links: [
-                                        { name: 'Customers', href: '#' },
-                                        { name: 'Resources', href: '#' },
-                                        { name: 'Careers', href: '/career' },
-                                        { name: 'Projects', href: '/projects' }
+                                        { name: 'Home', href: '/' },
+                                        { name: 'About Us', href: '/about' },
+                                        { name: 'Services', href: '/services' },
+                                        { name: 'Projects', href: '/projects' },
+                                        { name: 'Careers', href: '/career' }
                                     ] 
                                 },
                                 { 
-                                    title: 'Company', 
+                                    title: 'Services', 
                                     links: [
-                                        { name: 'Help', href: '#' },
-                                        { name: 'Terms', href: '#' },
-                                        { name: 'Cookies', href: '#' },
-                                        { name: 'Security', href: '#' },
-                                        { name: 'Privacy', href: '#' }
+                                        { name: 'Structural Steel Detailing', href: '/services#structural-steel-detailing' },
+                                        { name: 'Miscellaneous Metalwork', href: '/services#miscellaneous-metalwork' },
+                                        { name: 'Cold‑Rolled SFS Detailing', href: '/services#cold-rolled-sfs-detailing' },
+                                        { name: 'Cladding Detailing', href: '/services#cladding-detailing' }
                                     ] 
                                 },
                                 { 
-                                    title: 'Network', 
+                                    title: 'Capabilities', 
                                     links: [
-                                        { name: 'X', href: '#' },
-                                        { name: 'LinkedIn', href: '#' },
-                                        { name: 'Instagram', href: '#' },
-                                        { name: 'Facebook', href: '#' }
+                                        { name: 'BIM Modelling', href: '/services#bim-modelling' },
+                                        { name: 'GA / Shop Drawings', href: '/services#ga-shop-drawings' },
+                                        { name: 'Connection Design', href: '/services#connection-design' },
+                                        { name: 'As‑Built Modelling', href: '/services#as-built-modelling' }
                                     ] 
                                 }
                             ].map((section) => (
@@ -124,10 +124,7 @@ const Footer = () => {
                         </p>
 
                         <div className="flex flex-col lg:flex-row items-center gap-[8vw] lg:gap-[4vw]">
-                            <div className="flex gap-[6vw] lg:gap-[2vw]">
-                                <Link href="#" className="text-[3.2vw] lg:text-[0.9vw] font-black text-white/40 hover:text-white transition-colors">Legal</Link>
-                                <Link href="#" className="text-[3.2vw] lg:text-[0.9vw] font-black text-white/40 hover:text-white transition-colors">Compliance</Link>
-                            </div>
+
 
                             {/* Back to Top - Glass Style */}
                             <button

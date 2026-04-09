@@ -133,11 +133,8 @@ const FeaturedServices = () => {
                                 </p>
 
                                 <div className="flex flex-col lg:flex-row items-center gap-[4vw] lg:gap-[1.5vw]">
-                                    <button className="px-[10vw] lg:px-[4vw] py-[3.5vw] lg:py-[1.2vw] bg-navy hover:bg-teal text-white rounded-full font-heading uppercase tracking-widest text-[3.2vw] lg:text-[0.8vw] transition-all active:scale-95 cursor-pointer shadow-xl whitespace-nowrap">
-                                        Request Details
-                                    </button>
-                                    <span className="text-navy/20 text-[3.2vw] lg:text-[0.8vw] font-bold tracking-[0.2vw] uppercase font-heading">
-                                        / {activeItem.tag}
+                                    <span className="text-navy/60 text-[3.2vw] lg:text-[0.8vw] font-bold tracking-[0.2vw] uppercase font-heading">
+                                        {activeItem.tag}
                                     </span>
                                 </div>
                             </motion.div>
