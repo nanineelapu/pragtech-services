@@ -3,7 +3,7 @@ import Image from "next/image";
 import ServicesPage from './servicespage';
 import DetailsPage from './deatilspage';
 import FeaturedServices from './featuredservices';
-import Cards from './cards';
+
 
 export const metadata = {
     title: "Engineering Services",
@@ -28,7 +28,7 @@ const Page = () => {
             <div className="relative z-10 flex flex-col items-center gap-[10vw] lg:gap-[5vw] pb-[15vw] lg:pb-[8vw]">
                 <ServicesPage />
                 <DetailsPage />
-                <Cards />
+
                 <FeaturedServices />
             </div>
         </div>

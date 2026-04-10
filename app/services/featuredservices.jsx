@@ -7,49 +7,49 @@ const featuredData = [
     {
         id: "01",
         title: "Structural Steel Detailing",
-        desc: "At Pragtech Ltd, we deliver precise structural steel detailing for a wide range of industrial and commercial projects, including warehouses, factories, data centres, distribution hubs, retail spaces, offices, hospitals, schools, stadiums, bridges, and other complex structures. All detailing is completed in‑house for full quality control. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we produce accurate 3D models, fabrication‑ready drawings, and CNC outputs that support efficient production and smooth site erection. Our connection detailing prioritises buildability, cost‑efficiency, and alignment with engineering intent, backed by strict internal quality checks on every project.",
+        desc: "At Pragtech Ltd, we deliver precise structural steel detailing for a wide range of industrial and commercial projects, including warehouses, factories, data centres, distribution hubs, retail spaces, offices, hospitals, schools, stadiums, bridges, and other complex structures. All detailing is completed in‑house for full quality control. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we produce accurate 3D models, fabrication‑ready drawings, and CNC outputs that support efficient production and smooth site erection.",
         tag: "In-House Detail"
     },
     {
         id: "02",
         title: "Miscellaneous Metalwork",
-        desc: "At Pragtech Ltd, we provide accurate detailing for all miscellaneous and secondary steel elements, including gratings, stairs, handrails, ladders, guardrails, wall rails, platforms, canopies, gates, girts, and custom metalwork. We specialise in staircase and railing systems, delivering clear, compliant, and fabrication‑ready details for industrial, commercial, and specialised projects. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we produce coordinated models and drawings that support efficient fabrication and smooth installation. Every deliverable is reviewed through strict internal quality checks to ensure accuracy, buildability, and alignment with project standards.",
+        desc: "At Pragtech Ltd, we provide accurate detailing for all miscellaneous and secondary steel elements, including gratings, stairs, handrails, ladders, guardrails, wall rails, platforms, canopies, gates, girts, and custom metalwork. We specialise in staircase and railing systems, delivering clear, compliant, and fabrication‑ready details for industrial, commercial, and specialised projects.",
         tag: "Specialised Design"
     },
     {
         id: "03",
         title: "Cold‑Rolled SFS Detailing",
-        desc: "At Pragtech Ltd, we deliver accurate and coordinated cold‑rolled SFS detailing for industrial, commercial, and residential projects. Our scope includes panel layouts, stud arrangements, openings, brackets, and fixing details, all aligned with manufacturer requirements and project specifications. Using Tekla Structures, AutoCAD, and other advanced tools, we produce clear, buildable drawings that integrate smoothly with steel, cladding, and architectural elements. Every deliverable is checked internally to ensure accuracy, compliance, and efficient installation on site.",
+        desc: "At Pragtech Ltd, we deliver accurate and coordinated cold‑rolled SFS detailing for industrial, commercial, and residential projects. Our scope includes panel layouts, stud arrangements, openings, brackets, and fixing details, all aligned with manufacturer requirements and project specifications.",
         tag: "Integrated Detail"
     },
     {
         id: "04",
         title: "Cladding Detailing",
-        desc: "At Pragtech Ltd, we provide accurate and coordinated cladding detailing for industrial, commercial, and specialised building envelopes. Our scope includes panel layouts, fixing details, bracket arrangements, support systems, and interface coordination with steel, SFS, and architectural elements. Using Tekla Structures, AutoCAD, and other advanced tools, we deliver clear, buildable drawings that support efficient fabrication and smooth on‑site installation. Every detail is reviewed through our internal quality process to ensure accuracy, compliance, and seamless integration across all façade systems.",
+        desc: "At Pragtech Ltd, we provide accurate and coordinated cladding detailing for industrial, commercial, and specialised building envelopes. Our scope includes panel layouts, fixing details, bracket arrangements, support systems, and interface coordination with steel, SFS, and architectural elements.",
         tag: "Building Envelopes"
     },
     {
         id: "05",
         title: "BIM Modelling & Coordination",
-        desc: "At Pragtech Ltd, we provide accurate BIM modelling and coordination services that support clash detection, trade integration, and smooth project delivery. Our models align structural steel, SFS, cladding, and architectural elements to ensure clear communication and reduced on‑site issues. Using Tekla Structures, Revit, Navisworks, AutoCAD, and other advanced tools, we deliver coordinated 3D models and well‑structured information that improve buildability and project efficiency. Every model is reviewed through our internal quality process to ensure accuracy, compliance, and seamless collaboration across all disciplines.",
+        desc: "At Pragtech Ltd, we provide accurate BIM modelling and coordination services that support clash detection, trade integration, and smooth project delivery. Our models align structural steel, SFS, cladding, and architectural elements to ensure clear communication and reduced on‑site issues.",
         tag: "Clash Detection"
     },
     {
         id: "06",
         title: "GA / Shop Drawings",
-        desc: "At Pragtech Ltd, we provide reliable connection design support for structural steel projects of all sizes. We work closely with engineers and fabricators to develop buildable, cost‑efficient, and code‑compliant connection details that align with project requirements and fabrication capabilities. Using Tekla Structures, SDS/2, AutoCAD, and other advanced tools, we model and coordinate all connection types, ensuring clarity, accuracy, and smooth integration with the overall steel structure. Every detail is reviewed through our internal quality process to ensure safe, practical, and installation‑friendly solutions.",
+        desc: "At Pragtech Ltd, we produce coordinated GA and shop drawings for fabrication and installation. We work closely with engineers and fabricators to develop buildable, cost‑efficient, and code‑compliant details that align with project requirements and fabrication capabilities.",
         tag: "Technical Support"
     },
     {
         id: "07",
         title: "Connection Design Support",
-        desc: "At Pragtech Ltd, we provide accurate estimation and material take‑offs to support tendering, planning, and early‑stage project decisions. Our team prepares clear quantity breakdowns for structural steel, miscellaneous metalwork, SFS, and cladding components, ensuring reliable data for pricing and procurement. Using advance tools,we extract precise quantities directly from coordinated models and drawings. Every take‑off is reviewed through our internal quality process to ensure accuracy, consistency, and confidence in project budgeting.",
+        desc: "At Pragtech Ltd, we provide reliable connection design support for structural steel projects of all sizes. We develop buildable, cost‑efficient, and code‑compliant connection details that align with project requirements and fabrication capabilities.",
         tag: "Quantity Survey"
     },
     {
         id: "08",
         title: "As‑Built / Record Modelling",
-        desc: "At Pragtech Ltd, we prepare accurate as‑built and record models based on site‑verified information, red‑line markups, and final construction data. Our team updates structural steel, miscellaneous metalwork, SFS, and cladding models to reflect the exact conditions of what was installed on site. we deliver clear, compliant as‑built drawings and models that support handover, facility management, and future modifications. Every update is reviewed through our internal quality process to ensure accuracy and full alignment with final site conditions.",
+        desc: "At Pragtech Ltd, we prepare accurate as‑built and record models based on site‑verified information, red‑line markups, and final construction data. Our team updates structural steel, miscellaneous metalwork, SFS, and cladding models to reflect the exact conditions of what was installed on site.",
         tag: "Record Modelling"
     }
 ];
@@ -62,16 +62,10 @@ const FeaturedServices = () => {
 
     const activeItem = featuredData[activeIndex];
 
-    const slideVariants = {
-        initial: { opacity: 0, x: 20 },
-        animate: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: -20 },
-        transition: { duration: 0.5, ease: "easeOut" }
-    };
-
     return (
         <section className="relative w-full bg-transparent py-[10vw] lg:py-[6vw] px-[5vw] overflow-hidden flex flex-col items-center">
-            {/* Background Narrative Watermark - Inverted to Teal Trace */}
+
+            {/* Background Watermark */}
             <AnimatePresence mode="wait">
                 <motion.div
                     key={`bg-${activeIndex}`}
@@ -85,7 +79,7 @@ const FeaturedServices = () => {
                 </motion.div>
             </AnimatePresence>
 
-            {/* Main Carousel Wrapper */}
+            {/* Main Wrapper */}
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +87,6 @@ const FeaturedServices = () => {
                 transition={{ duration: 1 }}
                 className="relative z-10 w-full max-w-[90vw] lg:max-w-[85vw] flex flex-col items-center"
             >
-
                 {/* Header Label */}
                 <div className="flex items-center gap-[4vw] lg:gap-[1vw] mb-[10vw] lg:mb-[6vw]">
                     <motion.div
@@ -111,81 +104,127 @@ const FeaturedServices = () => {
                     />
                 </div>
 
-                {/* Content Split: Text & Preview */}
-                <div className="w-full flex flex-col lg:flex-row items-center gap-[10vw] lg:gap-[4vw] min-h-[35vw]">
+                {/* Content Split */}
+                <div className="w-full flex flex-col lg:flex-row items-start gap-[10vw] lg:gap-[5vw]">
 
-                    {/* Left Side: Active Content */}
-                    <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left min-h-[50vw] lg:min-h-0">
+                    {/* Left: Active Detail Panel */}
+                    <div className="w-full lg:w-[45%] lg:sticky lg:top-[14vw]">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeIndex}
-                                {...slideVariants}
-                                className="w-full h-full flex flex-col items-center lg:items-start"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                className="bg-white/25 backdrop-blur-sm border border-navy/15 rounded-[4vw] lg:rounded-[1.5vw] p-[8vw] lg:p-[4vw] shadow-xl flex flex-col gap-[3vw] lg:gap-[1.5vw]"
                             >
-                                <span className="text-[9vw] lg:text-[3vw] text-teal font-heading leading-none mb-[2vw] lg:mb-[1vw]">
-                                    {activeItem.id}
-                                </span>
-                                <h3 className="text-[9vw] lg:text-[4.5vw] font-black text-navy font-heading uppercase leading-[0.8] mb-[4vw] lg:mb-[2vw] tracking-tighter">
+                                {/* Number + Tag Row */}
+                                <div className="flex items-center justify-between">
+                                    <span className="text-teal text-[8vw] lg:text-[3vw] font-black font-heading leading-none">
+                                        {activeItem.id}
+                                    </span>
+                                    <span className="text-[2.8vw] lg:text-[0.75vw] font-bold tracking-[0.2vw] uppercase font-heading px-[3vw] lg:px-[1.2vw] py-[1vw] lg:py-[0.4vw] rounded-full bg-teal/20 border border-teal text-teal">
+                                        {activeItem.tag}
+                                    </span>
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="text-[8vw] lg:text-[3vw] font-black text-navy font-heading uppercase leading-[0.85] tracking-tighter">
                                     {activeItem.title}
                                 </h3>
-                                <p className="text-[4vw] lg:text-[1.2vw] text-navy/70 font-body leading-[1.6] mb-[6vw] lg:mb-[3vw] max-w-[85vw] lg:max-w-[40vw]">
-                                    "{activeItem.desc}"
+
+                                {/* Teal divider */}
+                                <div className="w-[12vw] lg:w-[3vw] h-[0.5vw] lg:h-[0.2vw] bg-teal rounded-full" />
+
+                                {/* Description */}
+                                <p className="text-[3.8vw] lg:text-[1.1vw] text-navy/80 font-body leading-[1.75]">
+                                    {activeItem.desc}
                                 </p>
 
-                                <div className="flex flex-col lg:flex-row items-center gap-[4vw] lg:gap-[1.5vw]">
-                                    <span className="text-navy/60 text-[3.2vw] lg:text-[0.8vw] font-bold tracking-[0.2vw] uppercase font-heading">
-                                        {activeItem.tag}
+                                {/* Prev / Next */}
+                                <div className="flex items-center gap-[3vw] lg:gap-[1.5vw] mt-[2vw] lg:mt-[1vw]">
+                                    <button
+                                        onClick={prevSlide}
+                                        className="w-[11vw] h-[11vw] lg:w-[3.5vw] lg:h-[3.5vw] rounded-full border border-navy/30 text-navy hover:bg-navy hover:text-white transition-all flex items-center justify-center cursor-pointer"
+                                    >
+                                        ←
+                                    </button>
+                                    <div className="flex-1 h-[0.4vw] lg:h-[0.2vw] bg-navy/15 rounded-full overflow-hidden">
+                                        <motion.div
+                                            initial={false}
+                                            animate={{ width: `${((activeIndex + 1) / featuredData.length) * 100}%` }}
+                                            transition={{ duration: 0.7, ease: "circOut" }}
+                                            className="h-full bg-teal rounded-full"
+                                        />
+                                    </div>
+                                    <button
+                                        onClick={nextSlide}
+                                        className="w-[11vw] h-[11vw] lg:w-[3.5vw] lg:h-[3.5vw] rounded-full border border-navy/30 text-navy hover:bg-navy hover:text-white transition-all flex items-center justify-center cursor-pointer"
+                                    >
+                                        →
+                                    </button>
+                                    <span className="text-navy/50 text-[3vw] lg:text-[0.85vw] font-heading font-bold tabular-nums">
+                                        {String(activeIndex + 1).padStart(2, '0')} / {String(featuredData.length).padStart(2, '0')}
                                     </span>
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
-                    {/* Right Side: Navigation & Timeline */}
-                    <div className="w-full lg:w-[35vw] flex flex-col gap-[6vw] lg:gap-[3vw]">
-                        {/* Selector List */}
-                        <div className="flex flex-col gap-[2vw] lg:gap-[1vw]">
-                            {featuredData.map((item, index) => (
-                                <button
+                    {/* Right: Solid Dark Service List */}
+                    <div className="w-full lg:w-[55%] flex flex-col gap-[2vw] lg:gap-[0.8vw]">
+                        {featuredData.map((item, index) => {
+                            const isActive = activeIndex === index;
+                            return (
+                                <motion.button
                                     key={item.id}
                                     onClick={() => setActiveIndex(index)}
-                                    className={`group flex items-center justify-between p-[4vw] lg:p-[1.5vw] border-b transition-all duration-500 ${activeIndex === index ? 'border-teal bg-navy/5' : 'border-navy/10 hover:border-navy/30'
+                                    initial={{ opacity: 0, x: 30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.06 }}
+                                    className={`group w-full flex items-center gap-[4vw] lg:gap-[2vw] px-[5vw] lg:px-[2.5vw] py-[4vw] lg:py-[1.6vw] rounded-[3vw] lg:rounded-[0.8vw] text-left transition-all duration-400 cursor-pointer ${isActive
+                                        ? 'bg-navy shadow-xl scale-[1.01]'
+                                        : 'bg-navy/85 hover:bg-navy shadow-md hover:shadow-lg hover:scale-[1.005]'
                                         }`}
                                 >
-                                    <span className={`text-[3.6vw] lg:text-[1vw] font-heading uppercase transition-colors ${activeIndex === index ? 'text-navy' : 'text-navy/30 group-hover:text-navy/60'
+                                    {/* Number */}
+                                    <span className={`text-[4vw] lg:text-[1.1vw] font-black font-heading shrink-0 w-[8vw] lg:w-[3vw] transition-colors duration-300 ${isActive ? 'text-teal' : 'text-white/50 group-hover:text-teal/80'
+                                        }`}>
+                                        {item.id}
+                                    </span>
+
+                                    {/* Title */}
+                                    <span className={`flex-1 text-[4.2vw] lg:text-[1.3vw] font-black font-heading uppercase tracking-tight transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/80 group-hover:text-white'
                                         }`}>
                                         {item.title}
                                     </span>
+
+                                    {/* Tag — desktop only */}
+                                    <span className={`hidden lg:block shrink-0 text-[0.7vw] font-bold tracking-[0.15vw] uppercase font-heading px-[1vw] py-[0.35vw] rounded-full transition-all duration-300 ${isActive
+                                        ? 'bg-teal text-white'
+                                        : 'bg-white/10 text-white/50 group-hover:bg-white/20 group-hover:text-white/80'
+                                        }`}>
+                                        {item.tag}
+                                    </span>
+
+                                    {/* Arrow */}
                                     <motion.div
-                                        animate={{ rotate: activeIndex === index ? 45 : 0 }}
-                                        className={`w-[8vw] h-[8vw] lg:w-[2.5vw] lg:h-[2.5vw] rounded-full border flex items-center justify-center transition-all ${activeIndex === index ? 'bg-teal border-teal text-white' : 'border-navy/10 text-navy/30'
-                                            }`}>
+                                        animate={{ rotate: isActive ? 45 : 0 }}
+                                        transition={{ duration: 0.35, ease: 'easeInOut' }}
+                                        className={`shrink-0 w-[8vw] h-[8vw] lg:w-[2.5vw] lg:h-[2.5vw] rounded-full flex items-center justify-center text-[3.5vw] lg:text-[1vw] border transition-all duration-300 ${isActive
+                                            ? 'bg-teal border-teal text-white'
+                                            : 'border-white/20 text-white/50 group-hover:border-white/60 group-hover:text-white'
+                                            }`}
+                                    >
                                         →
                                     </motion.div>
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Pagination Progress */}
-                        <div className="flex items-center gap-[4vw] lg:gap-[2vw] mt-[4vw] lg:mt-[2vw]">
-                            <button onClick={prevSlide} className="w-[12vw] h-[12vw] lg:w-[4vw] lg:h-[4vw] rounded-full bg-navy/5 text-navy hover:bg-navy hover:text-white transition-all cursor-pointer flex items-center justify-center shadow-sm">
-                                ←
-                            </button>
-                            <div className="flex-1 h-px bg-navy/10 relative overflow-hidden">
-                                <motion.div
-                                    initial={false}
-                                    animate={{ width: `${((activeIndex + 1) / featuredData.length) * 100}%` }}
-                                    transition={{ duration: 0.7, ease: "circOut" }}
-                                    className="absolute inset-y-0 left-0 bg-teal"
-                                />
-                            </div>
-                            <button onClick={nextSlide} className="w-[12vw] h-[12vw] lg:w-[4vw] lg:h-[4vw] rounded-full bg-navy/5 text-navy hover:bg-navy hover:text-white transition-all cursor-pointer flex items-center justify-center shadow-sm">
-                                →
-                            </button>
-                        </div>
+                                </motion.button>
+                            );
+                        })}
                     </div>
-                </div>
 
+                </div>
             </motion.div>
         </section>
     );

@@ -4,13 +4,9 @@ import React, { useState } from 'react';
 
 const jobPositions = [
     { title: "Senior Steel Detailer", type: "Full-Time", dept: "SDS/2 & Tekla", jd: "Lead complex 3D modeling for industrial structures. Ensure compliance with AISC/CISC standards using SDS/2 and Tekla structures." },
-    { title: "Structural Checker", type: "Full-Time", dept: "Quality", jd: "Perform high-precision verification of shop drawings. Maintain 100% accuracy in GA and assembly details for global delivery." },
-    { title: "Connection Engineer", type: "Full-Time", dept: "Professional", jd: "Design and seal high-integrity structural connections. Optimize steel joints for global commercial and industrial builds." },
-    { title: "BIM / VDC Coordinator", type: "Full-Time", dept: "Digital", jd: "Orchestrate digital construction workflows and clash detection. Integrate structural models with MEP and architectural systems." },
-    { title: "Project Manager", type: "Full-Time", dept: "Operations", jd: "Oversee international detailing lifecycles from award to delivery. Manage global teams and ensure strict timeline adherence." },
     { title: "Junior Steel Detailer", type: "Trainee", dept: "Engineering", jd: "Support modeling of minor steel components and miscellaneous framing. Develop core expertise in automated detailing software." },
+    { title: "Cladding Specialist", type: "Full-Time", dept: "Cladding", jd: "Produce accurate and coordinated cladding detailing for industrial and commercial building envelopes. Deliver panel layouts, bracket arrangements, and fixing details using Tekla Structures and AutoCAD." },
     { title: "Estimation Specialist", type: "Full-Time", dept: "MTO Division", jd: "Conduct comprehensive weight analysis and material take-offs. Provide accurate structural tonnage budgets for global bidding." },
-    { title: "Technical Lead", type: "Contract", dept: "Steel Solutions", jd: "Provide high-level software support and internal detailing standards. Resolve complex project-specific modeling challenges." }
 ];
 
 const OpenPostitions = () => {

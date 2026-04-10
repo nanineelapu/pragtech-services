@@ -119,7 +119,7 @@ const CarrerPage = () => {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.4vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                            Join a global elite of structural detailing experts. We are looking for precision-driven individuals ready to master SDS/2 and Tekla while working on iconic international landmarks.
+                            Join a global elite of structural detailing experts. We are looking for precision-driven individuals ready to master Tekla and SDS/2 while working on iconic international landmarks.
                         </motion.p>
 
                         {/* Action Buttons */}
@@ -127,7 +127,7 @@ const CarrerPage = () => {
                             variants={itemVariants}
                             className="mt-[6vw] md:mt-[2vw] flex items-center gap-[2.5vw] md:gap-[2.5vw] z-20"
                         >
-                            <button 
+                            <button
                                 onClick={() => document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' })}
                                 className="group relative px-[4vw] md:px-[3vw] py-[2.2vw] md:py-[1.2vw] bg-navy text-white text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] font-heading cursor-pointer whitespace-nowrap"
                             >
@@ -140,7 +140,7 @@ const CarrerPage = () => {
 
                             <div className="w-px h-[6vw] md:h-[3vw] bg-navy/10" />
 
-                            <button 
+                            <button
                                 onClick={() => document.getElementById('our-culture')?.scrollIntoView({ behavior: 'smooth' })}
                                 className="group px-[4vw] md:px-[3vw] py-[2.2vw] md:py-[1.1vw] border border-navy/20 text-navy text-[2.2vw] md:text-[0.9vw] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-navy hover:text-white transition-all duration-500 font-heading relative overflow-hidden cursor-pointer whitespace-nowrap"
                             >
