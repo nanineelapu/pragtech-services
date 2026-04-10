@@ -105,7 +105,7 @@ const FeaturedServices = () => {
                 </div>
 
                 {/* Content Split */}
-                <div className="w-full flex flex-col lg:flex-row items-start gap-[10vw] lg:gap-[5vw]">
+                <div className="w-full flex flex-col lg:flex-row mt-[7vw] items-start gap-[10vw] lg:gap-[5vw]">
 
                     {/* Left: Active Detail Panel */}
                     <div className="w-full lg:w-[45%] lg:sticky lg:top-[14vw]">
@@ -116,7 +116,7 @@ const FeaturedServices = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
-                                className="bg-white/25 backdrop-blur-sm border border-navy/15 rounded-[4vw] lg:rounded-[1.5vw] p-[8vw] lg:p-[4vw] shadow-xl flex flex-col gap-[3vw] lg:gap-[1.5vw]"
+                                className=" rounded-[4vw] lg:rounded-[1.5vw] p-[8vw] lg:p-[4vw] shadow-xl flex flex-col gap-[3vw] lg:gap-[1.5vw]"
                             >
                                 {/* Number + Tag Row */}
                                 <div className="flex items-center justify-between">
@@ -171,8 +171,8 @@ const FeaturedServices = () => {
                         </AnimatePresence>
                     </div>
 
-                    {/* Right: Solid Dark Service List */}
-                    <div className="w-full lg:w-[55%] flex flex-col gap-[2vw] lg:gap-[0.8vw]">
+                    {/* Right: Transparent Glass Service List */}
+                    <div className="w-full lg:w-[55%] flex flex-col gap-[2vw] lg:gap-[0.6vw]">
                         {featuredData.map((item, index) => {
                             const isActive = activeIndex === index;
                             return (
@@ -183,27 +183,27 @@ const FeaturedServices = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.06 }}
-                                    className={`group w-full flex items-center gap-[4vw] lg:gap-[2vw] px-[5vw] lg:px-[2.5vw] py-[4vw] lg:py-[1.6vw] rounded-[3vw] lg:rounded-[0.8vw] text-left transition-all duration-400 cursor-pointer ${isActive
-                                        ? 'bg-navy shadow-xl scale-[1.01]'
-                                        : 'bg-navy/85 hover:bg-navy shadow-md hover:shadow-lg hover:scale-[1.005]'
+                                    className={`group w-full flex items-center gap-[3vw] lg:gap-[1.5vw] px-[4vw] lg:px-[2vw] py-[3vw] lg:py-[1.1vw] rounded-[3vw] lg:rounded-[0.8vw] text-left transition-all duration-400 cursor-pointer border ${isActive
+                                        ? 'bg-white/30 backdrop-blur-sm border-navy/20 shadow-md scale-[1.01]'
+                                        : 'bg-white/15 backdrop-blur-sm border-white/20 hover:bg-white/25 hover:border-navy/15 hover:scale-[1.005]'
                                         }`}
                                 >
                                     {/* Number */}
-                                    <span className={`text-[4vw] lg:text-[1.1vw] font-black font-heading shrink-0 w-[8vw] lg:w-[3vw] transition-colors duration-300 ${isActive ? 'text-teal' : 'text-white/50 group-hover:text-teal/80'
+                                    <span className={`text-[3.5vw] lg:text-[0.95vw] font-black font-heading shrink-0 w-[7vw] lg:w-[2.5vw] transition-colors duration-300 ${isActive ? 'text-teal' : 'text-navy/40 group-hover:text-teal/80'
                                         }`}>
                                         {item.id}
                                     </span>
 
                                     {/* Title */}
-                                    <span className={`flex-1 text-[4.2vw] lg:text-[1.3vw] font-black font-heading uppercase tracking-tight transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/80 group-hover:text-white'
+                                    <span className={`flex-1 text-[3.8vw] lg:text-[1.1vw] font-black font-heading uppercase tracking-tight transition-colors duration-300 ${isActive ? 'text-navy' : 'text-navy/70 group-hover:text-navy'
                                         }`}>
                                         {item.title}
                                     </span>
 
                                     {/* Tag — desktop only */}
-                                    <span className={`hidden lg:block shrink-0 text-[0.7vw] font-bold tracking-[0.15vw] uppercase font-heading px-[1vw] py-[0.35vw] rounded-full transition-all duration-300 ${isActive
+                                    <span className={`hidden lg:block shrink-0 text-[0.65vw] font-bold tracking-[0.12vw] uppercase font-heading px-[0.9vw] py-[0.3vw] rounded-full transition-all duration-300 ${isActive
                                         ? 'bg-teal text-white'
-                                        : 'bg-white/10 text-white/50 group-hover:bg-white/20 group-hover:text-white/80'
+                                        : 'bg-navy/10 text-navy/50 group-hover:bg-navy/20 group-hover:text-navy/80'
                                         }`}>
                                         {item.tag}
                                     </span>
@@ -212,9 +212,9 @@ const FeaturedServices = () => {
                                     <motion.div
                                         animate={{ rotate: isActive ? 45 : 0 }}
                                         transition={{ duration: 0.35, ease: 'easeInOut' }}
-                                        className={`shrink-0 w-[8vw] h-[8vw] lg:w-[2.5vw] lg:h-[2.5vw] rounded-full flex items-center justify-center text-[3.5vw] lg:text-[1vw] border transition-all duration-300 ${isActive
+                                        className={`shrink-0 w-[7vw] h-[7vw] lg:w-[2vw] lg:h-[2vw] rounded-full flex items-center justify-center text-[3vw] lg:text-[0.85vw] border transition-all duration-300 ${isActive
                                             ? 'bg-teal border-teal text-white'
-                                            : 'border-white/20 text-white/50 group-hover:border-white/60 group-hover:text-white'
+                                            : 'border-navy/25 text-navy/40 group-hover:border-navy/60 group-hover:text-navy'
                                             }`}
                                     >
                                         →
