@@ -65,8 +65,8 @@ const Footer = () => {
                                     { id: 'tw', href: '#' },
                                     { id: 'ig', href: 'https://www.instagram.com/pragtech_ltd?igsh=MW5wYmptZ293a2lkYw==' }
                                 ].map((social) => (
-                                    <a 
-                                        key={social.id} 
+                                    <a
+                                        key={social.id}
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -97,7 +97,7 @@ const Footer = () => {
                                         { name: 'Services', href: '/services' },
                                         { name: 'Projects', href: '/projects' },
                                         { name: 'Careers', href: '/career' },
-                                        { name: 'Company Overview', href: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/Pragtech_Brochure.pdf' }
+                                        { name: 'Company Overview', href: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/Pragtech_Brochure_Full%20Page.pdf' }
                                     ]
                                 },
                                 {
@@ -137,8 +137,8 @@ const Footer = () => {
                                     <ul className="flex flex-wrap items-center gap-x-[6vw] lg:gap-x-[2.5vw] gap-y-[3vw] lg:gap-y-[1vw] pl-[0.5vw]">
                                         {section.links.map((link) => (
                                             <li key={link.name}>
-                                                <Link 
-                                                    href={link.href} 
+                                                <Link
+                                                    href={link.href}
                                                     target={link.name === 'Company Overview' ? '_blank' : '_self'}
                                                     rel={link.name === 'Company Overview' ? 'noopener noreferrer' : ''}
                                                     className="text-[4.2vw] lg:text-[1.2vw] font-bold text-white hover:text-[#14b8a6] transition-all relative group/link font-body"
