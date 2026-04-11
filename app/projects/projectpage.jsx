@@ -4,12 +4,48 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const projects = [
-    { title: "Industrial Power Plant", category: "Heavy Industrial", size: "large", id: "01" },
-    { title: "Metropolitan Stadium", category: "Commercial", size: "small", id: "02" },
-    { title: "University Complex", category: "Institutional", size: "medium", id: "03" },
-    { title: "Hospital Infrastructure", category: "Healthcare", size: "medium", id: "04" },
-    { title: "Conveyor Systems", category: "Material Handling", size: "small", id: "05" },
-    { title: "Maritime Facility", category: "Infrastructure", size: "large", id: "06" }
+    {
+        title: "Industrial Power Plant",
+        category: "Heavy Industrial",
+        size: "large",
+        id: "01",
+        image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/INDUSTRIAL%20IMAGE%20OF%20PROJECT%201.webp"
+    },
+    {
+        title: "Metropolitan Stadium",
+        category: "Commercial",
+        size: "small",
+        id: "02",
+        image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/METRO%20POLIEN%20STADIUM.webp"
+    },
+    {
+        title: "University Complex",
+        category: "Institutional",
+        size: "medium",
+        id: "03",
+        image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/UNIVERSITY%20COMPLEX.webp"
+    },
+    {
+        title: "Hospital Infrastructure",
+        category: "Healthcare",
+        size: "medium",
+        id: "04",
+        image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/hOSPATAIL%20INFRS%20STRUCTURE.webp"
+    },
+    {
+        title: "Conveyor Systems",
+        category: "Material Handling",
+        size: "small",
+        id: "05",
+        image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/CONVEYOR%20SYSTEMS.webp"
+    },
+    {
+        title: "Maritime Facility",
+        category: "Infrastructure",
+        size: "large",
+        id: "06",
+        image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/MARITIME%20IMAGE.webp"
+    }
 ];
 
 const ProjectHero = () => {
@@ -156,14 +192,30 @@ const ProjectHero = () => {
                             viewport={{ once: true, margin: "-100px" }}
                             variants={cardVariants}
                             onClick={() => setActiveProject(activeProject === index ? null : index)}
-                            className={`group relative overflow-hidden rounded-[2vw] lg:rounded-[1.5vw] bg-[#f8f9fa] border border-navy/5 shadow-lg transition-all duration-700 cursor-pointer
+                            className={`group relative overflow-hidden rounded-[2vw] lg:rounded-[1.5vw] bg-[#0f172a] border border-navy/5 shadow-lg transition-all duration-700 cursor-pointer
                                 ${project.size === 'large' ? 'col-span-12 lg:col-span-8 row-span-2' : project.size === 'medium' ? 'col-span-6 lg:col-span-4 row-span-2' : 'col-span-6 lg:col-span-4 row-span-1'}
                                 ${activeProject === index ? 'ring-2 ring-teal ring-inset shadow-2xl' : ''}
                             `}
                         >
+                            {/* Project Image Placeholder/Background */}
+                            {project.image && (
+                                <div className="absolute inset-0 z-0">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 
+                                            ${activeProject === index ? 'opacity-30 blur-md scale-105' : 'opacity-85 brightness-105 group-hover:opacity-75 group-hover:brightness-70'}
+                                        `}
+                                    />
+                                    {/* Vignette/Depth Gradient - Reduced Blue */}
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                                    <div className="absolute inset-0 bg-slate-950/10 group-hover:bg-slate-950/30 transition-colors duration-500" />
+                                </div>
+                            )}
+
                             {/* Technical Overlay - Now reactive to click + hover */}
-                            <div className={`absolute inset-0 bg-[#0f172a] transition-all duration-500 z-10 flex flex-col justify-center p-[4vw] lg:p-[2.5vw]
-                                ${activeProject === index ? 'opacity-[0.98] blur-0' : 'opacity-0 lg:group-hover:opacity-[0.97]'}
+                            <div className={`absolute inset-0 transition-all duration-500 z-10 flex flex-col justify-center p-[4vw] lg:p-[2.5vw]
+                                ${activeProject === index ? 'opacity-[0.98] blur-0 bg-[#0f172a]/90' : 'opacity-0 lg:group-hover:opacity-100 bg-transparent'}
                             `}>
                                 <div className="flex items-center justify-between mb-[1vw] lg:mb-[0.8vw]">
                                     <span className="text-[#14b8a6] text-[2.6vw] lg:text-[0.8vw] font-black uppercase tracking-widest font-heading">{project.category}</span>
@@ -179,28 +231,26 @@ const ProjectHero = () => {
                                 `}>
                                     Precision detailing through TEKLA & SDS/2 for structural excellence.
                                 </p>
-                                <div className="w-fit border-b border-teal text-teal font-black text-[2.4vw] lg:text-[0.7vw] uppercase tracking-widest pb-[0.2vw] font-heading">
-                                    View Technical Specs →
-                                </div>
+
                             </div>
 
                             {/* Base Card Info */}
-                            <div className="absolute inset-0 flex flex-col justify-end p-[2.5vw] lg:p-[1.8vw] bg-linear-to-t from-black/20 to-transparent">
+                            <div className="absolute inset-0 flex flex-col justify-end p-[2.5vw] lg:p-[1.8vw] bg-linear-to-t from-[#0f172a]/80 via-transparent to-transparent z-[5]">
                                 <div className="flex items-center justify-between relative z-0">
                                     <div className="flex flex-col">
-                                        <span className="text-navy/40 text-[2.5vw] lg:text-[0.8vw] font-heading">{project.id}</span>
-                                        <h4 className="text-[3.5vw] lg:text-[1.5vw] text-navy font-black uppercase transition-opacity group-hover:opacity-0 leading-none font-heading">
+                                        <span className="text-white/40 text-[2.5vw] lg:text-[0.8vw] font-heading">{project.id}</span>
+                                        <h4 className="text-[3.5vw] lg:text-[1.5vw] text-white font-black uppercase transition-opacity group-hover:opacity-0 leading-none font-heading">
                                             {project.title}
                                         </h4>
                                     </div>
-                                    <div className="w-[8vw] lg:w-[2.8vw] h-[8vw] lg:h-[2.8vw] rounded-full border border-navy/10 flex items-center justify-center text-navy text-[3vw] lg:text-[1.2vw] group-hover:border-teal transition-all">
+                                    <div className="w-[8vw] lg:w-[2.8vw] h-[8vw] lg:h-[2.8vw] rounded-full border border-white/10 flex items-center justify-center text-white text-[3vw] lg:text-[1.2vw] group-hover:border-teal transition-all">
                                         ↗
                                     </div>
                                 </div>
                             </div>
 
                             {/* Ghosted Tech Icon */}
-                            <div className="absolute top-[1.5vw] lg:top-[1.5vw] right-[1.5vw] lg:right-[1.5vw] text-[8vw] lg:text-[6vw] text-navy/2 font-black select-none group-hover:opacity-0 transition-opacity font-heading">
+                            <div className="absolute top-[1.5vw] lg:top-[1.5vw] right-[1.5vw] lg:right-[1.5vw] text-[8vw] lg:text-[6vw] text-teal/10 font-black select-none group-hover:opacity-0 transition-opacity font-heading z-[5]">
                                 ◈
                             </div>
                         </motion.div>
