@@ -12,17 +12,46 @@ const jobPositions = [
 const OpenPostitions = () => {
     const [selectedJob, setSelectedJob] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [uploadedFile, setUploadedFile] = useState(null);
 
     const handleApply = (job) => {
         setSelectedJob(job);
+        setIsSubmitted(false);
         document.body.style.overflow = 'hidden'; // Prevent scroll
     };
 
     const closePortal = () => {
         setSelectedJob(null);
         setUploadedFile(null);
+        setIsSubmitted(false);
         document.body.style.overflow = 'auto'; // Re-enable scroll
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        const formData = new FormData(e.target);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/naniatworkmail@gmail.com", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            if (response.ok) {
+                setIsSubmitted(true);
+            } else {
+                throw new Error("Form submission failed");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Something went wrong. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -79,7 +108,7 @@ const OpenPostitions = () => {
 
             {/* Application Modal Portal */}
             {selectedJob && (
-                <div className="fixed inset-0 z-[200] flex items-start justify-center px-[4vw] lg:px-0 pt-[15vw] lg:pt-[8vw] overflow-y-auto pb-[10vw]">
+                <div className="fixed inset-0 z-[200] flex items-start justify-center px-[4vw] lg:px-0 pt-[25vw] lg:pt-[8.5vw] overflow-y-auto pb-[5vw]">
                     {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-navy/60 backdrop-blur-md animate-in fade-in duration-500"
@@ -87,14 +116,14 @@ const OpenPostitions = () => {
                     />
 
                     {/* Modal Container */}
-                    <div className="relative w-full max-w-[95vw] lg:max-w-[45vw] bg-white rounded-[8vw] lg:rounded-[2vw] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.3)] border border-white/50 animate-in zoom-in-95 duration-500 flex flex-col overscroll-contain">
+                    <div className="relative w-full max-w-[95vw] lg:max-w-[42vw] max-h-[90vh] bg-white rounded-[6vw] lg:rounded-[1.5vw] shadow-[0_32px_80px_rgba(0,0,0,0.3)] border border-white/50 animate-in zoom-in-95 duration-500 flex flex-col overflow-hidden">
                         {/* Modal Header */}
-                        <div className="bg-navy p-[4vw] lg:p-[1.2vw] flex items-center justify-between shrink-0">
+                        <div className="bg-navy p-[3vw] lg:p-[0.8vw] flex items-center justify-between shrink-0">
                             <div>
-                                <h2 className="text-white text-[5.5vw] lg:text-[1.8vw] font-black anton-regular tracking-tight uppercase leading-none">
+                                <h2 className="text-white text-[4.5vw] lg:text-[1.4vw] font-black anton-regular tracking-tight uppercase leading-none">
                                     Apply for Position
                                 </h2>
-                                <p className="text-teal text-[3vw] lg:text-[0.85vw] font-black uppercase tracking-widest mt-[0.5vw] anton-regular">
+                                <p className="text-teal text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest mt-[0.2vw] anton-regular">
                                     {selectedJob.title}
                                 </p>
                             </div>
@@ -108,112 +137,147 @@ const OpenPostitions = () => {
                             </button>
                         </div>
 
-                        {/* Form Body */}
-                        <form 
-                            action="https://formsubmit.co/info@pragtech.co.uk" 
-                            method="POST"
-                            encType="multipart/form-data"
-                            className="p-[4vw] lg:p-[1.8vw] flex flex-col gap-[2vw] lg:gap-[1vw]"
-                        >
-                            {/* FormSubmit Configuration */}
-                            <input type="hidden" name="_subject" value={`New Job Application: ${selectedJob.title}`} />
-                            <input type="hidden" name="position" value={selectedJob.title} />
-                            <input type="hidden" name="_template" value="table" />
-                            <input type="hidden" name="_captcha" value="false" />
-                            <input type="hidden" name="_next" value="https://pragtech.co.uk/career" />
-
-                            {/* Input Group: Name */}
-                            <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
-                                <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Full Name*</label>
-                                <input
-                                    type="text"
-                                    name="full_name"
-                                    placeholder="John Doe"
-                                    className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
-                                    required
-                                />
-                            </div>
- 
-                            {/* Two Column Grid */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2vw] lg:gap-[1vw]">
-                                <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
-                                    <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Email Address*</label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="john@example.com"
-                                        className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
-                                        required
-                                    />
-                                </div>
-                                <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
-                                    <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Phone Number*</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        placeholder="+1 234 567 8900"
-                                        className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
-                                        required
-                                    />
-                                </div>
-                            </div>
- 
-                            {/* Preferred Location */}
-                            <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
-                                <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Preferred Location*</label>
-                                <select 
-                                    name="location"
-                                    className="w-full bg-white border border-navy/10 px-[4vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.4vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond appearance-none cursor-pointer"
-                                    required
-                                >
-                                    <option value="">Select a location</option>
-                                    <option value="London">London, UK (Global HQ)</option>
-                                    <option value="USA">USA</option>
-                                    <option value="Dubai">Dubai, UAE</option>
-                                    <option value="Toronto">Toronto, Canada</option>
-                                    <option value="Sydney">Sydney, Australia</option>
-                                </select>
-                            </div>
- 
-                            {/* Resume Upload Area */}
-                            <div className="flex flex-col gap-[0.5vw] lg:gap-[0.3vw]">
-                                <label className="text-navy text-[2.5vw] lg:text-[0.7vw] font-black uppercase tracking-widest anton-regular">Resume (PDF)*</label>
-                                <label className={`w-full border border-dashed ${uploadedFile ? 'border-teal bg-teal/5' : 'border-navy/10 bg-white/50'} hover:border-teal p-[3vw] lg:p-[1.2vw] rounded-[1.5vw] lg:rounded-[0.6vw] flex flex-col items-center justify-center gap-[1vw] lg:gap-[0.3vw] cursor-pointer transition-all group`}>
-                                    <input 
-                                        type="file" 
-                                        name="resume" 
-                                        className="hidden" 
-                                        accept=".pdf" 
-                                        onChange={(e) => setUploadedFile(e.target.files[0])}
-                                    />
-                                    <div className={`w-[8vw] h-[8vw] lg:w-[2.2vw] lg:h-[2.2vw] ${uploadedFile ? 'bg-teal/20' : 'bg-navy/5'} group-hover:bg-teal/10 rounded-full flex items-center justify-center transition-all`}>
-                                        <svg className={`w-[4vw] h-[4vw] lg:w-[1vw] lg:h-[1vw] ${uploadedFile ? 'text-teal' : 'text-navy/40'} group-hover:text-teal`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        {/* Modal Content */}
+                        <div className="flex-1 overflow-y-auto overscroll-contain">
+                            {isSubmitted ? (
+                                <div className="p-[6vw] lg:p-[3vw] flex flex-col items-center justify-center text-center gap-[3vw] lg:gap-[1.2vw] animate-in fade-in zoom-in duration-500">
+                                    <div className="w-[15vw] h-[15vw] lg:w-[5vw] lg:h-[5vw] bg-teal rounded-full flex items-center justify-center mb-2 shadow-[0_10px_30px_rgba(20,184,166,0.3)]">
+                                        <svg className="w-[8vw] h-[8vw] lg:w-[2.5vw] lg:h-[2.5vw] text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <span className={`text-[3vw] lg:text-[0.85vw] eb-garamond ${uploadedFile ? 'text-teal font-bold' : 'text-navy/60'} group-hover:text-navy text-center`}>
-                                        {uploadedFile ? `Selected: ${uploadedFile.name}` : 'Upload resume (PDF, max 5MB)'}
-                                    </span>
-                                </label>
-                            </div>
- 
-                            {/* Action Buttons */}
-                            <div className="grid grid-cols-2 gap-[3vw] lg:gap-[1.2vw] mt-[2vw]">
-                                <button
-                                    type="button"
-                                    onClick={closePortal}
-                                    className="w-full py-[2.5vw] lg:py-[0.7vw] border border-navy/10 hover:bg-navy/5 text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all"
+                                    <h3 className="text-[7vw] lg:text-[2vw] font-black text-navy anton-regular uppercase tracking-tight">Application <span className="text-teal">Received</span></h3>
+                                    <p className="text-[4vw] lg:text-[1vw] text-navy/60 eb-garamond max-w-[80vw] lg:max-w-[25vw] leading-relaxed italic">
+                                        Thank you for applying for the <span className="text-navy font-bold">{selectedJob.title}</span> role. Our recruitment team will review your credentials shortly.
+                                    </p>
+                                    <button
+                                        onClick={closePortal}
+                                        className="mt-[3vw] lg:mt-[1.5vw] px-[8vw] lg:px-[2.5vw] py-[3vw] lg:py-[0.8vw] bg-navy text-white rounded-full anton-regular uppercase text-[3.2vw] lg:text-[0.85vw] tracking-[0.2vw] hover:bg-teal hover:text-navy transition-all shadow-xl active:scale-95"
+                                    >
+                                        Return to Careers
+                                    </button>
+                                </div>
+                            ) : (
+                                <form
+                                    onSubmit={handleSubmit}
+                                    className="p-[5vw] lg:p-[1.5vw] flex flex-col gap-[3vw] lg:gap-[1vw]"
                                 >
-                                    Cancel
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="w-full py-[2.5vw] lg:py-[0.7vw] bg-navy hover:bg-teal text-white hover:text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-[1.5vw] lg:gap-[0.4vw]"
-                                >
-                                    Submit Application
-                                </button>
-                            </div>
-                        </form>
+                                    {/* FormSubmit Configuration */}
+                                    <input type="hidden" name="_subject" value={`New Job Application: ${selectedJob.title}`} />
+                                    <input type="hidden" name="position" value={selectedJob.title} />
+                                    <input type="hidden" name="_template" value="table" />
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="_autoresponse" value={`Thank you for applying for the ${selectedJob.title} position at Pragtech Services. We have received your application and resume. Our team will reach out to you if your profile matches our requirements.`} />
+
+                                    {/* Input Group: Name */}
+                                    <div className="flex flex-col gap-[0.2vw] lg:gap-[0.2vw]">
+                                        <label className="text-navy text-[2.5vw] lg:text-[0.65vw] font-black uppercase tracking-widest anton-regular">Full Name*</label>
+                                        <input
+                                            type="text"
+                                            name="full_name"
+                                            placeholder="John Doe"
+                                            className="w-full bg-white border border-navy/10 px-[3vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.3vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* Two Column Grid */}
+                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[3vw] lg:gap-[1vw]">
+                                        <div className="flex flex-col gap-[0.2vw] lg:gap-[0.2vw]">
+                                            <label className="text-navy text-[2.5vw] lg:text-[0.65vw] font-black uppercase tracking-widest anton-regular">Email Address*</label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="john@example.com"
+                                                className="w-full bg-white border border-navy/10 px-[3vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.3vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="flex flex-col gap-[0.2vw] lg:gap-[0.2vw]">
+                                            <label className="text-navy text-[2.5vw] lg:text-[0.65vw] font-black uppercase tracking-widest anton-regular">Phone Number*</label>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                placeholder="+1 234 567 8900"
+                                                className="w-full bg-white border border-navy/10 px-[3vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.3vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Preferred Location */}
+                                    <div className="flex flex-col gap-[0.2vw] lg:gap-[0.2vw]">
+                                        <label className="text-navy text-[2.5vw] lg:text-[0.65vw] font-black uppercase tracking-widest anton-regular">Preferred Location*</label>
+                                        <select
+                                            name="location"
+                                            className="w-full bg-white border border-navy/10 px-[3vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.3vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond appearance-none cursor-pointer"
+                                            required
+                                        >
+                                            <option value="">Select a location</option>
+                                            <option value="London">London, UK (Global HQ)</option>
+                                            <option value="USA">USA</option>
+                                            <option value="Dubai">Dubai, UAE</option>
+                                            <option value="Toronto">Toronto, Canada</option>
+                                            <option value="Sydney">Sydney, Australia</option>
+                                        </select>
+                                    </div>
+
+                                    {/* Resume Upload Area */}
+                                    <div className="flex flex-col gap-[0.5vw] lg:gap-[0.5vw]">
+                                        <label className="text-navy text-[3vw] lg:text-[0.75vw] font-black uppercase tracking-widest anton-regular">Resume (PDF)*</label>
+                                        <label className={`w-full border-2 border-dashed ${uploadedFile ? 'border-teal bg-teal/5' : 'border-navy/10 bg-white/50'} hover:border-teal p-[3.5vw] lg:p-[1.4vw] rounded-[1.5vw] lg:rounded-[0.8vw] flex flex-col items-center justify-center gap-[1.5vw] lg:gap-[0.4vw] cursor-pointer transition-all group relative overflow-hidden`}>
+                                            <input
+                                                type="file"
+                                                name="resume"
+                                                className="absolute inset-0 opacity-0 cursor-pointer"
+                                                accept=".pdf"
+                                                onChange={(e) => setUploadedFile(e.target.files[0])}
+                                                required
+                                            />
+                                            <div className={`w-[10vw] h-[10vw] lg:w-[2.5vw] lg:h-[2.5vw] ${uploadedFile ? 'bg-teal/20' : 'bg-navy/5'} group-hover:bg-teal/10 rounded-full flex items-center justify-center transition-all`}>
+                                                <svg className={`w-[5vw] h-[5vw] lg:w-[1.4vw] lg:h-[1.4vw] ${uploadedFile ? 'text-teal' : 'text-navy/40'} group-hover:text-teal`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                                </svg>
+                                            </div>
+                                            <div className="flex flex-col items-center gap-[0.5vw] lg:gap-[0.1vw]">
+                                                <span className={`text-[3.2vw] lg:text-[0.85vw] eb-garamond font-bold ${uploadedFile ? 'text-teal' : 'text-navy/60'} group-hover:text-navy text-center`}>
+                                                    {uploadedFile ? uploadedFile.name : 'Click to upload resume'}
+                                                </span>
+                                                <span className="text-[2.5vw] lg:text-[0.65vw] text-navy/30 eb-garamond uppercase tracking-widest leading-none">
+                                                    PDF format only (Max 5MB)
+                                                </span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="grid grid-cols-2 gap-[3vw] lg:gap-[1vw] pt-[1vw] mt-[1vw]">
+                                        <button
+                                            type="button"
+                                            onClick={closePortal}
+                                            className="w-full py-[3vw] lg:py-[0.8vw] border border-navy/10 hover:bg-navy/5 text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all"
+                                        >
+                                            Cancel
+                                        </button>
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full py-[3vw] lg:py-[0.8vw] bg-navy hover:bg-teal text-white hover:text-navy font-black rounded-full text-[3.2vw] lg:text-[0.85vw] eb-garamond uppercase tracking-[0.1vw] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-[1.5vw] lg:gap-[0.4vw] disabled:opacity-50"
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <svg className="animate-spin h-[3.5vw] w-[3.5vw] lg:h-[1vw] lg:w-[1vw]" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    Processing...
+                                                </>
+                                            ) : 'Submit Application'}
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}

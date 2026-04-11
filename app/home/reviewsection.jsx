@@ -1,157 +1,182 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, Quote, CheckCircle2 } from 'lucide-react';
 
 const ReviewSection = () => {
     const reviews = [
         {
-            name: "Sarah Williams",
-            title: "Engineering Director",
-            company: "SteelFrame",
-            text: "Working with this team has been a game-changer. Their BIM coordination services are top-notch.",
-            image: "https://i.pravatar.cc/150?u=sarah",
+            name: "Marcus V. Sterling",
+            role: "Managing Director",
+            company: "Apex Infrastructure Group",
+            text: "Pragtech's BIM implementation was the backbone of our 40-story residential project. Their precision in structural detailing eliminated 95% of on-site coordination errors and significantly accelerated our delivery timeline.",
+            image: "/assets/reviews/rev1.png",
+            rating: 5,
+            size: "large"
         },
         {
-            name: "James Rodriguez",
-            title: "Construction Manager",
-            company: "MetalWorks",
-            text: "Excellent communication and fast turnaround. The steel detailing was precise and met all our requirements.",
-            image: "https://i.pravatar.cc/150?u=james",
+            name: "Elena K. Novak",
+            role: "Senior Design Lead",
+            company: "Studio Vertex Architects",
+            text: "Their attention to detail in steel connectivity design is unmatched. They don't just provide drawings; they provide engineered solutions that work on the first try.",
+            image: "/assets/reviews/rev2.png",
+            rating: 5,
+            size: "small"
         },
         {
-            name: "Emily Thompson",
-            title: "Senior Architect",
-            company: "Design & Build",
-            text: "Their connection design services saved us weeks. Remarkable technical accuracy and problem-solving.",
-            image: "https://i.pravatar.cc/150?u=emily",
+            name: "Julian Thorne",
+            role: "Chief Operations Officer",
+            company: "IronGate Global Infra",
+            text: "Reliability and technical depth are the hallmarks of Pragtech. Their structural detailing team handled our massive industrial complex with absolute precision.",
+            image: "/assets/reviews/rev3.png",
+            rating: 4,
+            size: "small"
         },
         {
-            name: "David Miller",
-            title: "Project Head",
-            company: "SkyHigh",
-            text: "Quality and attention to detail is second to none. Handled our complex industrial framework with ease.",
-            image: "https://i.pravatar.cc/150?u=david",
-        },
-        {
-            name: "Sofia Chen",
-            title: "Structural Engineer",
-            company: "Urban Detailing",
-            text: "Highly recommended for large-scale projects. They provide innovative solutions to complex problems.",
-            image: "https://i.pravatar.cc/150?u=sofia",
+            name: "Sophia L. Chambers",
+            role: "Lead Structural Engineer",
+            company: "Urban Core Engineering",
+            text: "Digitizing our legacy blueprints into highly accurate LOD 400 BIM models was a game-changer. Pragtech is truly a partner in digital transformation.",
+            image: "/assets/reviews/rev4.png",
+            rating: 5,
+            size: "small"
         },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % reviews.length);
-        }, 6000);
-        return () => clearInterval(interval);
-    }, [reviews.length]);
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+        }
+    };
 
     return (
-        <motion.section
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="bg-transparent rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] py-[12vw] lg:py-[8vw] px-[6vw] lg:px-[4vw] flex flex-col items-center overflow-hidden w-[92%] mx-auto"
-        >
-            {/* Header Content */}
-            <div className="w-full flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[2vw]">
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="w-1/2 lg:w-full"
-                >
-                    <h2 className="text-[8vw] lg:text-[4vw] font-black text-navy tracking-tighter leading-none uppercase font-heading">
-                        CLIENT <br className="lg:hidden" /> <span className="text-teal">VOICES</span>
-                    </h2>
-                    <div className="w-[12vw] lg:w-[6vw] h-[0.8vw] lg:h-[0.3vw] bg-teal ml-0 mt-[2vw] rounded-full" />
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="w-1/2 lg:w-full lg:mt-[2vw]"
-                >
-                    <p className="text-[3vw] lg:text-[1.1vw] text-navy/40 font-bold uppercase tracking-widest text-right lg:text-left font-body">
-                        Trusted globally <br className="lg:hidden" /> since 2012
-                    </p>
-                </motion.div>
+        <section className="relative py-24 lg:py-32 px-6 lg:px-12 overflow-hidden bg-[#fafbfc]">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
+                <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-teal/5 blur-[120px]" />
+                <div className="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] rounded-full bg-navy/5 blur-[100px]" />
             </div>
 
-            {/* Circular Orbit Slider */}
-            <div className="relative w-full h-[100vw] lg:h-[40vw] flex items-center justify-center">
-                <AnimatePresence mode="wait">
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Header Area */}
+                <div className="flex flex-col mb-16 lg:mb-24">
                     <motion.div
-                        key={currentIndex}
-                        initial={{ opacity: 0, scale: 0.9, x: 50 }}
-                        animate={{ opacity: 1, scale: 1, x: 0 }}
-                        exit={{ opacity: 0, scale: 0.9, x: -50 }}
-                        transition={{ duration: 0.6, ease: "circOut" }}
-                        className="absolute flex flex-col items-center justify-center text-center p-[4vw] z-20"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex items-center gap-3 mb-4"
                     >
-                        {/* Circular Review Pod */}
-                        <div className="relative rounded-full aspect-square border-2 border-navy/10 flex flex-col items-center justify-center bg-white shadow-2xl w-[85vw] lg:w-[35vw]">
-                            {/* Quote Icon */}
-                            <div className="absolute top-[10%] bg-teal text-white w-[10vw] lg:w-[3vw] h-[10vw] lg:h-[3vw] rounded-full flex items-center justify-center shadow-lg">
-                                <svg className="w-[4vw] lg:w-[1.2vw] h-[4vw] lg:h-[1.2vw]" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 15.1046 21.017 14V9C21.017 7.89543 20.1216 7 19.017 7H16.017C14.9124 7 14.017 7.89543 14.017 9V12M3 21L3 18C3 16.8954 3.89543 16 5 16H8C9.10457 16 10 15.1046 10 14V9C10 7.89543 9.10457 7 8 7H5C3.89543 7 3 7.89543 3 9V12" />
-                                </svg>
+                        <div className="h-[2px] w-12 bg-teal" />
+                        <span className="text-teal font-bold tracking-[0.2em] uppercase text-xs lg:text-sm">Client Testimonials</span>
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="text-4xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tight max-w-2xl"
+                    >
+                        TRUSTED BY <span className="text-teal">INDUSTRY TITANS</span> GLOBALLY
+                    </motion.h2>
+                </div>
+
+                {/* Grid Layout */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8"
+                >
+                    {reviews.map((review, index) => (
+                        <motion.div
+                            key={index}
+                            variants={cardVariants}
+                            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                            className={`group relative bg-white border border-slate-100 p-8 lg:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col justify-between
+                                ${review.size === 'large' ? 'lg:col-span-2' : 'lg:col-span-1'}
+                            `}
+                        >
+                            {/* Card Content */}
+                            <div>
+                                <div className="flex justify-between items-start mb-8">
+                                    <div className="flex gap-1">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star
+                                                key={i}
+                                                size={16}
+                                                className={i < review.rating ? "fill-teal text-teal" : "text-slate-200"}
+                                            />
+                                        ))}
+                                    </div>
+                                    <Quote className="text-teal/10 group-hover:text-teal/20 transition-colors" size={48} strokeWidth={1.5} />
+                                </div>
+
+                                <p className={`text-navy/80 font-medium leading-relaxed mb-10
+                                    ${review.size === 'large' ? 'text-xl lg:text-2xl' : 'text-lg'}
+                                `}>
+                                    "{review.text}"
+                                </p>
                             </div>
 
-                            {/* Main Text Content */}
-                            <div className="max-w-[85%] lg:max-w-[75%] flex flex-col items-center">
-                                <p className="text-navy text-[3.8vw] lg:text-[1.2vw] font-bold leading-relaxed italic mb-[5vw] lg:mb-[2vw] font-body">
-                                    "{reviews[currentIndex].text}"
-                                </p>
-
-                                {/* Author Info */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-[15vw] lg:w-[4.5vw] h-[15vw] lg:h-[4.5vw] rounded-full overflow-hidden border-2 border-teal mb-[3vw] lg:mb-[1vw]">
-                                        <img src={reviews[currentIndex].image} alt={reviews[currentIndex].name} className="w-full h-full object-cover" />
+                            {/* Author Info */}
+                            <div className="flex items-center gap-4 mt-auto">
+                                <div className="relative">
+                                    <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-lg">
+                                        <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
                                     </div>
-                                    <h4 className="text-navy text-[4.5vw] lg:text-[1.4vw] font-black tracking-tight font-heading">{reviews[currentIndex].name}</h4>
-                                    <span className="text-teal text-[2.5vw] lg:text-[0.8vw] font-bold uppercase tracking-widest mt-1 lg:mt-0 font-body">{reviews[currentIndex].company}</span>
+                                    <div className="absolute -bottom-1 -right-1 bg-teal text-white p-1 rounded-full shadow-md">
+                                        <CheckCircle2 size={12} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 className="text-navy font-bold text-lg leading-tight">{review.name}</h4>
+                                    <p className="text-slate-500 text-sm font-medium">
+                                        {review.role} <span className="text-teal/60 mx-1">•</span> {review.company}
+                                    </p>
                                 </div>
                             </div>
 
-                            {/* Background Decorative Circle */}
-                            <div className="absolute inset-0 rounded-full border-4 border-dashed border-teal/10 animate-[spin_60s_linear_infinite]" />
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
+                            {/* Decorative accent */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-teal/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
+                        </motion.div>
+                    ))}
+                </motion.div>
 
-                {/* Orbiting Ring - Visual Only */}
-                <div className="hidden lg:block absolute w-[55vw] h-[55vw] rounded-full border border-navy/5 pointer-events-none" />
+                {/* Bottom Trust Bar */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1 }}
+                    className="mt-20 pt-10 border-t border-slate-100 flex flex-wrap justify-center lg:justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+                >
+                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">A Decade of Excellence</span>
+                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">ISO 9001 Certified</span>
+                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">Global Standards</span>
+                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">Digitizing Infrastructure</span>
+                </motion.div>
             </div>
-
-            {/* Pagination Dots */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="flex gap-[2.5vw] lg:gap-[1vw] mt-[8vw] lg:mt-[4vw]"
-            >
-                {reviews.map((_, i) => (
-                    <button
-                        key={i}
-                        onClick={() => setCurrentIndex(i)}
-                        className={`h-[2vw] lg:h-[0.8vw] rounded-full transition-all duration-500
-                            ${currentIndex === i ? 'bg-navy w-[6vw] lg:w-[2.5vw]' : 'bg-navy/20 w-[2vw] lg:w-[0.8vw]'}`}
-                    ></button>
-                ))}
-            </motion.div>
-        </motion.section>
+        </section>
     );
 };
 
 export default ReviewSection;
+

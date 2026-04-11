@@ -4,10 +4,10 @@ import React from 'react';
 
 const Technologies = () => {
     const techLogos = [
-        { name: "BLUEBEAM", color: "#0078d4" },
         { name: "Tekla", color: "#0f172a" },
-        { name: "AUTOCAD", color: "#f44336" },
         { name: "SDS/2", color: "#003b71" },
+        { name: "AUTOCAD", color: "#f44336" },
+        { name: "BLUEBEAM", color: "#0078d4" },
     ];
 
     return (
@@ -16,14 +16,14 @@ const Technologies = () => {
             <div className="w-full flex flex-row lg:flex-col items-center lg:items-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[6vw] relative z-10">
                 <div className="w-1/2 lg:w-full">
                     <h2 className="text-[7.5vw] lg:text-[4vw] font-black text-white tracking-tighter leading-tight uppercase font-heading">
-                        Tech <br className="lg:hidden" /> <span className="text-teal">Stack</span>
+                        Technical <br className="lg:hidden" /> <span className="text-teal">Synergy</span>
                     </h2>
                     <div className="w-[12vw] lg:w-[8vw] h-[0.8vw] lg:h-[0.3vw] bg-teal mt-[2vw] lg:mt-[1.5vw] rounded-full" />
                 </div>
 
                 <div className="w-1/2 lg:w-full lg:mt-[1.5vw]">
                     <p className="text-[2.8vw] lg:text-[1.1vw] text-white/50 font-medium max-w-full lg:max-w-[30vw] italic lg:not-italic text-right lg:text-left font-body">
-                        Leveraging advanced industrial tools for structural precision.
+                        Harnessing state-of-the-art computational power to transform complex blueprints into flawless physical realities.
                     </p>
                 </div>
             </div>

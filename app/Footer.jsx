@@ -29,28 +29,59 @@ const Footer = () => {
                                 Architecting the future of structural steel through high-precision detailing and engineering oversight. Operating in more than 6 countries.
                             </p>
 
-                            {/* Address & Reg Info */}
-                            <div className="flex flex-col gap-[1vw] text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body items-start lg:items-end mt-[2vw]">
-                                <p>71-75 Shelton street, Covent Garden</p>
-                                <p>London, WC2H 9JQ, United Kingdom</p>
-                                <p className="text-[#14b8a6]/60">Company Reg: 16973363</p>
-                                <p className="text-[#14b8a6]/60 underline">Pragtech.co.uk</p>
+                            {/* Global Offices Section */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-[6vw] lg:gap-[2vw] w-full text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[2vw]">
+                                <div className="flex flex-col gap-[0.5vw] items-start lg:items-end">
+                                    <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[1vw] lg:mb-[0.5vw]">Corporate Office</h4>
+                                    <p>8, Spey Glen Drive, Harwell</p>
+                                    <p>Didcot, OX11 6LX, UK</p>
+                                </div>
+                                <div className="flex flex-col gap-[0.5vw] items-start lg:items-end">
+                                    <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[1vw] lg:mb-[0.5vw]">Head Sales Office</h4>
+                                    <p>71-75 Shelton Street, London</p>
+                                    <p>WC2H 9JQ, United Kingdom</p>
+                                </div>
+                            </div>
+
+                            {/* Communication Hub */}
+                            <div className="flex flex-col gap-[1vw] items-start lg:items-end w-full border-t border-white/5 pt-[4vw] lg:pt-[1.5vw]">
+                                <div className="flex flex-wrap lg:flex-nowrap gap-[4vw] lg:gap-[1.5vw] items-center text-[3.2vw] lg:text-[0.9vw]">
+                                    <a href="mailto:info@pragtech.co.uk" className="text-[#14b8a6] hover:text-white transition-all font-bold">info@pragtech.co.uk</a>
+                                    <span className="hidden lg:block text-white/10">|</span>
+                                    <a href="mailto:mann@pragtech.co.uk" className="text-[#14b8a6] hover:text-white transition-all font-bold">mann@pragtech.co.uk</a>
+                                </div>
+                                <div className="flex flex-wrap lg:flex-nowrap gap-[4vw] lg:gap-[1.5vw] items-center text-[3.2vw] lg:text-[0.9vw] mt-[1vw] lg:mt-0">
+                                    <a href="tel:+447304120818" className="text-white/60 hover:text-[#14b8a6] transition-all">+44 7304 120818</a>
+                                    <span className="hidden lg:block text-white/10">•</span>
+                                    <a href="tel:+447404710491" className="text-white/60 hover:text-[#14b8a6] transition-all">+44 7404 710491</a>
+                                </div>
+                                <p className="text-white/20 mt-[2vw] lg:mt-[0.5vw] text-[2.8vw] lg:text-[0.7vw] uppercase tracking-widest font-black">Company Reg: 16973363</p>
                             </div>
 
                             {/* Social Icons - Optimized for Mobile Touch */}
                             <div className="flex gap-[4vw] lg:gap-[1vw] mt-[2vw] lg:mt-[1vw]">
-                                {['ln', 'tw', 'fb'].map((social) => (
-                                    <button key={social} className="w-[12vw] h-[12vw] lg:w-[3.5vw] lg:h-[3.5vw] rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#14b8a6] hover:text-white hover:border-[#14b8a6] transition-all group">
-                                        {social === 'ln' && (
+                                {[
+                                    { id: 'ln', href: 'https://www.linkedin.com/company/pragtech-ltd/' },
+                                    { id: 'tw', href: '#' },
+                                    { id: 'ig', href: 'https://www.instagram.com/pragtech_ltd?igsh=MW5wYmptZ293a2lkYw==' }
+                                ].map((social) => (
+                                    <a 
+                                        key={social.id} 
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-[12vw] h-[12vw] lg:w-[3.5vw] lg:h-[3.5vw] rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-[#14b8a6] hover:text-white hover:border-[#14b8a6] transition-all group"
+                                    >
+                                        {social.id === 'ln' && (
                                             <svg className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw]" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg>
                                         )}
-                                        {social === 'tw' && (
+                                        {social.id === 'tw' && (
                                             <svg className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
                                         )}
-                                        {social === 'fb' && (
-                                            <svg className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw]" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>
+                                        {social.id === 'ig' && (
+                                            <svg className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
                                         )}
-                                    </button>
+                                    </a>
                                 ))}
                             </div>
                         </div>
@@ -58,33 +89,34 @@ const Footer = () => {
                         {/* LINK ROWS */}
                         <div className="lg:col-span-7 flex flex-col gap-[8vw] lg:gap-[3vw] w-full">
                             {[
-                                { 
-                                    title: 'Menu', 
+                                {
+                                    title: 'Menu',
                                     links: [
                                         { name: 'Home', href: '/' },
                                         { name: 'About Us', href: '/about' },
                                         { name: 'Services', href: '/services' },
                                         { name: 'Projects', href: '/projects' },
-                                        { name: 'Careers', href: '/career' }
-                                    ] 
+                                        { name: 'Careers', href: '/career' },
+                                        { name: 'Company Overview', href: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/Pragtech_Brochure.pdf' }
+                                    ]
                                 },
-                                { 
-                                    title: 'Services', 
+                                {
+                                    title: 'Services',
                                     links: [
                                         { name: 'Structural Steel Detailing', href: '/services#structural-steel-detailing' },
                                         { name: 'Miscellaneous Metalwork', href: '/services#miscellaneous-metalwork' },
                                         { name: 'Cold‑Rolled SFS Detailing', href: '/services#cold-rolled-sfs-detailing' },
                                         { name: 'Cladding Detailing', href: '/services#cladding-detailing' }
-                                    ] 
+                                    ]
                                 },
-                                { 
-                                    title: 'Capabilities', 
+                                {
+                                    title: 'Capabilities',
                                     links: [
                                         { name: 'BIM Modelling', href: '/services#bim-modelling' },
                                         { name: 'GA / Shop Drawings', href: '/services#ga-shop-drawings' },
                                         { name: 'Connection Design', href: '/services#connection-design' },
                                         { name: 'As‑Built Modelling', href: '/services#as-built-modelling' }
-                                    ] 
+                                    ]
                                 }
                             ].map((section) => (
                                 <div key={section.title} className="flex flex-col gap-[3vw] lg:gap-[0.8vw] group">
@@ -105,7 +137,12 @@ const Footer = () => {
                                     <ul className="flex flex-wrap items-center gap-x-[6vw] lg:gap-x-[2.5vw] gap-y-[3vw] lg:gap-y-[1vw] pl-[0.5vw]">
                                         {section.links.map((link) => (
                                             <li key={link.name}>
-                                                <Link href={link.href} className="text-[4.2vw] lg:text-[1.2vw] font-bold text-white hover:text-[#14b8a6] transition-all relative group/link font-body">
+                                                <Link 
+                                                    href={link.href} 
+                                                    target={link.name === 'Company Overview' ? '_blank' : '_self'}
+                                                    rel={link.name === 'Company Overview' ? 'noopener noreferrer' : ''}
+                                                    className="text-[4.2vw] lg:text-[1.2vw] font-bold text-white hover:text-[#14b8a6] transition-all relative group/link font-body"
+                                                >
                                                     {link.name}
                                                     <span className="absolute -bottom-[0.5vw] lg:-bottom-[0.2vw] left-0 w-0 h-[2px] lg:h-[2px] bg-[#14b8a6] transition-all duration-300 group-hover/link:w-full" />
                                                 </Link>

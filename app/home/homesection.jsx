@@ -120,8 +120,9 @@ const HomeSection = () => {
                             Delivered Globally
                         </h3>
                         <p className="max-w-[80vw] text-navy/60 text-[3.2vw] md:text-[1.4vw] font-medium tracking-[0.1vw] font-body italic">
-                            UK-based steel detailing experts supporting projects across 6+ countries with accuracy,
-                            speed, and reliability.
+                            We are experts in solving your complex
+                            engineering with our young & creative
+                            technical team
                         </p>
                     </motion.div>
 

@@ -105,7 +105,7 @@ const FeaturedServices = () => {
                 </div>
 
                 {/* Content Split */}
-                <div className="w-full flex flex-col lg:flex-row mt-[7vw] items-start gap-[10vw] lg:gap-[5vw]">
+                <div className="w-full flex flex-col-reverse lg:flex-row mt-[7vw] items-start gap-[10vw] lg:gap-[5vw]">
 
                     {/* Left: Active Detail Panel */}
                     <div className="w-full lg:w-[45%] lg:sticky lg:top-[14vw]">

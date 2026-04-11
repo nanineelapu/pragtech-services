@@ -100,11 +100,11 @@ const ProjectHero = () => {
                     </motion.div>
 
                     {/* Text Block */}
-                    <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw]">
+                    <div className="z-10 flex flex-col items-center gap-[3vw] md:gap-[1vw] -mt-[10vw] md:-mt-[5vw]">
                         {/* Badge */}
                         <motion.div
                             variants={itemVariants}
-                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
+                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[8vw] lg:mb-[3vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
                             <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Global Project Archive</span>
@@ -114,7 +114,7 @@ const ProjectHero = () => {
                             variants={itemVariants}
                             className="text-navy text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            ENGINEERING <br /> <span className="text-teal">PORTFOLIO</span>
+                            PROJECT <br /> <span className="text-teal">SHOWCASE</span>
                         </motion.h1>
 
                         {/* Teal Separator Line */}
@@ -131,8 +131,11 @@ const ProjectHero = () => {
                             </div>
                         </motion.div>
 
-                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[50vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                            A testament to structural precision across more than 3500 projects. From complex industrial frameworks to iconic commercial developments, we deliver accuracy that defines structural reality.
+                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[60vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
+                            Successfully completed 250+ projects across various sectors including power plants,
+                            stadiums, conveyors, hospitals, and schools. We utilise SDS/2 and Tekla software
+                            to deliver high-quality detailing, along with expertise in structural steel,
+                            miscellaneous metalwork, cold-rolled steel (SFS), and cladding services.
                         </motion.p>
                     </div>
                 </motion.div>
