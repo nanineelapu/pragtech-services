@@ -13,7 +13,7 @@ const HomeSection = () => {
             opacity: 1,
             transition: {
                 staggerChildren: 0.15,
-                delayChildren: 0.3,
+                delayChildren: 1,
                 duration: 0.8,
                 ease: "easeOut"
             }
@@ -34,7 +34,7 @@ const HomeSection = () => {
         visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: 1.5, delay: 0.2, ease: "easeOut" }
+            transition: { duration: 1.5, delay: 1, ease: "easeOut" }
         }
     };
 
@@ -43,7 +43,7 @@ const HomeSection = () => {
         visible: {
             scaleX: 1,
             opacity: 1,
-            transition: { duration: 1.2, delay: 0.5, ease: "circOut" }
+            transition: { duration: 1.2, delay: 1.3, ease: "circOut" }
         }
     };
 

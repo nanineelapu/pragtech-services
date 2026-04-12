@@ -13,49 +13,48 @@ const Footer = () => {
                         {/* BRANDING & DESCRIPTION (Moved to top on mobile) */}
                         <div className="order-first lg:order-last lg:col-span-5 flex flex-col gap-[3vw] lg:gap-[1.5vw] items-start lg:items-end text-left lg:text-right w-full">
                             <div className="flex flex-col gap-[1.5vw] lg:gap-[1vw] items-start lg:items-end min-w-full">
-                                <div className="relative h-[15vw] lg:h-[4.5vw] w-[45vw] lg:w-[12vw]">
-                                    <img
-                                        src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
-                                        alt="Pragtech Ltd Logo"
-                                        className="w-full h-full object-contain lg:object-right -translate-x-[15vw] lg:translate-x-0 transition-transform"
-                                    />
-                                    <p className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">PRAGTECH LTD</p>
+                                <div className="flex flex-col items-start gap-[2vw]">
+                                    <div className="relative h-[12vw] lg:h-[4.5vw] w-[35vw] lg:w-[12vw]">
+                                        <img
+                                            src="https://ehtazgziwtjqm5ww.public.blob.vercel-storage.com/logo_clean_transparent.webp"
+                                            alt="Pragtech Ltd Logo"
+                                            className="w-full h-full object-contain lg:object-right transition-transform"
+                                        />
+                                    </div>
+                                    <p className="text-[3.2vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase font-heading opacity-80">PRAGTECH LTD</p>
                                 </div>
-                                <span className="text-[2.8vw] lg:text-[0.7vw] tracking-[0.5vw] lg:tracking-[0.4vw] text-[#14b8a6] font-bold uppercase mt-[2vw] lg:mt-0 font-heading opacity-80">
-                                    Engineering Excellence Globally
-                                </span>
                             </div>
-                            <p className="text-[4vw] lg:text-[1.1vw] text-white/50 font-medium leading-relaxed max-w-full lg:max-w-[30vw] font-body">
+                            <p className="text-[4vw] lg:text-[1.1vw] pt-[2vw] lg:pt-0 text-white/50 font-medium leading-relaxed max-w-full lg:max-w-[30vw] font-body">
                                 Architecting the future of structural steel through high-precision detailing and engineering oversight. Operating in more than 6 countries.
                             </p>
 
                             {/* Global Offices Section */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-[4vw] lg:gap-[2vw] w-full text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[1vw]">
-                                <div className="flex flex-col gap-[0.5vw] items-start lg:items-end">
-                                    <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[1vw] lg:mb-[0.5vw]">Corporate Office</h4>
+                             <div className="grid grid-cols-1 md:grid-cols-2 gap-[6vw] lg:gap-[2vw] w-full text-[3.5vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[4vw] lg:mt-[1vw]">
+                                <div className="flex flex-col gap-[1vw] items-start lg:items-end">
+                                    <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[0.5vw]">Corporate Office</h4>
                                     <p>8, Spey Glen Drive, Harwell</p>
                                     <p>Didcot, OX11 6LX, UK</p>
                                 </div>
-                                <div className="flex flex-col gap-[0.5vw] items-start lg:items-end">
-                                    <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[1vw] lg:mb-[0.5vw]">Head Sales Office</h4>
+                                <div className="flex flex-col gap-[1vw] items-start lg:items-end border-t border-white/5 pt-[6vw] lg:border-none lg:pt-0">
+                                    <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[0.5vw]">Head Sales Office</h4>
                                     <p>71-75 Shelton Street, London</p>
                                     <p>WC2H 9JQ, United Kingdom</p>
                                 </div>
                             </div>
 
                             {/* Communication Hub */}
-                            <div className="flex flex-col gap-[1vw] items-start lg:items-end w-full border-t border-white/5 pt-[3vw] lg:pt-[1vw]">
-                                <div className="flex flex-wrap lg:flex-nowrap gap-[4vw] lg:gap-[1.5vw] items-center text-[3.2vw] lg:text-[0.9vw]">
+                            <div className="flex flex-col gap-[4vw] lg:gap-[1vw] items-start lg:items-end w-full border-t border-white/5 pt-[8vw] lg:pt-[1vw] mt-[4vw] lg:mt-0">
+                                <div className="flex flex-col lg:flex-row gap-[3vw] lg:gap-[1.5vw] items-start lg:items-center text-[3.8vw] lg:text-[0.9vw]">
                                     <a href="mailto:info@pragtech.co.uk" className="text-[#14b8a6] hover:text-white transition-all font-bold">info@pragtech.co.uk</a>
                                     <span className="hidden lg:block text-white/10">|</span>
                                     <a href="mailto:mann@pragtech.co.uk" className="text-[#14b8a6] hover:text-white transition-all font-bold">mann@pragtech.co.uk</a>
                                 </div>
-                                <div className="flex flex-wrap lg:flex-nowrap gap-[4vw] lg:gap-[1.5vw] items-center text-[3.2vw] lg:text-[0.9vw] mt-[1vw] lg:mt-0">
+                                <div className="flex flex-col lg:flex-row gap-[3vw] lg:gap-[1.5vw] items-start lg:items-center text-[3.8vw] lg:text-[0.9vw]">
                                     <a href="tel:+447304120818" className="text-white/60 hover:text-[#14b8a6] transition-all">+44 7304 120818</a>
                                     <span className="hidden lg:block text-white/10">•</span>
                                     <a href="tel:+447404710491" className="text-white/60 hover:text-[#14b8a6] transition-all">+44 7404 710491</a>
                                 </div>
-                                <p className="text-white/20 mt-[2vw] lg:mt-[0.5vw] text-[2.8vw] lg:text-[0.7vw] uppercase tracking-widest font-black">Company Reg: 16973363</p>
+                                <p className="text-white/20 mt-[4vw] lg:mt-[0.5vw] text-[3vw] lg:text-[0.7vw] uppercase tracking-widest font-black">Company Reg: 16973363</p>
                             </div>
 
                             {/* Social Icons & Back to Top */}

@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./globals.css";
 import SmoothScroll from "./SmoothScroll";
+import Preloader from "./Preloader";
 
 // Global Metadata for SEO
 export const metadata = {
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="flex flex-col font-body text-pretty bg-white" suppressHydrationWarning>
+        <Preloader />
         <SmoothScroll>
           <Navbar />
           <main className="grow relative">

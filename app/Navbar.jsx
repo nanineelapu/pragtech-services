@@ -71,7 +71,7 @@ const Navbar = () => {
                 stiffness: 90,
                 damping: 22,
                 mass: 1,
-                delay: 0.05,
+                delay: 0.8,
                 width: {
                     type: "spring",
                     stiffness: 70,
@@ -95,7 +95,7 @@ const Navbar = () => {
             y: 0,
             filter: "blur(0px)",
             transition: {
-                delay: 0.6, // Materializes quickly after expansion begins
+                delay: 1.2, // Materializes after nav expands + preloader
                 duration: 0.8,
                 ease: [0.16, 1, 0.3, 1]
             }

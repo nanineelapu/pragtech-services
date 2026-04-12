@@ -65,7 +65,7 @@ const ReviewSection = () => {
     };
 
     return (
-        <section className="relative py-24 lg:py-32 px-6 lg:px-12 overflow-hidden bg-[#fafbfc]">
+        <section className="relative py-16 lg:py-32 px-5 lg:px-12 overflow-hidden bg-[#fafbfc]">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
                 <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-teal/5 blur-[120px]" />
@@ -74,7 +74,7 @@ const ReviewSection = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header Area */}
-                <div className="flex flex-col mb-16 lg:mb-24">
+                <div className="flex flex-col items-center text-center lg:items-start lg:text-left mb-12 lg:mb-24">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -82,7 +82,7 @@ const ReviewSection = () => {
                         transition={{ duration: 0.6 }}
                         className="flex items-center gap-3 mb-4"
                     >
-                        <div className="h-[2px] w-12 bg-teal" />
+                        <div className="h-[2px] w-8 lg:w-12 bg-teal" />
                         <span className="text-teal font-bold tracking-[0.2em] uppercase text-xs lg:text-sm">Client Testimonials</span>
                     </motion.div>
 
@@ -91,7 +91,7 @@ const ReviewSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-4xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tight max-w-2xl"
+                        className="text-3xl lg:text-6xl font-black text-navy leading-[1.2] lg:leading-[1.1] tracking-tight max-w-2xl"
                     >
                         TRUSTED BY <span className="text-teal">INDUSTRY TITANS</span> GLOBALLY
                     </motion.h2>
@@ -103,52 +103,52 @@ const ReviewSection = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8"
+                    className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8"
                 >
                     {reviews.map((review, index) => (
                         <motion.div
                             key={index}
                             variants={cardVariants}
                             whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                            className={`group relative bg-white border border-slate-100 p-8 lg:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col justify-between
-                                ${review.size === 'large' ? 'lg:col-span-2' : 'lg:col-span-1'}
+                            className={`group relative bg-white border border-slate-100 p-4 lg:p-10 rounded-2xl lg:rounded-[2.5rem] shadow-[0_15px_35px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col justify-between
+                                ${review.size === 'large' ? 'lg:col-span-2' : 'col-span-1'}
                             `}
                         >
                             {/* Card Content */}
-                            <div>
-                                <div className="flex justify-between items-start mb-8">
-                                    <div className="flex gap-1">
+                            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                                <div className="flex justify-between items-start mb-4 lg:mb-8 w-full">
+                                    <div className="flex gap-0.5">
                                         {[...Array(5)].map((_, i) => (
                                             <Star
                                                 key={i}
-                                                size={16}
-                                                className={i < review.rating ? "fill-teal text-teal" : "text-slate-200"}
+                                                size={10}
+                                                className={i < review.rating ? "fill-teal text-teal" : "text-slate-200 lg:size-[16px]"}
                                             />
                                         ))}
                                     </div>
-                                    <Quote className="text-teal/10 group-hover:text-teal/20 transition-colors" size={48} strokeWidth={1.5} />
+                                    <Quote className="text-teal/10 group-hover:text-teal/20 transition-colors w-5 h-5 lg:w-12 lg:h-12" strokeWidth={1.5} />
                                 </div>
 
-                                <p className={`text-navy/80 font-medium leading-relaxed mb-10
-                                    ${review.size === 'large' ? 'text-xl lg:text-2xl' : 'text-lg'}
+                                <p className={`text-navy/80 font-medium leading-normal mb-3 lg:mb-10
+                                    ${review.size === 'large' ? 'text-[11px] lg:text-2xl' : 'text-[11px] lg:text-lg'}
                                 `}>
                                     "{review.text}"
                                 </p>
                             </div>
 
                             {/* Author Info */}
-                            <div className="flex items-center gap-4 mt-auto">
+                            <div className="flex flex-col items-center lg:flex-row lg:items-center gap-2 lg:gap-4 mt-auto">
                                 <div className="relative">
-                                    <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-lg">
+                                    <div className="w-8 h-8 lg:w-14 lg:h-14 rounded-lg lg:rounded-2xl overflow-hidden border border-white shadow-sm">
                                         <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="absolute -bottom-1 -right-1 bg-teal text-white p-1 rounded-full shadow-md">
                                         <CheckCircle2 size={12} />
                                     </div>
                                 </div>
-                                <div>
-                                    <h4 className="text-navy font-bold text-lg leading-tight">{review.name}</h4>
-                                    <p className="text-slate-500 text-sm font-medium">
+                                <div className="flex flex-col items-center lg:items-start">
+                                    <h4 className="text-navy font-bold text-[10px] lg:text-lg leading-tight">{review.name}</h4>
+                                    <p className="text-slate-500 text-[8px] lg:text-sm font-medium">
                                         {review.role} <span className="text-teal/60 mx-1">•</span> {review.company}
                                     </p>
                                 </div>
@@ -160,19 +160,7 @@ const ReviewSection = () => {
                     ))}
                 </motion.div>
 
-                {/* Bottom Trust Bar */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1 }}
-                    className="mt-20 pt-10 border-t border-slate-100 flex flex-wrap justify-center lg:justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
-                >
-                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">A Decade of Excellence</span>
-                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">ISO 9001 Certified</span>
-                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">Global Standards</span>
-                    <span className="text-navy/40 font-bold uppercase tracking-widest text-xs">Digitizing Infrastructure</span>
-                </motion.div>
+
             </div>
         </section>
     );
