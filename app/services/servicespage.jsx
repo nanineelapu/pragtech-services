@@ -131,7 +131,7 @@ const ServicesPage = ({
                             variants={itemVariants}
                             className="text-navy/40 text-[6vw] md:text-[3vw] font-black leading-[0.8] tracking-tighter uppercase font-heading"
                         >
-                            Our Core Capabilities
+                            Our Capabilities
                         </motion.h2>
 
                         <motion.div

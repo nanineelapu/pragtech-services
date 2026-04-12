@@ -27,7 +27,7 @@ const WhyWorkWithUs = () => {
             <div className="flex items-center gap-[3vw] lg:gap-[1vw] mb-[12vw] lg:mb-[6vw]">
                 <div className="w-[8vw] lg:w-[3vw] h-px bg-navy/10" />
                 <h2 className="text-[8vw] lg:text-[3.5vw] font-black text-navy anton-regular uppercase tracking-tighter">
-                    THE PRAGTECH <span className="text-teal">ADVANTAGE</span>
+                    WHY WORK <span className="text-teal">WITH US</span>
                 </h2>
                 <div className="w-[8vw] lg:w-[3vw] h-px bg-navy/10" />
             </div>

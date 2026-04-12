@@ -167,7 +167,7 @@ const ProjectHero = () => {
                             </div>
                         </motion.div>
 
-                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[60vw] text-navy/60 text-[3.8vw] md:text-[1.4vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
+                        <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[65vw] text-navy/60 text-[3.5vw] md:text-[1.25vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
                             Successfully completed 250+ projects across various sectors including power plants,
                             stadiums, conveyors, hospitals, and schools. We utilise SDS/2 and Tekla software
                             to deliver high-quality detailing, along with expertise in structural steel,
@@ -175,14 +175,37 @@ const ProjectHero = () => {
                         </motion.p>
                     </div>
                 </motion.div>
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 1 }}
+                    className="absolute bottom-[6vw] md:bottom-[2vw] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[2vw] md:gap-[0.5vw] cursor-pointer z-30 group"
+                    onClick={() => document.getElementById('project-gallery')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    <span className="text-[2.2vw] md:text-[0.6vw] text-navy/40 font-bold uppercase tracking-[0.4em] font-heading group-hover:text-teal transition-colors">Scroll to Discover</span>
+                    <div className="w-[5vw] h-[8vw] md:w-[1.2vw] md:h-[2.2vw] border-2 border-navy/10 rounded-full flex justify-center p-[1vw] md:p-[0.3vw] group-hover:border-teal/30 transition-colors">
+                        <motion.div
+                            animate={{
+                                y: [0, 12, 0],
+                                opacity: [1, 0, 1]
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className="w-[1.2vw] md:w-[0.25vw] h-[1.2vw] md:h-[0.25vw] bg-teal rounded-full shadow-[0_0_10px_rgba(20,184,166,0.5)]"
+                        />
+                    </div>
+                </motion.div>
+
                 {/* Subtle Vignette */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.03)_100%)] pointer-events-none" />
             </section>
 
-
-
             {/* ASYMMETRICAL MOSAIC GALLERY */}
-            <section className="w-full py-[15vw] lg:py-[10vw] px-[4vw] lg:px-[5vw]">
+            <section id="project-gallery" className="w-full py-[15vw] lg:py-[10vw] px-[4vw] lg:px-[5vw]">
                 <div className="grid grid-cols-12 gap-[2vw] lg:gap-[1.5vw] auto-rows-[25vw] lg:auto-rows-[16vw]">
                     {projects.map((project, index) => (
                         <motion.div

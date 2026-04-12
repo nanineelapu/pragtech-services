@@ -90,7 +90,7 @@ const MarketSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                                     alt={market.title}
                                     fill
                                     unoptimized
-                                    className="object-contain p-[1.5vw] opacity-90 transition-transform duration-1000 group-hover:scale-105"
+                                    className="object-contain p-[1.5vw] opacity-95 brightness-80 transition-all duration-700 group-hover:scale-105 group-hover:brightness-105"
                                 />
                             </div>
 

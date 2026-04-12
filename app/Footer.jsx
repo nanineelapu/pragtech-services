@@ -7,11 +7,11 @@ const Footer = () => {
         <footer className="w-full relative px-[4vw] lg:px-0">
             {/* High Performance Solid Navy Footer */}
             <div className="bg-[#0F172A] overflow-hidden relative transition-all duration-500 rounded-t-[8vw] lg:rounded-none">
-                <div className="relative z-10 p-[8vw] lg:p-[5vw]">
-                    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-[10vw] lg:gap-[4vw] items-start">
+                <div className="relative z-10 p-[6vw] lg:p-[3.5vw]">
+                    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-[8vw] lg:gap-[2.5vw] items-start">
 
                         {/* BRANDING & DESCRIPTION (Moved to top on mobile) */}
-                        <div className="order-first lg:order-last lg:col-span-5 flex flex-col gap-[5vw] lg:gap-[2vw] items-start lg:items-end text-left lg:text-right w-full">
+                        <div className="order-first lg:order-last lg:col-span-5 flex flex-col gap-[3vw] lg:gap-[1.5vw] items-start lg:items-end text-left lg:text-right w-full">
                             <div className="flex flex-col gap-[1.5vw] lg:gap-[1vw] items-start lg:items-end min-w-full">
                                 <div className="relative h-[15vw] lg:h-[4.5vw] w-[45vw] lg:w-[12vw]">
                                     <img
@@ -30,7 +30,7 @@ const Footer = () => {
                             </p>
 
                             {/* Global Offices Section */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-[6vw] lg:gap-[2vw] w-full text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[2vw]">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-[4vw] lg:gap-[2vw] w-full text-[3.2vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[1vw]">
                                 <div className="flex flex-col gap-[0.5vw] items-start lg:items-end">
                                     <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[1vw] lg:mb-[0.5vw]">Corporate Office</h4>
                                     <p>8, Spey Glen Drive, Harwell</p>
@@ -44,7 +44,7 @@ const Footer = () => {
                             </div>
 
                             {/* Communication Hub */}
-                            <div className="flex flex-col gap-[1vw] items-start lg:items-end w-full border-t border-white/5 pt-[4vw] lg:pt-[1.5vw]">
+                            <div className="flex flex-col gap-[1vw] items-start lg:items-end w-full border-t border-white/5 pt-[3vw] lg:pt-[1vw]">
                                 <div className="flex flex-wrap lg:flex-nowrap gap-[4vw] lg:gap-[1.5vw] items-center text-[3.2vw] lg:text-[0.9vw]">
                                     <a href="mailto:info@pragtech.co.uk" className="text-[#14b8a6] hover:text-white transition-all font-bold">info@pragtech.co.uk</a>
                                     <span className="hidden lg:block text-white/10">|</span>
@@ -58,8 +58,8 @@ const Footer = () => {
                                 <p className="text-white/20 mt-[2vw] lg:mt-[0.5vw] text-[2.8vw] lg:text-[0.7vw] uppercase tracking-widest font-black">Company Reg: 16973363</p>
                             </div>
 
-                            {/* Social Icons - Optimized for Mobile Touch */}
-                            <div className="flex gap-[4vw] lg:gap-[1vw] mt-[2vw] lg:mt-[1vw]">
+                            {/* Social Icons & Back to Top */}
+                            <div className="flex items-center gap-[4vw] lg:gap-[1vw] mt-[2vw] lg:mt-[1vw]">
                                 {[
                                     { id: 'ln', href: 'https://www.linkedin.com/company/pragtech-ltd/' },
                                     { id: 'tw', href: '#' },
@@ -83,11 +83,21 @@ const Footer = () => {
                                         )}
                                     </a>
                                 ))}
+
+                                {/* Back to Top - Glass Style */}
+                                <button
+                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    className="ml-[2vw] lg:ml-[1vw] w-[12vw] h-[12vw] lg:w-[3.5vw] lg:h-[3.5vw] bg-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-white hover:text-[#0f172a] transition-all group shadow-xl cursor-pointer"
+                                >
+                                    <svg className="w-[5vw] lg:w-[1.4vw] h-[5vw] lg:h-[1.4vw] transform transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
                         {/* LINK ROWS */}
-                        <div className="lg:col-span-7 flex flex-col gap-[8vw] lg:gap-[3vw] w-full">
+                        <div className="lg:col-span-7 flex flex-col gap-[6vw] lg:gap-[2.5vw] w-full">
                             {[
                                 {
                                     title: 'Menu',
@@ -119,7 +129,7 @@ const Footer = () => {
                                     ]
                                 }
                             ].map((section) => (
-                                <div key={section.title} className="flex flex-col gap-[3vw] lg:gap-[0.8vw] group">
+                                <div key={section.title} className="flex flex-col gap-[2vw] lg:gap-[0.5vw] group">
                                     <div className="flex items-center gap-[4vw] lg:gap-[1.5vw]">
                                         <h3 className="text-[3.5vw] lg:text-[1vw] font-black text-white/40 tracking-[0.4vw] lg:tracking-[0.3vw] uppercase italic shrink-0 font-heading">
                                             {section.title}
@@ -134,7 +144,7 @@ const Footer = () => {
                                     </div>
 
                                     {/* Horizontal Sub-links */}
-                                    <ul className="flex flex-wrap items-center gap-x-[6vw] lg:gap-x-[2.5vw] gap-y-[3vw] lg:gap-y-[1vw] pl-[0.5vw]">
+                                    <ul className="flex flex-wrap items-center gap-x-[6vw] lg:gap-x-[2.5vw] gap-y-[2vw] lg:gap-y-[0.5vw] pl-[0.5vw]">
                                         {section.links.map((link) => (
                                             <li key={link.name}>
                                                 <Link
@@ -154,26 +164,6 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Footer Bottom: Floating Minimal Row */}
-                    <div className="mt-[12vw] lg:mt-[6vw] pt-[6vw] lg:pt-[2.5vw] border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-[6vw] lg:gap-[2vw]">
-                        <p className="text-[3.5vw] lg:text-[1vw] text-white/30 font-medium text-center lg:text-left font-body">
-                            © 2026 <span className="text-white/60 font-black font-heading">Pragtech Ltd</span>. All Rights Reserved.
-                        </p>
-
-                        <div className="flex flex-col lg:flex-row items-center gap-[8vw] lg:gap-[4vw]">
-
-
-                            {/* Back to Top - Glass Style */}
-                            <button
-                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                className="w-[15vw] h-[15vw] lg:w-[4vw] lg:h-[4vw] bg-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-white hover:text-[#0f172a] transition-all group shadow-xl"
-                            >
-                                <svg className="w-[6vw] lg:w-[1.8vw] h-[6vw] lg:h-[1.8vw] transform transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>

@@ -93,7 +93,7 @@ const AboutPage = () => {
                         {/* Badge */}
                         <motion.div
                             variants={itemVariants}
-                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[2vw] lg:mb-[1vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
+                            className="px-[4vw] lg:px-[1.5vw] py-[1.5vw] lg:py-[0.5vw] bg-teal/10 border border-teal/20 rounded-full mb-[5vw] lg:mb-[3vw] flex items-center gap-[1.5vw] lg:gap-[0.8vw]"
                         >
                             <span className="text-teal text-[2.5vw] lg:text-[1.2vw]">◈</span>
                             <span className="text-teal text-[1.8vw] lg:text-[0.8vw] font-black uppercase tracking-[0.4vw] font-heading">Global Engineering Excellence</span>

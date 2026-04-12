@@ -148,20 +148,6 @@ const HomeSection = () => {
                     </motion.div>
                 </div>
 
-                {/* Interactive Slider representation */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                    className="absolute bottom-[8vw] md:bottom-[3vw] flex items-center gap-[3vw] md:gap-[1.2vw]"
-                >
-                    <div className="w-[4vw] md:w-[1.4vw] h-[4vw] md:h-[1.4vw] rounded-full border-2 border-teal flex items-center justify-center">
-                        <div className="w-[1.5vw] md:w-[0.5vw] h-[1.5vw] md:h-[0.5vw] rounded-full bg-teal" />
-                    </div>
-                    {[1, 2, 3].map((i) => (
-                        <div key={i} className="w-[1.5vw] md:w-[0.6vw] h-[1.5vw] md:h-[0.6vw] rounded-full bg-navy/10 hover:bg-navy/30 transition-colors cursor-pointer" />
-                    ))}
-                </motion.div>
             </motion.div>
 
             {/* Subtle Vignette */}
