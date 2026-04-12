@@ -281,11 +281,6 @@ const OpenPostitions = () => {
                     </div>
                 </div>
             )}
-
-            {/* Footer Note */}
-            <p className="mt-[12vw] lg:mt-[8vw] text-navy/40 text-[4vw] lg:text-[1.2vw] eb-garamond max-w-[85vw] lg:max-w-[30vw] text-center italic">
-                * Pragmatic Technical Services is an equal opportunity employer committed to structural excellence and engineering innovation.
-            </p>
         </section>
     );
 };

@@ -10,17 +10,17 @@ const MarketSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
         {
             title: "Structural Steel Detailing",
             desc: "Accurate detailing for beams, frames & more.",
-            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/Market%20image%202.webp"
+            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/SERVICES%20PHOTOS/mis%202.webp"
         },
         {
             title: "Miscellaneous Metal Detailing",
             desc: "Stairs, platforms, handrails & custom steelwork.",
-            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/Market%20image%201.webp"
+            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/SERVICES%20PHOTOS/Miscellaneuos.webp"
         },
         {
             title: "Cold Rolled SFS Detailing",
             desc: "Precise detailing for light gauge steel framing.",
-            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/Gemini_Generated_Image_5yxq2u5yxq2u5yxq.webp"
+            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/SERVICES%20PHOTOS/SFS%20Detailing.webp"
         },
     ];
 

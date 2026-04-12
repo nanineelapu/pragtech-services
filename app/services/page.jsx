@@ -28,7 +28,6 @@ const Page = () => {
             <div className="relative z-10 flex flex-col items-center gap-[10vw] lg:gap-[5vw] pb-[15vw] lg:pb-[8vw]">
                 <ServicesPage />
                 <DetailsPage />
-
                 <FeaturedServices />
             </div>
         </div>

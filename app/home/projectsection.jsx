@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => {
@@ -13,7 +14,8 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             statLabel: "Precision",
             author: "Natalia García Jané",
             role: "Senior Ops Manager",
-            side: "right"
+            side: "right",
+            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/PRoject%20home%20images%20completed.webp"
         },
         {
             title: "Industrial Framework optimization",
@@ -22,7 +24,8 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             statLabel: "Faster",
             author: "Marissa Taylor",
             role: "Product Support",
-            side: "left"
+            side: "left",
+            image: "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/Project%20home%20page%20image%201.webp"
         }
     ];
 
@@ -124,14 +127,26 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
 
                             {/* 3D Illustration placeholder */}
                             <div className="mt-auto relative h-[25vw] lg:h-[15vw] w-full transform group-hover:scale-105 transition-transform duration-700">
-                                <div className="absolute bottom-0 right-0 w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-black/5 rounded-[2vw] rotate-6 border border-black/5" />
+                                <div className="absolute bottom-0 right-0 w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-black/5 rounded-[2vw] rotate-6 border border-black/5 overflow-hidden">
+                                    <Image
+                                        src="https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/PROJECT%20IMAGES/Project%20home%20page%20image%201.webp"
+                                        alt="Background Project"
+                                        fill
+                                        className="object-cover opacity-30"
+                                    />
+                                </div>
                                 <motion.div
                                     initial={{ rotate: -15, scale: 0.8 }}
                                     whileInView={{ rotate: -3, scale: 1 }}
                                     transition={{ delay: 0.6, duration: 1, type: "spring" }}
-                                    className="absolute bottom-[2vw] lg:bottom-[2vw] right-[2vw] lg:right-[2vw] w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-white/20 backdrop-blur-sm rounded-[2vw] border border-white/20 flex items-center justify-center text-navy/20 text-[5vw] lg:text-[4vw] font-black"
+                                    className="absolute bottom-[2vw] lg:bottom-[2vw] right-[2vw] lg:right-[2vw] w-[25vw] lg:w-[18vw] h-[25vw] lg:h-[18vw] bg-white/20 backdrop-blur-sm rounded-[2vw] border border-white/20 flex items-center justify-center overflow-hidden"
                                 >
-                                    STEEL
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover opacity-80"
+                                    />
                                 </motion.div>
                             </div>
                         </motion.div>
