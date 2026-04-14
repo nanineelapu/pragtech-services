@@ -2,7 +2,7 @@ import Image from "next/image";
 import PragtechHome from "./home/pragtech";
 
 export const metadata = {
-  title: "Precision Steel Detailing & Structural Engineering | Global BIM Solutions",
+  title: "Pragtech Steel Detailing & Structural Engineering | Global BIM Solutions",
   description: "Pragtech Ltd offers premium steel detailing and structural engineering services. Delivering precise fabrication drawings, BIM modeling, and technical expertise for global industrial projects.",
   keywords: ["precision steel detailing", "structural engineering London", "BIM modeling solutions", "industrial steel frameworks", "steel fabrication drawings"],
 };
