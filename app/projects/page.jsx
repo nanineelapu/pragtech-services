@@ -2,8 +2,9 @@ import Image from "next/image";
 import ProjectHero from './projectpage';
 
 export const metadata = {
-  title: "Our Projects",
-  description: "Explore our portfolio of complex engineering projects, including heavy industrial frameworks, commercial steel structures, and BIM detailing success stories.",
+  title: "Engineering & Steel Detailing Portfolio | Global Projects",
+  description: "Showcasing our precision engineering and steel detailing excellence. Explore our portfolio of heavy industrial frameworks and complex commercial BIM projects.",
+  keywords: ["engineering portfolio", "steel detailing projects", "industrial design cases", "BIM success stories", "Pragtech projects"],
 };
 
 const Page = () => {

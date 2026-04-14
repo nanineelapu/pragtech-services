@@ -41,7 +41,7 @@ const FirstSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
                     <div className="relative w-full aspect-square max-w-[75vw] lg:max-w-[32vw] rounded-[6vw] lg:rounded-[2.5vw] overflow-hidden shadow-2xl border border-white/10">
                         <Image
                             src="/steel_hero.png"
-                            alt="Structural Engineering"
+                            alt="Pragtech Ltd - Precision Structural Steel Detailing and Engineering Experts"
                             fill
                             className="object-cover brightness-105 transition-transform duration-700 group-hover:scale-110"
                         />

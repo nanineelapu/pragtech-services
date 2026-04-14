@@ -6,8 +6,9 @@ import CustomerFocus from "./customerfocus";
 import ReviewSection from "../home/reviewsection";
 
 export const metadata = {
-    title: "About Pragtech Ltd | UK-Based Steel Detailing Experts",
-    description: "Pragtech Ltd delivers precise, fabrication-ready models and drawings for structural steel, miscellaneous metalwork, cold-rolled SFS, and cladding systems worldwide.",
+    title: "About Pragtech Ltd | UK-Based Precision Engineering Experts",
+    description: "Learn more about Pragtech Ltd, your trusted UK partner for high-precision steel detailing, fabrication-ready models, and comprehensive structural engineering services worldwide.",
+    keywords: ["About Pragtech", "UK steel detailing history", "precision engineering team", "global engineering presence", "Tekla detailing company"],
 };
 
 const Page = () => {

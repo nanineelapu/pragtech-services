@@ -6,8 +6,9 @@ import FeaturedServices from './featuredservices';
 
 
 export const metadata = {
-    title: "Engineering Services",
-    description: "Comprehensive steel detailing, BIM modeling, and structural engineering services. We provide high-accuracy technical documentation for industrial and commercial sectors.",
+    title: "Structural Engineering & Steel Detailing Services",
+    description: "Comprehensive BIM modeling, Tekla steel detailing, and structural analysis. We provide industry-leading technical documentation for industrial, commercial, and infra sectors.",
+    keywords: ["BIM modeling services", "Tekla detailing", "connection design", "structural analysis UK", "steel fabrication drawings"],
 };
 
 const Page = () => {
