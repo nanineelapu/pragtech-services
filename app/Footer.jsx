@@ -29,7 +29,7 @@ const Footer = () => {
                             </p>
 
                             {/* Global Offices Section */}
-                             <div className="grid grid-cols-1 md:grid-cols-2 gap-[6vw] lg:gap-[2vw] w-full text-[3.5vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[4vw] lg:mt-[1vw]">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-[6vw] lg:gap-[2vw] w-full text-[3.5vw] lg:text-[0.9vw] text-white/40 font-medium font-body mt-[4vw] lg:mt-[1vw]">
                                 <div className="flex flex-col gap-[1vw] items-start lg:items-end">
                                     <h4 className="text-[#14b8a6] font-bold uppercase tracking-wider mb-[0.5vw]">Corporate Office</h4>
                                     <p>8, Spey Glen Drive, Harwell</p>
@@ -49,10 +49,10 @@ const Footer = () => {
                                     <span className="hidden lg:block text-white/10">|</span>
                                     <a href="mailto:mann@pragtech.co.uk" className="text-[#14b8a6] hover:text-white transition-all font-bold">mann@pragtech.co.uk</a>
                                 </div>
-                                <div className="flex flex-col lg:flex-row gap-[3vw] lg:gap-[1.5vw] items-start lg:items-center text-[3.8vw] lg:text-[0.9vw]">
-                                    <a href="tel:+447304120818" className="text-white/60 hover:text-[#14b8a6] transition-all">+44 7304 120818</a>
-                                    <span className="hidden lg:block text-white/10">•</span>
+                                <div className="flex flex-col lg:flex-row gap-[3vw] lg:gap-[3.1vw] items-start lg:items-center text-[3.8vw] lg:text-[0.9vw]">
                                     <a href="tel:+447404710491" className="text-white/60 hover:text-[#14b8a6] transition-all">+44 7404 710491</a>
+                                    <span className="hidden lg:block text-white/10">•</span>
+                                    <a href="tel:07404710491" className="text-white/60 hover:text-[#14b8a6] transition-all">07404710491</a>
                                 </div>
                                 <p className="text-white/20 mt-[4vw] lg:mt-[0.5vw] text-[3vw] lg:text-[0.7vw] uppercase tracking-widest font-black">Company Reg: 16973363</p>
                             </div>

@@ -103,7 +103,7 @@ const MainContactContent = () => {
                                 London, WC2H 9JQ, United Kingdom
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full flex flex-col gap-1">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 7304 120818</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 7404 710491</span>
                                 <span className="text-navy/40 text-[3vw] lg:text-[0.8vw] font-bold uppercase tracking-widest">Sales Inquiry</span>
                             </div>
                         </motion.div>
@@ -142,7 +142,7 @@ const MainContactContent = () => {
                                 <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+971 770-809-0806</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">info@pragtech.co.uk</span>
                             </div>
                         </motion.div>
 
@@ -160,7 +160,7 @@ const MainContactContent = () => {
                                 <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+1 281-648-8137</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">info@pragtech.co.uk</span>
                             </div>
                         </motion.div>
 
@@ -178,7 +178,7 @@ const MainContactContent = () => {
                                 <span className="text-teal/60 italic text-[3.5vw] lg:text-[0.9vw]">[Address details updating shortly]</span>
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+61 1107-HWY-103W</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">info@pragtech.co.uk</span>
                             </div>
                         </motion.div>
                     </div>

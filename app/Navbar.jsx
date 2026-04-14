@@ -187,10 +187,10 @@ const Navbar = () => {
                     {/* Desktop Phone/Action */}
                     <div className="hidden lg:flex items-center gap-[2.5vw]">
                         <Link
-                            href="tel:+447304120818"
+                            href="tel:+447404710491"
                             className="text-[#111] font-medium text-[1.1vw] hover:text-[#14b8a6] transition-colors font-body"
                         >
-                            +44 7304120818
+                            +44 7404710491
                         </Link>
                         <Link
                             href="/contact"
