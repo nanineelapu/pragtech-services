@@ -21,19 +21,22 @@ export const metadata = {
   },
   description: "Pragtech Ltd provides premium structural engineering and precision steel detailing services in the UK and globally. Experts in BIM modeling, Tekla detailing, and industrial framework design.",
   keywords: [
-    "steel detailing UK", 
-    "structural engineering", 
-    "precision engineering", 
-    "Pragtech Ltd", 
-    "steel construction drawings", 
-    "BIM modeling services", 
-    "Tekla steel detailing", 
+    "pragtech steel detailing UK",
+    "pragtech structural engineering",
+    "pragtech precision engineering",
+    "Pragtech Ltd",
+    "pragtech",
+    "pragtech uk",
+    "steel uk",
+    "pragtech uk steel construction drawings",
+    "pragtech BIM modeling services",
+    "Tekla steel detailing",
     "London structural engineering",
     "industrial steel design",
     "fabrication drawings",
     "connection design"
   ],
-  authors: [{ name: "Pragtech Ltd", url: "https://pragtech.services" }],
+  authors: [{ name: "Pragtech Ltd", url: "https://pragtech.co.uk", url: "https://www.pragtech.co.uk" }],
   creator: "Pragtech Ltd",
   publisher: "Pragtech Ltd",
   alternates: {
@@ -130,6 +133,7 @@ export default function RootLayout({ children }) {
         <SmoothScroll>
           <Navbar />
           <main className="grow relative">
+            <h2 className="sr-only">Pragtech Ltd provides premium structural engineering and precision steel detailing services in the UK and globally. Experts in BIM modeling, Tekla detailing, and industrial framework design, operating in 6+ countries with high-end technical expertise.</h2>
             {/* Page Content */}
             <div className="relative z-10 w-full min-h-screen">
               {children}

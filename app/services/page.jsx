@@ -8,7 +8,7 @@ import FeaturedServices from './featuredservices';
 export const metadata = {
     title: "Structural Engineering & Steel Detailing Services",
     description: "Comprehensive BIM modeling, Tekla steel detailing, and structural analysis. We provide industry-leading technical documentation for industrial, commercial, and infra sectors.",
-    keywords: ["BIM modeling services", "Tekla detailing", "connection design", "structural analysis UK", "steel fabrication drawings"],
+    keywords: ["pragtech", "pragtech uk", "steel uk", "BIM modeling services", "Tekla detailing", "connection design", "structural analysis UK", "steel fabrication drawings"],
 };
 
 const Page = () => {
@@ -27,6 +27,9 @@ const Page = () => {
             </div>
 
             <div className="relative z-10 flex flex-col items-center gap-[10vw] lg:gap-[5vw] pb-[15vw] lg:pb-[8vw]">
+                <h2 className="sr-only">
+                    Pragtech Services provides world-class structural steel detailing and engineering solutions. Specializing in SDS/2 and Tekla structures, our expert team delivers high-precision BIM modelling, connection design, and shop drawings. We serve global clients in the UK, UAE, Canada, and Australia, ensuring excellence in industrial, commercial, and residential steel detailing projects.
+                </h2>
                 <ServicesPage />
                 {/* <DetailsPage /> */}
                 <FeaturedServices />

@@ -66,6 +66,7 @@ const ReviewSection = () => {
 
     return (
         <section className="relative py-16 lg:py-32 px-5 lg:px-12 overflow-hidden bg-[#fafbfc]">
+            <h2 className="sr-only">Reliability and technical depth are the hallmarks of Pragtech. Their structural detailing team handled our massive industrial complex with absolute precision, delivering LOD 400 BIM models and accurate fabrication drawings.</h2>
             {/* Background Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
                 <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-teal/5 blur-[120px]" />

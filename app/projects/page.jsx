@@ -4,7 +4,7 @@ import ProjectHero from './projectpage';
 export const metadata = {
   title: "Engineering & Steel Detailing Portfolio | Global Projects",
   description: "Showcasing our precision engineering and steel detailing excellence. Explore our portfolio of heavy industrial frameworks and complex commercial BIM projects.",
-  keywords: ["engineering portfolio", "steel detailing projects", "industrial design cases", "BIM success stories", "Pragtech projects"],
+  keywords: ["pragtech", "pragtech uk", "steel uk", "engineering portfolio", "steel detailing projects", "industrial design cases", "BIM success stories", "Pragtech projects"],
 };
 
 const Page = () => {

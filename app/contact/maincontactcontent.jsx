@@ -65,6 +65,7 @@ const MainContactContent = () => {
 
     return (
         <section className="bg-transparent py-[15vw] lg:py-[10vw] px-[6vw] lg:px-[4vw] relative overflow-hidden">
+            <h2 className="sr-only">Contact Pragtech Services for expert structural steel detailing and engineering consultation. With global hubs in London, Dubai, Toronto, and Sydney, we provide precision detailing, BIM coordination, and technical support worldwide.</h2>
             {/* Background Decorative Element */}
             <div className="absolute top-0 right-0 w-[50vw] lg:w-[30vw] h-[50vw] lg:h-[30vw] bg-navy/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 

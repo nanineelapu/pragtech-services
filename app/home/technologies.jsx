@@ -12,6 +12,7 @@ const Technologies = () => {
 
     return (
         <section className="bg-navy/90 backdrop-blur-md rounded-[6vw] lg:rounded-[4vw] mt-[8vw] lg:mt-[5vw] p-[8vw] lg:p-[6vw] relative overflow-hidden flex flex-col items-start w-[92%] mx-auto shadow-2xl border border-white/10">
+            <h2 className="sr-only">Our engineers utilize advanced SDS/2, Tekla Structures, AutoCAD, and Bluebeam software to deliver high-precision structural steel detailing and connection designs. We harness computational power to ensure flawless technical documentation.</h2>
             {/* Header Content - Dynamic Row on Mobile */}
             <div className="w-full flex flex-row lg:flex-col items-center lg:items-start gap-[4vw] lg:gap-0 mb-[10vw] lg:mb-[6vw] relative z-10">
                 <div className="w-1/2 lg:w-full">

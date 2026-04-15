@@ -8,7 +8,7 @@ import ReviewSection from "../home/reviewsection";
 export const metadata = {
     title: "About Pragtech Ltd | UK-Based Precision Engineering Experts",
     description: "Learn more about Pragtech Ltd, your trusted UK partner for high-precision steel detailing, fabrication-ready models, and comprehensive structural engineering services worldwide.",
-    keywords: ["About Pragtech", "UK steel detailing history", "precision engineering team", "global engineering presence", "Tekla detailing company"],
+    keywords: ["pragtech", "pragtech uk", "steel uk", "About Pragtech", "UK steel detailing history", "precision engineering team", "global engineering presence", "Tekla detailing company"],
 };
 
 const Page = () => {
@@ -28,6 +28,9 @@ const Page = () => {
             </div>
 
             <div className="relative z-10 flex flex-col items-center gap-[5vw] lg:gap-[3vw] pb-[10vw] lg:pb-[5vw]">
+                <h2 className="sr-only">
+                    Pragtech Services provides world-class structural steel detailing and engineering solutions. Specializing in SDS/2 and Tekla structures, our expert team delivers high-precision BIM modelling, connection design, and shop drawings. We serve global clients in the UK, UAE, Canada, and Australia, ensuring excellence in industrial, commercial, and residential steel detailing projects.
+                </h2>
                 <AboutPage />
                 <Details />
                 <GlobalPresence />

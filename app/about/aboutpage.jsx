@@ -49,6 +49,7 @@ const AboutPage = () => {
         <div className="flex flex-col items-center bg-transparent w-full">
             {/* High Performance Full Width Hero Section */}
             <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
+                <h2 className="sr-only">Pragtech Ltd is a UK-based detailing company delivering precise structural steel, miscellaneous metalwork, cold-rolled SFS, and cladding systems. Operating globally, we provide fabrication-ready models and drawings with engineering excellence.</h2>
                 {/* Technical Grid Overlay */}
                 <div className="absolute inset-0 opacity-[0.08]">
                     <svg width="100%" height="100%">

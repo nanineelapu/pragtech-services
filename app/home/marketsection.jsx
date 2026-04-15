@@ -46,6 +46,7 @@ const MarketSection = ({ px = "4vw", py = "6vw", width = "92%", ...props }) => {
             }}
             {...props}
         >
+            <h2 className="sr-only">Experts in structural steel detailing and high-precision engineering, Pragtech Services specializes in Tekla and SDS/2 modelling for global projects. Our services include connection design, shop drawings, and BIM management across London, Dubai, Toronto, and Sydney.</h2>
             {/* Header Area */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -6,7 +6,7 @@ import OpenPostitions from "./openpostitions";
 export const metadata = {
     title: "Careers | Join the Pragtech Engineering Team",
     description: "Build your career with Pragtech Ltd. We are hiring structural engineers, steel detailers, and BIM experts for high-impact global projects.",
-    keywords: ["engineering jobs UK", "steel detailer careers", "structural engineer vacancies", "BIM modeler jobs"],
+    keywords: ["pragtech", "pragtech uk", "steel uk", "engineering jobs UK", "steel detailer careers", "structural engineer vacancies", "BIM modeler jobs"],
 };
 
 const Page = () => {

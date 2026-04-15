@@ -64,6 +64,7 @@ const FeaturedServices = () => {
 
     return (
         <section className="relative w-full bg-transparent py-[10vw] lg:py-[6vw] px-[5vw] overflow-hidden flex flex-col items-center">
+            <h2 className="sr-only">At Pragtech Ltd, we deliver precise structural steel detailing for industrial and commercial projects. Our services include Tekla Structures, SDS/2, connection design, shop drawings, BIM coordination, and SFS detailing. We specialize in fabrication-ready models and building envelope documentation.</h2>
 
             {/* Background Watermark */}
             <AnimatePresence mode="wait">

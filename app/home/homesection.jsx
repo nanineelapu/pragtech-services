@@ -49,6 +49,7 @@ const HomeSection = () => {
 
     return (
         <section className="relative w-full h-[140vw] md:h-[50vw] overflow-hidden group bg-transparent pt-[12vw] md:pt-[4.5vw]">
+            <h2 className="sr-only">Pragtech Services provides world-class structural steel detailing and engineering solutions. Specializing in SDS/2 and Tekla structures, our expert team delivers high-precision BIM modelling, connection design, and shop drawings. We serve global clients in the UK, UAE, Canada, and Australia.</h2>
             {/* Background is now global */}
             {/* Technical Grid Overlay - Keep but make it more subtle */}
             <div className="absolute inset-0 opacity-[0.03]">

@@ -8,6 +8,7 @@ const Footer = () => {
             {/* High Performance Solid Navy Footer */}
             <div className="bg-[#0F172A] overflow-hidden relative transition-all duration-500 rounded-t-[8vw] lg:rounded-none">
                 <div className="relative z-10 p-[6vw] lg:p-[3.5vw]">
+                    <h2 className="sr-only">Architecting the future of structural steel through high-precision detailing and engineering oversight. Pragtech Ltd operates in more than 6 countries, providing SDS/2 and Tekla detailing, BIM modelling, and structural engineering services.</h2>
                     <div className="flex flex-col lg:grid lg:grid-cols-12 gap-[8vw] lg:gap-[2.5vw] items-start">
 
                         {/* BRANDING & DESCRIPTION (Moved to top on mobile) */}

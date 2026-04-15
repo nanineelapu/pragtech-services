@@ -110,6 +110,7 @@ const Navbar = () => {
                 variants={navVariants}
                 className="fixed top-[3vw] md:top-[1.2vw] left-1/2 z-100 flex items-center justify-center bg-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white/20 rounded-full lg:rounded-[4vw] min-h-[12vw] md:min-h-[4.5vw] py-[3.5vw] md:py-[0.8vw] px-[4vw] overflow-hidden"
             >
+                <h2 className="sr-only">Pragtech Services provides global structural steel detailing, BIM solutions, and technical engineering services. Our London-based team specializes in Tekla, SDS/2, and precise fabrication drawings for international markets.</h2>
                 {/* Left Side: Navigation Links */}
                 <motion.div
                     initial="initial"

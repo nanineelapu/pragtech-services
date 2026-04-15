@@ -48,6 +48,7 @@ const ProjectSection = ({ px = "4vw", py = "5vw", width = "92%", ...props }) => 
             }}
             {...props}
         >
+            <h2 className="sr-only">Operating across four continents, Pragtech Services is a leader in structural steel detailing and BIM solutions. From the UK to Australia, our engineers utilize advanced SDS/2 and Tekla software to deliver fabrication-ready drawings and precise connection designs.</h2>
             {/* Header Content - Left Aligned */}
             <motion.div
                 initial={{ opacity: 0, x: -40 }}
