@@ -103,7 +103,7 @@ const ContctPage = () => {
                             variants={itemVariants}
                             className="text-navy text-[10vw] md:text-[8vw] font-black leading-[0.8] tracking-tight font-heading select-none uppercase"
                         >
-                            INITIATE <br /> <span className="text-teal text-[8vw] md:text-[6vw]">CONNECTION</span>
+                            CONTACT <br /> <span className="text-teal">PRAGTECH LTD</span>
                         </motion.h1>
 
                         {/* Teal Separator Line */}

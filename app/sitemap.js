@@ -1,6 +1,6 @@
 export default function sitemap() {
   const baseUrl = 'https://pragtech.services';
-  
+
   const routes = ['', '/about', '/services', '/projects', '/career', '/contact'].map(
     (route) => ({
       url: `${baseUrl}${route}`,

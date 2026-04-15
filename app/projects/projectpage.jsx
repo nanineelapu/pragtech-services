@@ -168,7 +168,7 @@ const ProjectHero = () => {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="max-w-[85vw] lg:max-w-[65vw] text-navy/60 text-[3.5vw] md:text-[1.25vw] font-medium tracking-[0.05vw] font-body italic leading-relaxed">
-                            Successfully completed 250+ projects across various sectors including power plants,
+                            Successfully completed 512+ projects across various sectors including power plants,
                             stadiums, conveyors, hospitals, and schools. We utilise SDS/2 and Tekla software
                             to deliver high-quality detailing, along with expertise in structural steel,
                             miscellaneous metalwork, cold-rolled steel (SFS), and cladding services.

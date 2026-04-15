@@ -13,7 +13,7 @@ const MainContactContent = () => {
         const formData = new FormData(e.target);
 
         try {
-            const response = await fetch("https://formsubmit.co/ajax/naniatworkmail@gmail.com", {
+            const response = await fetch("https://formsubmit.co/ajax/info@pragtech.co.uk", {
                 method: "POST",
                 body: formData,
                 headers: {
@@ -253,7 +253,7 @@ const MainContactContent = () => {
                                         type="email"
                                         name="email"
                                         className="px-[4vw] lg:px-[1.5vw] py-[3.5vw] lg:py-[1.2vw] bg-white/5 border border-white/10 rounded-[2vw] lg:rounded-[1vw] text-white text-[4vw] lg:text-[1.1vw] outline-none focus:border-teal focus:bg-white/10 transition-all font-medium placeholder:text-white/20"
-                                        placeholder="operator@domain.com"
+                                        placeholder="info@pragtech.co.uk"
                                         required
                                     />
                                 </div>
