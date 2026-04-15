@@ -9,11 +9,16 @@ import Preloader from "./Preloader";
 
 // Global Metadata for SEO
 export const metadata = {
-  metadataBase: new URL('https://pragtech.services'),
+  metadataBase: new URL('https://www.pragtech.co.uk'),
   icons: {
-    icon: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/favicon.ico',
-    shortcut: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/favicon.ico',
-    apple: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', type: 'image/x-icon' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/favicon.ico', sizes: '180x180', type: 'image/x-icon' },
+    ],
   },
   title: {
     default: "Pragtech Ltd | Precision Steel Detailing & Structural Engineering UK",
@@ -36,7 +41,7 @@ export const metadata = {
     "fabrication drawings",
     "connection design"
   ],
-  authors: [{ name: "Pragtech Ltd", url: "https://pragtech.co.uk", url: "https://www.pragtech.co.uk" }],
+  authors: [{ name: "Pragtech Ltd", url: "https://www.pragtech.co.uk" }],
   creator: "Pragtech Ltd",
   publisher: "Pragtech Ltd",
   alternates: {
@@ -50,7 +55,7 @@ export const metadata = {
   openGraph: {
     title: "Pragtech Ltd | Engineering & Steel Detailing Excellence",
     description: "Premium structural engineering and precision steel detailing services globally. Operating in 6+ countries with high-end technical expertise.",
-    url: "https://pragtech.services",
+    url: "https://www.pragtech.co.uk",
     siteName: "Pragtech Ltd",
     images: [
       {
@@ -93,8 +98,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Pragtech Ltd",
-  "url": "https://pragtech.services",
-  "logo": "https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/favicon.ico",
+  "url": "https://www.pragtech.co.uk",
+  "logo": "https://www.pragtech.co.uk/favicon.ico",
   "sameAs": [
     "https://www.linkedin.com/company/pragtech-ltd"
   ],

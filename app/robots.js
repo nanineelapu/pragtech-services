@@ -7,6 +7,6 @@ export default function robots() {
         disallow: '/private/',
       },
     ],
-    sitemap: 'https://pragtech.services/sitemap.xml',
+    sitemap: 'https://www.pragtech.co.uk/sitemap.xml',
   }
 }

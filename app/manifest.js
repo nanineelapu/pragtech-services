@@ -9,8 +9,23 @@ export default function manifest() {
     theme_color: '#000000',
     icons: [
       {
-        src: 'https://ni6f1bnmnusal1wh.public.blob.vercel-storage.com/favicon.ico',
+        src: '/favicon.ico',
         sizes: 'any',
+        type: 'image/x-icon',
+      },
+      {
+        src: '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+      {
+        src: '/favicon.ico',
+        sizes: '192x192',
+        type: 'image/x-icon',
+      },
+      {
+        src: '/favicon.ico',
+        sizes: '512x512',
         type: 'image/x-icon',
       },
     ],
