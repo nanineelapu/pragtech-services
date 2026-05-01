@@ -191,7 +191,7 @@ const Navbar = () => {
                             href="tel:+442080905309"
                             className="text-[#111] font-medium text-[1.1vw] hover:text-[#14b8a6] transition-colors font-body"
                         >
-                            020 8090 5309
+                            +44 2080905309
                         </Link>
                         <Link
                             href="/contact"
@@ -278,7 +278,7 @@ const Navbar = () => {
                                     </div>
                                     <div className="flex flex-col text-left">
                                         <span className="text-[2.5vw] uppercase tracking-widest opacity-40 font-bold">Call Us</span>
-                                        <span className="text-[4.5vw] font-bold">020 8090 5309</span>
+                                        <span className="text-[4.5vw] font-bold">+44 2080905309</span>
                                     </div>
                                 </Link>
                             </div>
