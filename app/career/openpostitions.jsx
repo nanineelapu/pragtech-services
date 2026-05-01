@@ -199,7 +199,7 @@ const OpenPostitions = () => {
                                             <input
                                                 type="tel"
                                                 name="phone"
-                                                placeholder="+44 7404 710491"
+                                                placeholder="020 8090 5309"
                                                 className="w-full bg-white border border-navy/10 px-[3vw] lg:px-[0.8vw] py-[2.2vw] lg:py-[0.5vw] rounded-[1vw] lg:rounded-[0.3vw] text-navy text-[3.5vw] lg:text-[0.9vw] focus:outline-none focus:border-teal transition-all eb-garamond"
                                                 required
                                             />

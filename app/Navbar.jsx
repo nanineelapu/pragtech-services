@@ -188,10 +188,10 @@ const Navbar = () => {
                     {/* Desktop Phone/Action */}
                     <div className="hidden lg:flex items-center gap-[2.5vw]">
                         <Link
-                            href="tel:+447404710491"
+                            href="tel:+442080905309"
                             className="text-[#111] font-medium text-[1.1vw] hover:text-[#14b8a6] transition-colors font-body"
                         >
-                            +44 7404710491
+                            020 8090 5309
                         </Link>
                         <Link
                             href="/contact"
@@ -268,7 +268,7 @@ const Navbar = () => {
 
                             <div className="mt-2 pt-6 border-t border-black/5 flex flex-col gap-4">
                                 <Link
-                                    href="tel:+447304120818"
+                                    href="tel:+442080905309"
                                     className="flex items-center gap-4 p-4 text-[#111] group"
                                 >
                                     <div className="w-[12vw] h-[12vw] rounded-2xl bg-black/5 flex items-center justify-center transition-all group-hover:bg-[#14b8a6]/10 group-hover:text-[#14b8a6]">
@@ -278,7 +278,7 @@ const Navbar = () => {
                                     </div>
                                     <div className="flex flex-col text-left">
                                         <span className="text-[2.5vw] uppercase tracking-widest opacity-40 font-bold">Call Us</span>
-                                        <span className="text-[4.5vw] font-bold">+44 7304120818</span>
+                                        <span className="text-[4.5vw] font-bold">020 8090 5309</span>
                                     </div>
                                 </Link>
                             </div>

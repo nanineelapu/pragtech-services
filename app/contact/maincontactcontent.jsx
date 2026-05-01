@@ -104,7 +104,7 @@ const MainContactContent = () => {
                                 London, WC2H 9JQ, United Kingdom
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full flex flex-col gap-1">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 7404 710491</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">020 8090 5309</span>
                                 <span className="text-navy/40 text-[3vw] lg:text-[0.8vw] font-bold uppercase tracking-widest">Sales Inquiry</span>
                             </div>
                         </motion.div>
@@ -123,7 +123,7 @@ const MainContactContent = () => {
                                 Didcot, OX11 6LX, United Kingdom
                             </p>
                             <div className="mt-[5vw] lg:mt-[2vw] pt-[4vw] lg:pt-[1.5vw] border-t border-navy/5 w-full flex flex-col gap-1">
-                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">+44 7404 710491</span>
+                                <span className="text-navy font-black text-[5vw] lg:text-[1.2vw] anton-regular tracking-tight">020 8090 5309</span>
                                 <span className="text-navy/40 text-[3vw] lg:text-[0.8vw] font-bold uppercase tracking-widest">Operations Support</span>
                             </div>
                         </motion.div>
